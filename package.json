@@ -28,7 +28,7 @@
         "lint": "eslint --fix --ext .js,.vue src",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
         "unit:dev": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js ",
-        "test": "jest --config test/unit/jest.conf.js --coverage",
+        "jest": "jest --config test/unit/jest.conf.js --coverage",
         "jest:dev": "jest --config test/unit/jest.conf.js --watch",
         "e2e": "node test/e2e/runner.js",
         "e2e:dev": "cross-env PORT=8081 nightwatch -c test/e2e/nightwatch.conf.js --env chrome",
