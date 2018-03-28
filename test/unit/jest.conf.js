@@ -22,10 +22,13 @@ module.exports = {
     ],
     snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
     setupFiles: ['<rootDir>/test/unit/setup'],
+    // collectCoverage: true,
     coverageDirectory: '<rootDir>/test/unit/coverage',
     collectCoverageFrom: [
-        'src/**/*.{js,vue}',
-        '!src/main.js',
+        // 'src/**/*.{js,vue}',
+        'src/**/*.{vue}',
+        '!src/index.js',
+        '!src/libs/router.js',
         '!src/router/index.js',
         '!**/node_modules/**'
     ]

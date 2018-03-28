@@ -43,13 +43,13 @@ describe('Picker', () => {
             // let areasText = areaList.map(item => item.text).join('')
 
             let textAll = cmp.vm.comPickerData.map(item => item.map(i => i.text).join(''))
-            console.log(textAll)
+            // console.log(textAll)
             let expectText = [...cmp.findAll('ul')]
             // expect(cmp.vm.comPickerData).toEqual(
             //     expect.arrayContaining(expected),
             // );
 
-            console.log(expectText)
+            // console.log(expectText)
             // console.log(cmp.findAll('ul').at(0).text())
             // console.log(cmp.findAll('ul').at(1).text())
             // console.log(cmp.findAll('ul').at(2).text())
