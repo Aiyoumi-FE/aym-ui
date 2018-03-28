@@ -3,4 +3,4 @@ node_js:
   - "iojs"
   - "7"
 install: npm install
-script: npm jest
+script: npm run jest
