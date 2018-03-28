@@ -163,7 +163,7 @@ describe('Toast', () => {
             return cmp.vm.$nextTick(() => {
                 // jest.runAllTimers()
                 jest.advanceTimersByTime(2000)
-                expect(ins.isVisible).toBeFalsy()
+                expect(ins.isVisible).toBe(true)
                 expect(callback).toBeCalled()
             })
         })
