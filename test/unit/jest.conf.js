@@ -15,7 +15,7 @@ module.exports = {
         '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
         '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
     },
-    testMatch: ['**/__tests__/**/*.js?(x)', '**/?(picker.)(spec|test).js?(x)'],
+    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(picker.)(spec|test).js?(x)'],
 
     testPathIgnorePatterns: [
         '<rootDir>/test/e2e'
@@ -26,8 +26,9 @@ module.exports = {
     coverageDirectory: '<rootDir>/test/unit/coverage',
     collectCoverageFrom: [
         // 'src/**/*.{js,vue}',
-        'src/**/*.{vue}',
+        'src/**/*.{js,vue}',
         '!src/index.js',
+        '!src/modules.js',
         '!src/libs/router.js',
         '!src/router/index.js',
         '!**/node_modules/**'

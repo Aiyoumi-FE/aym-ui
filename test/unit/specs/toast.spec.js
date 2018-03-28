@@ -83,7 +83,7 @@ describe('Toast', () => {
                         expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000)
                     })
             })
-            it.only('time为0时，toast需要手动关闭 ', () => {
+            it('time为0时，toast需要手动关闭 ', () => {
                 cmp.setProps({
                     txt: '呵呵呵',
                     time: 0
