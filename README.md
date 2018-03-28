@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/Aiyoumi-FE/aym-ui.svg?branch=master)](https://travis-ci.org/Aiyoumi-FE/aym-ui)
+
 ## 爱又米专用VUE组件库。
 
 `aym-ui` 是基于Vue 的移动端组件库
