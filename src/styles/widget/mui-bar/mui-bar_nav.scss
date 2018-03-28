@@ -1,0 +1,18 @@
+.mui-bar_nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: px2rem(88);
+    .mui-bar__title {
+        line-height: px2rem(88);
+        color: $textColorImportant;
+        font-size: $fontSizeLevel2;
+    }
+    .mui-bar__left,
+    .mui-bar__tools {
+        line-height: px2rem(88);
+        color: #474747;
+        font-size: $fontSizeLevel1;
+    }
+}

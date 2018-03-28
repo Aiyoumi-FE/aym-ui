@@ -1,0 +1,6 @@
+// 设计稿尺寸
+$designWidth: 750;
+// rem切换
+@function px2rem( $px) {
+    @return $px*320/$designWidth/20+rem;
+}

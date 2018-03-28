@@ -1,0 +1,17 @@
+.mui-bar_modal {
+    height: px2rem(97);
+    .mui-bar__title {
+        line-height: px2rem(97);
+        color: $textColorGeneral;
+        font-size: $fontSizeLevel3;
+    }
+    .mui-bar__left,
+    .mui-bar__tools {
+        line-height: px2rem(97);
+        color: $textColorGeneral;
+        [class*='mui-icon-'] {
+            font-size: $fontSizeLevel3;
+            vertical-align: middle;
+        }
+    }
+}

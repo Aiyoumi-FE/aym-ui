@@ -1,0 +1,12 @@
+.mui-btn_plain {
+    background-color: $btnSubsidiaryBg;
+    border: 1px solid $btnSubsidiaryBdColor;
+    &:active {
+        background-color: $btnSubsidiaryActiveBg;
+    }
+    @import 'mui-btn_size';
+    &.disabled {
+        background-color: $btnSubsidiaryDisabledBg;
+        color: $btnSubsidiaryDisabledColor;
+    }
+}

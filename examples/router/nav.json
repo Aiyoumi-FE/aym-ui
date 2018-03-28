@@ -1,0 +1,85 @@
+[
+{
+    "title": "弹层类",
+    "list": [
+    {
+        "path": "/popup",
+        "name": "popup"
+    },
+    {
+        "path": "/toast",
+        "name": "toast"
+    },
+    {
+        "path": "/dialog",
+        "name": "dialog"
+    },
+    {
+        "path": "/actionsheet",
+        "name": "actionsheet"
+    },
+    {
+        "path": "/modal",
+        "name": "modal"
+    },
+    {
+        "path": "/picker",
+        "name": "picker"
+    }]
+},
+{
+    "title": "基础组件",
+    "list": [
+    {
+        "path": "/button",
+        "name": "button"
+    },
+    {
+        "path": "/cell",
+        "name": "cell"
+    },
+    {
+        "path": "/header",
+        "name": "header"
+    },
+    {
+        "path": "/badge",
+        "name": "badge"
+    },
+    {
+        "path": "/loading",
+        "name": "loading"
+    },
+    {
+        "path": "/progress",
+        "name": "progress"
+    },
+    {
+        "path": "/tags",
+        "name": "tags"
+    },
+    {
+        "path": "/icon",
+        "name": "icon"
+    },
+    {
+        "path": "/marquee",
+        "name": "marquee"
+    },
+    {
+        "path": "/tabbar",
+        "name": "tabbar"
+    }]
+},
+{
+    "title": "表单类",
+    "list": [
+    {
+        "path": "/input",
+        "name": "input"
+    },
+    {
+        "path": "/switch",
+        "name": "switch"
+    }]
+}]

@@ -1,0 +1,31 @@
+@mixin _setArrow($arrowwidth, $arrowheight) {
+    display: inline-block;
+    width: $arrowwidth;
+    height: $arrowheight;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE0IDI0Ij48c3R5bGU+LnN0MHtmaWxsOiNjY2N9PC9zdHlsZT48cGF0aCBpZD0iWE1MSURfNF8iIGNsYXNzPSJzdDAiIGQ9Ik0uNi43Yy0uOC44LS44IDIgMCAyLjhMOS4xIDEyIC42IDIwLjVjLS44LjgtLjggMiAwIDIuOC44LjggMiAuOCAyLjggMGw5LjktOS45Yy40LS40LjYtLjkuNi0xLjRzLS4yLTEtLjYtMS40TDMuNS43QzIuNy0uMSAxLjQtLjEuNi43eiIvPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin setArrow($direction,
+$arrowwidth,
+$arrowheight) {
+    @include _setArrow($arrowwidth,
+    $arrowheight);
+    @if $direction==top {
+        transform: rotate(-90deg);
+        right: 0;
+    }
+    @else if $direction==right {
+        right: 0;
+    }
+    @else if $direction==down {
+        transform: rotate(90deg);
+        right: 0;
+    }
+    @else {
+        transform: rotate(180deg);
+        right: px2rem(-6);
+    }
+    position: relative;
+}
