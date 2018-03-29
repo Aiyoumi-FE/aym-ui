@@ -18,7 +18,7 @@ jobs:
       deploy:
         provider: pages
         skip-cleanup: true
-        github-token: git_token  # Set in travis-ci.org dashboard, marked secure
+        github-token: $git_token  # Set in travis-ci.org dashboard, marked secure
         on:
           branch: dev
 # script: npm run jest
