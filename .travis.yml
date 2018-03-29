@@ -1,10 +1,10 @@
 language: node_js
 node_js:
   - "7"
-branches:
-  only:
-    - master
-    - dev
+# branches:
+#   only:
+#     - master
+#     - dev
 cache:
   directories:
     - node_modules
