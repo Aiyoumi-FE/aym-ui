@@ -5,6 +5,7 @@ branches:
   only:
     - master
     - dev
+    - hehe
 cache:
   directories:
     - node_modules
@@ -15,4 +16,5 @@ deploy:
   skip-cleanup: true
   github-token: b85f54e960dd2bd2fc92355e1dddd012b80bdcd7  # Set in travis-ci.org dashboard, marked secure
   keep-history: true
+  local-dir: dist
   target-branch: hehe
