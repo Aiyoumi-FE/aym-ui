@@ -13,7 +13,7 @@ script: npm run jest
 deploy:
   - provider: pages
     skip-cleanup: true
-    github-token: WWIzkld4hGQDjj5bWf3xXw  # Set in travis-ci.org dashboard, marked secure
+    github-token: f88ce04e117991df9d8a767adc58ee5adcb5074e  # Set in travis-ci.org dashboard, marked secure
     keep-history: true
     local-dir: dist
     target-branch: gh-pages #推送local-dir 内容到，默认为gh-pages
