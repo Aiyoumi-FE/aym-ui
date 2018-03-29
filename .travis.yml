@@ -15,11 +15,15 @@ jobs:
       script: npm run jest
     - stage: deploy
       script: npm run build:demo
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
 # script: npm run jest
-deploy:
-    provider: pages
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+# deploy:
+#     provider: pages
+#     skip-cleanup: true
+#     github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
     # keep-history: true
     # local-dir: dist
     # target-branch: gh-pages #推送local-dir 内容到，默认为gh-pages
