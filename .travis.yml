@@ -22,6 +22,7 @@ jobs:
         github-token: $git_token  # Set in travis-ci.org dashboard, marked secure
         on:
           branch: dev
+          tags: true
 # script: npm run jest
 # deploy:
 #     provider: pages
