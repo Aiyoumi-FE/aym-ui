@@ -26,4 +26,4 @@ echo "tag is $1 $TRAVIS_BRANCH"
 git add -f \
     lib/**/*
 git commit -m "auto build"
-git push
+git push origin $TRAVIS_BRANCH
