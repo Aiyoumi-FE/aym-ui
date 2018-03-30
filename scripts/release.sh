@@ -22,8 +22,8 @@ set -e
 #     git commit -m "build: build $VERSION"
 #     git push
 # fi
-
+echo "tag is $1"
 git add -f \
-    dist/*.js
+    lib/**/*
 git commit -m "auto build"
 git push

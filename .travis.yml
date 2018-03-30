@@ -23,12 +23,12 @@ jobs:
         branch: dev
         repo: Aiyoumi-FE/aym-ui
         # tags: true
-    # - provider: script
-    #   script: npm run release
-    #   on:
-    #     branch: dev
-    #     repo: Aiyoumi-FE/aym-ui
-    #     # tags: true
+    - provider: script
+      script: npm run release $TRAVIS_TAG
+      on:
+        branch: dev
+        repo: Aiyoumi-FE/aym-ui
+        # tags: true
     - provider: releases
       script: npm run release
       api_key:
