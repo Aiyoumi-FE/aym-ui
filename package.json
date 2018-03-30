@@ -33,7 +33,8 @@
         "e2e": "node test/e2e/runner.js",
         "e2e:dev": "cross-env PORT=8081 nightwatch -c test/e2e/nightwatch.conf.js --env chrome",
         "test": "npm run lint && npm run unit",
-        "deploy": "npm run build:demo && node build/bin/deploy.docs.js"
+        "deploy:docs": "npm run build:demo && node build/bin/deploy.docs.js",
+        "release": "bash scripts/release.sh"
     },
     "deploy": {
         "srcFolder": "./dist/",
