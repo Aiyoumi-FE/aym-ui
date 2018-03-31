@@ -22,8 +22,8 @@ set -e
 #     git commit -m "build: build $VERSION"
 #     git push
 # fi
-echo "哈哈哈哈哈哈哈哈哈哈哈哈"
-# git add -f \
-#     lib/**/*
-# git commit -m "auto build"
-# git push origin $TRAVIS_BRANCH
+echo "tag is $1 $TRAVIS_BRANCH"
+git add -f \
+    lib/**/*
+git commit -m "auto build"
+git push origin $TRAVIS_BRANCH
