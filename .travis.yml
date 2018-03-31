@@ -16,9 +16,6 @@ jobs:
     # script: npm run build & npm run build:demo
     script: npm run build:modules
     after_success:
-      - eval "$(ssh-agent -s)" #start the ssh agent
-      - chmod 600 .travis/deploy_key.pem # this key should have push access
-      - ssh-add .travis/deploy_key.pem
       - npm run release
     before_deploy:
       # Set up git user name and tag this commit
