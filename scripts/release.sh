@@ -22,9 +22,7 @@ set -e
 #     git commit -m "build: build $VERSION"
 #     git push
 # fi
-eval "$(ssh-agent -s)" #start the ssh agent
-chmod 600 .travis/deploy_key.pem # this key should have push access
-ssh-add .travis/deploy_key.pem
+
 echo "tag is $1 $TRAVIS_BRANCH"
 git add -f \
     lib/**/*
