@@ -20,7 +20,6 @@ jobs:
       - git config --local user.name "zhouqing"
       - git config --local user.email "448340778@qq.com"
       - echo 'heh2erqew-----'
-      - rm -rf .gitignore
     deploy:
     # - provider: pages
     #   skip-cleanup: true
@@ -46,8 +45,12 @@ jobs:
       api_key:
         secure: JzAl9PPzU/igygtpftCjHYmm/UuQHYW4rII5HMH6l+HVML5gob/jClYMiR1Of6jPbFUmUF1CtSb0x8ABoFq7Pg919Jjx5vO2uI4N32Ilnn1pEKSyFtxaJ8zpNba9wbn5pF35TsZT0NBkGccBrJG3HjYvMbCeuqIsvthqdK+wLeXIaNouF1YP+nTmQBrvwI63nxidw5ojO5W233SqQcMIuiNRoQYexj91aXGBeJovGKq7Neswe+MUdcheUNjK3D6ETCd3oindVPSScJlz3Z9yxhwWojeGkKwIGWX/dGod2LkZs0DIHCwDm69bGFXgUSDPPTzw0hzxIRhO1aW69TJIkZBDYt/AFdR+Nz2Fpl1HEdjuWiAxf9rpPrcYcdEQ4BD+WXpFE8Nr/ltYliBLHi/mOsbeTTMLRt+hTyS7+JxWxDAidCZc68msa+QhK/jbv7nm/9s2KtepHCMCZ00RSLEZ8pj/fDuFWpAz4ikL24VxMSe7r6OFEbMH975ZbgFUvYX33FPchlX1JjP9UXy7TovDDcPFHFozuPArc1raxDSAaXdtyLgjiQAvpOBNC/5WG6HvfhE2q4SaEm77AEMJOV4B2s/YbzpQqdiTPSAEaujhCMjPUBpuYbmJj7bqIx6Xls/FnSLfCkx+HGfGkcvQi6vv6MKJ7UErVSp2AVZxcvl1jHM=
       skip-cleanup: true
-      file_glob: true
-      file: lib/**/*
+      run:
+        - git add -f lib/**/*
+        - git commit -m "auto build"
+        - git push origin $TRAVIS_BRANCH
+      # file_glob: true
+      # file: lib/**/*
       overwrite: true
       on:
         branch: dev
