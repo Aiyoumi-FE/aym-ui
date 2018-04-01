@@ -12,8 +12,8 @@ notifications:
     on_failure: always # default: always
 jobs:
   include:
-  - stage: test
-    script: npm run jest
+  # - stage: test
+  #   script: npm run jest
   - stage: deploy
     # script: npm run build & npm run build:demo
     script: npm run build:demo
@@ -24,7 +24,7 @@ jobs:
     deploy:
     - provider: pages
       skip-cleanup: true
-      local-dir: dist
+      local-dir: lib
       github-token: "$git_token"
       on:
         branch: dev
