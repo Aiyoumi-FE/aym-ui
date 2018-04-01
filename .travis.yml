@@ -12,22 +12,24 @@ notifications:
     on_failure: always # default: always
 jobs:
   include:
+  - stage: test
+    script: npm run jest
   - stage: deploy
     # script: npm run build & npm run build:demo
-    script: npm run build:modules
+    script: npm run build:demo
     before_deploy:
       # Set up git user name and tag this commit
       - git config --local user.name "zhouqing"
       - git config --local user.email "448340778@qq.com"
     deploy:
-    # - provider: pages
-    #   skip-cleanup: true
-    #   local-dir: dist
-    #   github-token: "$git_token"
-    #   on:
-    #     branch: dev
-    #     repo: Aiyoumi-FE/aym-ui
-    #     # tags: true
+    - provider: pages
+      skip-cleanup: true
+      local-dir: dist
+      github-token: "$git_token"
+      on:
+        branch: dev
+        repo: Aiyoumi-FE/aym-ui
+        # tags: true
     # - provider: script
     #   skip-cleanup: true
     #   api_key:
