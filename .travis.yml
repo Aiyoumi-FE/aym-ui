@@ -16,7 +16,7 @@ jobs:
   #   script: npm run jest
   - stage: deploy
     # script: npm run build & npm run build:demo
-    script: npm run build:demo
+    script: npm run build
     before_deploy:
       # Set up git user name and tag this commit
       - git config --local user.name "zhouqing"
