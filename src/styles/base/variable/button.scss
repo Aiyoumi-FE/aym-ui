@@ -1,0 +1,48 @@
+@import "./color";
+//按钮公共样式定义
+$btnBorderRadius: px2rem(4);
+$btnDefaultGap: px2rem(30);
+//主操作按钮
+$btnPrimaryBg: $colorPrimary;
+$btnPrimaryActiveBg: #FEC106;
+$btnPrimaryDisabledBg: #f2f2f2;
+$btnPrimaryDisabledColor: #cccccc;
+//辅助按钮
+$btnSubsidiaryBg: #ffffff;
+$btnSubsidiaryActiveBg: #F2F2F2;
+$btnSubsidiaryBdColor:#E4E4E4;
+$btnSubsidiaryDisabledBg:#F7F7F7;
+$btnSubsidiaryDisabledColor:#CCCCCC;
+//警告按钮
+$btnWarnBg: #ffffff;
+$btnWarnColor:#FF3C37;
+$btnWarnActiveBg: #F2F2F2;
+$btnWarnBdColor: #E4E4E4;
+$btnWarnActiveBdColor: #CCCCCC;
+$btnWarnDisabledBdColor: #e4e4e4;
+$btnWarnDisabledColor:#FEAAA9;
+$btnWarnDisabledBgColor:#F7F7F7;
+//边框按钮
+$btnBorderColor:#FB9F00;
+$btnBorderBdColor:#F99E00;
+$btnBorderActiveColor:#FCC360;
+$btnBorderActiveBdColor:#FDC457;
+$btnBorderDisabledColor:#e4e4e4;
+$btnBorderDisabledBdColor:#e4e4e4;
+//满屏按钮
+$btnFullWidth:px2rem(100);
+$btnFullBg: $colorPrimary;
+$btnFullColor:#474747;
+$btnFullActiveBg:#FEC106;
+$btnFullDisabledColor:#666666;
+$btnFullDisabledBgColor:#FFEDA7;
+// 按钮尺寸
+$widthLarge:px2rem(686);
+$heightLarge:px2rem(96);
+$fontSizeLarge:px2rem(36);
+$widthMiddle:px2rem(300);
+$heightMiddle:px2rem(84);
+$fontSizeMiddle:px2rem(34);
+$widthSmall:px2rem(118);
+$heightSmall:px2rem(60);
+$fontSizeSmall:px2rem(26);

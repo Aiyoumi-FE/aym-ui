@@ -1,0 +1,14 @@
+
+# editorconfig.org
+root = true
+
+[*]
+indent_style = space #indent_style 表示缩进的方式，可选项有：space - 每次输入tab会被空格代替；tab - 直接输入tab，不替换
+indent_size = 4  #表示缩进的宽度（个数）
+end_of_line = lf  #设置使用的换行符，有lf，cr，以及crlf，建议使用lf
+charset = utf-8     #设置文件的编码
+trim_trailing_whitespace = true  # 是否去除每行代码后的多余空格
+insert_final_newline = true  # 是否在每个文件尾部添加一个换行
+
+[*.md]
+trim_trailing_whitespace = false

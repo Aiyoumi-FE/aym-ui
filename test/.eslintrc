@@ -1,0 +1,12 @@
+{
+    env:
+    {
+        jasmine: true,
+        jest: true
+    },
+    "globals":
+    {
+        "triggerEvent": true,
+        "waitForUpdate": true
+    },
+}

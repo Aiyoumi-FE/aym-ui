@@ -1,0 +1,11 @@
+// @import "src/styles/base/fn";
+@import "mui-btn_global";
+@import "mui-btn_primary";
+@import "mui-btn_plain";
+@import "mui-btn_warn";
+@import "mui-btn_border";
+@import "mui-btn_full";
+
+.mui-btn+.mui-btn {
+    margin-top: $btnDefaultGap;
+}

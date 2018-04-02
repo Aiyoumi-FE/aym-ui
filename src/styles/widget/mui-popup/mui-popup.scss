@@ -1,0 +1,43 @@
+// @import "src/styles/base/fn";
+@import "../mui-mask/mui-mask";
+.mui-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    .mui-popup__container {
+        width: 100%;
+        height: 100%;
+        transform: translate(100%, 100%);
+        position: absolute;
+        z-index: 1001;
+    }
+    .mui-popup__content {
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+// actionsheet modal
+.mui-actionsheet,
+.mui-modal,
+.mui-picker {
+    .mui-popup__content {
+        width: 100%;
+        left: 0;
+        top: 0;
+        transform: translate(-100%, -100%);
+    }
+}
+
+.mui-modal__content {
+    min-height: px2rem(503);
+    max-height: px2rem(663);
+    background-color: #fff;
+    overflow: auto;
+}

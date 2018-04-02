@@ -1,0 +1,175 @@
+// @import "src/styles/base/fn";
+.mui-progress_step {
+    display: flex;
+    height: 12px; // height: px2rem(20);
+    margin-left: px2rem(20);
+    font-size: 0;
+    position: relative;
+    .mui-progress__item {
+        display: inline-block;
+        flex: 1;
+        width: auto;
+        position: relative;
+        &:first-child {
+            width: px2rem(20);
+            flex: 0;
+        }
+        .mui-progress__ball {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: 7;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            transform: translate(0, -50%);
+            background-color: #E4E4E4;
+        }
+        &.cur {
+            .mui-progress__ball {
+                box-sizing: content-box;
+                border: 2px solid #FCF4C6;
+                background-color: #FFE352; // top: -2px
+            }
+        }
+        .mui-progress__txt {
+            display: block;
+            position: absolute;
+            top: px2rem(40);
+            left: 50%;
+            transform: translateX(-50%);
+            color: #999;
+            font-size: px2rem(28);
+            line-height: px2rem(30);
+            white-space: nowrap;
+        }
+    }
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 1;
+        width: 99%;
+        height: 2px;
+        transform: translate(0, -50%);
+        background-color: #E4E4E4;
+    }
+    .cur+.cur:after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 6;
+        width: 100%;
+        height: 2px;
+        content: "";
+        transform: translate(0, -50%);
+        background-color: #FFE352;
+    }
+    .cur {
+        .mui-progress__txt {
+            color: #666666;
+        }
+    }
+}
+
+.mui-progress_timeline {
+    font-size: px2rem(30);
+    color: $textColorAssistant;
+    background-color: #fff;
+    .mui-progress__item {
+        display: flex;
+        min-height: px2rem(140); // padding: px2rem(22) 0;
+        .mui-progress__time {
+            width: px2rem(165);
+            line-height: px2rem(30);
+            text-align: center;
+            padding: px2rem(55) 0;
+            text-indent: px2rem(-8);
+            position: relative;
+            &:before,
+            &:after {
+                content: '';
+                width: px2rem(3);
+                height: 50%;
+                background-color: #E4E4E4;
+                position: absolute;
+                right: px2rem(32);
+            }
+            &:before {
+                top: 0;
+            }
+            &:after {
+                bottom: 0;
+            }
+        }
+        .mui-progress__ball {
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #E4E4E4;
+            position: absolute;
+            top: 50%;
+            right: px2rem(26);
+            margin-top: -4px;
+            z-index: 1;
+        }
+        .mui-progress__content {
+            width: px2rem(585);
+            padding: px2rem(22) px2rem(32) px2rem(22) 0;
+            position: relative;
+            p:last-child {
+                font-size: px2rem(26);
+                color: #999;
+            }
+            &:before {
+                @include setBottomLine($lineColorLight);
+            }
+        }
+    }
+    .mui-progress__item.cur {
+        .mui-progress__time,
+        .mui-progress__content p:first-child {
+            color: $textColorImportant;
+        }
+        .mui-progress__time {
+            .mui-progress__ball,
+            &:before,
+            &:after {
+                background-color: #FFD72D;
+            }
+            .mui-progress__ball {
+                box-sizing: content-box;
+                border: 2px solid #FCF4C6;
+                right: px2rem(22);
+            }
+        }
+    }
+    .mui-progress__item.none-halfline {
+        .mui-progress__time {
+            &:after {
+                background-color: #E4E4E4;
+            }
+        }
+    }
+    li.mui-progress__item:first-child {
+        .mui-progress__time {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    li.mui-progress__item:last-child {
+        .mui-progress__time {
+            &:after {
+                display: none;
+            }
+        }
+        .mui-progress__content:before {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+// @import "src/styles/base/fn";
+
+.mui-actionsheet-panel {
+    color: $textColorImportant;
+    background-color: $bgColorDefault;
+}
+
+.mui-actionsheet__title {
+    background-color: #f2f2f2;
+}
+
+.mui-actionsheet__menu {
+    background-color: #FFFFFF;
+}
+
+.mui-actionsheet__cell {
+    position: relative;
+    height: px2rem(96);
+    line-height: px2rem(96);
+    text-align: center;
+    font-size: px2rem(34);
+    color: $textColorImportant;
+    &:before {
+        @include setTopLine($lineColorLight);
+    }
+    &:active {}
+}
+
+.mui-actionsheet__ft {
+    .mui-actionsheet_default {
+        display: block;
+        width: 100%;
+        line-height: px2rem(96);
+        margin-top: px2rem(12);
+        text-align: center;
+        background-color: #fff;
+        font-size: px2rem(34);
+        color: $textColorImportant;
+    }
+    .mui-actionsheet_warn {
+        background-color: $colorWarn;
+        color: #fff;
+    }
+}
+
+.mui-actionsheet_toggle {
+    transform: translate(0, 0);
+}

@@ -1,0 +1,15 @@
+.mui-btn_warn {
+    color: $btnWarnColor;
+    background-color: $btnWarnBg;
+    border: 1px solid $btnWarnBdColor;
+    &:active {
+        background-color: $btnWarnActiveBg;
+        border-color: $btnWarnActiveBdColor;
+    }
+    @import 'mui-btn_size';
+    &.disabled {
+        color: $btnWarnDisabledColor;
+        background-color: $btnWarnDisabledBgColor;
+        border-color: $btnWarnDisabledBdColor;
+    }
+}

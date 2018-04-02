@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actionsheet Actionsheet API $creatActionSheet 1`] = `
+<div
+  class="mui-popup mui-actionsheet"
+  style="display: none;"
+>
+  <div
+    class="mui-mask"
+  />
+   
+  <div
+    class="mui-popup__container"
+  >
+    <div
+      class="mui-popup__content"
+    >
+      <div
+        class="mui-actionsheet-panel"
+        style="display: none;"
+      >
+        <!---->
+         
+        <div
+          class="mui-actionsheet__menu"
+        >
+          <div
+            class="mui-actionsheet__cell"
+          >
+            本科
+          </div>
+          <div
+            class="mui-actionsheet__cell"
+          >
+            专科
+          </div>
+          <div
+            class="mui-actionsheet__cell"
+          >
+            研究生
+          </div>
+          <div
+            class="mui-actionsheet__cell"
+          >
+            博士
+          </div>
+        </div>
+         
+        <div
+          class="mui-actionsheet__ft"
+        >
+          <a
+            class="mui-actionsheet_default"
+            href="javascript:;"
+          >
+            取消
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
