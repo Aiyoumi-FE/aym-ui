@@ -10,6 +10,10 @@ notifications:
       - zhouqing2@aiyoumi.com
     on_success: always # default: change
     on_failure: always # default: always
+branches:
+  only:
+    - master
+    - dev
 jobs:
   include:
   - stage: test
