@@ -23,7 +23,7 @@
         "build:demo": "cross-env NODE_ENV=production  webpack --config build/webpack.prod.demo.conf.js  --progress ",
         "build:mui": " cross-env NODE_ENV=production  webpack --config build/webpack.prod.mui.conf.js  --progress ",
         "build:modules": "cross-env NODE_ENV=production webpack --config build/webpack.prod.modules.conf.js  --progress",
-        "build": "npm run build:mui & npm run build:modules & npm run build:demo",
+        "build": "npm run build:mui & npm run build:modules",
         "new": "node build/bin/new.js",
         "lint": "eslint --fix --ext .js,.vue src",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
