@@ -24,7 +24,7 @@ jobs:
     deploy:
     - provider: pages
       skip-cleanup: true
-      local-dir: lib
+      local-dir: dist
       github-token: "$git_token"
       on:
         branch: dev
