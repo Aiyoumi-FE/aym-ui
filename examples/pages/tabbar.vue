@@ -1,6 +1,3 @@
-<docs>
-    ## This is an Example component.
-</docs>
 <template>
     <m-page>
         <m-header slot="header"></m-header>

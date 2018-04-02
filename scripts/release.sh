@@ -13,15 +13,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 echo "Releasing $VERSION ..."
 echo "tag $RELEASE_TAG ..."
     # build
-    VERSION=$VERSION npm run build
+    VERSION=$VERSION npm run build && npm run deploy:docs
     # updata version
     npm version $VERSION
     # commit
     git add -A
     git add -f \
         dist/*.js
-    # git commit -m "build: build $VERSION"
-    # git push
+    git commit -m "build: build $VERSION"
+    git push
+    # npm
+    npm publish
 fi
 
 # echo "tag is   $RELEASE_TAG"
