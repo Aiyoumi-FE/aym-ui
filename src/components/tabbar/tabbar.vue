@@ -44,8 +44,7 @@ export default {
     }
 }
 </script>
-<style lang="scss"
-    scoped>
+<style lang="scss">
 @import "src/styles/base/fn";
 .m-tabbar {
     width: 16rem;

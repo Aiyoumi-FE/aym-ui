@@ -1,7 +1,7 @@
 // For authoring Nightwatch tests, see
 // http://nightwatchjs.org/guide#usage
 const name = 'modal'
-const PAGE_URL = '/#/' + name
+const PAGE_URL = name
 module.exports = {
     modal: function(browser) {
         // automatically uses dev Server port from /config.index.js

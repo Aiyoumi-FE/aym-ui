@@ -1,7 +1,7 @@
 // For authoring Nightwatch tests, see
 // http://nightwatchjs.org/guide#usage
 
-const PAGE_URL = '/#/button'
+const PAGE_URL = 'button'
 module.exports = {
     '按钮 button': function(browser) {
         // automatically uses dev Server port from /config.index.js
