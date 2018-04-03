@@ -46,25 +46,5 @@ export default {
 </script>
 <style lang="scss">
 @import "src/styles/base/fn";
-.m-tabbar {
-    width: 16rem;
-    margin: 0 auto;
-    display: flex; // width: 100%;
-    position: fixed;
-    bottom: 0;
-    background: #fff;
-    box-shadow: 0 -1px px2rem(5) 0 rgba(230, 222, 222, 0.50);
-    padding: px2rem(15) 0 px2rem(4);
-}
-
-.m-tabbar__item {
-    font-size: 0;
-    flex: 1;
-    text-align: center;
-    color: #B3B3B3;
-    /deep/ .m-tabbar__label {
-        font-size: px2rem(20);
-        margin-top: px2rem(6);
-    }
-}
+@import "src/styles/widget/mui-tabbar/mui-tabbar";
 </style>
