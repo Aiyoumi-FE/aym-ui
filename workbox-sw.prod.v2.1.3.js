@@ -142,12 +142,12 @@ const cacheUpdatedMessageType='CACHE_UPDATED';
 const defaultHeadersToCheck=['content-length','etag','last-modified'];
 const defaultSource='workbox-broadcast-cache-update';
 
-function broadcastUpdate({channel:a,cacheName:b,url:c,source:d}={}){isInstance({channel:a},BroadcastChannel),isType({cacheName:b},'string'),isType({source:d},'string'),isType({url:c},'string'),a.postMessage({type:cacheUpdatedMessageType,meta:d,payload:{cacheName:b,updatedUrl:c}});}
+function broadcastUpdate({channel:a,cacheName:b,url:c,source:d}={}){'BroadcastChannel'in self&&(isInstance({channel:a},BroadcastChannel),isType({cacheName:b},'string'),isType({source:d},'string'),isType({url:c},'string'),a.postMessage({type:cacheUpdatedMessageType,meta:d,payload:{cacheName:b,updatedUrl:c}}));}
 
 function responsesAreSame({first:a,second:b,headersToCheck:c}={}){if(!(a instanceof Response&&b instanceof Response&&c instanceof Array))throw ErrorFactory$6.createError('responses-are-same-parameters-required');const d=c.some((c)=>a.headers.has(c)&&b.headers.has(c));return d?c.every((c)=>a.headers.has(c)===b.headers.has(c)&&a.headers.get(c)===b.headers.get(c)):(logHelper.log({message:`Unable to determine whether the response has been updated
         because none of the headers that would be checked are present.`,data:{"First Response":a,"Second Response":b,"Headers To Check":JSON.stringify(c)}}),!0)}
 
-class BroadcastCacheUpdate{constructor({channelName:a,headersToCheck:b,source:c}={}){if('string'!=typeof a||0===a.length)throw ErrorFactory$6.createError('channel-name-required');this.channelName=a,this.headersToCheck=b||defaultHeadersToCheck,this.source=c||defaultSource;}get channel(){return this._channel||(this._channel=new BroadcastChannel(this.channelName)),this._channel}notifyIfUpdated({first:a,second:b,cacheName:c,url:d}){isType({cacheName:c},'string'),responsesAreSame({first:a,second:b,headersToCheck:this.headersToCheck})||broadcastUpdate({cacheName:c,url:d,channel:this.channel,source:this.source});}}
+class BroadcastCacheUpdate{constructor({channelName:a,headersToCheck:b,source:c}={}){if('string'!=typeof a||0===a.length)throw ErrorFactory$6.createError('channel-name-required');this.channelName=a,this.headersToCheck=b||defaultHeadersToCheck,this.source=c||defaultSource;}get channel(){return this._channel||('BroadcastChannel'in self?this._channel=new BroadcastChannel(this.channelName):this._channel={postMessage:()=>{}}),this._channel}notifyIfUpdated({first:a,second:b,cacheName:c,url:d}){isType({cacheName:c},'string'),responsesAreSame({first:a,second:b,headersToCheck:this.headersToCheck})||broadcastUpdate({cacheName:c,url:d,channel:this.channel,source:this.source});}}
 
 class BroadcastCacheUpdatePlugin extends BroadcastCacheUpdate{cacheDidUpdate({cacheName:a,oldResponse:b,newResponse:c,url:d}){isType({cacheName:a},'string'),isInstance({newResponse:c},Response),b&&this.notifyIfUpdated({cacheName:a,first:b,second:c,url:d});}}
 
@@ -184,4 +184,4 @@ class WorkboxSW$1{constructor({cacheId:a,skipWaiting:b,clientsClaim:c,handleFetc
 return WorkboxSW$1;
 
 }());
-//# sourceMappingURL=workbox-sw.prod.v2.1.2.js.map
+//# sourceMappingURL=workbox-sw.prod.v2.1.3.js.map
