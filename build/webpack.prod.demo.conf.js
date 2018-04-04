@@ -34,9 +34,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         // chunkFilename: utils.assetsPath('js/[id].js')
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'], {
-            root: config.projectRoot
-        }),
+
         // http://vuejs.github.io/vue-loader/en/workflow/production.html
         new webpack.DefinePlugin({
             'process.env': env
@@ -108,13 +106,7 @@ const webpackConfig = merge(baseWebpackConfig, {
             ignore: ['.*']
         }]),
 
-        new WorkboxPlugin({
 
-            // 这些选项帮助 ServiceWorkers 快速启用
-            // 不允许遗留任何“旧的” ServiceWorkers
-            clientsClaim: true,
-            skipWaiting: true
-        })
     ],
     stats: {
         colors: true,
@@ -125,6 +117,20 @@ const webpackConfig = merge(baseWebpackConfig, {
     // externals: { 'aym-ui': 'src/index' } // 排除aym-ui
 })
 utils.multipleEntries(webpackConfig, HtmlWebpackPlugin, entries)
+
+if (process.env.NODE_ENV === 'production') {
+    webpackConfig.plugins.push(
+        new CleanWebpackPlugin(['dist'], {
+            root: config.projectRoot
+        }),
+        new WorkboxPlugin({
+            // 这些选项帮助 ServiceWorkers 快速启用
+            // 不允许遗留任何“旧的” ServiceWorkers
+            clientsClaim: true,
+            skipWaiting: true
+        })
+    )
+}
 
 if (config.build.productionGzip) {
     const CompressionWebpackPlugin = require('compression-webpack-plugin')

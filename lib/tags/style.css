@@ -1,1 +1,73 @@
-.mui-tags_bg{display:inline-block;line-height:.64rem;padding:0 .10667rem;color:#fff;border-radius:.08533rem;font-size:.46933rem}.mui-tags_bg.mui-tags_orange{background-color:#f99e00}.mui-tags_bg.mui-tags_red{background-color:#ff3f3f}.mui-tags_bg.mui-tags_yellow{padding:0 .17067rem;line-height:.59733rem;border-radius:1.23733rem;background-color:#ffe352;color:#474747}.mui-tags_bg.mui-tags_linear-blue{font-size:.42667rem;padding:0 .08533rem;line-height:.55467rem;background:#669aff;background:-webkit-linear-gradient(left,#669aff,#a97ffe);background:-webkit-gradient(linear,left top,right top,from(#669aff),to(#a97ffe));background:linear-gradient(90deg,#669aff 0,#a97ffe);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#669aff",endColorstr="#a97ffe",GradientType=1)}.mui-tags_bg.mui-tags_linear-red{font-size:.42667rem;padding:0 .08533rem;line-height:.55467rem;background:#ff6298;background:-webkit-linear-gradient(left,#ff6298,#f43a56);background:-webkit-gradient(linear,left top,right top,from(#ff6298),to(#f43a56));background:linear-gradient(90deg,#ff6298 0,#f43a56);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff6298",endColorstr="#f43a56",GradientType=1)}.mui-tags_border{display:inline-block;line-height:.68267rem;padding:0 .08533rem;border:1px solid #f99e00;border-radius:.08533rem;color:#fb9f00;font-size:.512rem}
+
+@charset "UTF-8";
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
+.mui-tags_bg {
+  display: inline-block;
+  line-height: 0.64rem;
+  padding: 0 0.10667rem;
+  color: #ffffff;
+  border-radius: 0.08533rem;
+  font-size: 0.46933rem;
+}
+.mui-tags_bg.mui-tags_orange {
+    background-color: #F99E00;
+}
+.mui-tags_bg.mui-tags_red {
+    background-color: #FF3F3F;
+}
+.mui-tags_bg.mui-tags_yellow {
+    padding: 0 0.17067rem;
+    line-height: 0.59733rem;
+    border-radius: 1.23733rem;
+    background-color: #FFE352;
+    color: #474747;
+}
+.mui-tags_bg.mui-tags_linear-blue {
+    font-size: 0.42667rem;
+    padding: 0 0.08533rem;
+    line-height: 0.55467rem;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#669aff+0,a97ffe+100 */
+    background: #669aff;
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #669aff 0%, #a97ffe 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from(#669aff), to(#a97ffe));
+    background: linear-gradient(to right, #669aff 0%, #a97ffe 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
+    /* IE6-9 */
+}
+.mui-tags_bg.mui-tags_linear-red {
+    font-size: 0.42667rem;
+    padding: 0 0.08533rem;
+    line-height: 0.55467rem;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6298+0,f43a56+100 */
+    background: #ff6298;
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ff6298 0%, #f43a56 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from(#ff6298), to(#f43a56));
+    background: linear-gradient(to right, #ff6298 0%, #f43a56 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
+    /* IE6-9 */
+}
+.mui-tags_border {
+  display: inline-block;
+  line-height: 0.68267rem;
+  padding: 0 0.08533rem;
+  border: 1px solid #F99E00;
+  border-radius: 0.08533rem;
+  color: #FB9F00;
+  font-size: 0.512rem;
+}

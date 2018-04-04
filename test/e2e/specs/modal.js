@@ -16,7 +16,7 @@ module.exports = {
             .url(devServer)
             .waitForElementVisible('#app', 5000)
 
-        showPopup(1, '.mui-icon-close1')
+        showPopup(1, '.mui-icon')
         showPopup(2, '.mui-btn_full')
         browser.end()
 

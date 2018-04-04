@@ -1,7 +1,7 @@
 import { createLocalVue, mount } from 'vue-test-utils'
 
 import Picker from '@/components/picker/picker'
-import PickerApi from '@/modules/picker'
+import PickerApi from '@/components/picker'
 
 import { data1, data2, data3 } from '../../../examples/data/picker'
 import { provinceList, cityList, areaList } from '../../../examples/data/area'

@@ -1,7 +1,7 @@
 import { createLocalVue, mount } from 'vue-test-utils'
 
 import Actionsheet from '@/components/actionsheet/actionsheet'
-import ActionsheetApi from '@/modules/actionsheet'
+import ActionsheetApi from '@/components/actionsheet'
 
 describe('Actionsheet', () => {
 

@@ -45,7 +45,6 @@ export function formatDate(date, fmt = 'YYYY-MM-DD HH:mm:ss') {
     return fmt
 }
 
-
 export function getZeroDate(date) {
     const year = date.getFullYear()
     const month = date.getMonth() + 1

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import { createLocalVue, mount } from 'vue-test-utils'
 
 import Toast from '@/components/toast/toast'
-import ToastApi from '@/modules/toast'
+import ToastApi from '@/components/toast'
 import instantiateComponent from '@/common/helpers/instantiate-component'
 
 describe('Toast', () => {

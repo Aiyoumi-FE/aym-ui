@@ -2,7 +2,7 @@ import Vue from 'vue'
 import { createLocalVue, mount } from 'vue-test-utils'
 
 import Dialog from '@/components/dialog/dialog'
-import DialogApi from '@/modules/dialog'
+import DialogApi from '@/components/dialog'
 
 describe('Dialog', () => {
 

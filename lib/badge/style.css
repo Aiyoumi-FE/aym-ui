@@ -1,1 +1,30 @@
-.mui-badge{display:inline-block;padding:.08533rem .17067rem;min-width:.64rem;border-radius:.384rem;background-color:#f66045;color:#fff;height:.64rem;line-height:.53333rem;text-align:center;font-size:.512rem;vertical-align:middle}.mui-badge_dot{height:0;min-width:0;padding:4px;border:1px solid #fff}
+
+@charset "UTF-8";
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
+.mui-badge {
+  display: inline-block;
+  padding: 0.08533rem 0.17067rem;
+  min-width: 0.64rem;
+  border-radius: 0.384rem;
+  background-color: #F66045;
+  color: #FFFFFF;
+  height: 0.64rem;
+  line-height: 0.53333rem;
+  text-align: center;
+  font-size: 0.512rem;
+  vertical-align: middle;
+}
+.mui-badge_dot {
+  height: 0;
+  min-width: 0;
+  padding: 4px;
+  border: 1px solid #fff;
+}
