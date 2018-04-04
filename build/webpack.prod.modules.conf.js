@@ -11,7 +11,7 @@ const config = require('../config')
 const isProduction = process.env.NODE_ENV === 'production'
 
 // console.log(modules)
-let entries = utils.getEntry('./src/modules/**/index.js')
+let entries = utils.getEntry('./src/components/**/index.js')
 
 const webpackConfig = merge(baseWebpackConfig, {
     module: {

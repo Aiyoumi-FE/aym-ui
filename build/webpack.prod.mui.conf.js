@@ -3,6 +3,7 @@ const path = require('path')
 const version = require("./../package.json").version;
 const banner = "/**\n" + " * aym-ui v" + version + "\n" + " */\n";
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const utils = require('./utils')
 const merge = require('webpack-merge')
@@ -39,11 +40,14 @@ const webpackConfig = merge(baseWebpackConfig, {
                 NODE_ENV: '"production"'
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                compress: {
+                    warnings: false
+                }
             },
-            sourceMap: false
+            sourceMap: config.build.productionSourceMap,
+            parallel: true
         }),
         new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
         new webpack.BannerPlugin({
