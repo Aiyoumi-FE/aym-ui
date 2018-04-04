@@ -1,40 +1,105 @@
-var utils = require('./utils')
-var webpack = require('webpack')
-var config = require('../config')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-var entries = config.dev.entry
+'use strict'
+const utils = require('./utils')
+const webpack = require('webpack')
+const config = require('../config')
+const merge = require('webpack-merge')
+const path = require('path')
+const baseWebpackConfig = require('./webpack.base.conf')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const portfinder = require('portfinder')
 
-// add hot-reload related code to entry chunks
-Object.keys(entries).forEach(function(name) {
-    entries[name] = ['./build/dev-client'].concat(entries[name])
-})
+const HOST = process.env.HOST
+const PORT = process.env.PORT && Number(process.env.PORT)
 
-var conf = merge(baseWebpackConfig, {
+const entries = config.dev.entry
+const devWebpackConfig = merge(baseWebpackConfig, {
     entry: entries,
+    // entry: {
+    //     examples: './examples/main.js'
+    // },
     module: {
-        rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+        rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: false }) // TODO
     },
     // cheap-module-eval-source-map is faster for development
-    devtool: '#cheap-module-eval-source-map',
+    devtool: config.dev.devtool,
+
+    // these devServer options should be customized in /config/index.js
+    devServer: {
+        disableHostCheck: true,
+        clientLogLevel: 'warning',
+        historyApiFallback: {
+            verbose: true,
+            rewrites: [
+                // { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+                { from: /\//, to: path.posix.join(config.dev.assetsPublicPath, 'examples.html') },
+                {
+                    from: /.*/,
+                    to(context) {
+                        return context.parsedUrl.pathname;
+                    }
+                },
+            ]
+        },
+        hot: true,
+        contentBase: false, // since we use CopyWebpackPlugin.
+        compress: true,
+        host: HOST || config.dev.host,
+        port: PORT || config.dev.port,
+        open: config.dev.autoOpenBrowser,
+        overlay: config.dev.errorOverlay ? { warnings: false, errors: true } : false,
+        publicPath: config.dev.assetsPublicPath,
+        proxy: config.dev.proxyTable,
+        quiet: true, // necessary for FriendlyErrorsPlugin
+        watchOptions: {
+            poll: config.dev.poll,
+        }
+    },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env': config.dev.env
+            'process.env': require('../config/dev.env')
         }),
-        // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
         new webpack.NoEmitOnErrorsPlugin(),
         // https://github.com/ampedandwired/html-webpack-plugin
-        // new HtmlWebpackPlugin(config.docDev.HtmlWebpackPluginOption),
-        // new HtmlWebpackPlugin(config.examplesDev.HtmlWebpackPluginOption),
-        new FriendlyErrorsPlugin()
+        // new HtmlWebpackPlugin({
+        //     filename: 'examples.html',
+        //     template: 'examples/index.html',
+        //     inject: true
+        // }),
+        // copy custom static assets
+        new CopyWebpackPlugin([{
+            from: path.resolve(__dirname, '../static'),
+            to: config.dev.assetsSubDirectory,
+            ignore: ['.*']
+        }])
     ]
 })
+utils.multipleEntries(devWebpackConfig, HtmlWebpackPlugin, entries)
 
-utils.multipleEntries(conf, HtmlWebpackPlugin, entries)
-// set multipleEntries using HtmlWebpackPlugin
-// utils.multipleEntries(conf, HtmlWebpackPlugin, entries)
+module.exports = new Promise((resolve, reject) => {
+    portfinder.basePort = process.env.PORT || config.dev.port
+    portfinder.getPort((err, port) => {
+        if (err) {
+            reject(err)
+        } else {
+            // publish the new Port, necessary for e2e tests
+            process.env.PORT = port
+            // add port to devServer config
+            devWebpackConfig.devServer.port = port
 
-module.exports = conf
+            // Add FriendlyErrorsPlugin
+            devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
+                compilationSuccessInfo: {
+                    messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+                },
+                onErrors: config.dev.notifyOnErrors ?
+                    utils.createNotifierCallback() : undefined
+            }))
+
+            resolve(devWebpackConfig)
+        }
+    })
+})
