@@ -9,42 +9,42 @@
                 </tr>
                 <tr>
                     <td>
-                        <m-icon type="repay_nor"></m-icon>
+                        <m-icon type="checkbox_checked"></m-icon>
                     </td>
                     <td>
-                        repay_nor
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <m-icon type="repay_sel"></m-icon>
-                    </td>
-                    <td>
-                        repay_sel
+                        checkbox_checked
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <m-icon type="mine1_nor"></m-icon>
+                        <m-icon type="checkbox_unchecked"></m-icon>
                     </td>
                     <td>
-                        mine1_nor
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <m-icon type="mine1_sel"></m-icon>
-                    </td>
-                    <td>
-                        mine1_sel
+                        checkbox_unchecked
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <m-icon type="home_nor"></m-icon>
+                        <m-icon type="checkbox_disabled"></m-icon>
                     </td>
                     <td>
-                        home_nor
+                        checkbox_disabled
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="order_sel"></m-icon>
+                    </td>
+                    <td>
+                        order_sel
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="order_nor"></m-icon>
+                    </td>
+                    <td>
+                        order_nor
                     </td>
                 </tr>
                 <tr>
@@ -57,10 +57,42 @@
                 </tr>
                 <tr>
                     <td>
-                        <m-icon type="find_nor"></m-icon>
+                        <m-icon type="home_nor"></m-icon>
                     </td>
                     <td>
-                        find_nor
+                        home_nor
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="mine1_sel"></m-icon>
+                    </td>
+                    <td>
+                        mine1_sel
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="mine1_nor"></m-icon>
+                    </td>
+                    <td>
+                        mine1_nor
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="repay_sel"></m-icon>
+                    </td>
+                    <td>
+                        repay_sel
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="repay_nor"></m-icon>
+                    </td>
+                    <td>
+                        repay_nor
                     </td>
                 </tr>
                 <tr>
@@ -69,6 +101,14 @@
                     </td>
                     <td>
                         find_sel
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m-icon type="find_nor"></m-icon>
+                    </td>
+                    <td>
+                        find_nor
                     </td>
                 </tr>
                 <tr>
@@ -412,7 +452,7 @@ export default {
     border-top: 1px solid #c6cbd1
 }
 
-.icon-list table tr:nth-child(2n) {
-    background-color: #f6f8fa
-}
+// .icon-list table tr:nth-child(2n) {
+//     background-color: #f6f8fa
+// }
 </style>

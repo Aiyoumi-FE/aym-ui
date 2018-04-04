@@ -1,50 +1,11 @@
 <template>
-    <span :class="'mui-icon-'+ type">
-        <span v-if="path" v-for="n in path" :class="'path'+n"></span>
-    </span>
+    <svg class="mui-icon"
+        aria-hidden="true">
+        <use :xlink:href="'#icon-'+type"></use>
+    </svg>
 </template>
 <script>
-const PATH = {
-    'find_sel': 2,
-    'repay_sel': 3,
-    'fail': 1,
-    'success': 1,
-    'minus': 2,
-    'plus': 2,
-    'bakctop': 2,
-    'check2': 1,
-    'collect': 1,
-    'market': 1,
-    'service': 1,
-    'share': 1,
-    'shop': 1,
-    'arrow2': 1,
-    'ask': 1,
-    'attetion': 1,
-    'back': 1,
-    'back1': 1,
-    'check': 1,
-    'check1': 2,
-    'check1-disabled': 2,
-    'uncheck1': 1,
-    'close': 1,
-    'close1': 1,
-    'delete': 1,
-    'message': 1,
-    'more': 1,
-    'scan': 1,
-    'search': 1,
-    'shop_nor': 1,
-    'shop_sel': 2,
-    'topic_nor': 1,
-    'topic_sel': 5,
-    'school_nor': 1,
-    'school_sel': 6,
-    'money_nor': 1,
-    'money_sel': 4,
-    'mine_nor': 1,
-    'mine_sel': 5
-}
+import '../../libs/iconfont.js'
 export default {
     name: 'm-icon',
     props: {
@@ -53,10 +14,22 @@ export default {
             default: ''
         }
     },
-    computed: {
-        path() {
-            return PATH[this.type] || 1
-        }
-    }
+    computed: {}
 }
 </script>
+<style lang="scss">
+@import "src/styles/base/fn";
+.mui-icon {
+    /* 通过设置 font-size 来改变图标大小 */
+    width: 1em;
+    height: 1em;
+    /* 图标和文字相邻时，垂直对齐 */
+    vertical-align: -0.15em;
+    /* 通过设置 color 来改变 SVG 的颜色/fill */
+    fill: currentColor;
+    /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+             normalize.css 中也包含这行 */
+    overflow: hidden;
+    font-size: px2rem(44);
+}
+</style>
