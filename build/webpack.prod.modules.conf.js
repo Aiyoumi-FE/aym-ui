@@ -1,23 +1,24 @@
-var webpack = require("webpack");
-var path = require('path')
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
+const path = require('path')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var utils = require('./utils')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
+const utils = require('./utils')
+const merge = require('webpack-merge')
+const baseWebpackConfig = require('./webpack.base.conf')
 
-var config = require('../config')
-// var modules = require('../src/modules')
-var isProduction = process.env.NODE_ENV === 'production'
+const config = require('../config')
+// const modules = require('../src/modules')
+const isProduction = process.env.NODE_ENV === 'production'
 
 // console.log(modules)
-let entries = utils.getEntry('./src/modules/**/index.js')
+let entries = utils.getEntry('./src/components/**/index.js')
 
-var webpackConfig = merge(baseWebpackConfig, {
+const webpackConfig = merge(baseWebpackConfig, {
     module: {
         rules: utils.styleLoaders({
             sourceMap: true,
-            extract: isProduction ? config.build.extractCss : config.dev.extractCss
+            extract: true,
+            usePostCSS: false
         })
     },
     // entry: path.join(__dirname, '..', "src/index.js"),

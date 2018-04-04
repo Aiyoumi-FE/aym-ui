@@ -61,7 +61,7 @@ const docsTpl = `
 const docsDir = path.resolve('document/components/docs')
 const examplesDir = path.resolve('examples/pages')
 const componentsDir = path.resolve(`src/components/${FILE_NAME}`)
-const modulesDir = path.resolve(`src/modules/${FILE_NAME}`)
+const modulesDir = path.resolve(`src/components/${FILE_NAME}`)
 
 const FILE_ARR = [{
     name: 'component',

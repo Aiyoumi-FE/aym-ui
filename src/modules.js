@@ -1,38 +1,38 @@
-// import createAPI from './modules/create-api'
+// import createAPI from './components/create-api'
 
-import Style from './modules/style'
+import Style from './components/style'
 
-import ActionSheet from './modules/actionsheet'
-import Badge from './modules/badge'
-import Button from './modules/button'
+import ActionSheet from './components/actionsheet'
+import Badge from './components/badge'
+import Button from './components/button'
 import {
     CellGroup,
     Cell,
     Input
-} from './modules/cell'
+} from './components/cell'
 import {
     Marquee,
     MarqueeItem
-} from './modules/marquee'
+} from './components/marquee'
 import {
     Tabbar,
     TabbarItem
-} from './modules/tabbar'
-import Dialog from './modules/dialog'
-import Header from './modules/header'
-import Icon from './modules/icon'
-import Indicator from './modules/indicator'
-import PageLoading from './modules/loading'
-import Modal from './modules/modal'
-import Page from './modules/page'
-import Picker from './modules/picker'
-import Popup from './modules/popup'
-import Progress from './modules/progress'
-import Switch from './modules/switch'
-import Tags from './modules/tags'
-import Toast from './modules/toast'
+} from './components/tabbar'
+import Dialog from './components/dialog'
+import Header from './components/header'
+import Icon from './components/icon'
+import Indicator from './components/indicator'
+import PageLoading from './components/loading'
+import Modal from './components/modal'
+import Page from './components/page'
+import Picker from './components/picker'
+import Popup from './components/popup'
+import Progress from './components/progress'
+import Switch from './components/switch'
+import Tags from './components/tags'
+import Toast from './components/toast'
 // directives
-import TransferDom from './modules/transfer-dom'
+import TransferDom from './components/transfer-dom'
 export {
     // createAPI,
     Style,
