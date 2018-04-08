@@ -1,4 +1,4 @@
-import Page from '../../components/page/page.vue'
+import Page from './page.vue'
 
 Page.install = function(Vue) {
     Vue.component(Page.name, Page)

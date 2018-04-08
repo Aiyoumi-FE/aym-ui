@@ -1,4 +1,4 @@
-import Dialog from '../../components/dialog/dialog.vue'
+import Dialog from './dialog.vue'
 import addDialog from './api'
 
 Dialog.install = function(Vue) {

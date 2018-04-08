@@ -1,5 +1,5 @@
-import Marquee from '../../components/marquee/marquee.vue'
-import MarqueeItem from '../../components/marquee/marquee-item.vue'
+import Marquee from './marquee.vue'
+import MarqueeItem from './marquee-item.vue'
 
 Marquee.install = function(Vue) {
     Vue.component(Marquee.name, Marquee)

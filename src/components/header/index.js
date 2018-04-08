@@ -1,4 +1,4 @@
-import Header from '../../components/header/header.vue'
+import Header from './header.vue'
 
 Header.install = function(Vue) {
     Vue.component(Header.name, Header)

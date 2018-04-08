@@ -1,4 +1,4 @@
-import Picker from '../../components/picker/picker.vue'
+import Picker from './picker.vue'
 import addPicker from './api'
 
 Picker.install = function(Vue) {

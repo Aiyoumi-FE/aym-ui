@@ -1,6 +1,6 @@
-import CellGroup from '../../components/cell/cell-group.vue'
-import Cell from '../../components/cell/cell.vue'
-import Input from '../../components/cell/input.vue'
+import CellGroup from './cell-group.vue'
+import Cell from './cell.vue'
+import Input from './input.vue'
 
 CellGroup.install = function(Vue) {
     Vue.component(CellGroup.name, CellGroup)

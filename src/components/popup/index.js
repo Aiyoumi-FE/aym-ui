@@ -1,4 +1,4 @@
-import Popup from '../../components/popup/popup.vue'
+import Popup from './popup.vue'
 
 Popup.install = function(Vue) {
     Vue.component(Popup.name, Popup)

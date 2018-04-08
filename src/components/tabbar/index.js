@@ -1,5 +1,5 @@
-import Tabbar from '../../components/tabbar/tabbar.vue'
-import TabbarItem from '../../components/tabbar/tabbar-item.vue'
+import Tabbar from './tabbar.vue'
+import TabbarItem from './tabbar-item.vue'
 
 Tabbar.install = function(Vue) {
     Vue.component(Tabbar.name, Tabbar)

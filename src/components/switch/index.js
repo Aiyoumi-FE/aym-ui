@@ -1,4 +1,4 @@
-import Switch from '../../components/switch/switch.vue'
+import Switch from './switch.vue'
 
 Switch.install = function(Vue) {
     Vue.component(Switch.name, Switch)
