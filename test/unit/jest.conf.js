@@ -17,7 +17,7 @@ module.exports = {
         '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
         '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
     },
-    testMatch: ['**/__tests__/**/*.js?(x)', '**/?(tabbar.)(spec|test).js?(x)'],
+    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(tabbar.)(spec|test).js?(x)'],
 
     testPathIgnorePatterns: [
         '<rootDir>/test/e2e'
