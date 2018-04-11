@@ -1,6 +1,8 @@
 const path = require('path')
 
 module.exports = {
+    // roots: ['<rootDir>/', '<rootDir>/src/', '<rootDir>/test/unit/'],
+    roots: ['<rootDir>/', '<rootDir>/test/unit/'],
     rootDir: path.resolve(__dirname, '../../'),
     moduleFileExtensions: [
         'js',
@@ -15,7 +17,7 @@ module.exports = {
         '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
         '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
     },
-    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(picker.)(spec|test).js?(x)'],
+    testMatch: ['**/__tests__/**/*.js?(x)', '**/?(tabbar.)(spec|test).js?(x)'],
 
     testPathIgnorePatterns: [
         '<rootDir>/test/e2e'

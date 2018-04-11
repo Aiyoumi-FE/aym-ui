@@ -1,7 +1,7 @@
 <template>
     <a href="javascript:;"
         class="m-tabbar__item"
-        :class="{'m-bar__item_on': isActive}"
+        :class="{'m-tabbar__item_on': isActive}"
         @click="onItemClick">
         <div class="m-tabbar__icon">
             <slot name="icon"
