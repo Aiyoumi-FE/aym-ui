@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input 属性测试 vcode: 倒计时到0 1`] = `
+<div
+  class="mui-cell mui-cell_vcode"
+>
+  <div
+    class="mui-cell__hd"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="mui-cell__bd"
+  >
+    <input
+      btntype="codeBtn"
+      class="mui-input"
+      inputtype="vcode"
+      istiming="true"
+      placeholder=""
+      title=""
+      type="text"
+    />
+  </div>
+   
+  <div
+    class="mui-cell__ft"
+  >
+    <button
+      class="mui-vcode__btn disabled"
+    >
+      0s后重发
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Input 属性测试 vcode: 倒计时开始 1`] = `
+<div
+  class="mui-cell mui-cell_vcode"
+>
+  <div
+    class="mui-cell__hd"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="mui-cell__bd"
+  >
+    <input
+      btntype="codeBtn"
+      class="mui-input"
+      inputtype="vcode"
+      istiming="true"
+      placeholder=""
+      title=""
+      type="text"
+    />
+  </div>
+   
+  <div
+    class="mui-cell__ft"
+  >
+    <button
+      class="mui-vcode__btn disabled"
+    >
+      60s后重发
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Input 属性测试 vcode: 计时完毕，保持原样 1`] = `
+<div
+  class="mui-cell mui-cell_vcode"
+>
+  <div
+    class="mui-cell__hd"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="mui-cell__bd"
+  >
+    <input
+      btntype="codeBtn"
+      class="mui-input"
+      inputtype="vcode"
+      placeholder=""
+      title=""
+      type="text"
+    />
+  </div>
+   
+  <div
+    class="mui-cell__ft"
+  >
+    <button
+      class="mui-vcode__btn"
+    >
+      获取验证码
+    </button>
+  </div>
+</div>
+`;

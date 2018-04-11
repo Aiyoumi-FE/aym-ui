@@ -16,8 +16,8 @@ echo "Releasing $VERSION ..."
     # commit
     git add -A
     git add -f \
-        dist/**/* \
-        lib/**/*
+        dist/ \
+        lib/
     git commit -m "build: build $VERSION"
 
      # updata version

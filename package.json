@@ -37,11 +37,6 @@
         "deploy:docs": "npm run build:demo && node build/bin/deploy.docs.js",
         "release": "bash scripts/release.sh"
     },
-    "deploy": {
-        "srcFolder": "./dist/",
-        "destFolder": "libs/aym-ui/",
-        "serverUrl": "http://127.0.0.1:7000/upload/upfiles"
-    },
     "author": "aymFE",
     "license": "MIT",
     "dependencies": {

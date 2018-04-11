@@ -21,7 +21,7 @@
 <script>
 import {
     go
-} from '../../libs/router'
+} from 'src/libs/router'
 export default {
     name: 'm-cell',
     props: {

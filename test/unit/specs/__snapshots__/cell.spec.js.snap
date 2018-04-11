@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell 属性测试 组合 1`] = `
+<div
+  class="mui-cell mui-cell_access select"
+>
+  <div
+    class="mui-cell__hd"
+  />
+   
+  <div
+    class="mui-cell__bd"
+  >
+    cellTitle
+  </div>
+   
+  <div
+    class="mui-cell__ft"
+  >
+    cellValue
+  </div>
+</div>
+`;
