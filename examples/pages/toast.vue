@@ -31,9 +31,9 @@ export default {
         showLoading() {
             let loading = this.$_loading()
             loading.show()
-            // setTimeout(() => {
-            //     loading.hide()
-            // }, 2000)
+            setTimeout(() => {
+                loading.hide()
+            }, 2000)
         },
         showIconToast() {
             this.$_toast({
@@ -44,7 +44,7 @@ export default {
         showIconTextToast() {
             this.$_toast({
                 icon: 'check2',
-                time: 0,
+                time: 1000,
                 txt: '信息文案'
             })
         }
