@@ -5,10 +5,8 @@
             v-show="isVisible">
             <div class="mui-toast__content"
                 :class="classes">
-                <i v-if="icon==='loading'"
+                <i v-if="icon"
                     :class="classIcon"></i>
-                <m-icon v-if="icon!=='loading'"
-                    :type="icon"> </m-icon>
                 <p v-if="txt"
                     :class="classText">{{txt}}</p>
             </div>
@@ -17,7 +15,6 @@
 </template>
 <script>
 import mPopup from '../popup/popup'
-import mIcon from '../icon/icon'
 import apiMixin from '../../common/mixins/api'
 /**
  * m-toast
@@ -64,7 +61,7 @@ export default {
         classIcon() {
             if (this.icon) {
                 return [{
-                    [`mui-icon-${this.icon}`]: !!this.icon && this.icon === 'loading',
+                    [`mui-icon-${this.icon}`]: !!this.icon,
                     'mui-toast__no-text': this.txt.length == 0
                 }]
             }
@@ -103,8 +100,7 @@ export default {
 
     },
     components: {
-        mPopup,
-        mIcon
+        mPopup
     }
 }
 </script>
