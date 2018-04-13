@@ -15,6 +15,10 @@
             <br>
             <m-progress type="timeline"
                 :stepText="timelineArr"></m-progress>
+            <br>
+            <m-progress type="timeline"
+                :isHalfLine="false"
+                :stepText="timelineArr"></m-progress>
         </demo-content>
     </m-page>
 </template>

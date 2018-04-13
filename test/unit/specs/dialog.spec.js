@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { createLocalVue, mount } from 'vue-test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 
 import Dialog from '@/components/dialog/dialog'
 import DialogApi from '@/components/dialog'

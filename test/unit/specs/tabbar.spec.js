@@ -1,5 +1,5 @@
  import Vue from 'vue'
- import { mount } from 'vue-test-utils'
+ import { mount } from '@vue/test-utils'
 
  import Tabbar from '@/components/tabbar/tabbar'
  import TabbarItem from '@/components/tabbar/tabbar-item'

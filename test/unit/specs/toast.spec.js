@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { createLocalVue, mount } from 'vue-test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 
 import Toast from '@/components/toast/toast'
 import ToastApi from '@/components/toast'

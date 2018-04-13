@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { mount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 
 import Cell from '@/components/cell/cell'
 // import { go } from 'src/libs/router'

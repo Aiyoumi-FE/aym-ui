@@ -1,4 +1,4 @@
-import { createLocalVue, mount } from 'vue-test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 
 import Picker from '@/components/picker/picker'
 import PickerApi from '@/components/picker'

@@ -1,4 +1,4 @@
-import { createLocalVue, mount } from 'vue-test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 
 import Modal from '@/components/modal/modal'
 import ModalApi from '@/components/modal'

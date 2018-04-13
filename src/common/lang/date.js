@@ -8,10 +8,15 @@ export function formatDate(date, fmt = 'YYYY-MM-DD HH:mm:ss') {
     }
     if (typeof date === 'string') {
         date = new Date(date.replace(/-/g, '/'))
+
     }
     if (typeof date === 'number') {
         date = new Date(date)
     }
+    if (date.toString() === 'Invalid Date') {
+        return ''
+    }
+
     var o = {
         'M+': date.getMonth() + 1,
         'D+': date.getDate(),

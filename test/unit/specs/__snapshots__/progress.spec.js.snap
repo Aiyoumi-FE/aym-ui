@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress step curStep：当前所在步数: 满格 1`] = `
+<ul
+  class="mui-progress_step"
+  ishalfline="true"
+  type="step"
+>
+  <li
+    class="mui-progress__item cur"
+  >
+    <span
+      class="mui-progress__ball"
+    >
+      <span
+        class="mui-progress__txt"
+      >
+        b1
+      </span>
+    </span>
+  </li>
+  <li
+    class="mui-progress__item cur"
+  >
+    <span
+      class="mui-progress__ball"
+    >
+      <span
+        class="mui-progress__txt"
+      >
+        b2
+      </span>
+    </span>
+  </li>
+  <li
+    class="mui-progress__item cur"
+  >
+    <span
+      class="mui-progress__ball"
+    >
+      <span
+        class="mui-progress__txt"
+      >
+        b3
+      </span>
+    </span>
+  </li>
+  <li
+    class="mui-progress__item cur"
+  >
+    <span
+      class="mui-progress__ball"
+    >
+      <span
+        class="mui-progress__txt"
+      >
+        b4
+      </span>
+    </span>
+  </li>
+  <li
+    class="mui-progress__item cur"
+  >
+    <span
+      class="mui-progress__ball"
+    >
+      <span
+        class="mui-progress__txt"
+      >
+        b5
+      </span>
+    </span>
+  </li>
+  <li
+    class="mui-progress__item cur"
+  >
+    <span
+      class="mui-progress__ball"
+    >
+      <span
+        class="mui-progress__txt"
+      >
+        b6
+      </span>
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`Progress timeline 显示那半条线: 显示那半条线 1`] = `
+<ul
+  class="mui-progress_timeline"
+  type="timeline"
+>
+  <li
+    class="mui-progress__item"
+  >
+    <div
+      class="mui-progress__time"
+    >
+      <span>
+        3.28
+      </span>
+       
+      <span
+        class="mui-progress__ball"
+      />
+    </div>
+     
+    <div
+      class="mui-progress__content"
+    >
+      <p>
+        第1步标题
+      </p>
+       
+      <p>
+        第1步描述
+      </p>
+    </div>
+  </li>
+  <li
+    class="mui-progress__item"
+  >
+    <div
+      class="mui-progress__time"
+    >
+      <span>
+        3.29
+      </span>
+       
+      <span
+        class="mui-progress__ball"
+      />
+    </div>
+     
+    <div
+      class="mui-progress__content"
+    >
+      <p>
+        第2步标题
+      </p>
+       
+      <p>
+        第2步描述
+      </p>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Progress timeline 默认不显示一半线: 不显示那半条线 1`] = `
+<ul
+  class="mui-progress_timeline"
+  type="timeline"
+>
+  <li
+    class="mui-progress__item"
+  >
+    <div
+      class="mui-progress__time"
+    >
+      <span>
+        3.28
+      </span>
+       
+      <span
+        class="mui-progress__ball"
+      />
+    </div>
+     
+    <div
+      class="mui-progress__content"
+    >
+      <p>
+        第1步标题
+      </p>
+       
+      <p>
+        第1步描述
+      </p>
+    </div>
+  </li>
+  <li
+    class="mui-progress__item none-halfline"
+  >
+    <div
+      class="mui-progress__time"
+    >
+      <span>
+        3.29
+      </span>
+       
+      <span
+        class="mui-progress__ball"
+      />
+    </div>
+     
+    <div
+      class="mui-progress__content"
+    >
+      <p>
+        第2步标题
+      </p>
+       
+      <p>
+        第2步描述
+      </p>
+    </div>
+  </li>
+</ul>
+`;
