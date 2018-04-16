@@ -36,6 +36,7 @@ module.exports = {
         '!src/router/index.js',
         '!**/node_modules/**'
     ],
+
     "globals": {
         "vue-jest": {
             "hideStyleWarn": true,
