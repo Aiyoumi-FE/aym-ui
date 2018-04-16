@@ -5,7 +5,7 @@
     </svg>
 </template>
 <script>
-import '../../libs/iconfont.js'
+import 'src/libs/iconfont'
 export default {
     name: 'm-icon',
     props: {

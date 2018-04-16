@@ -24,6 +24,7 @@
     </header>
 </template>
 <script>
+import mIcon from '@/components/icon/icon'
 export default {
     name: 'm-header',
     props: {
@@ -53,6 +54,9 @@ export default {
         headerTitle() {
             return this.title || document.title
         }
+    },
+    components: {
+        mIcon
     },
     methods: {
         leftHandle() {

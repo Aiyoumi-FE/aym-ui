@@ -31,6 +31,7 @@ export default {
             return this.$parent.items.indexOf(this)
         }
     },
+
     beforeCreate() {
         this.$parent.items.push(this)
     },

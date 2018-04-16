@@ -10,14 +10,14 @@ module.exports = {
         'vue'
     ],
     moduleNameMapper: {
-        // '^vue$': 'vue/dist/vue.common.js',
+        '^vue$': 'vue/dist/vue.common.js',
         '^@/(.*)$': '<rootDir>/src/$1'
     },
     transform: {
         '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
         '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
     },
-    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(progress.)(spec|test).js?(x)'],
+    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(modal.)(spec|test).js?(x)'],
 
     testPathIgnorePatterns: [
         '<rootDir>/test/e2e'
@@ -35,5 +35,11 @@ module.exports = {
         '!src/libs/router.js',
         '!src/router/index.js',
         '!**/node_modules/**'
-    ]
+    ],
+    "globals": {
+        "vue-jest": {
+            "hideStyleWarn": true,
+            "experimentalCSSCompile": true
+        }
+    }
 }

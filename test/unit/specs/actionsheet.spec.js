@@ -1,5 +1,4 @@
 import { createLocalVue, mount } from '@vue/test-utils'
-'
 
 import Actionsheet from '@/components/actionsheet/actionsheet'
 import ActionsheetApi from '@/components/actionsheet'
@@ -38,7 +37,7 @@ describe('Actionsheet', () => {
         it('actionsheet 事件', () => {
             const confirmEvent = jest.spyOn(cmp.vm, 'itemClick')
             const cancelEvent = jest.spyOn(cmp.vm, 'cancel')
-            cmp.update()
+            // cmp.update()
             // 选中
             cmp.vm.show()
             expect(cmp.vm.isVisible).toBe(true)

@@ -7,9 +7,9 @@ describe('Cell', () => {
     let cmp
 
     beforeEach(() => {
-        cmp = mount(Cell)
-        jest.resetModules()
-        jest.clearAllMocks()
+        cmp = mount(Cell, {})
+        // jest.resetModules()
+        // jest.clearAllMocks()
     })
     afterEach(() => {
         cmp.destroy()
@@ -30,13 +30,18 @@ describe('Cell', () => {
         })
         it('cell isLink', () => {
             const clickEvent = jest.fn()
+
+            cmp = mount(Cell, {
+                methods: {
+                    handleClick: clickEvent // ???  setMethods 不行
+                }
+            })
             expect(cmp.classes()).not.toContain('mui-cell_access')
             cmp.setProps({ isLink: true })
             expect(cmp.classes()).toContain('mui-cell_access')
 
             // 测试链接跳转
             cmp.setProps({ link: LINK_URL })
-            cmp.setMethods({ handleClick: clickEvent })
             expect(cmp.emitted('click')).toBeFalsy()
 
             cmp.trigger('click')

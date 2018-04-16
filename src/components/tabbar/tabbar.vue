@@ -7,10 +7,10 @@
 export default {
 
     name: 'm-tabbar',
-    // model: {
-    //     prop: 'value',
-    //     event: 'change'
-    // },
+    model: {
+        prop: 'value',
+        event: 'change'
+    },
     props: {
         value: {
             type: Number,
@@ -23,7 +23,7 @@ export default {
         }
     },
     watch: {
-        value() {
+        value(to, from) {
             this.setActiveItem()
         }
     },
@@ -38,7 +38,7 @@ export default {
             })
         },
         onChange(active) {
-            this.$emit('input', active)
+            // this.$emit('input', active)
             this.$emit('change', active)
         }
     }

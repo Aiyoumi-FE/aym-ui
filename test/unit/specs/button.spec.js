@@ -9,7 +9,9 @@ describe('Button', () => {
     beforeEach(() => {
         cmp = mount(Button)
     })
-
+    afterEach(() => {
+        cmp.destroy()
+    })
     it('renders a button', () => {
         expect(cmp.contains('button')).toBe(true)
     })
@@ -36,9 +38,14 @@ describe('Button', () => {
     testAttr({ size: 'small' })
 
     it('事件调用', () => {
-        cmp.vm.handleClick = jest.fn()
-        cmp.update()
+
+        const fn = jest.fn()
+        cmp = mount(Button, {
+            methods: {
+                handleClick: fn
+            }
+        })
         cmp.trigger('click')
-        expect(cmp.vm.handleClick).toBeCalled()
+        expect(fn).toBeCalled()
     })
 })
