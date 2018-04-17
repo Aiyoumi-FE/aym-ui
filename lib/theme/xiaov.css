@@ -1,5 +1,5 @@
 /**
- * aym-ui v1.1.18
+ * aym-ui v1.1.19
  */
 
 @charset "UTF-8";
@@ -915,7 +915,7 @@
   flex: 1;
   text-align: center;
   color: #B3B3B3; }
-  .m-tabbar__item /deep/ .m-tabbar__label {
+  .m-tabbar__item .m-tabbar__label {
     font-size: 0.42667rem;
     margin-top: 0.128rem; }
 
