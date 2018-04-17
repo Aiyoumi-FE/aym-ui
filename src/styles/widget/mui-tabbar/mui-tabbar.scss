@@ -14,7 +14,7 @@
     flex: 1;
     text-align: center;
     color: #B3B3B3;
-    /deep/ .m-tabbar__label {
+    .m-tabbar__label {
         font-size: px2rem(20);
         margin-top: px2rem(6);
     }
