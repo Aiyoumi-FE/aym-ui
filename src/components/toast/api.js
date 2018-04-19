@@ -14,7 +14,7 @@ export default function addToast(Vue, Toast) {
         }
     }
     Vue.prototype.$_loading = function(config) {
-        let defaultConfig = { icon: 'loading', time: 0, txt: '加载中' }
+        let defaultConfig = { icon: 'loading', time: 0, txt: '加载中', isSvg: false }
         let _config = Object.assign({}, defaultConfig, config)
         return loading.create.call(this, _config)
     }

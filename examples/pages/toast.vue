@@ -29,7 +29,7 @@ export default {
             })
         },
         showLoading() {
-            let loading = this.$_loading({ isSvg: false })
+            let loading = this.$_loading()
             loading.show()
             setTimeout(() => {
                 loading.hide()
