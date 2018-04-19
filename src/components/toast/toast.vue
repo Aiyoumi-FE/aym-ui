@@ -5,8 +5,10 @@
             v-show="isVisible">
             <div class="mui-toast__content"
                 :class="classes">
-                <i v-if="icon"
+                <i v-if="!isSvg && icon"
                     :class="classIcon"></i>
+                <m-icon v-if="isSvg && icon"
+                    :type="icon"></m-icon>
                 <p v-if="txt"
                     :class="classText">{{txt}}</p>
             </div>
@@ -16,6 +18,7 @@
 <script>
 import mPopup from '../popup/popup'
 import apiMixin from '../../common/mixins/api'
+import mIcon from '../icon/icon'
 /**
  * m-toast
  * @param {String} [type='text'] - 提示类型,默认值为'text',仅文本
@@ -38,6 +41,10 @@ export default {
         },
         icon: {
             type: String
+        },
+        isSvg: {
+            type: Boolean,
+            default: true
         },
         txt: {
             type: String,
@@ -100,7 +107,8 @@ export default {
 
     },
     components: {
-        mPopup
+        mPopup,
+        mIcon
     }
 }
 </script>

@@ -29,7 +29,7 @@ export default {
             })
         },
         showLoading() {
-            let loading = this.$_loading()
+            let loading = this.$_loading({ isSvg: false })
             loading.show()
             setTimeout(() => {
                 loading.hide()
@@ -38,12 +38,14 @@ export default {
         showIconToast() {
             this.$_toast({
                 icon: 'loading',
+                isSvg: false,
                 time: 1000
             })
         },
         showIconTextToast() {
             this.$_toast({
-                icon: 'check2',
+                icon: 'check',
+                isSvg: true,
                 time: 1000,
                 txt: '信息文案'
             })

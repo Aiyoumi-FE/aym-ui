@@ -39,5 +39,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .mui-icon {
+            font-size: px2rem(96);
+            margin: px2rem(45) 0 px2rem(10);
+        }
     }
 }

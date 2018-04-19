@@ -48,7 +48,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="home_sel">
                         <m-icon type="home_sel"></m-icon>
                     </td>
                     <td>
@@ -450,6 +450,10 @@ export default {
 .icon-list table tr {
     background-color: #fff;
     border-top: 1px solid #c6cbd1
+}
+
+.home_sel /deep/ path {
+    fill: #000;
 }
 
 // .icon-list table tr:nth-child(2n) {
