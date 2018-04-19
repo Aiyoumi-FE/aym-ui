@@ -1,5 +1,5 @@
 /**
- * aym-ui v1.1.19
+ * aym-ui v1.1.20
  */
 
 @charset "UTF-8";
@@ -971,6 +971,9 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
+    .mui-toast__content.mui-toast__icon .mui-icon {
+      font-size: 2.048rem;
+      margin: 0.96rem 0 0.21333rem; }
 
 .mui-progress_step {
   display: flex;

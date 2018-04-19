@@ -76,6 +76,30 @@
 /*
 * mui 规范中定义的颜色
 */
+.mui-icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 1em;
+  height: 1em;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+             normalize.css 中也包含这行 */
+  overflow: hidden;
+  font-size: 0.93867rem;
+}
+
+@charset "UTF-8";
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .mui-toast__content {
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
@@ -115,4 +139,8 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+}
+.mui-toast__content.mui-toast__icon .mui-icon {
+      font-size: 2.048rem;
+      margin: 0.96rem 0 0.21333rem;
 }
