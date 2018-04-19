@@ -8,12 +8,11 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const WorkboxPlugin = require('workbox-webpack-plugin') // zq
 const CleanWebpackPlugin = require('clean-webpack-plugin') // zq
-const env = process.env.NODE_ENV === 'testing' ? require('../config/test.env') : require('../config/prod.env')
+// const env = process.env.NODE_ENV === 'testing' ? require('../config/test.env') : require('../config/prod.env')
 const entries = config.dev.entry
 require('./check-versions')()
 const webpackConfig = merge(baseWebpackConfig, {
@@ -33,24 +32,38 @@ const webpackConfig = merge(baseWebpackConfig, {
         // filename: utils.assetsPath('js/[name].js'),
         // chunkFilename: utils.assetsPath('js/[id].js')
     },
+    optimization: {
+        occurrenceOrder: true,
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: "commons",
+                    chunks: "initial",
+                    minChunks: 2
+                }
+            }
+        }
+        // runtimeChunk: {
+        //     name: "manifest"
+        // },
+        // splitChunks: {
+        //     cacheGroups: {
+        //         commons: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             name: "vendor",
+        //             chunks: "all"
+        //         }
+        //     }
+        // }
+    },
     plugins: [
 
         // http://vuejs.github.io/vue-loader/en/workflow/production.html
-        new webpack.DefinePlugin({
-            'process.env': env
-        }),
-        new UglifyJsPlugin({
-            uglifyOptions: {
-                compress: {
-                    warnings: false
-                }
-            },
-            sourceMap: config.build.productionSourceMap,
-            parallel: true
-        }),
+
         // extract css into its own file
         new ExtractTextPlugin({
-            filename: utils.assetsPath('css/[name].[contenthash].css'),
+            filename: utils.assetsPath('css/[name].[hash:7].css'),
+            // filename: '[name].css',
             // Setting the following option to `false` will not extract CSS from codesplit chunks.
             // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
             // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
@@ -59,41 +72,51 @@ const webpackConfig = merge(baseWebpackConfig, {
         }),
         // Compress extracted CSS. We are using this plugin so that possible
         // duplicated CSS from different components can be deduped.
-        new OptimizeCSSPlugin({
-            cssProcessorOptions: config.build.productionSourceMap ? { safe: true, map: { inline: false } } : { safe: true }
-        }),
+        // new OptimizeCSSPlugin({
+        //     cssProcessorOptions: config.build.productionSourceMap ? { safe: true, map: { inline: false } } : { safe: true }
+        // }),
 
         // keep module.id stable when vendor modules does not change
         new webpack.HashedModuleIdsPlugin(),
         // enable scope hoisting
-        new webpack.optimize.ModuleConcatenationPlugin(),
+        // new webpack.optimize.ModuleConcatenationPlugin(),
         // split vendor js into its own file
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks(module) {
-                // any required modules inside node_modules are extracted to vendor
-                return (
-                    module.resource &&
-                    /\.js$/.test(module.resource) &&
-                    module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
-                    ) === 0
-                )
+        //
+        new webpack.optimize.SplitChunksPlugin({
+            optimization: {
+                // runtimeChunk: {
+                //     name: "manifest"
+                // },
+                splitChunks: {
+                    cacheGroups: {
+                        commons: {
+                            test: /[\\/]node_modules[\\/]/,
+                            name: "vendor",
+                            chunks: "all"
+                        }
+                    }
+                }
             }
+            //
+            // name: 'vendor',
+            // minChunks(module) {
+            //     // any required modules inside node_modules are extracted to vendor
+            //     return (
+            //         module.resource &&
+            //         /\.js$/.test(module.resource) &&
+            //         module.resource.indexOf(
+            //             path.join(__dirname, '../node_modules')
+            //         ) === 0
+            //     )
+            // }
         }),
         // extract webpack runtime and module manifest to its own file in order to
         // prevent vendor hash from being updated whenever app bundle is updated
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest',
-            minChunks: Infinity
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'manifest',
+        //     minChunks: Infinity
+        // }),
 
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'app',
-            async: 'vendor-async',
-            children: true,
-            minChunks: 3
-        }),
         // copy custom static assets
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, '../static'),
@@ -105,8 +128,15 @@ const webpackConfig = merge(baseWebpackConfig, {
             to: config.build.assetsRoot,
             ignore: ['.*']
         }]),
-
-
+        new CleanWebpackPlugin(['dist'], {
+            root: config.projectRoot
+        }),
+        new WorkboxPlugin({
+            // 这些选项帮助 ServiceWorkers 快速启用
+            // 不允许遗留任何“旧的” ServiceWorkers
+            clientsClaim: true,
+            skipWaiting: true
+        })
     ],
     stats: {
         colors: true,
@@ -118,19 +148,19 @@ const webpackConfig = merge(baseWebpackConfig, {
 })
 utils.multipleEntries(webpackConfig, HtmlWebpackPlugin, entries)
 
-if (process.env.NODE_ENV === 'production') {
-    webpackConfig.plugins.push(
-        new CleanWebpackPlugin(['dist'], {
-            root: config.projectRoot
-        }),
-        new WorkboxPlugin({
-            // 这些选项帮助 ServiceWorkers 快速启用
-            // 不允许遗留任何“旧的” ServiceWorkers
-            clientsClaim: true,
-            skipWaiting: true
-        })
-    )
-}
+// if (process.env.NODE_ENV === 'production') {
+//     webpackConfig.plugins.push(
+//         new CleanWebpackPlugin(['dist'], {
+//             root: config.projectRoot
+//         }),
+//         new WorkboxPlugin({
+//             // 这些选项帮助 ServiceWorkers 快速启用
+//             // 不允许遗留任何“旧的” ServiceWorkers
+//             clientsClaim: true,
+//             skipWaiting: true
+//         })
+//     )
+// }
 
 if (config.build.productionGzip) {
     const CompressionWebpackPlugin = require('compression-webpack-plugin')

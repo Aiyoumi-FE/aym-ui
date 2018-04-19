@@ -18,7 +18,6 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production' && win
         })
     })
 }
-
 new Vue({
     el: '#app',
     router,

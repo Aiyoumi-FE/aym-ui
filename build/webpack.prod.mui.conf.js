@@ -3,7 +3,7 @@ const path = require('path')
 const version = require("./../package.json").version;
 const banner = "/**\n" + " * aym-ui v" + version + "\n" + " */\n";
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const utils = require('./utils')
 const merge = require('webpack-merge')
@@ -11,7 +11,7 @@ const baseWebpackConfig = require('./webpack.base.conf')
 
 const config = require('../config')
 // const modules = require('../src/modules')
-const isProduction = process.env.NODE_ENV === 'production'
+// const isProduction = process.env.NODE_ENV === 'production'
 
 const webpackConfig = merge(baseWebpackConfig, {
     module: {
@@ -35,20 +35,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         libraryTarget: "umd"
     },
     plugins: [
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new UglifyJsPlugin({
-            uglifyOptions: {
-                compress: {
-                    warnings: false
-                }
-            },
-            sourceMap: config.build.productionSourceMap,
-            parallel: true
-        }),
         new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
         new webpack.BannerPlugin({
             banner: banner,
@@ -64,7 +50,4 @@ const webpackConfig = merge(baseWebpackConfig, {
     }
 });
 
-if (config.build.productionGzip) {
-    //  utils.gZip(webpackConfig)
-}
 module.exports = webpackConfig;
