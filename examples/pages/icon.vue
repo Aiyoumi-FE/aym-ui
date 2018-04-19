@@ -161,14 +161,6 @@
                 </tr>
                 <tr>
                     <td>
-                        <m-icon type="check2"></m-icon>
-                    </td>
-                    <td>
-                        check2
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <m-icon type="collect"></m-icon>
                     </td>
                     <td>
@@ -261,22 +253,6 @@
                     </td>
                     <td>
                         check1
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <m-icon type="check1-disabled"></m-icon>
-                    </td>
-                    <td>
-                        check1-disabled
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <m-icon type="uncheck1"></m-icon>
-                    </td>
-                    <td>
-                        uncheck1
                     </td>
                 </tr>
                 <tr>
