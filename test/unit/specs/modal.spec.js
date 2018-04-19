@@ -1,8 +1,9 @@
-import { createLocalVue, mount } from '@vue/test-utils'
+import 'src/libs/iconfont'
 
+import { createLocalVue, mount } from '@vue/test-utils'
 import Modal from '@/components/modal/modal'
 import ModalApi from '@/components/modal'
-
+import mButton from '@/components/button'
 describe('Modal', () => {
 
     describe('Modal.vue', () => {
@@ -13,6 +14,10 @@ describe('Modal', () => {
                 propsData: {
                     isShow: false,
                 },
+                components: {
+                    mButton
+                },
+
                 slots: {
                     content: `<div><p>cotent</p> <p>cotent</p> <p>cotent</p> <p>cotent</p> </div> <div slot="footer">
                   <m-button type="full"@click="hide">关闭</m-button></div>`

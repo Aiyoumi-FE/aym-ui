@@ -93,7 +93,7 @@ exports[`Progress timeline 显示那半条线: 显示那半条线 1`] = `
   type="timeline"
 >
   <li
-    class="mui-progress__item"
+    class="mui-progress__item cur"
   >
     <div
       class="mui-progress__time"
@@ -155,7 +155,7 @@ exports[`Progress timeline 默认不显示一半线: 不显示那半条线 1`] =
   type="timeline"
 >
   <li
-    class="mui-progress__item"
+    class="mui-progress__item cur"
   >
     <div
       class="mui-progress__time"
@@ -182,7 +182,7 @@ exports[`Progress timeline 默认不显示一半线: 不显示那半条线 1`] =
     </div>
   </li>
   <li
-    class="mui-progress__item none-halfline"
+    class="mui-progress__item cur none-halfline"
   >
     <div
       class="mui-progress__time"

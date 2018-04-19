@@ -69,7 +69,7 @@ describe('Dialog', () => {
             })
             const confirmEvent = jest.spyOn(cmp.vm, 'confirm')
             const cancelEvent = jest.spyOn(cmp.vm, 'cancel')
-            cmp.update()
+            // cmp.update()
             cmp.vm.show()
             expect(cmp.vm.isVisible).toBe(true)
             cmp.find('.mui-dialog__btn_primary').trigger('click')
