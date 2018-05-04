@@ -36,6 +36,10 @@ export default {
             type: String,
             required: false
         },
+        isBack: {
+            type: Boolean,
+            default: true
+        },
         isLine: {
             type: Boolean,
             default: false
@@ -60,7 +64,7 @@ export default {
     },
     methods: {
         leftHandle() {
-            if (this.type === 'nav') {
+            if (this.type === 'nav' && this.isBack) {
                 return this.$router ? this.$router.go(-1) : window.history.go(-1)
             } else {
                 this.$emit('click', event)

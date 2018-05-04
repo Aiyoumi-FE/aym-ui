@@ -1,22 +1,24 @@
 <template>
     <m-page>
         <m-header slot="header">
-            <span slot="right"
-                class="mui-icon-shop"></span>
+            <m-icon slot="right"
+                type="shop"></m-icon>
         </m-header>
         <m-header slot="header"
             title="标题不传默认document.title"
             style="top:50px;">
-            <span slot="right"
-                class="mui-icon-shop"></span>
+            <m-icon slot="right"
+                type="shop"></m-icon>
         </m-header>
         <m-header slot="header"
+            :isBack="false"
+            @click="clickHandler"
             style="top:100px;">
             <span slot="title">
                 自定义标题内容
             </span>
-            <span slot="right"
-                class="mui-icon-shop"></span>
+            <m-icon slot="right"
+                type="shop"></m-icon>
         </m-header>
         <demo-content>
         </demo-content>
@@ -33,7 +35,7 @@ export default {
     },
     methods: {
         clickHandler() {
-
+            this.$_toast('自定义左边按钮行为')
         }
     }
 }
