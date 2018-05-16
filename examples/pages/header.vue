@@ -18,6 +18,16 @@
             <span slot="right"
                 class="mui-icon-shop"></span>
         </m-header>
+        <m-header slot="header"
+            style="top:150px;"
+            type="click"
+            @click="clickHandler">
+            <span slot="title">
+                自定义返回事件
+            </span>
+            <span slot="right"
+                class="mui-icon-shop"></span>
+        </m-header>
         <demo-content>
         </demo-content>
     </m-page>
@@ -33,7 +43,7 @@ export default {
     },
     methods: {
         clickHandler() {
-
+            this.$_toast('点击了')
         }
     }
 }

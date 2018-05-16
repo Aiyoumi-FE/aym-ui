@@ -5,10 +5,10 @@
             href="javascript:;"
             @click="leftHandle">
             <slot name="left">
-                <m-icon v-if="type === 'nav'"
-                    type="back"></m-icon>
                 <m-icon v-if="type === 'modal'"
                     type="close1"></m-icon>
+                <m-icon v-else
+                    type="back"></m-icon>
             </slot>
         </a>
         <a class="mui-bar__tools"
@@ -46,8 +46,12 @@ export default {
     },
     computed: {
         classes() {
-            return [{
-                [`mui-bar_${this.type}`]: !!this.type,
+            let navClass = 'mui-bar_nav'
+            if (this.type === 'modal') {
+                navClass = 'mui-bar_modal'
+            }
+            return [navClass, {
+                // [`mui-bar_${this.type}`]: !!this.type,
                 'mui-bar_bottom-line': this.isLine
             }]
         },
