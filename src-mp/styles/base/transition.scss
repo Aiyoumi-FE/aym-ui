@@ -1,0 +1,19 @@
+.fade-enter,
+.fade-leave-active {
+    opacity: 0
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .3s ease;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: all .3s ease;
+}
+
+.slide-up-enter,
+.slide-up-leave-active {
+    transform: translate3d(0, 100%, 0)
+}

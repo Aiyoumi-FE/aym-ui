@@ -1,0 +1,13 @@
+.mui-btn_border {
+    color: $btnBorderColor;
+    border: 1px solid $btnBorderBdColor;
+    &:active {
+        color: $btnBorderActiveColor;
+        border-color: $btnBorderActiveBdColor;
+    }
+    @import 'mui-btn_size';
+    &.disabled {
+        color: $btnBorderDisabledColor;
+        border-color: $btnBorderDisabledBdColor;
+    }
+}

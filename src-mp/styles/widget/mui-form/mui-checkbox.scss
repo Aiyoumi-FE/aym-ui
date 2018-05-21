@@ -1,0 +1,13 @@
+// @import "src/styles/base/fn";
+.mui-check-icon {
+    display: inline-block;
+    position: relative;
+    .mui-icon-check1,
+    .mui-icon-uncheck1 {
+        font-size: px2rem(40);
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+    }
+}
