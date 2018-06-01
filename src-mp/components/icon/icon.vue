@@ -5,7 +5,7 @@
     </svg>
 </template>
 <script>
-import 'src/libs/iconfont'
+// import '../../libs/iconfont'
 export default {
     name: 'm-icon',
     props: {
@@ -18,6 +18,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/icon/iconfont";
+@import "../../styles/base/fn";
+@import "../../styles/icon/iconfont";
 </style>

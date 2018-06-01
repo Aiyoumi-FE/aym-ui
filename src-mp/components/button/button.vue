@@ -1,6 +1,6 @@
 <template>
     <button :type="htmlType"
-        :class="classes"
+        :class="['mui-btn',classType,classSize,{disabled:disabled}]"
         :disabled="disabled"
         @click="handleClick">
         <slot></slot>
@@ -43,16 +43,18 @@ export default {
             default: false
         }
     },
+
+    data() {
+        return {}
+    },
     computed: {
-        classes() {
-            return [
-                `${prefixCls}`,
-                {
-                    [`${prefixCls}_${this.type}`]: !!this.type,
-                    [`${prefixCls}_${this.size}`]: this.type !== 'full',
-                    'disabled': this.disabled
-                }
-            ]
+        classType() {
+            return `${prefixCls}_${this.type}`
+        },
+        classSize() {
+            if (this.type !== 'full') {
+                return `${prefixCls}_${this.size}`
+            }
         }
     },
     methods: {
@@ -69,6 +71,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-button/mui-button";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-button/mui-button";
 </style>

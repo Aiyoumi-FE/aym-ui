@@ -1,14 +1,12 @@
 <template>
     <label :for="newId"
-        @click.prevent="handle"
-        @touchstart="startHandle"
-        @touchmove="moveHandle"
-        @touchend="endHandle">
+        @click.prevent="handle">
         <input :id="newId"
             class="mui-switch__input"
             type="checkbox"
             :checked="checked">
-        <div class="mui-switch__box"></div>
+        <div class="mui-switch__box"
+            :class="{'mui-switch__box_checked':checked}"></div>
     </label>
 </template>
 <script>
@@ -49,25 +47,11 @@ export default {
         handle() {
             this.$emit('change', !this.checked)
             this.$emit('input', !this.checked)
-        },
-        startHandle(e) {
-            let p = e.targetTouches[0]
-            this.startPosition.x = p.clientX
-            this.startPosition.y = p.clientY
-        },
-        moveHandle(e) {},
-        endHandle(e) {
-            let p = e.changedTouches[0]
-            let dis = Math.sqrt(Math.pow(p.clientX - this.startPosition.x, 2) + Math.pow(p.clientY - this.startPosition.y, 2))
-            if (dis >= 30) {
-                this.handle()
-            }
         }
-
     }
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-form/mui-switch";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-form/mui-switch";
 </style>

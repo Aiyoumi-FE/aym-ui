@@ -1,5 +1,5 @@
 <template>
-    <div :class="classes">
+    <div :class="['mui-cell',classType]">
         <div class="mui-cell__hd">
             <slot name="hd">
                 <label v-if="title"
@@ -7,13 +7,33 @@
             </slot>
         </div>
         <div class="mui-cell__bd">
-            <input class="mui-input"
-                v-model="inputValue"
-                v-bind="$props"
-                :type="type"
-                :placeholder="placeholder"
-                :readonly="readonly"
-                :disabled="disabled">
+            <template v-if="type==='tel'">
+                <input type="tel"
+                    class="mui-input"
+                    v-model="inputValue"
+                    v-bind="$props"
+                    :placeholder="placeholder"
+                    :readonly="readonly"
+                    :disabled="disabled">
+            </template>
+            <template v-else-if="type==='password'">
+                <input type="password"
+                    class="mui-input"
+                    v-model="inputValue"
+                    v-bind="$props"
+                    :placeholder="placeholder"
+                    :readonly="readonly"
+                    :disabled="disabled">
+            </template>
+            <template v-else>
+                <input type="text"
+                    class="mui-input"
+                    v-model="inputValue"
+                    v-bind="$props"
+                    :placeholder="placeholder"
+                    :readonly="readonly"
+                    :disabled="disabled">
+            </template>
         </div>
         <div class="mui-cell__ft">
             <slot name="ft">
@@ -105,15 +125,43 @@ export default {
             currentTime: 0
         }
     },
+
+    //     classType() {
+    //     return `${prefixCls}_${this.type}`
+    // },
+    // classSize() {
+    //     if (this.type !== 'full') {
+    //         return `${prefixCls}_${this.size}`
+    //     }
+    //     return ''
+    // },
+    // classes() {
+    //     // [`${prefixCls}`,{`${prefixCls}_${this.type}`}]
+
+    //     return [
+    //         `${prefixCls}`,
+    //         {
+    //             [`${prefixCls}_${this.type}`]: !!this.type,
+    //             [`${prefixCls}_${this.size}`]: this.type !== 'full',
+    //             'disabled': this.disabled
+    //         }
+    //     ]
+    // }
+
     computed: {
-        classes() {
-            return [
-                `${prefixCls}`,
-                {
-                    [`${prefixCls}_${this.inputType}`]: this.inputType.length > 0
-                }
-            ]
+        classType() {
+            if (this.inputType) {
+                return `${prefixCls}_${this.inputType}`
+            }
         },
+        // classes() {
+        //     return [
+        //         `${prefixCls}`,
+        //         {
+        //             [`${prefixCls}_${this.inputType}`]: this.inputType.length > 0
+        //         }
+        //     ]
+        // },
         isDisabled() {
             return this.isTiming
         },
@@ -162,8 +210,8 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-cell/mui-cell";
-@import "src/styles/widget/mui-form/mui-input";
-@import "src/styles/widget/mui-form/mui-vcode";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-cell/mui-cell";
+@import "../../styles/widget/mui-form/mui-input";
+@import "../../styles/widget/mui-form/mui-vcode";
 </style>

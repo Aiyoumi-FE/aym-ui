@@ -45,6 +45,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-tabbar/mui-tabbar";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-tabbar/mui-tabbar";
 </style>

@@ -12,8 +12,7 @@
         <div class="mui-cell__bd">
             <slot name="title">{{ title }}</slot>
         </div>
-        <div class="mui-cell__ft"
-            :class="valueClass">
+        <div class="mui-cell__ft">
             <slot name="value">{{value}}</slot>
         </div>
     </div>
@@ -21,7 +20,7 @@
 <script>
 import {
     go
-} from 'src/libs/router'
+} from '../../libs/router'
 export default {
     name: 'm-cell',
     props: {
@@ -54,15 +53,16 @@ export default {
             default: false
         }
     },
-    computed: {
-        valueClass() {
-            return {}
-        }
-    },
+    computed: {},
     methods: {
         handleClick(event) {
             if (this.link) {
                 if (!this.disabled) {
+                    if (typeof wx === 'object') {
+                        let url = this.link
+                        wx.navigateTo({ url })
+                        return
+                    }
                     go(this.link, this.$router)
                 }
             } else {
@@ -73,6 +73,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-cell/mui-cell";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-cell/mui-cell";
 </style>

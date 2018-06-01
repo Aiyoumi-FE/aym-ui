@@ -1,3 +1,4 @@
+const EVENT_MASK_CLICK = 'mask-click'
 export default {
     data() {
         return {
@@ -12,10 +13,14 @@ export default {
     },
     methods: {
         show() {
+            console.log('---api show---')
             this.isVisible = true
         },
         hide() {
             this.isVisible = false
+        },
+        maskClick(e) {
+            this.$emit(EVENT_MASK_CLICK, e)
         }
     }
 }

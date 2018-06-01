@@ -1,5 +1,5 @@
 <template>
-    <span :class="classes">
+    <span :class="['mui-tags',classType,classBg,classes]">
         <slot></slot>
     </span>
 </template>
@@ -15,6 +15,9 @@ export default {
                 return ['bg', 'border'].indexOf(value) > -1
             }
         },
+        classes: {
+            type: String
+        },
         bgColor: {
             type: String,
             default: 'orange',
@@ -24,17 +27,19 @@ export default {
         }
     },
     computed: {
-        classes() {
-            return [{
-                [`${prefixCls}_${this.type}`]: !!this.type,
-                [`${prefixCls}_${this.bgColor}`]: this.type === 'bg'
-            }]
+        classType() {
+            return `${prefixCls}_${this.type}`
+        },
+        classBg() {
+            if (this.type === 'bg') {
+                return `${prefixCls}_${this.bgColor}`
+            }
         }
     },
     methods: {}
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-tags/mui-tags";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-tags/mui-tags";
 </style>

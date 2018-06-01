@@ -1,9 +1,10 @@
 <template>
     <div class="m-marquee"
         :style="{height: height + 'px'}">
+        <!--  :style="{transform: `translate3d(0,${currenTranslateY}px,0)`, transition: `transform ${noAnimate ? 0 : duration}ms`}"> -->
         <ul class="m-marquee-box"
             ref="box"
-            :style="{transform: `translate3d(0,${currenTranslateY}px,0)`, transition: `transform ${noAnimate ? 0 : duration}ms`}">
+            :style="{transform: styleTransform, transition:styleTransition}">
             <slot></slot>
         </ul>
     </div>
@@ -29,10 +30,18 @@ export default {
     data() {
         return {
             currenTranslateY: 0,
-            height: '',
+            height: this.itemHeight,
             length: 0,
             currentIndex: 0,
             noAnimate: false
+        }
+    },
+    computed: {
+        styleTransform() {
+            return `translate3d(0,${this.currenTranslateY}px,0)`
+        },
+        styleTransition() {
+            return `transform ${this.noAnimate ? 0 : this.duration}ms`
         }
     },
     beforeDestroy() {
@@ -52,6 +61,7 @@ export default {
             }
 
             this.cloneNode = null
+
             let firstItem = this.$refs.box.firstElementChild
             if (!firstItem) {
                 return false
@@ -105,6 +115,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-marquee/mui-marquee";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-marquee/mui-marquee";
 </style>

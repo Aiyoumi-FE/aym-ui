@@ -1,28 +1,37 @@
 <template>
-    <transition name="fade">
-        <m-popup type="modal"
-            v-show="isVisible">
-            <transition name="slide-up">
-                <div class="mui-modal-panel"
-                    v-show="isVisible">
-                    <slot>
-                        <slot name="header">
-                            <m-header v-if="title"
-                                :title="title"
-                                type="modal"
-                                isLine
-                                @click="close"></m-header>
-                        </slot>
-                        <div class="mui-modal__content">
-                            <slot name="content"></slot>
-                            <div v-html="content"></div>
-                        </div>
-                        <slot name="footer"></slot>
-                    </slot>
+    <!--     <m-popup type="modal"
+        :isShow="isVisible"
+        @mask-click="maskClick">
+        <div class="mui-modal-panel">
+            <slot>
+                <slot name="header">
+                    <m-header v-if="title"
+                        :title="title"
+                        type="modal"
+                        isLine
+                        @click="close"></m-header>
+                </slot>
+                <div class="mui-modal__content">
+                    <slot name="content"></slot>
                 </div>
-            </transition>
-        </m-popup>
-    </transition>
+                <slot name="footer"></slot>
+            </slot>
+        </div>
+    </m-popup> -->
+    <div class="mui-popup"
+        :class="[{hide:!isVisible}]">
+        <div class="mui-mask"
+            :class="{hide:!mask}"
+            @click="maskClick"
+            :style="transparent? transparentStyle :''"></div>
+        <div class="mui-popup__container">
+            <div class="mui-popup__content">
+                <slot>
+                    {{content}}
+                </slot>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 import mPopup from '../popup/popup'
@@ -32,6 +41,7 @@ const EVENT_CLOSE = 'close'
 export default {
     name: 'm-modal',
     mixins: [apiMixin],
+    extends: mPopup,
     props: {
         title: {
             type: String,

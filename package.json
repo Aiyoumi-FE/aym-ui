@@ -16,7 +16,8 @@
     "style": "lib/index.css",
     "files": [
         "lib",
-        "src"
+        "src",
+        "src-mp"
     ],
     "scripts": {
         "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

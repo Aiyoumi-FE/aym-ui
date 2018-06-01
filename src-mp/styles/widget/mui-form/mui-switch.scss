@@ -38,8 +38,9 @@
     }
 }
 
-.mui-switch:checked,
-.mui-switch__input:checked~.mui-switch__box {
+// .mui-switch:checked,
+// .mui-switch__input:checked~
+.mui-switch__box_checked {
     background-color: $colorPrimary;
     &:before {
         transform: scale(0);

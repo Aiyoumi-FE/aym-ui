@@ -1,6 +1,10 @@
 <template>
-    <component :is="type"
-        v-bind="$props"></component>
+    <!-- <component :is="type"
+        v-bind="$props"></component> -->
+    <timeline v-if="type==='timeline'"
+        v-bind="$props"> </timeline>
+    <step v-else
+        v-bind="$props"></step>
 </template>
 <script>
 import step from './step'
@@ -36,7 +40,11 @@ export default {
             default: true
         }
     },
-    computed: {},
+    computed: {
+        hehe() {
+
+        }
+    },
     components: {
         step,
         timeline
@@ -45,6 +53,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-progress/mui-progress";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-progress/mui-progress";
 </style>
