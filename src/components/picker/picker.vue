@@ -9,7 +9,9 @@
                         <a class="close"
                             href="javascript:;"
                             data-action="cancel"
-                            @click="cancel"><span class="mui-icon-close1"></span></a>
+                            @click="cancel">
+                            <m-icon type="close"></m-icon>
+                        </a>
                         <h3>{{title}}</h3>
                     </div>
                     <div class="mui-picker__bd">
@@ -39,6 +41,7 @@
 import BScroll from 'better-scroll'
 import mButton from '../button/button'
 import mPopup from '../popup/popup'
+import mIcon from '@/components/icon/icon'
 import apiMixin from '../../common/mixins/api'
 
 const EVENT_SELECT = 'select'
@@ -92,7 +95,8 @@ export default {
     },
     components: {
         mPopup,
-        mButton
+        mButton,
+        mIcon
     },
     created() {
         if (!this.pickerSelectedIndex.length) {
