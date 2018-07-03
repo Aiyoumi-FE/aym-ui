@@ -1,5 +1,5 @@
 /**
- * aym-ui v1.2.2
+ * aym-ui v1.3.0
  */
 
 @charset "UTF-8";
@@ -1278,8 +1278,9 @@ li {
     position: absolute;
     left: 0;
     top: 0;
+    color: #666;
 }
-.mui-picker__hd .close span {
+.mui-picker__hd .close .mui-icon {
       font-size: 0.68267rem;
 }
 .mui-picker__hd h3 {

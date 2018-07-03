@@ -236,6 +236,30 @@
 /*
 * mui 规范中定义的颜色
 */
+.mui-icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 1em;
+  height: 1em;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+             normalize.css 中也包含这行 */
+  overflow: hidden;
+  font-size: 0.93867rem;
+}
+
+@charset "UTF-8";
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .mui-picker .mui-picker-panel {
   height: 12.8rem;
   background-color: #fff;
@@ -256,8 +280,9 @@
     position: absolute;
     left: 0;
     top: 0;
+    color: #666;
 }
-.mui-picker__hd .close span {
+.mui-picker__hd .close .mui-icon {
       font-size: 0.68267rem;
 }
 .mui-picker__hd h3 {
