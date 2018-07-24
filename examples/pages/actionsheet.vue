@@ -16,6 +16,11 @@ export default {
         showActionsheet() {
             this.actionsheet = this.$createActionSheet({
                 data: ['本科', '专科', '研究生', '博士'],
+                isBottomBtn: false,
+                selectItem: {
+                    isSelect: true,
+                    index: 0
+                },
                 onSelect: (item, index) => {
                     this.$_toast({
                         time: 1000,
