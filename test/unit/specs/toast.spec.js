@@ -61,7 +61,7 @@ describe('Toast', () => {
             expect(cmp.find('.mui-toast__txt').text()).toContain('呵呵呵')
         })
 
-        it('icon测试 ', () => {
+        xit('icon测试 ', () => {
             cmp.setProps({
                 txt: '呵呵呵',
                 icon: 'loading'
