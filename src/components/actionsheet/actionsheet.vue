@@ -73,6 +73,11 @@ export default {
             }
         }
     },
+    watch: {
+        selectItem(val) {
+            this.sIndex = val.index
+        }
+    },
     computed: {},
     methods: {
         cancel() {

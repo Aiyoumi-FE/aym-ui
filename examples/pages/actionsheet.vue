@@ -2,7 +2,16 @@
     <m-page>
         <m-header slot="header"></m-header>
         <demo-content>
-            <m-button @click="showActionsheet">Actionsheet</m-button>
+            <m-cell-group>
+                <m-cell title="学校"
+                    :value="school.name"
+                    is-link
+                    @click="fnClick"></m-cell>
+                <m-cell title="学历"
+                    :value="education.name"
+                    is-link
+                    @click="fnClick1"></m-cell>
+            </m-cell-group>
         </demo-content>
     </m-page>
 </template>
@@ -10,22 +19,47 @@
 export default {
     name: 'demo-actionsheet',
     data() {
-        return {}
+        return {
+            school: {
+                name: '请选择',
+                code: ''
+            },
+            education: {
+                name: '请选择',
+                code: ''
+            },
+            schoolData: ['北京大学', '浙江大学', '财经大学'],
+            schoolSelectItem: {
+                isSelect: true,
+                index: 0
+            },
+            decucationData: ['本科', '专科', '研究生', '博士'],
+            decucationSelectItem: {
+                isSelect: true,
+                index: 0
+            }
+        }
     },
     methods: {
-        showActionsheet() {
+        fnClick() {
             this.actionsheet = this.$createActionSheet({
-                data: ['本科', '专科', '研究生', '博士'],
+                data: this.schoolData,
                 isBottomBtn: false,
-                selectItem: {
-                    isSelect: true,
-                    index: 0
-                },
+                selectItem: this.schoolSelectItem,
                 onSelect: (item, index) => {
-                    this.$_toast({
-                        time: 1000,
-                        txt: '选择了: 第' + index + '项, ' + item
-                    })
+                    this.schoolSelectItem.index = index
+                    this.school.name = item
+                }
+            }).show()
+        },
+        fnClick1() {
+            this.actionsheet = this.$createActionSheet({
+                data: this.decucationData,
+                isBottomBtn: false,
+                selectItem: this.decucationSelectItem,
+                onSelect: (item, index) => {
+                    this.decucationSelectItem.index = index
+                    this.education.name = item
                 }
             }).show()
         }
