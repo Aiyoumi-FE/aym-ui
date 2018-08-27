@@ -8,7 +8,8 @@
             class="mui-switch__input"
             type="checkbox"
             :checked="checked">
-        <div class="mui-switch__box"></div>
+        <div class="mui-switch__box"
+            :class="{'mui-switch__box_checked':checked}"></div>
     </label>
 </template>
 <script>

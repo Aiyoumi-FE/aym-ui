@@ -24,11 +24,19 @@ export default {
         }
     },
     computed: {
+        classType() {
+            return `${prefixCls}_${this.type}`
+        },
+        classBg() {
+            if (this.type === 'bg') {
+                return `${prefixCls}_${this.bgColor}`
+            }
+        },
         classes() {
-            return [{
-                [`${prefixCls}_${this.type}`]: !!this.type,
-                [`${prefixCls}_${this.bgColor}`]: this.type === 'bg'
-            }]
+            return [
+                this.classType,
+                this.classBg
+            ]
         }
     },
     methods: {}

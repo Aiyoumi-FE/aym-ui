@@ -106,12 +106,16 @@ export default {
         }
     },
     computed: {
+        classType() {
+            if (this.inputType) {
+                return `${prefixCls}_${this.inputType}`
+            }
+        },
         classes() {
             return [
                 `${prefixCls}`,
-                {
-                    [`${prefixCls}_${this.inputType}`]: this.inputType.length > 0
-                }
+                this.classType
+                // {  [`${prefixCls}_${this.inputType}`]: this.inputType.length > 0}
             ]
         },
         isDisabled() {

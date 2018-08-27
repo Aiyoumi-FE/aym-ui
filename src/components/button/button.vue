@@ -44,14 +44,21 @@ export default {
         }
     },
     computed: {
+        classType() {
+            return `${prefixCls}_${this.type}`
+        },
+        classSize() {
+            if (this.type !== 'full') {
+                return `${prefixCls}_${this.size}`
+            }
+        },
+
         classes() {
             return [
                 `${prefixCls}`,
-                {
-                    [`${prefixCls}_${this.type}`]: !!this.type,
-                    [`${prefixCls}_${this.size}`]: this.type !== 'full',
-                    'disabled': this.disabled
-                }
+                this.classType,
+                this.classSize,
+                { 'disabled': this.disabled }
             ]
         }
     },
