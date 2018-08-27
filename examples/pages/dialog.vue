@@ -2,6 +2,10 @@
     <m-page>
         <m-header slot="header"></m-header>
         <demo-content>
+            <h5>简单调用</h5>
+            <m-button @click="showAlert">$_alert('简单调用')</m-button>
+            <m-button @click="showConfirm">$_confirm('简单调用')</m-button>
+            <br>
             <h5>api调用</h5>
             <m-button @click="showDialog1">有标题单按钮</m-button>
             <m-button @click="showDialog2">有标题双按钮</m-button>
@@ -38,6 +42,18 @@ export default {
         return {}
     },
     methods: {
+        showAlert() {
+            this.$_alert('简单调用').then(res => {
+                this.$_toast({ txt: '点了确认', time: 1000 })
+            })
+        },
+        showConfirm() {
+            this.$_confirm('简单调用').then(res => {
+                this.$_toast({ txt: '点了确认', time: 1000 })
+            }, res => {
+                this.$_toast({ txt: '点了取消', time: 1000 })
+            })
+        },
         showDialog1() {
             this.$createDialog({
                 title: '标题',
