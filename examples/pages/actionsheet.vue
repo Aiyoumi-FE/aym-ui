@@ -31,7 +31,7 @@ export default {
             schoolData: ['北京大学', '浙江大学', '财经大学'],
             schoolSelectItem: {
                 isSelect: true,
-                index: 0
+                index: 1
             },
             decucationData: ['本科', '专科', '研究生', '博士'],
             decucationSelectItem: {
@@ -44,7 +44,7 @@ export default {
         fnClick() {
             this.actionsheet = this.$createActionSheet({
                 data: this.schoolData,
-                isBottomBtn: false,
+                // isBottomBtn: false,
                 selectItem: this.schoolSelectItem,
                 onSelect: (item, index) => {
                     this.schoolSelectItem.index = index

@@ -33,7 +33,7 @@
         "codecov": "codecov",
         "jest:dev": "jest --config test/unit/jest.conf.js --watch",
         "e2e": "node test/e2e/runner.js",
-        "e2e:dev": "cross-env PORT=8080 nightwatch -c test/e2e/nightwatch.conf.js --env chrome",
+        "e2e:dev": "cross-env PORT=8081 nightwatch -c test/e2e/nightwatch.conf.js --env chrome",
         "test": "npm run lint && npm run jest && npm run e2e",
         "deploy:docs": "npm run build:demo && node build/bin/deploy.docs.js",
         "release": "bash scripts/release.sh"
@@ -41,6 +41,7 @@
     "author": "aymFE",
     "license": "MIT",
     "dependencies": {
+        "node-sass": "^4.9.4",
         "vue": "^2.5.16",
         "vue-router": "^3.0.1"
     },
@@ -110,7 +111,6 @@
         "mustache": "^2.3.0",
         "nightwatch": "^0.9.20",
         "node-notifier": "^5.1.2",
-        "node-sass": "^4.8.3",
         "opn": "^5.3.0",
         "optimize-css-assets-webpack-plugin": "^3.2.0",
         "ora": "^1.4.0",
