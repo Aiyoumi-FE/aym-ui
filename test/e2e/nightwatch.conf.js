@@ -4,7 +4,7 @@ var config = require('../../config')
 // http://nightwatchjs.org/gettingstarted#settings-file
 module.exports = {
     src_folders: ['test/e2e/specs'],
-    // src_folders: ['test/e2e/specs/modal.js'],
+    // src_folders: ['test/e2e/specs/actionsheet.js'],
     output_folder: 'test/e2e/reports',
     custom_assertions_path: ['test/e2e/custom-assertions'],
 
@@ -30,8 +30,8 @@ module.exports = {
                 path: 'test/e2e/screenshots/failure'
             },
             globals: {
-                // devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
-                devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port) + '/examples.html#/',
+                devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port) + '/#/',
+                // devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port) + '/examples.html#/',
                 screenshots: 'test/e2e/screenshots/common/'
             }
         },

@@ -12,7 +12,7 @@ module.exports = {
         const popup = '.mui-modal:not([style*="display: none"])'
 
         browser
-            .windowSize('windowHandle是什么', 375, 667)
+            .windowSize('', 375, 667)
             .url(devServer)
             .waitForElementVisible('#app', 5000)
 

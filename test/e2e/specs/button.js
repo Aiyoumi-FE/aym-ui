@@ -9,7 +9,7 @@ module.exports = {
         // see nightwatch.conf.js
         const devServer = browser.globals.devServerURL + PAGE_URL
         browser
-            .windowSize('windowHandle是什么', 375, 667)
+            .windowSize('', 375, 667)
             .url(devServer)
             .waitForElementVisible('#app', 5000)
             .assert.elementCount('button', 20)

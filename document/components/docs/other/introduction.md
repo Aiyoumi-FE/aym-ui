@@ -5,7 +5,7 @@
 ### 安装
  
 ```
-npm install aym-ui --save-dev
+npm install aym-ui --save
 ```
 
 #### 使用

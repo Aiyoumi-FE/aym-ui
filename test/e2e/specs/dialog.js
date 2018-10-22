@@ -11,17 +11,17 @@ module.exports = {
         const SCREENSHOT_PATH = browser.globals.screenshots + name + '.png'
         const dialog = '.mui-dialog:not([style*="display: none"])'
         browser
-            .windowSize('windowHandle是什么', 375, 667)
+            .windowSize('', 375, 667)
             .url(devServer)
             .waitForElementVisible('#app', 5000)
             // .click('.mui-btn')
-            .assert.elementCount('.mui-btn', 5)
+            .assert.elementCount('.mui-btn', 7)
 
-        for (let i = 1; i < 6; i++) {
+        for (let i = 1; i < 8; i++) {
             showPopup(i, '.mui-dialog__btn_primary', '确认')
         }
-        showPopup(2)
         showPopup(4)
+        showPopup(6)
         browser.end()
 
         function showPopup(n, btn = '.mui-dialog__btn_default', txt = '取消') {

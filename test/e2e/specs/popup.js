@@ -10,7 +10,7 @@ module.exports = {
         const devServer = browser.globals.devServerURL + PAGE_URL
         const SCREENSHOT_PATH = browser.globals.screenshots + name + '.png'
         browser
-            .windowSize('windowHandle是什么', 375, 667)
+            .windowSize('', 375, 667)
             .url(devServer)
             .waitForElementVisible('#app', 5000)
             .click('.mui-btn')
