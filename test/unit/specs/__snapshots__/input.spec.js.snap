@@ -14,12 +14,7 @@ exports[`Input 属性测试 vcode: 倒计时到0 1`] = `
     class="mui-cell__bd"
   >
     <input
-      btntype="codeBtn"
       class="mui-input"
-      inputtype="vcode"
-      istiming="true"
-      placeholder=""
-      title=""
       type="text"
     />
   </div>
@@ -50,12 +45,7 @@ exports[`Input 属性测试 vcode: 倒计时开始 1`] = `
     class="mui-cell__bd"
   >
     <input
-      btntype="codeBtn"
       class="mui-input"
-      inputtype="vcode"
-      istiming="true"
-      placeholder=""
-      title=""
       type="text"
     />
   </div>
@@ -86,11 +76,7 @@ exports[`Input 属性测试 vcode: 计时完毕，保持原样 1`] = `
     class="mui-cell__bd"
   >
     <input
-      btntype="codeBtn"
       class="mui-input"
-      inputtype="vcode"
-      placeholder=""
-      title=""
       type="text"
     />
   </div>

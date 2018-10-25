@@ -147,9 +147,7 @@ export default {
         //     this.$emit(EVENT_INPUT, to)
         // }
     },
-    mounted() {
-        console.log(this)
-    },
+    mounted() {},
     methods: {
         onInput(event) {
             this.$emit(EVENT_INPUT, event.target.value)
