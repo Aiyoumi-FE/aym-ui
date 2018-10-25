@@ -67,7 +67,7 @@ export default {
             if (this.type === 'nav') {
                 return this.$router ? this.$router.go(-1) : window.history.go(-1)
             } else {
-                this.$emit('click', event)
+                this.$emit('click')
             }
         }
     }

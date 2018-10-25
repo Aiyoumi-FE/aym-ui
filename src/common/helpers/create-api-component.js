@@ -4,19 +4,25 @@ import parseRenderData from './parse-render-data'
 export default function createAPIComponent(Vue, Component, events = [], single = false) {
     let singleComponent
     let singleInstance
+    const beforeFns = []
     const api = {
+        before(fn) {
+            beforeFns.push(fn)
+        },
         open(data, renderFn, instanceSingle) {
             if (typeof renderFn !== 'function') {
                 instanceSingle = renderFn
                 renderFn = null
             }
+            beforeFns.forEach((before) => {
+                before(data, renderFn, instanceSingle)
+            })
             if (instanceSingle === undefined) {
                 instanceSingle = single
             }
             if (instanceSingle && singleComponent) {
                 singleInstance.updateRenderData(data, renderFn)
                 singleInstance.$forceUpdate()
-                // singleComponent.show && singleComponent.show()
                 return singleComponent
             }
 
@@ -27,8 +33,10 @@ export default function createAPIComponent(Vue, Component, events = [], single =
             component.remove = function() {
                 originRemove && originRemove.call(this)
                 instance.destroy()
-                singleComponent = null
-                singleInstance = null
+                if (instanceSingle) {
+                    singleComponent = null
+                    singleInstance = null
+                }
             }
             const originShow = component.show
             component.show = function() {

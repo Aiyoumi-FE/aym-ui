@@ -39,17 +39,18 @@ module.exports = {
 
         function showPopup(n, txt = '', btn = '.mui-btn_full') {
             btn = popup + ' ' + btn
-            let obj
-            obj = `.mui-cells:nth-of-type(1) .mui-cell:nth-of-type(${n})`
+            let obj = `.mui-cells:nth-of-type(1) .mui-cell:nth-of-type(${n})`
             if (n === 4) {
                 obj = '.mui-cells:nth-of-type(2) .mui-cell:nth-of-type(1)'
             }
             browser.click(obj)
+                .waitForElementVisible(popup, 1000)
                 .assert.elementCount(popup, 1)
                 .pause(300)
                 .click(btn)
                 .pause(300)
                 .assert.containsText(obj, txt)
+                .waitForElementNotVisible('.mui-toast', 3000) // toast消失再点击
         }
         // .end()
     }

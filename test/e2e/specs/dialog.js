@@ -22,13 +22,15 @@ module.exports = {
         }
         showPopup(4)
         showPopup(6)
+        // showPopup(3, '.mui-dialog__btn_primary', '确认')
+
         browser.end()
 
         function showPopup(n, btn = '.mui-dialog__btn_default', txt = '取消') {
             btn = dialog + ' ' + btn
-            console.log(btn)
             browser.click(`.mui-btn:nth-of-type(${n})`)
                 .waitForElementVisible(dialog, 1000)
+                // .pause(300)
                 .click(btn)
                 .waitForElementVisible('.mui-toast', 1000)
                 .assert.containsText('.mui-toast', txt)

@@ -77,19 +77,17 @@ export default {
     mounted() {
         this.picker = this.$createPicker({
             title: 'Picker-单列',
-            data: [data1],
-            selectedIndex: [1],
-            cancelTxt: 'xx',
+            data: [
+                ['妲己', '张良', '明世隐', '小乔', '黄忠', '甄姬']
+            ],
+            selectedIndex: [0],
             confirmTxt: '确定',
             onSelect: (selectedItem, selectedIndex) => {
+                console.log(selectedItem)
                 this.pickerText = this.showText(selectedItem)
             },
             onCancel: () => {
-                // this.$_toast({
-                //     type: 'correct',
-                //     txt: 'Clicked cancel button',
-                //     time: 1000
-                // })
+                this.$_toast('取消选择')
             }
         })
         this.mutiPicker = this.$createPicker({
@@ -99,11 +97,7 @@ export default {
                 this.mutiPickerText = this.showText(selectedItem)
             },
             onCancel: () => {
-                // this.$_toast({
-                //     type: 'correct',
-                //     txt: 'Clicked cancel button',
-                //     time: 1000
-                // })
+                this.$_toast('取消选择')
             }
         })
         this.linkagePicker = this.$createPicker({
@@ -124,11 +118,7 @@ export default {
                 this.linkagePickerText = this.showText(selectedItem)
             },
             onCancel: () => {
-                // this.$_toast({
-                //     type: 'correct',
-                //     txt: 'Clicked cancel button',
-                //     time: 1000
-                // })
+                this.$_toast('取消选择')
             }
         })
     },
@@ -151,7 +141,8 @@ export default {
         },
         showText(arr) {
             return arr.reduce((accumulator, cur) => {
-                return accumulator + cur.text
+                let curText = typeof cur !== 'object' ? cur : cur.text
+                return accumulator + curText
             }, '')
         },
         comPickerSelect(selectedItem, selectedIndex) {

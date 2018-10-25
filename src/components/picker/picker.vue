@@ -23,7 +23,9 @@
                                 <ul class="wheel-scroll">
                                     <li v-for="(item,itemIndex) in data"
                                         class="wheel-item"
-                                        :class="{'active':itemIndex == pickerSelectedIndex[index]}">{{item[textKey]}}</li>
+                                        :class="{'active':itemIndex == pickerSelectedIndex[index]}">
+                                        {{item|showText(textKey)}}
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -78,6 +80,12 @@ export default {
         isShow: {
             type: Boolean,
             default: false
+        }
+    },
+    filters: {
+        showText(value, textKey) {
+            let typeValue = typeof value
+            return (typeValue === 'string' || typeValue === 'number') ? value : value[textKey]
         }
     },
     data() {
