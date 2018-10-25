@@ -10,8 +10,10 @@
             <template v-if="type==='tel'">
                 <input type="tel"
                     class="mui-input"
-                    v-model="inputValue"
-                    v-bind="$props"
+                    v-model.lazy="inputValue"
+                    @blur="onBlur"
+                    @input="onInput"
+                    @change="onChange"
                     :placeholder="placeholder"
                     :readonly="readonly"
                     :disabled="disabled">
@@ -19,8 +21,10 @@
             <template v-else-if="type==='password'">
                 <input type="password"
                     class="mui-input"
-                    v-model="inputValue"
-                    v-bind="$props"
+                    v-model.lazy="inputValue"
+                    @blur="onBlur"
+                    @input="onInput"
+                    @change="onChange"
                     :placeholder="placeholder"
                     :readonly="readonly"
                     :disabled="disabled">
@@ -28,8 +32,10 @@
             <template v-else>
                 <input type="text"
                     class="mui-input"
-                    v-model="inputValue"
-                    v-bind="$props"
+                    v-model.lazy="inputValue"
+                    @blur="onBlur"
+                    @input="onInput"
+                    @change="onChange"
                     :placeholder="placeholder"
                     :readonly="readonly"
                     :disabled="disabled">
@@ -188,6 +194,15 @@ export default {
         }
     },
     methods: {
+        onInput(event) {
+            this.$emit('_input', event.target.value)
+        },
+        onBlur(event) {
+            this.$emit('blur', event.target.value)
+        },
+        onChange(event) {
+            this.$emit('change', event.target.value)
+        },
         getCode(e) {
             if (this.isTiming) {
                 return

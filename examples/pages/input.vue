@@ -19,6 +19,8 @@
             <m-cell-group>
                 <m-input title="文本"
                     type="tel"
+                    @blur="inputBlur"
+                    v-model="testValue0"
                     placeholder="请输入手机号"></m-input>
                 <m-input title="最大长度6"
                     v-model="testValue1"
@@ -60,6 +62,7 @@ export default {
     name: 'demo-input',
     data() {
         return {
+            testValue0: 'testblur',
             testValue1: '123456',
             testValue2: 'readonly',
             testValue3: 'disabled',
@@ -67,6 +70,9 @@ export default {
         }
     },
     methods: {
+        inputBlur() {
+            console.log('blur')
+        },
         getCode(type) {
             if (type === 'send') {
                 // 异步操作后开始倒计时

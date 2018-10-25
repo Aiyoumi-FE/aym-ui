@@ -6,14 +6,13 @@
                     class="mui-label">{{title}}</label>
             </slot>
         </div>
+        <!-- v-model="inputValue" -->
         <div class="mui-cell__bd">
             <input class="mui-input"
-                v-model="inputValue"
-                v-bind="$props"
-                :type="type"
-                :placeholder="placeholder"
-                :readonly="readonly"
-                :disabled="disabled">
+                :value="value"
+                v-on="listeners"
+                v-bind="$attrs"
+                :type="type">
         </div>
         <div class="mui-cell__ft">
             <slot name="ft">
@@ -40,6 +39,7 @@ const EVENT_GETCODE = 'getCode'
 const EVENT_INPUT = 'input'
 export default {
     name: 'm-input',
+    inheritAttrs: false,
     props: {
         title: {
             type: String,
@@ -49,6 +49,13 @@ export default {
             type: String,
             default: 'text'
         },
+        btnType: {
+            type: String,
+            default: 'codeBtn',
+            validator(value) {
+                return ['codeBtn', 'imgBtn'].indexOf(value) > -1
+            }
+        },
         inputType: {
             type: String,
             default: ''
@@ -57,55 +64,52 @@ export default {
             type: Boolean,
             default: false
         },
-        value: {
-            type: [String, Number],
-            default: ''
-        },
-        placeholder: {
-            type: String,
-            default: ''
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
-        readonly: {
-            type: Boolean,
-            default: false
-        },
-        btnType: {
-            type: String,
-            default: 'codeBtn',
-            validator(value) {
-                return ['codeBtn', 'imgBtn'].indexOf(value) > -1
-            }
-        },
-        autofocus: {
-            type: Boolean,
-            default: false
-        },
-        autocomplete: {
-            type: Boolean,
-            default: false
-        },
-        name: String,
-        id: String,
-        form: String,
-        minlength: Number,
-        maxlength: Number,
-        resize: String,
-        min: Number,
-        max: Number,
-        step: Number,
-        tabindex: String
+        value: {}
+        // placeholder: {
+        //     type: String,
+        //     default: ''
+        // },
+        // disabled: {
+        //     type: Boolean,
+        //     default: false
+        // },
+        // readonly: {
+        //     type: Boolean,
+        //     default: false
+        // },
+
+        // autofocus: {
+        //     type: Boolean,
+        //     default: false
+        // },
+        // autocomplete: {
+        //     type: Boolean,
+        //     default: false
+        // },
+        // name: String,
+        // id: String,
+        // form: String,
+        // minlength: Number,
+        // maxlength: Number,
+        // resize: String,
+        // min: Number,
+        // max: Number,
+        // step: Number,
+        // tabindex: String
     },
     data() {
         return {
-            inputValue: this.value,
+            // inputValue: this.value,
             currentTime: 0
         }
     },
     computed: {
+        listeners() {
+            return {
+                ...this.$listeners,
+                input: this.onInput
+            }
+        },
         classType() {
             if (this.inputType) {
                 return `${prefixCls}_${this.inputType}`
@@ -135,15 +139,21 @@ export default {
                     this.$emit(EVENT_GETCODE, 'done')
                 })
             }
-        },
-        value(to) {
-            this.inputValue = to
-        },
-        inputValue(to) {
-            this.$emit(EVENT_INPUT, to)
         }
+        // value(to) {
+        //     this.inputValue = to
+        // },
+        // inputValue(to) {
+        //     this.$emit(EVENT_INPUT, to)
+        // }
+    },
+    mounted() {
+        console.log(this)
     },
     methods: {
+        onInput(event) {
+            this.$emit(EVENT_INPUT, event.target.value)
+        },
         getCode(e) {
             if (this.isTiming) {
                 return
