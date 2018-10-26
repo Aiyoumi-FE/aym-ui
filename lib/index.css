@@ -1,5 +1,5 @@
 /**
- * aym-ui v1.3.2
+ * aym-ui v1.3.3
  */
 
 @charset "UTF-8";
@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-touch-callout: none; }
 
 html {
@@ -121,7 +121,7 @@ li {
   .mui-page-loading .mui-page-loading__mask {
     width: 100%;
     height: 100%;
-    background-color: transparent; }
+    background-color: rgba(0, 0, 0, 0); }
   .mui-page-loading .mui-page-loading__content {
     width: 5.12rem;
     height: 5.12rem;
@@ -356,7 +356,7 @@ li {
   border-width: 0;
   outline: 0;
   background: transparent;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-appearance: none;
   overflow: hidden;
 }
@@ -566,7 +566,7 @@ li {
   max-width: 3.84rem;
 }
 .mui-cell_access {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: inherit;
 }
 .mui-cell_access:active {
@@ -675,7 +675,7 @@ li {
   max-width: 3.84rem;
 }
 .mui-cell_access {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: inherit;
 }
 .mui-cell_access:active {
@@ -736,7 +736,7 @@ li {
 .mui-cells_form input,
 .mui-cells_form textarea,
 .mui-cells_form label[for] {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .mui-cell_warn {
   color: #ff6161;
@@ -912,7 +912,7 @@ li {
           flex: 1;
   color: #222222;
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
 }
 .mui-dialog__btn:active {
@@ -1646,17 +1646,14 @@ li {
     transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
     transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
-.mui-switch:checked,
-.mui-switch__input:checked ~ .mui-switch__box {
+.mui-switch__box_checked {
   background-color: #ffe352;
 }
-.mui-switch:checked:before,
-  .mui-switch__input:checked ~ .mui-switch__box:before {
+.mui-switch__box_checked:before {
     -webkit-transform: scale(0);
             transform: scale(0);
 }
-.mui-switch:checked:after,
-  .mui-switch__input:checked ~ .mui-switch__box:after {
+.mui-switch__box_checked:after {
     -webkit-transform: translateX(0.85333rem);
             transform: translateX(0.85333rem);
 }

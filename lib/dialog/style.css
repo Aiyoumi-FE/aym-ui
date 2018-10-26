@@ -132,7 +132,7 @@
           flex: 1;
   color: #222222;
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
 }
 .mui-dialog__btn:active {

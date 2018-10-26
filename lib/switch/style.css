@@ -57,17 +57,14 @@
     transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
     transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
-.mui-switch:checked,
-.mui-switch__input:checked ~ .mui-switch__box {
+.mui-switch__box_checked {
   background-color: #ffe352;
 }
-.mui-switch:checked:before,
-  .mui-switch__input:checked ~ .mui-switch__box:before {
+.mui-switch__box_checked:before {
     -webkit-transform: scale(0);
             transform: scale(0);
 }
-.mui-switch:checked:after,
-  .mui-switch__input:checked ~ .mui-switch__box:after {
+.mui-switch__box_checked:after {
     -webkit-transform: translateX(0.85333rem);
             transform: translateX(0.85333rem);
 }

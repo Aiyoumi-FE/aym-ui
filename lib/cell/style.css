@@ -73,7 +73,7 @@
   max-width: 3.84rem;
 }
 .mui-cell_access {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: inherit;
 }
 .mui-cell_access:active {
@@ -182,7 +182,7 @@
   max-width: 3.84rem;
 }
 .mui-cell_access {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: inherit;
 }
 .mui-cell_access:active {
@@ -243,7 +243,7 @@
 .mui-cells_form input,
 .mui-cells_form textarea,
 .mui-cells_form label[for] {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .mui-cell_warn {
   color: #ff6161;
