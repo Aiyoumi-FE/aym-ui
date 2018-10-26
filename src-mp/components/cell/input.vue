@@ -7,7 +7,20 @@
             </slot>
         </div>
         <div class="mui-cell__bd">
-            <template v-if="type==='tel'">
+            <slot>
+                <input :type="type"
+                    :confirm-type="confirmType"
+                    class="mui-input"
+                    :value="value"
+                    @blur="onBlur"
+                    @input="onInput"
+                    @change="onChange"
+                    :placeholder="placeholder"
+                    :readonly="readonly"
+                    :disabled="disabled"
+                    :maxlength="maxlength">
+            </slot>
+            <!-- <template v-if="type==='tel'">
                 <input type="tel"
                     class="mui-input"
                     v-model.lazy="inputValue"
@@ -39,7 +52,7 @@
                     :placeholder="placeholder"
                     :readonly="readonly"
                     :disabled="disabled">
-            </template>
+            </template> -->
         </div>
         <div class="mui-cell__ft">
             <slot name="ft">
@@ -75,6 +88,7 @@ export default {
             type: String,
             default: 'text'
         },
+        confirmType: String,
         inputType: {
             type: String,
             default: ''
@@ -117,8 +131,10 @@ export default {
         name: String,
         id: String,
         form: String,
-        minlength: Number,
-        maxlength: Number,
+        minlength: {},
+        maxlength: {
+            default: -1
+        },
         resize: String,
         min: Number,
         max: Number,
@@ -185,17 +201,14 @@ export default {
                     this.$emit(EVENT_GETCODE, 'done')
                 })
             }
-        },
-        value(to) {
-            this.inputValue = to
-        },
-        inputValue(to) {
-            this.$emit(EVENT_INPUT, to)
         }
+        // inputValue(to) {
+        //     this.$emit(EVENT_INPUT, to)
+        // }
     },
     methods: {
         onInput(event) {
-            this.$emit('_input', event.target.value)
+            this.$emit('input', event.target.value)
         },
         onBlur(event) {
             this.$emit('blur', event.target.value)
