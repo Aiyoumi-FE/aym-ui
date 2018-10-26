@@ -42,17 +42,17 @@ describe('Input', () => {
         })
 
         it('value', () => {
-            expect(cmp.vm.value).toBe('')
+            expect(cmp.vm.value).toBeFalsy()
             cmp.setProps({ value: VALUE })
             expect(cmp.vm.value).toBe(VALUE)
         })
         it('disabled', () => {
-            expect(cmp.vm.disabled).toBe(false)
+            expect(cmp.vm.disabled).toBeFalsy()
             cmp.setProps({ disabled: true })
             expect(cmp.vm.disabled).toBe(true)
         })
         it('readonly', () => {
-            expect(cmp.vm.readonly).toBe(false)
+            expect(cmp.vm.readonly).toBeFalsy()
             cmp.setProps({ readonly: true })
             expect(cmp.vm.readonly).toBe(true)
         })
