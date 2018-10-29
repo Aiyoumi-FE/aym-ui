@@ -118,11 +118,11 @@ export default {
                     compositionend: (e) => {
                         if (!e.target.composing) return
                         e.target.composing = false
-                        vm.$emit('input', e.target.value)
+                        vm.$emit(EVENT_INPUT, e.target.value)
                     },
                     input: function(e) {
                         if (!e.target.composing) {
-                            vm.$emit('input', e.target.value)
+                            vm.$emit(EVENT_INPUT, e.target.value)
                         }
                     }
                 }
