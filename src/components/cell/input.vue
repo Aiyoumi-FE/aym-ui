@@ -6,7 +6,6 @@
                     class="mui-label">{{title}}</label>
             </slot>
         </div>
-        <!-- v-model="inputValue" -->
         <div class="mui-cell__bd">
             <input class="mui-input"
                 :value="value"
@@ -105,10 +104,29 @@ export default {
     },
     computed: {
         listeners() {
-            return {
-                ...this.$listeners,
-                input: this.onInput
-            }
+            var vm = this
+            return Object.assign({},
+                // 我们从父级添加所有的监听器
+                this.$listeners,
+                // 然后我们添加自定义监听器，
+                // 或覆写一些监听器的行为
+                {
+                    // 这里确保组件配合 `v-model` 的工作
+                    compositionstart: (e) => {
+                        e.target.composing = true
+                    },
+                    compositionend: (e) => {
+                        if (!e.target.composing) return
+                        e.target.composing = false
+                        vm.$emit('input', e.target.value)
+                    },
+                    input: function(e) {
+                        if (!e.target.composing) {
+                            vm.$emit('input', e.target.value)
+                        }
+                    }
+                }
+            )
         },
         classType() {
             if (this.inputType) {
@@ -149,9 +167,6 @@ export default {
     },
     mounted() {},
     methods: {
-        onInput(event) {
-            this.$emit(EVENT_INPUT, event.target.value)
-        },
         getCode(e) {
             if (this.isTiming) {
                 return
