@@ -24,7 +24,7 @@ const fileManifest = [
   },
   {
     "url": "examples.html",
-    "revision": "b9aee6d37c3ddba11cbd7ed0366cbfdd"
+    "revision": "124b38d8017ae2ec7a0890b4dc2179be"
   },
   {
     "url": "static/css/document.57c7da827cab98f2f3fa034d471287d6.css",
@@ -123,8 +123,8 @@ const fileManifest = [
     "revision": "0762cef238bb033bf7dcbae98d8e7b1d"
   },
   {
-    "url": "static/js/examples.dcb7448.js",
-    "revision": "5f626cf84468b43b2e2d12e631276fa1"
+    "url": "static/js/examples.2c4b71e.js",
+    "revision": "16c73bca1f772fd0723b7583af6a8b3c"
   },
   {
     "url": "static/js/manifest.297d352.js",
