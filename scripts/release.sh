@@ -26,6 +26,8 @@ echo "Releasing $VERSION ..."
 
     git push origin refs/tags/v$VERSION
     git push
+    # git release
+    npx conventional-github-releaser -p angular
     # npm
     npm publish
 fi
