@@ -24,15 +24,15 @@ const fileManifest = [
   },
   {
     "url": "examples.html",
-    "revision": "149f1bb9db85e60ce8fcefb86475b2f0"
+    "revision": "95d5449d634094a236da8a92c53e1080"
   },
   {
     "url": "static/css/document.57c7da827cab98f2f3fa034d471287d6.css",
     "revision": "45fd85870a5c2e081f460a5c0764d38c"
   },
   {
-    "url": "static/css/examples.4ad343893faafc2742506e329b591ec6.css",
-    "revision": "f5e838212cc891ab22372da44d4958fa"
+    "url": "static/css/examples.0744042e3781db749411618ccda354d0.css",
+    "revision": "8c8e52b1f2a1167e70193175bab06608"
   },
   {
     "url": "static/js/0.3aa30f2.js",
@@ -123,8 +123,8 @@ const fileManifest = [
     "revision": "0762cef238bb033bf7dcbae98d8e7b1d"
   },
   {
-    "url": "static/js/examples.b0327cd.js",
-    "revision": "8e95ae641bcdbfb03ec522a31fbaed84"
+    "url": "static/js/examples.9f6f33c.js",
+    "revision": "f6816d9ad33bb1bbf71bd0ffe79d9c61"
   },
   {
     "url": "static/js/manifest.297d352.js",
