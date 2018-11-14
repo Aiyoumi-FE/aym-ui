@@ -27,6 +27,7 @@
     word-wrap: break-word;
     word-break: break-all;
     color: $textColorGeneral;
+
     &:first-child {
         padding: px2rem(44) px2rem(60) px2rem(35);
         color: #353535;
@@ -38,6 +39,7 @@
     line-height: px2rem(100);
     font-size: $fontSizeLevel2;
     display: flex;
+
     &:after {
         @include setTopLine($lineColorLight);
     }
@@ -49,14 +51,18 @@
     color: $textColorImportant;
     text-decoration: none;
     @include setTapColor();
+
     &:active {
         background-color: #f2c402;
     }
+
     position: relative;
+
     &:after {
         content: " ";
         @include setLeftLine($lineColorLight);
     }
+
     &:first-child {
         &:after {
             display: none;
@@ -67,6 +73,7 @@
 .mui-dialog__btn_default {
     color: #666666;
     font-size: $fontSizeLevel2;
+
     &:active {
         background-color: #fff;
     }
@@ -75,6 +82,7 @@
 .mui-dialog__btn_primary {
     color: #F99E00;
     font-size: $fontSizeLevel2;
+
     &:active {
         background-color: #fff;
     }
@@ -82,6 +90,7 @@
 
 .mui-dialog-fade-enter-active {
     animation: dialog-fadein .4s;
+
     .mui-dialog-panel {
         animation: dialog-zoom .4s
     }
@@ -91,18 +100,21 @@
     0% {
         opacity: 0
     }
+
     100% {
         opacity: 1
     }
 }
 
 @keyframes dialog-zoom {
-    0 {
+    0% {
         transform: scale(0)
     }
+
     50% {
         transform: scale(1.1)
     }
+
     100% {
         transform: scale(1)
     }
