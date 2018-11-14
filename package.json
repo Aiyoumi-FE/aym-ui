@@ -33,7 +33,9 @@
         "e2e:dev": "cross-env PORT=8081 nightwatch -c test/e2e/nightwatch.conf.js --env chrome",
         "test": "npm run lint && npm run jest && npm run e2e",
         "deploy:docs": "npm run build:demo && node build/bin/deploy.docs.js",
-        "release": "bash scripts/release.sh"
+        "release": "bash scripts/release.sh",
+        "version": "standard-changelog  -f && git add CHANGELOG.md",
+        "commit": "git-cz"
     },
     "author": "aymFE",
     "license": "MIT",
@@ -62,11 +64,13 @@
         "chromedriver": "^2.37.0",
         "clean-webpack-plugin": "^0.1.19",
         "codecov": "^3.0.0",
+        "commitizen": "^3.0.4",
         "connect-history-api-fallback": "^1.3.0",
         "copy-webpack-plugin": "^4.5.1",
         "cross-env": "^5.1.4",
         "cross-spawn": "^5.0.1",
         "css-loader": "^0.28.11",
+        "cz-conventional-changelog": "^2.1.0",
         "eslint": "^4.19.1",
         "eslint-config-standard": "^10.2.1",
         "eslint-friendly-formatter": "^3.0.0",
@@ -123,6 +127,7 @@
         "shelljs": "^0.7.6",
         "sinon": "^4.5.0",
         "sinon-chai": "^2.8.0",
+        "standard-changelog": "^2.0.6",
         "uglifyjs-webpack-plugin": "^1.1.1",
         "url-loader": "^0.5.8",
         "vue-jest": "^2.4.1",
@@ -153,5 +158,10 @@
         "not Edge <= 100",
         "Android >= 4.0",
         "iOS 7"
-    ]
+    ],
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
 }

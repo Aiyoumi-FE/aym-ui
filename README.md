@@ -1,5 +1,6 @@
 
 [![Build Status](https://travis-ci.org/Aiyoumi-FE/aym-ui.svg?branch=master)](https://travis-ci.org/Aiyoumi-FE/aym-ui)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## 爱又米专用VUE组件库。
 

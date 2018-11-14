@@ -2,7 +2,7 @@ set -e
 
 if [[ -z $1 ]]; then
 echo "Enter new version: "
-read VERSION
+read -r VERSION
 else
 VERSION=$1
 fi
@@ -20,8 +20,8 @@ echo "Releasing $VERSION ..."
         lib/
     git commit -m "build: build $VERSION"
 
-     # updata version
-    npm version $VERSION
+     # updata tag version
+    npm version "$VERSION" --message "build: release $VERSION"
     echo " $RELEASE_TAG ..."
 
     git push origin refs/tags/v$VERSION
