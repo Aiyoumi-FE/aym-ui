@@ -1,5 +1,5 @@
 /**
- * aym-ui v1.3.6
+ * aym-ui v1.3.7
  */
 
 @charset "UTF-8";
@@ -974,7 +974,7 @@ li {
 }
 }
 @-webkit-keyframes dialog-zoom {
-0 {
+0% {
     -webkit-transform: scale(0);
             transform: scale(0);
 }
@@ -988,7 +988,7 @@ li {
 }
 }
 @keyframes dialog-zoom {
-0 {
+0% {
     -webkit-transform: scale(0);
             transform: scale(0);
 }
