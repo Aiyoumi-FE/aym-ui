@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.3.8...v1.4.0) (2018-12-21)
+
+
+### Features
+
+* **component:** name 前缀可配 ([6742a49](https://github.com/Aiyoumi-FE/aym-ui/commit/6742a49))
+* **popup:** 弹层类组件支持maskclick事件 ([f6a784e](https://github.com/Aiyoumi-FE/aym-ui/commit/f6a784e))
+
+
+
 ## [1.3.8](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.3.7...v1.3.8) (2018-11-14)
 
 
