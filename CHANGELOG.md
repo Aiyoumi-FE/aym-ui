@@ -1,3 +1,12 @@
+## [1.4.2](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.1...v1.4.2) (2018-12-21)
+
+
+### Reverts
+
+* 修正上一个版本错误 ([6922a92](https://github.com/Aiyoumi-FE/aym-ui/commit/6922a92))
+
+
+
 ## [1.4.1](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.0...v1.4.1) (2018-12-21)
 
 
