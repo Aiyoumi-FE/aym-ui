@@ -1,3 +1,7 @@
+## [1.4.1](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.0...v1.4.1) (2018-12-21)
+
+
+
 # [1.4.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.3.8...v1.4.0) (2018-12-21)
 
 
