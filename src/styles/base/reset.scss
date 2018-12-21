@@ -18,6 +18,11 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 img {
     display: block;
     width: 100%;
@@ -60,24 +65,24 @@ li {
     display: block;
 }
 
- ::-webkit-input-placeholder {
+::-webkit-input-placeholder {
     /* WebKit browsers */
     color: $textColorLight;
 }
 
- :-moz-placeholder {
+:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     color: $textColorLight;
     opacity: 1;
 }
 
- ::-moz-placeholder {
+::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     color: $textColorLight;
     opacity: 1;
 }
 
- :-ms-input-placeholder {
+:-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: $textColorLight;
 }

@@ -1,8 +1,8 @@
-const webpack = require("webpack");
+const webpack = require("webpack")
 const path = require('path')
-const version = require("./../package.json").version;
-const banner = "/**\n" + " * aym-ui v" + version + "\n" + " */\n";
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const version = process.env.VERSION
+const banner = "/**\n" + " * aym-ui v" + version + "\n" + " */\n"
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const utils = require('./utils')
@@ -37,7 +37,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                NODE_ENV: '"production"'
+                NODE_ENV: '"production"',
+                __VERSION__: '"' + version + '"'
             }
         }),
         new UglifyJsPlugin({
