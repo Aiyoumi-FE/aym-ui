@@ -25,6 +25,10 @@ body {
   background-color: #f7f7f7;
   -webkit-overflow-scrolling: touch; }
 
+html,
+body {
+  height: 100%; }
+
 img {
   display: block;
   width: 100%; }
