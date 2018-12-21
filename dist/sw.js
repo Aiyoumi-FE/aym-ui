@@ -20,11 +20,11 @@ importScripts('workbox-sw.prod.v2.1.3.js');
 const fileManifest = [
   {
     "url": "document.html",
-    "revision": "969610d0905644a2b0db548bfa84c5e1"
+    "revision": "151b21b16e332b68bcd176b7de21b60d"
   },
   {
     "url": "examples.html",
-    "revision": "95d5449d634094a236da8a92c53e1080"
+    "revision": "6b0fe9345b4596b6af4c6ec17c084d25"
   },
   {
     "url": "static/css/document.57c7da827cab98f2f3fa034d471287d6.css",
@@ -35,8 +35,8 @@ const fileManifest = [
     "revision": "8c8e52b1f2a1167e70193175bab06608"
   },
   {
-    "url": "static/js/0.3aa30f2.js",
-    "revision": "ea3381b97c200cb195b7122bdd1820ed"
+    "url": "static/js/0.8aa5b64.js",
+    "revision": "ef47e2db6941d53bbf9415b2d2214908"
   },
   {
     "url": "static/js/1.d0a8021.js",
@@ -123,12 +123,12 @@ const fileManifest = [
     "revision": "0762cef238bb033bf7dcbae98d8e7b1d"
   },
   {
-    "url": "static/js/examples.9f6f33c.js",
-    "revision": "f6816d9ad33bb1bbf71bd0ffe79d9c61"
+    "url": "static/js/examples.1871d0a.js",
+    "revision": "0bfa82ccc01607ef60de01b9e227103f"
   },
   {
-    "url": "static/js/manifest.297d352.js",
-    "revision": "0b5e30363d8839da25b09c42a1ad77aa"
+    "url": "static/js/manifest.7515c47.js",
+    "revision": "52f50bdcbf2ba867b1d4377c274e685a"
   },
   {
     "url": "static/js/vendor.13d250c.js",
