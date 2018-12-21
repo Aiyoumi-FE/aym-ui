@@ -11,6 +11,9 @@ export default {
         }
     },
     methods: {
+        maskClick() {
+            this.$emit('maskClick', this.hide)
+        },
         show() {
             this.isVisible = true
         },

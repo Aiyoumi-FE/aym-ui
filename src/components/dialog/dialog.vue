@@ -1,6 +1,7 @@
 <template>
     <transition name="mui-dialog-fade">
         <m-popup type="dialog"
+            @maskClick="maskClick"
             v-show="isVisible">
             <div class="mui-dialog-panel">
                 <div class="mui-dialog__hd"

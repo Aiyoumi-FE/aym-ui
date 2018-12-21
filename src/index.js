@@ -2,6 +2,7 @@ import createAPI from './common/helpers/create-api'
 import { setComponentName } from './common/helpers/util'
 import * as modules from './modules'
 // import 'src/styles/index.scss'
+const version = process.env.VERSION || require('../package.json').version
 
 function install(Vue, options = { prefix: '' }) {
     if (install.installed) {
@@ -18,8 +19,10 @@ function install(Vue, options = { prefix: '' }) {
 }
 const mui = {
     install,
-    createAPI
+    createAPI,
+    version
 }
+// console.log(mui)
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(install)
 }

@@ -1,8 +1,8 @@
 <template>
     <transition name=" fade">
         <m-popup type="actionsheet"
-            v-show="isVisible"
-            @mask-click="cancel">
+            @maskClick="maskClick"
+            v-show="isVisible">
             <transition name="slide-up">
                 <div class="mui-actionsheet-panel"
                     v-show="isVisible">

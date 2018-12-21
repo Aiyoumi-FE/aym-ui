@@ -68,6 +68,9 @@ export default {
                 type: 'confirm',
                 title: '标题',
                 content: '我是双按钮，描述文字尽量控制在三行内',
+                onMaskClick: (hide) => {
+                    hide()
+                },
                 onConfirm: () => {
                     this.$_toast({ txt: '点了确认', time: 1000 })
                 },

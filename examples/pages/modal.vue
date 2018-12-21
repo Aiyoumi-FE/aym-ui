@@ -11,7 +11,7 @@
                 title="呵呵"
                 ref="modal2"
                 @close="modal2IsShow=false"
-                @mask-click="hideModal2">
+                @maskClick="hideModal2">
                 <div slot="content">
                     <p>cotent</p>
                     <p>cotent</p>
@@ -38,7 +38,11 @@ export default {
         showModal() {
             this.$createModal({
                 title: '主标题',
-                content: '<div>heheda</div>'
+                content: '<div>heheda</div>',
+                onClose: () => {},
+                onMaskClick(hide) {
+                    hide()
+                }
             }).show()
         },
         showModal2() {

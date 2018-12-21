@@ -1,6 +1,7 @@
 <template>
     <transition name="fade">
         <m-popup type="picker"
+            @maskClick="maskClick"
             v-show="isVisible">
             <transition name="slide-up">
                 <div class="mui-picker-panel"

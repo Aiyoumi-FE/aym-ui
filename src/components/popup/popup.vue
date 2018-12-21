@@ -21,7 +21,7 @@
 </template>
 <script>
 import apiMixin from '../../common/mixins/api'
-const EVENT_MASK_CLICK = 'mask-click'
+const EVENT_MASK_CLICK = 'maskClick'
 export default {
     name: 'm-popup',
     mixins: [apiMixin],
