@@ -2,7 +2,7 @@ import createAPI from './common/helpers/create-api'
 import { setComponentName } from './common/helpers/util'
 import * as modules from './modules'
 // import 'src/styles/index.scss'
-const version = process.env.VERSION || require('../package.json').version
+const version = process.env.VERSION
 
 function install(Vue, options = { prefix: '' }) {
     if (install.installed) {
