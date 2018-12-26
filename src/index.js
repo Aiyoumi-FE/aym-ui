@@ -1,7 +1,6 @@
 import createAPI from './common/helpers/create-api'
 import { setComponentName } from './common/helpers/util'
 import * as modules from './modules'
-// import 'src/styles/index.scss'
 
 function install(Vue, options = { prefix: '' }) {
     if (install.installed) {
@@ -26,3 +25,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(install)
 }
 export default mui
+export * from './modules'

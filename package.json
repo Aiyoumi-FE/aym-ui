@@ -11,7 +11,11 @@
         "components",
         "ui"
     ],
+    "sideEffects": [
+        "./src"
+    ],
     "main": "lib/index.js",
+    "module": "src/index.js",
     "style": "lib/index.css",
     "files": [
         "lib",

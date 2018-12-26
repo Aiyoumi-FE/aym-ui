@@ -1,4 +1,3 @@
-// @import "src/styles/base/fn";
 .mui-switch {
     appearance: none;
 }
@@ -14,6 +13,7 @@
     box-sizing: border-box;
     background-color: $bgColorDefault;
     transition: background-color .1s, border .1s;
+
     &:before {
         content: " ";
         position: absolute;
@@ -25,6 +25,7 @@
         background-color: $bgColorDefault;
         transition: transform .35s cubic-bezier(0.45, 1, 0.4, 1);
     }
+
     &:after {
         content: " ";
         position: absolute;
@@ -42,9 +43,11 @@
 // .mui-switch__input:checked~.mui-switch__box {
 .mui-switch__box_checked {
     background-color: $colorPrimary;
+
     &:before {
         transform: scale(0);
     }
+
     &:after {
         transform: translateX(px2rem(40));
     }

@@ -69,6 +69,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-form/mui-switch";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-form/mui-switch";
 </style>

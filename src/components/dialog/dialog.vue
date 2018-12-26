@@ -136,6 +136,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-dialog/mui-dialog";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-dialog/mui-dialog";
 </style>

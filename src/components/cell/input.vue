@@ -189,8 +189,8 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-cell/mui-cell";
-@import "src/styles/widget/mui-form/mui-input";
-@import "src/styles/widget/mui-form/mui-vcode";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-cell/mui-cell";
+@import "../../styles/widget/mui-form/mui-input";
+@import "../../styles/widget/mui-form/mui-vcode";
 </style>

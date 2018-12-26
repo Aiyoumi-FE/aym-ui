@@ -44,7 +44,7 @@
 import BScroll from 'better-scroll'
 import mButton from '../button/button'
 import mPopup from '../popup/popup'
-import mIcon from '@/components/icon/icon'
+import mIcon from '../icon/icon'
 import apiMixin from '../../common/mixins/api'
 
 const EVENT_SELECT = 'select'
@@ -252,6 +252,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-picker/mui-picker";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-picker/mui-picker";
 </style>

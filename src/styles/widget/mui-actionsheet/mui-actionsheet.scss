@@ -1,4 +1,3 @@
-// @import "src/styles/base/fn";
 .mui-actionsheet-panel {
     color: $textColorImportant;
     background-color: $bgColorDefault;
@@ -19,12 +18,16 @@
     text-align: center;
     font-size: px2rem(34);
     color: $textColorImportant;
+
     &:before {
         @include setTopLine($lineColorLight);
     }
+
     &:active {}
+
     &.select {
         color: $tipsColor;
+
         &:after {
             content: '';
             display: inline-block;
@@ -51,6 +54,7 @@
         font-size: px2rem(34);
         color: $textColorImportant;
     }
+
     .mui-actionsheet_warn {
         background-color: $colorWarn;
         color: #fff;

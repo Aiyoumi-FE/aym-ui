@@ -50,6 +50,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-layout/mui-layout";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-layout/mui-layout";
 </style>

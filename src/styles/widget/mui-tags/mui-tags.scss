@@ -1,4 +1,3 @@
-// @import "src/styles/base/fn";
 .mui-tags_bg {
     display: inline-block;
     line-height: px2rem(30);
@@ -6,12 +5,15 @@
     color: #ffffff;
     border-radius: px2rem(4);
     font-size: px2rem(22);
+
     &.mui-tags_orange {
         background-color: #F99E00;
     }
+
     &.mui-tags_red {
         background-color: #FF3F3F;
     }
+
     &.mui-tags_yellow {
         padding: 0 px2rem(8);
         line-height: px2rem(28);
@@ -19,6 +21,7 @@
         background-color: #FFE352;
         color: #474747;
     }
+
     &.mui-tags_linear-blue {
         font-size: px2rem(20);
         padding: 0 px2rem(4);
@@ -32,9 +35,10 @@
         /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to right, #669aff 0%, #a97ffe 100%);
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
         /* IE6-9 */
     }
+
     &.mui-tags_linear-red {
         font-size: px2rem(20);
         padding: 0 px2rem(4);
@@ -48,7 +52,7 @@
         /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to right, #ff6298 0%, #f43a56 100%);
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
         /* IE6-9 */
     }
 }

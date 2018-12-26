@@ -22,6 +22,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-tips/mui-badge";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-tips/mui-badge";
 </style>

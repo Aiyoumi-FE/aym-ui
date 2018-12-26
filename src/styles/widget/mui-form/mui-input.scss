@@ -1,41 +1,43 @@
- // @import "src/styles/base/fn";
- .mui-label {
-     display: block;
-     width: px2rem(168);
-     @include text_wrap();
- }
+.mui-label {
+    display: block;
+    width: px2rem(168);
+    @include text_wrap();
+}
 
- .mui-input {
-     width: 100%;
-     border: 0;
-     outline: 0;
-     -webkit-appearance: none;
-     background-color: transparent;
-     font-size: inherit;
-     color: inherit;
-     height: px2rem(96 - 2 * 30);
-     line-height: px2rem(96 - 2 * 30); // hides the spin-button
-     &::-webkit-outer-spin-button,
-     &::-webkit-inner-spin-button {
-         -webkit-appearance: none;
-         margin: 0;
-     }
- }
+.mui-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: px2rem(96 - 2 * 30);
+    line-height: px2rem(96 - 2 * 30); // hides the spin-button
 
- .mui-cells_form {
-     .mui-icon-warn {
-         display: none;
-     }
-     input,
-     textarea,
-     label[for] {
-         @include setTapColor();
-     }
- }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
 
- .mui-cell_warn {
-     color: $colorWarn;
-     .mui-icon-warn {
-         display: inline-block;
-     }
- }
+.mui-cells_form {
+    .mui-icon-warn {
+        display: none;
+    }
+
+    input,
+    textarea,
+    label[for] {
+        @include setTapColor();
+    }
+}
+
+.mui-cell_warn {
+    color: $colorWarn;
+
+    .mui-icon-warn {
+        display: inline-block;
+    }
+}

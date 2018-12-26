@@ -24,7 +24,7 @@
     </header>
 </template>
 <script>
-import mIcon from '@/components/icon/icon'
+import mIcon from '../icon/icon'
 export default {
     name: 'm-header',
     props: {
@@ -74,6 +74,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-bar/mui-bar";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-bar/mui-bar";
 </style>

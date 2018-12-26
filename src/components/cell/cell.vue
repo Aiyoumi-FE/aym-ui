@@ -21,7 +21,7 @@
 <script>
 import {
     go
-} from 'src/libs/router'
+} from '../../libs/router'
 export default {
     name: 'm-cell',
     props: {
@@ -73,6 +73,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-cell/mui-cell";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-cell/mui-cell";
 </style>

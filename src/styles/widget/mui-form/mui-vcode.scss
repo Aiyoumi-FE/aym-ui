@@ -1,4 +1,3 @@
-// @import "src/styles/base/fn";
 .mui-cell.mui-cell_vcode {
     padding-top: 0;
     padding-right: 0;
@@ -24,9 +23,11 @@
     white-space: nowrap;
     background-color: transparent;
     outline: 0;
+
     &:before {
         @include setLeftLine(#e4e4e4);
     }
+
     &.disabled {
         color: $textColorAssistant;
     }

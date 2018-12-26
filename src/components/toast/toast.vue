@@ -113,6 +113,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-tips/mui-toast";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-tips/mui-toast";
 </style>

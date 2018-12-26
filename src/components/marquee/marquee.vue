@@ -105,6 +105,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "src/styles/base/fn";
-@import "src/styles/widget/mui-marquee/mui-marquee";
+@import "../../styles/base/fn";
+@import "../../styles/widget/mui-marquee/mui-marquee";
 </style>
