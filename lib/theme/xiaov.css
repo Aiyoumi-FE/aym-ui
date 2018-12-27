@@ -1,5 +1,5 @@
 /**
- * aym-ui v1.4.2
+ * aym-ui vundefined
  */
 
 @charset "UTF-8";
@@ -883,7 +883,7 @@
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #669aff 0%, #a97ffe 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
     /* IE6-9 */ }
   .mui-tags_bg.mui-tags_linear-red {
     font-size: 0.42667rem;
@@ -898,7 +898,7 @@
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #ff6298 0%, #f43a56 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
     /* IE6-9 */ }
 
 .mui-tags_border {
@@ -1304,3 +1304,4 @@ li {
 :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #cccccc; }
+

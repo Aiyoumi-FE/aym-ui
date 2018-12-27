@@ -2,7 +2,8 @@
 const path = require('path')
 const config = require('../config')
 const glob = require('glob')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 const packageConfig = require('../package.json')
 
 exports.assetsPath = function(_path) {
@@ -62,15 +63,11 @@ exports.cssLoaders = function(options) {
         // Extract CSS when that option is specified
         // (which is the case during production build)
         if (options.extract) {
-            return ExtractTextPlugin.extract({
-                use: loaders,
-                fallback: 'vue-style-loader'
-            })
+            return [MiniCssExtractPlugin.loader].concat(loaders)
         } else {
             return ['vue-style-loader'].concat(loaders)
         }
     }
-
     // https://vue-loader.vuejs.org/en/configurations/extract-css.html
     return {
         css: generateLoaders(),
@@ -87,7 +84,6 @@ exports.cssLoaders = function(options) {
 exports.styleLoaders = function(options) {
     const output = []
     const loaders = exports.cssLoaders(options)
-
     for (const extension in loaders) {
         const loader = loaders[extension]
         output.push({
@@ -95,17 +91,16 @@ exports.styleLoaders = function(options) {
             use: loader
         })
     }
-
     return output
 }
 
 
 exports.multipleEntries = function(webpackConfig, HtmlWebpackPlugin, entries) {
-    const baseChunks = ['manifest', 'vendor']
+    const baseChunks = ['chunk-vendors']
     Object.keys(entries).map(function(id) {
         // console.log(id)
         var _conf = {
-            chunks: baseChunks.concat(id),
+            chunks: ['chunk-vendors', id],
             filename: `${id}.html`,
             // template: "!!html-webpack-plugin/lib/loader.js!./templates/" + id + ".html",
             template: `${id}/index.html`, // use common index.html template

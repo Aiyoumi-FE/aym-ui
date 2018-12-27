@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -47,6 +48,22 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: vueLoaderConfig
+                // }, {
+                //     test: /\.scss$/,
+                //     use: [
+                //         'vue-style-loader',
+                //         {
+                //             loader: 'css-loader',
+                //             options: { modules: true }
+                //         },
+                //         'sass-loader'
+                //     ]
+                // }, {
+                //     test: /\.css$/,
+                //     use: [
+                //         'vue-style-loader',
+                //         'css-loader'
+                //     ]
             }, {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -55,10 +72,12 @@ module.exports = {
             {
                 test: /\.md$/,
                 include: resolve('document'),
-                loader: 'vue-markdown-loader',
-                options: {
-                    preventExtract: true
-                }
+                loaders: ['vue-loader', 'vue-markdown-loader/lib/markdown-compiler.js']
+                // loader: 'vue-markdown-loader',
+                // loader: 'vue-markdown-loader/lib/markdown-compiler',
+                // options: {
+                //     raw: true
+                // }
             }, {
                 test: /\.(png|jpe?g|gif)(\?.*)?$/,
                 loader: 'url-loader',
@@ -83,6 +102,10 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        // 请确保引入这个插件！
+        new VueLoaderPlugin()
+    ],
     node: {
         // prevent webpack from injecting useless setImmediate polyfill because Vue
         // source contains it (although only uses it if it's native).

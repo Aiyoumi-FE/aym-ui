@@ -2,7 +2,8 @@ const webpack = require("webpack")
 const path = require('path')
 const version = process.env.VERSION
 const banner = "/**\n" + " * aym-ui v" + version + "\n" + " */\n"
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const utils = require('./utils')
@@ -41,16 +42,16 @@ const webpackConfig = merge(baseWebpackConfig, {
                 __VERSION__: '"' + version + '"'
             }
         }),
-        new UglifyJsPlugin({
-            uglifyOptions: {
-                compress: {
-                    warnings: false
-                }
-            },
-            sourceMap: config.build.productionSourceMap,
-            parallel: true
-        }),
-        new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
+        // new UglifyJsPlugin({
+        //     uglifyOptions: {
+        //         compress: {
+        //             warnings: false
+        //         }
+        //     },
+        //     sourceMap: config.build.productionSourceMap,
+        //     parallel: true
+        // }),
+        new MiniCssExtractPlugin({ filename: '[name].css' }),
         new webpack.BannerPlugin({
             banner: banner,
             raw: true
@@ -64,7 +65,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         chunkModules: false
     }
 });
-
+console.log(JSON.stringify(webpackConfig.module.rules))
 if (config.build.productionGzip) {
     //  utils.gZip(webpackConfig)
 }

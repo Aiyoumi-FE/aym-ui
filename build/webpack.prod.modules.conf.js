@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const path = require('path')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const utils = require('./utils')
 const merge = require('webpack-merge')
@@ -38,7 +38,7 @@ const webpackConfig = merge(baseWebpackConfig, {
                 NODE_ENV: '"production"'
             }
         }),
-        new ExtractTextPlugin({ filename: '[name]/style.css', allChunks: true })
+        new MiniCssExtractPlugin({ filename: '[name]/style.css' })
     ],
     stats: {
         colors: true,
