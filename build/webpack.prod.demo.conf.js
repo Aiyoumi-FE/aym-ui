@@ -113,8 +113,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         modules: false,
         children: false
     }
-    // externals: ['src/index'] // 排除aym-ui
-    // externals: { 'aym-ui': 'src/index' } // 排除aym-ui
 })
 utils.multipleEntries(webpackConfig, HtmlWebpackPlugin, entries)
 
