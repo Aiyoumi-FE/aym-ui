@@ -1,4 +1,4 @@
-// import createAPI from './components/create-api'
+import createAPI from './components/create-api'
 
 import Style from './components/style'
 
@@ -34,7 +34,7 @@ import Toast from './components/toast'
 // directives
 import TransferDom from './components/transfer-dom'
 export {
-    // createAPI,
+    createAPI,
     Style,
     ActionSheet,
     Badge,

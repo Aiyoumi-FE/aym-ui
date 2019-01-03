@@ -44,6 +44,10 @@
     },
     "author": "aymFE",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Aiyoumi-FE/aym-ui.git"
+    },
     "dependencies": {
         "vue": "^2.5.21"
     },
