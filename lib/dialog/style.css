@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 /*
 * mui 规范中定义的字号
@@ -37,8 +36,7 @@
 .mui-popup .mui-popup__container {
     width: 100%;
     height: 100%;
-    -webkit-transform: translate(100%, 100%);
-            transform: translate(100%, 100%);
+    transform: translate(100%, 100%);
     position: absolute;
     z-index: 1001;
 }
@@ -46,8 +44,7 @@
     position: absolute;
     left: -50%;
     top: -50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 .mui-actionsheet .mui-popup__content,
@@ -56,8 +53,7 @@
   width: 100%;
   left: 0;
   top: 0;
-  -webkit-transform: translate(-100%, -100%);
-          transform: translate(-100%, -100%);
+  transform: translate(-100%, -100%);
 }
 .mui-modal__content {
   min-height: 10.73067rem;
@@ -108,8 +104,6 @@
   position: relative;
   line-height: 2.13333rem;
   font-size: 0.768rem;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .mui-dialog__ft:after {
@@ -120,16 +114,12 @@
     right: 0;
     height: 1px;
     border-top: 1px solid #e4e4e4;
-    -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-    -webkit-transform: scaleY(0.5);
-            transform: scaleY(0.5);
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
 }
 .mui-dialog__btn {
   display: block;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
   color: #222222;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -147,10 +137,8 @@
     width: 1px;
     bottom: 0;
     border-left: 1px solid #e4e4e4;
-    -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5);
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
 }
 .mui-dialog__btn:first-child:after {
     display: none;
@@ -170,20 +158,10 @@
     background-color: #fff;
 }
 .mui-dialog-fade-enter-active {
-  -webkit-animation: dialog-fadein .4s;
-          animation: dialog-fadein .4s;
+  animation: dialog-fadein .4s;
 }
 .mui-dialog-fade-enter-active .mui-dialog-panel {
-    -webkit-animation: dialog-zoom .4s;
-            animation: dialog-zoom .4s;
-}
-@-webkit-keyframes dialog-fadein {
-0% {
-    opacity: 0;
-}
-100% {
-    opacity: 1;
-}
+    animation: dialog-zoom .4s;
 }
 @keyframes dialog-fadein {
 0% {
@@ -193,31 +171,15 @@
     opacity: 1;
 }
 }
-@-webkit-keyframes dialog-zoom {
-0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-}
-50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-}
-100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-}
-}
 @keyframes dialog-zoom {
 0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
 }
 50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    transform: scale(1.1);
 }
 100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
 }
 }
+

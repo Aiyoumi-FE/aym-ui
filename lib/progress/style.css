@@ -10,8 +10,6 @@
 * mui 规范中定义的颜色
 */
 .mui-progress_step {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   height: 12px;
   margin-left: 0.42667rem;
@@ -20,17 +18,13 @@
 }
 .mui-progress_step .mui-progress__item {
     display: inline-block;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
+    flex: 1;
     width: auto;
     position: relative;
 }
 .mui-progress_step .mui-progress__item:first-child {
       width: 0.42667rem;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0;
-              flex: 0;
+      flex: 0;
 }
 .mui-progress_step .mui-progress__item .mui-progress__ball {
       display: block;
@@ -41,13 +35,11 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      -webkit-transform: translate(0, -50%);
-              transform: translate(0, -50%);
+      transform: translate(0, -50%);
       background-color: #E4E4E4;
 }
 .mui-progress_step .mui-progress__item.cur .mui-progress__ball {
-      -webkit-box-sizing: content-box;
-              box-sizing: content-box;
+      box-sizing: content-box;
       border: 2px solid #FCF4C6;
       background-color: #FFE352;
 }
@@ -56,8 +48,7 @@
       position: absolute;
       top: 0.85333rem;
       left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
+      transform: translateX(-50%);
       color: #999;
       font-size: 0.59733rem;
       line-height: 0.64rem;
@@ -72,8 +63,7 @@
     z-index: 1;
     width: 99%;
     height: 2px;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
     background-color: #E4E4E4;
 }
 .mui-progress_step .cur + .cur:after {
@@ -84,8 +74,7 @@
     width: 100%;
     height: 2px;
     content: "";
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
     background-color: #FFE352;
 }
 .mui-progress_step .cur .mui-progress__txt {
@@ -97,8 +86,6 @@
   background-color: #fff;
 }
 .mui-progress_timeline .mui-progress__item {
-    display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
     min-height: 2.98667rem;
 }
@@ -153,10 +140,8 @@
         right: 0;
         height: 1px;
         border-bottom: 1px solid #e4e4e4;
-        -webkit-transform-origin: 0 100%;
-                transform-origin: 0 100%;
-        -webkit-transform: scaleY(0.5);
-                transform: scaleY(0.5);
+        transform-origin: 0 100%;
+        transform: scaleY(0.5);
 }
 .mui-progress_timeline .mui-progress__item.cur .mui-progress__time,
   .mui-progress_timeline .mui-progress__item.cur .mui-progress__content p:first-child {
@@ -166,8 +151,7 @@
     background-color: #FFD72D;
 }
 .mui-progress_timeline .mui-progress__item.cur .mui-progress__time .mui-progress__ball {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    box-sizing: content-box;
     border: 2px solid #FCF4C6;
     right: 0.46933rem;
 }
@@ -183,3 +167,4 @@
 .mui-progress_timeline li.mui-progress__item:last-child .mui-progress__content:before {
     display: none;
 }
+

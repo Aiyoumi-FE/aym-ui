@@ -1,71 +1,3 @@
-
-@charset "UTF-8";
-/*
-* mui 规范中定义的字号
-*/
-/*
-* mui 规范中定义的颜色
-*/
-/*
-* mui 规范中定义的颜色
-*/
-.mui-mask {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-.mui-mask_transparent {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-.mui-popup {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-}
-.mui-popup .mui-popup__container {
-    width: 100%;
-    height: 100%;
-    -webkit-transform: translate(100%, 100%);
-            transform: translate(100%, 100%);
-    position: absolute;
-    z-index: 1001;
-}
-.mui-popup .mui-popup__content {
-    position: absolute;
-    left: -50%;
-    top: -50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    text-align: center;
-}
-.mui-actionsheet .mui-popup__content,
-.mui-modal .mui-popup__content,
-.mui-picker .mui-popup__content {
-  width: 100%;
-  left: 0;
-  top: 0;
-  -webkit-transform: translate(-100%, -100%);
-          transform: translate(-100%, -100%);
-}
-.mui-modal__content {
-  min-height: 10.73067rem;
-  max-height: 14.144rem;
-  background-color: #fff;
-  overflow: auto;
-}
-
 @charset "UTF-8";
 /*
 * mui 规范中定义的字号
@@ -236,6 +168,70 @@
 /*
 * mui 规范中定义的颜色
 */
+.mui-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.mui-mask_transparent {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.mui-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.mui-popup .mui-popup__container {
+    width: 100%;
+    height: 100%;
+    transform: translate(100%, 100%);
+    position: absolute;
+    z-index: 1001;
+}
+.mui-popup .mui-popup__content {
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.mui-actionsheet .mui-popup__content,
+.mui-modal .mui-popup__content,
+.mui-picker .mui-popup__content {
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, -100%);
+}
+.mui-modal__content {
+  min-height: 10.73067rem;
+  max-height: 14.144rem;
+  background-color: #fff;
+  overflow: auto;
+}
+
+@charset "UTF-8";
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .mui-icon {
   /* 通过设置 font-size 来改变图标大小 */
   width: 1em;
@@ -265,8 +261,6 @@
   background-color: #fff;
 }
 .mui-picker__hd {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   line-height: 2.048rem;
   padding: 0 0.68267rem;
@@ -300,10 +294,8 @@
     right: 0;
     height: 1px;
     border-bottom: 1px solid #e4e4e4;
-    -webkit-transform-origin: 0 100%;
-            transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-            transform: scaleY(0.5);
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
 }
 .mui-picker__bd {
   position: relative;
@@ -322,8 +314,6 @@
 }
 .mui-picker__bd .mui-picker__bottom-1px {
     top: 0;
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.8)));
-    background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
     background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
 }
 .mui-picker__bd .mui-picker__bottom-1px:after {
@@ -334,15 +324,11 @@
       right: 0;
       height: 1px;
       border-bottom: 1px solid #e4e4e4;
-      -webkit-transform-origin: 0 100%;
-              transform-origin: 0 100%;
-      -webkit-transform: scaleY(0.5);
-              transform: scaleY(0.5);
+      transform-origin: 0 100%;
+      transform: scaleY(0.5);
 }
 .mui-picker__bd .mui-picker__top-1px {
     bottom: 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.8)));
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
 }
 .mui-picker__bd .mui-picker__top-1px:after {
@@ -353,23 +339,16 @@
       right: 0;
       height: 1px;
       border-top: 1px solid #e4e4e4;
-      -webkit-transform-origin: 0 0;
-              transform-origin: 0 0;
-      -webkit-transform: scaleY(0.5);
-              transform: scaleY(0.5);
+      transform-origin: 0 0;
+      transform: scaleY(0.5);
 }
 .mui-picker__wheel-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   padding: 0 0.68267rem;
 }
 .mui-picker__wheel-wrapper div {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    -webkit-flex-basis: 1e-px2rem 9;
-            flex-basis: 1e-px2rem 9;
+    flex: 1;
+    flex-basis: 1e-px2rem 9;
     width: 1%;
     height: 7.552rem;
     overflow: hidden;
@@ -388,3 +367,4 @@
       white-space: nowrap;
       color: #333;
 }
+

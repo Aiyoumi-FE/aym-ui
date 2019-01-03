@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 /*
 * mui 规范中定义的字号
@@ -10,8 +9,7 @@
 * mui 规范中定义的颜色
 */
 .mui-switch {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 .mui-switch,
 .mui-switch__box {
@@ -21,10 +19,8 @@
   outline: 0;
   border: none;
   border-radius: 0.768rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: #f7f7f7;
-  -webkit-transition: background-color .1s, border .1s;
   transition: background-color .1s, border .1s;
 }
 .mui-switch:before,
@@ -37,10 +33,7 @@
     height: 1.32267rem;
     border-radius: 0.768rem;
     background-color: #f7f7f7;
-    -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
-    transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
     transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
-    transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1), -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
 }
 .mui-switch:after,
   .mui-switch__box:after {
@@ -52,21 +45,16 @@
     height: 1.152rem;
     border-radius: 50%;
     background-color: #FFFFFF;
-    -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
-    transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
     transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
-    transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
 .mui-switch__box_checked {
   background-color: #ffe352;
 }
 .mui-switch__box_checked:before {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
 }
 .mui-switch__box_checked:after {
-    -webkit-transform: translateX(0.85333rem);
-            transform: translateX(0.85333rem);
+    transform: translateX(0.85333rem);
 }
 .mui-switch__input {
   position: absolute;
@@ -75,3 +63,4 @@
 .mui-switch__box {
   display: block;
 }
+

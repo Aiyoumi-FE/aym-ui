@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 /*
 * mui 规范中定义的字号
@@ -37,13 +36,13 @@
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#669aff+0,a97ffe+100 */
     background: #669aff;
     /* Old browsers */
+    background: -moz-linear-gradient(left, #669aff 0%, #a97ffe 100%);
     /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #669aff 0%, #a97ffe 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, right top, from(#669aff), to(#a97ffe));
     background: linear-gradient(to right, #669aff 0%, #a97ffe 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#669aff', endColorstr='#a97ffe', GradientType=1);
     /* IE6-9 */
 }
 .mui-tags_bg.mui-tags_linear-red {
@@ -53,13 +52,13 @@
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6298+0,f43a56+100 */
     background: #ff6298;
     /* Old browsers */
+    background: -moz-linear-gradient(left, #ff6298 0%, #f43a56 100%);
     /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #ff6298 0%, #f43a56 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, right top, from(#ff6298), to(#f43a56));
     background: linear-gradient(to right, #ff6298 0%, #f43a56 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6298', endColorstr='#f43a56', GradientType=1);
     /* IE6-9 */
 }
 .mui-tags_border {
@@ -71,3 +70,4 @@
   color: #FB9F00;
   font-size: 0.512rem;
 }
+
