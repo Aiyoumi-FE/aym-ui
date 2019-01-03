@@ -14,6 +14,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 let entries = utils.getEntry('./src/components/**/index.js')
 
 const webpackConfig = merge(baseWebpackConfig, {
+    mode: 'production',
     module: {
         rules: utils.styleLoaders({
             sourceMap: true,

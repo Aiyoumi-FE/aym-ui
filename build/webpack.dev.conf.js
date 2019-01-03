@@ -15,6 +15,7 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const entries = config.dev.entry
 const devWebpackConfig = merge(baseWebpackConfig, {
+    mode: 'development',
     entry: entries,
     // entry: {
     //     examples: './examples/main.js'
@@ -56,7 +57,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             poll: config.dev.poll,
         }
     },
-    mode: 'development',
     plugins: [
         // new webpack.DefinePlugin({
         //     'process.env': require('../config/dev.env')

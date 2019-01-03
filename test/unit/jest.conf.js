@@ -11,13 +11,14 @@ module.exports = {
     ],
     moduleNameMapper: {
         '^vue$': 'vue/dist/vue.common.js',
-        '^@/(.*)$': '<rootDir>/src/$1'
+        'iconfont': '<rootDir>/test/unit/specs/__mocks__/src/components/icon/iconfont.js',
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     transform: {
         '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
         '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
     },
-    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(modal.)(spec|test).js?(x)'],
+    // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(toast.)(spec|test).js?(x)'],
 
     testPathIgnorePatterns: [
         '<rootDir>/test/e2e'

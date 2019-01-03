@@ -18,80 +18,58 @@ const env = process.env.NODE_ENV === 'testing' ? require('../config/test.env') :
 const entries = config.dev.entry
 
 require('./check-versions')()
-
 const webpackConfig = merge(baseWebpackConfig, {
     mode: 'production',
     entry: entries,
     module: {
-        rules: [{
-            test: /\.s?css$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                // 'vue-style-loader',
-                'css-loader',
-                'sass-loader',
-            ]
-        }]
-
-        // rules: utils.styleLoaders({
-        //     sourceMap: config.build.productionSourceMap,
-        //     extract: true,
-        //     usePostCSS: true
-        // })
-        // rules: [{
-        //     test: /\.scss$/,
-        //     use: [
-        //         'vue-style-loader',
-        //         {
-        //             loader: 'css-loader',
-        //             options: { modules: true }
-        //         },
-        //         'sass-loader'
-        //     ]
-        // }]
+        rules: utils.styleLoaders({
+            sourceMap: config.build.productionSourceMap,
+            extract: true,
+            usePostCSS: true
+        })
     },
     devtool: config.build.productionSourceMap ? config.build.devtool : false,
     output: {
         path: config.build.assetsRoot,
         filename: utils.assetsPath('js/[name].[chunkhash:7].js'),
-        // chunkFilename: utils.assetsPath('js/[id].[chunkhash:7].js')
+        chunkFilename: utils.assetsPath('js/[name].[chunkhash:7].js')
         // filename: utils.assetsPath('js/[name].js'),
         // chunkFilename: utils.assetsPath('js/[id].js')
     },
     optimization: {
         // runtimeChunk: true,
-        // minimizer: [
-        //     new UglifyJsPlugin({
-        //         cache: true, // 开启缓存
-        //         parallel: true, // 允许并发
-        //         sourceMap: true
-        //     }),
-        //     new OptimizeCSSAssetsPlugin({}) // use OptimizeCSSAssetsPlugin
-        // ],
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true, // 开启缓存
+                parallel: true, // 允许并发
+                sourceMap: true
+            }),
+            new OptimizeCSSAssetsPlugin({}) // use OptimizeCSSAssetsPlugin
+        ],
         splitChunks: {
             cacheGroups: {
                 vendors: {
                     name: `chunk-vendors`,
                     test: /[\\/]node_modules[\\/]/,
-                    // priority: -10,
-                    chunks: 'all'
+                    priority: -10,
+                    chunks: 'initial'
                 },
-                // common: {
-                //     name: `chunk-common`,
-                //     minChunks: 2,
-                //     priority: -20,
-                //     chunks: 'all',
-                //     reuseExistingChunk: true
-                // },
-                // styles: {
-                //     name: `styles`,
-                //     test: (m) => m.constructor.name === 'CssModule',
-                //     // minChunks: 1,
-                //     chunks: 'all',
-                //     enforce: true,
-                //     priority: -30,
-                //     reuseExistingChunk: true
-                // }
+                //         common: {
+                //             name: `chunk-common`,
+                //             minChunks: 2,
+                //             priority: -20,
+                //             chunks: 'all',
+                //             reuseExistingChunk: true
+                //         },
+                //         styles: {
+                //             name: `styles`,
+                //             test: (m) => m.constructor.name === 'CssModule',
+                //             // minChunks: 1,
+                //             chunks: 'all',
+                //             // enforce: true,
+                //             priority: -30,
+                //             reuseExistingChunk: true
+                //         }
             }
         }
     },
@@ -143,17 +121,20 @@ const webpackConfig = merge(baseWebpackConfig, {
 })
 utils.multipleEntries(webpackConfig, HtmlWebpackPlugin, entries)
 
-if (webpackConfig.mode === 'production') {
+if (process.env.NODE_ENV === 'production') {
     webpackConfig.plugins.push(
         new CleanWebpackPlugin(['dist/'], {
             root: config.projectRoot
         }),
-        new WorkboxPlugin({
+        new WorkboxPlugin.GenerateSW({
             // 这些选项帮助 ServiceWorkers 快速启用
             // 不允许遗留任何“旧的” ServiceWorkers
             clientsClaim: true,
             skipWaiting: true
         })
+        // new WorkboxPlugin.InjectManifest({
+        //     swSrc: './sw.js',
+        // })
     )
 }
 

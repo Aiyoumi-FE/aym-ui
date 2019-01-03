@@ -5,7 +5,7 @@ const banner = "/**\n" + " * aym-ui v" + version + "\n" + " */\n"
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const utils = require('./utils')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
@@ -15,6 +15,7 @@ const config = require('../config')
 const isProduction = process.env.NODE_ENV === 'production'
 
 const webpackConfig = merge(baseWebpackConfig, {
+    mode: 'production',
     module: {
         rules: utils.styleLoaders({
             sourceMap: true,
@@ -34,6 +35,23 @@ const webpackConfig = merge(baseWebpackConfig, {
         // configuration.output.libraryTarget should be one of these:
         // "var" | "assign" | "this" | "window" | "global" | "commonjs" | "commonjs2" | "commonjs-module" | "amd" | "umd" | "umd2" | "jsonp"
         libraryTarget: "umd"
+    },
+    module: {
+        rules: utils.styleLoaders({
+            sourceMap: config.build.productionSourceMap,
+            extract: true,
+            usePostCSS: true
+        })
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true, // 开启缓存
+                parallel: true, // 允许并发
+                sourceMap: true
+            }),
+            new OptimizeCSSAssetsPlugin({}) // use OptimizeCSSAssetsPlugin
+        ]
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -65,7 +83,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         chunkModules: false
     }
 });
-console.log(JSON.stringify(webpackConfig.module.rules))
 if (config.build.productionGzip) {
     //  utils.gZip(webpackConfig)
 }

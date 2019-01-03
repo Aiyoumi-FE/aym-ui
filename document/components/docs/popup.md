@@ -9,7 +9,7 @@ Popup是所有弹层类组件的基础组件,如`toast`、`dialog`...
 
 ```html
 <m-popup ref="myPopup"
-    @mask-click="closePopup('myPopup')">
+    @maskClick="closePopup('myPopup')">
     <div class="text">
         Popup是所有弹层类组件的基础组件
     </div>

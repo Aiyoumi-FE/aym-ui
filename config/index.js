@@ -51,7 +51,7 @@ const path = require('path')
 module.exports = {
     dev: {
         entry: {
-            // document: 'document/main.js',
+            document: 'document/main.js',
             examples: 'examples/main.js'
         },
         // Paths

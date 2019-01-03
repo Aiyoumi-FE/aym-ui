@@ -4,7 +4,7 @@
         <demo-content>
             <m-button @click="showPopup('myPopup')">点击弹出Popup</m-button>
             <m-popup ref="myPopup"
-                @mask-click="closePopup('myPopup')">
+                @maskClick="closePopup('myPopup')">
                 <div class="text">
                     Popup是所有弹层类组件的基础组件
                 </div>

@@ -48,58 +48,50 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: vueLoaderConfig
-                // }, {
-                //     test: /\.scss$/,
-                //     use: [
-                //         'vue-style-loader',
-                //         {
-                //             loader: 'css-loader',
-                //             options: { modules: true }
-                //         },
-                //         'sass-loader'
-                //     ]
-                // }, {
-                //     test: /\.css$/,
-                //     use: [
-                //         'vue-style-loader',
-                //         'css-loader'
-                //     ]
-            }, {
+            },
+            {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: [resolve('src'), resolve('examples'), resolve('document'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
             },
             {
                 test: /\.md$/,
-                include: resolve('document'),
-                loaders: ['vue-loader', 'vue-markdown-loader/lib/markdown-compiler.js']
-                // loader: 'vue-markdown-loader',
-                // loader: 'vue-markdown-loader/lib/markdown-compiler',
-                // options: {
-                //     raw: true
-                // }
-            }, {
+                use: [{
+                        loader: 'vue-loader'
+                    },
+                    {
+                        loader: 'vue-markdown-loader/lib/markdown-compiler',
+                        options: {
+                            preventExtract: true,
+                            raw: true
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(png|jpe?g|gif)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
-            }, {
+            },
+            {
                 test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
                     name: utils.assetsPath('media/[name].[hash:7].[ext]')
                 }
-            }, {
+            },
+            {
                 test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     // limit: 100000,
                     name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
                 }
-            }
+            },
         ]
     },
     plugins: [
