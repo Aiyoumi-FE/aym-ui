@@ -1,3 +1,12 @@
+# [2.0.0-beta.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.2...v2.0.0-beta.0) (2019-01-03)
+
+
+### Features
+
+* **path:** change to releative path,support code ([6290f76](https://github.com/Aiyoumi-FE/aym-ui/commit/6290f76))
+
+
+
 ## [1.4.2](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.1...v1.4.2) (2018-12-21)
 
 
