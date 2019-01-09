@@ -1,8 +1,8 @@
-import ActionSheet from './actionsheet.vue'
-import addActionSheet from './api'
-ActionSheet.install = function(Vue) {
-    Vue.component(ActionSheet.name, ActionSheet)
-    addActionSheet(Vue, ActionSheet)
+import Actionsheet from './actionsheet.vue'
+import addActionsheet from './api'
+Actionsheet.install = function(Vue) {
+    Vue.component(Actionsheet.name, Actionsheet)
+    addActionsheet(Vue, Actionsheet)
 }
 
-export default ActionSheet
+export default Actionsheet

@@ -9,10 +9,13 @@ function install(Vue, options = { prefix: '' }) {
     install.installed = true
 
     for (let component in modules) {
-        if (options.prefix) {
+        let { name, install } = modules[component]
+        if (options.prefix && name) {
             modules[component].name = setComponentName(modules[component].name, options.prefix)
         }
-        Vue.use(modules[component])
+        if (typeof install === 'function') {
+            Vue.use(modules[component])
+        }
     }
 }
 const mui = {
@@ -25,4 +28,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(install)
 }
 export default mui
-export * from './modules'
+// export * from './modules'

@@ -88,6 +88,7 @@ exports.styleLoaders = function(options) {
         const loader = loaders[extension]
         output.push({
             test: new RegExp('\\.' + extension + '$'),
+            // sideEffects: true,
             use: loader
         })
     }
