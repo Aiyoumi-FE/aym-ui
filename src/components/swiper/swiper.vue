@@ -3,35 +3,33 @@
 * 轮播组件
 */
 <template>
-    <div class="asskicker">
-        <div class="container_outside">
-            <div v-if="dataList.length > 1"
-                class="container_inside clearfix"
-                :style="{'width': (dataList.length + 4) * 16 + 'rem', 'transition-timing-function': 'ease-out', 'transition-duration': transitionDuration,'transform': 'translate(' + handledMoveDistance  + 'px, 0px) translateZ(0px)'}"
-                @touchstart="touchStart"
-                @touchmove="touchMove"
-                @touchend="touchEnd">
-                <!-- <a :data-index="this.dataList.length - 2" href="javascript:;" class="ass_item">
-                    <img :data-index="this.dataList.length - 2" :src="assLastSecond.img" alt="">
-                </a> -->
-                <a :data-index="dataList.length - 1" href="javascript:;" :class="['ass_item', (stillIndex % dataList.length) === 1 ? 'active_item__still' : ((activeIndex % dataList.length) === 1 ? 'active_item' : '')]">
-                    <img :data-index="dataList.length - 1" :src="assLast.img" alt="">
-                </a>
-                <a :data-index="index" href="javascript:;" :class="['ass_item', (stillIndex % dataList.length) === ((index + 2) % dataList.length) ? 'active_item__still' : ((activeIndex % dataList.length) === ((index + 2) % dataList.length) ? 'active_item' : '')]" v-for="(item, index) in dataList" :key="'assitem' + item.img">
-                    <img :data-index="index" :src="item.img" alt="">
-                </a>
-                <a :data-index="'0'" href="javascript:;" :class="['ass_item', (stillIndex % dataList.length) === indexShift ? 'active_item__still' : ((activeIndex % dataList.length) === indexShift ? 'active_item' : '')]">
-                    <img :data-index="'0'" :src="assFirst.img" alt="">
-                </a>
-                <!-- <a :data-index="'1'" href="javascript:;" class="ass_item">
-                    <img :data-index="'1'" :src="assSecond.img" alt="">
-                </a> -->
-            </div>
-            <div v-else class="container_inside clearfix">
-                <a :data-index="'0'" href="javascript:;" :class="['ass_item', 'active_item']">
-                    <img :data-index="'0'" :src="assFirst.img" alt="">
-                </a>
-            </div>
+    <div :class="['container_outside', componentID]">
+        <div v-if="dataList.length > 1"
+            class="container_inside clearfix"
+            :style="{'width': (dataList.length + 4) * unitWidth + 'px', 'transition-timing-function': 'ease-out', 'transition-duration': transitionDuration,'transform': 'translate(' + handledMoveDistance  + 'px, 0px) translateZ(0px)'}"
+            @touchstart="touchStart"
+            @touchmove="touchMove"
+            @touchend="touchEnd">
+            <!-- <a :data-index="this.dataList.length - 2" href="javascript:;" class="ass_item">
+                <img :data-index="this.dataList.length - 2" :src="assLastSecond.img" alt="">
+            </a> -->
+            <a :data-index="dataList.length - 1" href="javascript:;" :class="['ass_item', (stillIndex % dataList.length) === 1 ? 'active_item__still' : ((activeIndex % dataList.length) === 1 ? 'active_item' : '')]" :style="{'width': unitWidth + 'px'}">
+                <img :data-index="dataList.length - 1" :src="assLast.img" alt="">
+            </a>
+            <a :data-index="index" href="javascript:;" :class="['ass_item', (stillIndex % dataList.length) === ((index + 2) % dataList.length) ? 'active_item__still' : ((activeIndex % dataList.length) === ((index + 2) % dataList.length) ? 'active_item' : '')]" v-for="(item, index) in dataList" :key="'assitem' + item.img" :style="{'width': unitWidth + 'px'}">
+                <img :data-index="index" :src="item.img" alt="">
+            </a>
+            <a :data-index="'0'" href="javascript:;" :class="['ass_item', (stillIndex % dataList.length) === indexShift ? 'active_item__still' : ((activeIndex % dataList.length) === indexShift ? 'active_item' : '')]" :style="{'width': unitWidth + 'px'}">
+                <img :data-index="'0'" :src="assFirst.img" alt="">
+            </a>
+            <!-- <a :data-index="'1'" href="javascript:;" class="ass_item">
+                <img :data-index="'1'" :src="assSecond.img" alt="">
+            </a> -->
+        </div>
+        <div v-else class="container_inside clearfix">
+            <a :data-index="'0'" href="javascript:;" :class="['ass_item', 'active_item']">
+                <img :data-index="'0'" :src="assFirst.img" alt="">
+            </a>
         </div>
     </div>
 </template>
@@ -85,6 +83,9 @@ export default {
     watch: {
     },
     computed: {
+        componentID() {
+            return 'swiperNO' + new Date().getTime() + '-' + Math.floor(Math.random() * 2048)
+        },
         sizeInfoReady() {
             return this.unitWidth !== 0
         },
@@ -133,7 +134,7 @@ export default {
     },
     methods: {
         _initSizeInfo() {
-            let tarDom = document.querySelector('.container_outside')
+            let tarDom = document.querySelector('.' + this.componentID)
             if (!tarDom && !tarDom.offsetWidth) {
                 setTimeout(() => {
                     this._initSizeInfo()
@@ -181,7 +182,7 @@ export default {
             this.startMoveDistance = this.curMoveDistance = this.handledMoveDistance
             this.startIndex = this.activeIndex
             this.isHandlTouching = this.isTime0 = true
-            this.limitMin = document.querySelector('.container_outside').offsetWidth - document.querySelector('.container_inside').offsetWidth
+            this.limitMin = document.querySelector('.' + this.componentID).offsetWidth - document.querySelector('.container_inside').offsetWidth
         },
         touchMove(e) {
             // 实际拖动距离
@@ -222,27 +223,27 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.asskicker {
+<style lang="scss">
+.container_outside {
     width: 100%;
+    height: 100%;
     background: #fff;
     padding: 0;
     overflow: hidden;
-}
-.container_outside {
     .container_inside {
         width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
         .ass_item {
-            display: block;
-            float: left;
-            width: 16rem;
-            img {
-                height: auto;
-                width: auto;
-                max-height: 100%;
-                max-width: 100%;
-                box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.08);
-            }
+            height: 100%;
+        }
+        img {
+            height: auto;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+            margin: 0 auto;
         }
     }
 }

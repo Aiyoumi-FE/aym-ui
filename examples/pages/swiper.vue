@@ -6,10 +6,10 @@
             <div class="swiper_container swiper_1">
                 <m-swiper :dataList="dataList"></m-swiper>
             </div>
-            <!-- <p>自动无限loop 每帧尺寸不一致</p>
+            <p>自动无限loop 每帧尺寸不一致</p>
             <div class="swiper_container swiper_2">
                 <m-swiper :dataList="dataList3"></m-swiper>
-            </div> -->
+            </div>
             <!-- <div class="swiper_container swiper_3">
                 <m-swiper :dataList="dataList3"></m-swiper>
             </div> -->
@@ -57,7 +57,7 @@ export default {
     margin: 0 auto;
 }
 .swiper_2 {
-    width: 100%;
+    width: 300px;
     height: 200px;
     border: 1px solid red;
 }
