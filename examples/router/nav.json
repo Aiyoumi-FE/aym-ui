@@ -81,5 +81,9 @@
     {
         "path": "/switch",
         "name": "switch"
+    },
+    {
+        "path": "/swiper",
+        "name": "swiper"
     }]
 }]
