@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.0.0-beta.0...v2.0.0) (2019-01-16)
+
+
+
 # [2.0.0-beta.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.2...v2.0.0-beta.0) (2019-01-03)
 
 
