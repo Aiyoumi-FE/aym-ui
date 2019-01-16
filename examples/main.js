@@ -8,7 +8,8 @@ import demo from './demo.vue'
 import { install as demoGlobal } from './global'
 Vue.use(demoGlobal)
 Vue.use(aymUI)
-if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production' && window.parent === window) {
+// && window.parent === window
+if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js').then(registration => {
             console.log(' SW registered: ', registration)

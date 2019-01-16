@@ -50,26 +50,17 @@ const webpackConfig = merge(baseWebpackConfig, {
             cacheGroups: {
                 vendors: {
                     name: `chunk-vendors`,
-                    test: /[\\/]node_modules[\\/]/,
+                    test: /[\\/]node_modules[\\/](vue|vue-router)/,
                     priority: -10,
                     chunks: 'initial'
                 },
-                //         common: {
-                //             name: `chunk-common`,
-                //             minChunks: 2,
-                //             priority: -20,
-                //             chunks: 'all',
-                //             reuseExistingChunk: true
-                //         },
-                //         styles: {
-                //             name: `styles`,
-                //             test: (m) => m.constructor.name === 'CssModule',
-                //             // minChunks: 1,
-                //             chunks: 'all',
-                //             // enforce: true,
-                //             priority: -30,
-                //             reuseExistingChunk: true
-                //         }
+                common: {
+                    name: `chunk-common`,
+                    minChunks: 2,
+                    priority: -20,
+                    chunks: 'initial',
+                    reuseExistingChunk: true
+                }
             }
         }
     },

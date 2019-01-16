@@ -97,11 +97,10 @@ exports.styleLoaders = function(options) {
 
 
 exports.multipleEntries = function(webpackConfig, HtmlWebpackPlugin, entries) {
-    const baseChunks = ['chunk-vendors']
+    const baseChunks = ['chunk-vendors', 'chunk-common']
     Object.keys(entries).map(function(id) {
-        // console.log(id)
         var _conf = {
-            chunks: ['chunk-vendors', id],
+            chunks: [...baseChunks, id],
             filename: `${id}.html`,
             // template: "!!html-webpack-plugin/lib/loader.js!./templates/" + id + ".html",
             template: `${id}/index.html`, // use common index.html template
