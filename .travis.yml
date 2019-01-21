@@ -28,4 +28,7 @@ jobs:
   #     on:
   #       branch: dev
   #       repo: Aiyoumi-FE/aym-ui
-
+after_success:
+  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/zq741235/travis-automerge/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='^dev$' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=Aiyoumi-FE/aym-ui /tmp/travis-automerge"

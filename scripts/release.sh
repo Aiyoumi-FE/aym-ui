@@ -19,10 +19,10 @@ echo "Releasing $VERSION ..."
     git add -f \
         dist/ \
         lib/
-    git commit -m "build: build $VERSION"
+    git commit -m "build(build): $VERSION"
 
      # updata tag version
-    npm version "$VERSION" --message "build: release $VERSION"
+    npm version "$VERSION" --message "build(release): $VERSION"
     echo " $RELEASE_TAG ..."
 
     git push origin refs/tags/v$VERSION
