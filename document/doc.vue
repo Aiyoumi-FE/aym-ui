@@ -1,164 +1,29 @@
 <template>
-    <div class="aym-doc">
-        <topNav logo=""
-            title="AYM UI">
-            <span ref="menuButton"
-                slot="menuButton"
-                class="menu-button visible-xs visible-sm"
-                @click="toggleSideBar">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                </span>
-        </topNav logo="">
-        <!--  <topNav logo=""
-            title="AYM - UI">
-            <span ref="menuButton"
-                class="menu-button visible-xs visible-sm"
-                @click="toggleSideBar">111</span>
-        </topNav logo=""> -->
-        <div id="main"
-            class="container-fluid ">
-            <div class="row">
-                <!-- hidden-sm hidden-xs   -->
-                <div ref="sidebar"
-                    class="col-md-2 sidebar"
-                    :class="{open:isVisibelSideBar}">
-                    <sideNav :config="navs"></sideNav>
-                    <!--   <div class="sidebar"
-                        :style="sidebarStyle">
-                        <sideNav :config="navs"></sideNav>
-                    </div> -->
-                </div>
-                <div class="col-md-6">
-                    <div class="content markdown-body"
-                        :style="sidebarStyle">
-                        <router-view></router-view>
-                    </div>
-                </div>
-                <div class="col-md-4 hidden-sm hidden-xs">
-                    <div class="viewbox viewbox-fixed">
-                        <div class="viewbox__nav">
-                            <div class="viewbox__url"
-                                :title="viewboxSrc">{{viewboxSrc}}</div>
-                            <div class="viewbox__reload"
-                                title="跳转到该示例页面"
-                                @click="goViewbox">
-                            </div>
-                        </div>
-                        <iframe ref="viewbox"
-                            :src="viewboxSrc"
-                            frameborder="0"
-                            :style="viewboxStyle"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- :demoUrl="dUrl" -->
+    <adoc :navs="navs"
+        :demoUrl="demoUrl"
+        :topOptions="{
+            logo:require('./assets/logo.gif'),
+            title:'AYM UI'
+        }">
+        <router-view />
+    </adoc>
 </template>
 <script>
 import { navs } from './router'
-import sideNav from './components/side-nav/side'
-import topNav from './components/top-nav/top'
-
 export default {
     name: 'documentApp',
     data() {
         return {
-            navs,
-            viewboxSrc: '',
-            isVisibelSideBar: false,
-            windowHeight: window.innerHeight,
-            menuButton: '',
-            sidebar: ''
+            navs
         }
     },
     computed: {
-        pageUrl() {
-            let path = window.location.origin + window.location.pathname.replace('document.html', 'examples.html')
-            return path + '#' + this.$route.path
-        },
-        viewboxStyle() {
-            const height = Math.min(556, this.windowHeight - 160)
-            return {
-                height: height + 'px'
-            }
-        },
-        sidebarStyle() {
-            // const height = this.windowHeight - 80
-            // return {
-            //     height: height + 'px',
-            //     overflowY: 'scroll'
-            // }
+        demoUrl() {
+            return window.location.pathname.replace('document.html', 'example.html')
         }
     },
-    components: {
-        sideNav,
-        topNav
-    },
-    watch: {
-        pageUrl() {
-            this.viewboxSrc = this.pageUrl
-        },
-        $route(to, from) {
-            if (this.isVisibelSideBar) {
-                this.isVisibelSideBar = false
-                document.documentElement.scrollTop = 0
-            }
-        }
-    },
-    mounted() {
-        window.addEventListener('resize', () => {
-            this.windowHeight = window.innerHeight
-        })
-        this.initSideBar()
-    },
-    methods: {
-        initSideBar() {
-            let sidebar = this.$refs.sidebar
-            let menuButton = this.$refs.menuButton
-
-            document.body.addEventListener('click', (e) => {
-                // alert(11)
-                if (e.target !== menuButton && !sidebar.contains(e.target)) {
-                    // sidebar.classList.remove('open')
-                    this.isVisibelSideBar = false
-                }
-            }, true)
-
-            // Toggle sidebar on swipe
-            let start = {}
-            let end = {}
-
-            document.body.addEventListener('touchstart', (e) => {
-                start.x = e.changedTouches[0].clientX
-                start.y = e.changedTouches[0].clientY
-            })
-
-            document.body.addEventListener('touchend', (e) => {
-                end.y = e.changedTouches[0].clientY
-                end.x = e.changedTouches[0].clientX
-
-                let xDiff = end.x - start.x
-                let yDiff = end.y - start.y
-
-                if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                    if (xDiff > 0 && start.x <= 80) this.isVisibelSideBar = true
-                    else this.isVisibelSideBar = false
-                }
-            })
-        },
-        toggleSideBar() {
-            this.isVisibelSideBar = !this.isVisibelSideBar
-        },
-        goViewbox() {
-            window.location.href = this.viewboxSrc
-            // const { viewbox } = this.$refs
-            // if (viewbox && viewbox.contentWindow) {
-            //     viewbox.contentWindow.location.reload()
-            // }
-        }
-    }
+    method: {}
 }
 </script>
 <style>
@@ -213,6 +78,7 @@ body {
         transform: translate(-100%, 0);
         transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
     }
+
     .sidebar.open {
         display: block !important;
         transform: translate(0, 0);

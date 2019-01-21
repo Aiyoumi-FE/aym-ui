@@ -11,11 +11,12 @@ const registerRoute = (config, prefix) => {
     let navs = []
     config.forEach(group => {
         group.list.forEach(item => {
+            console.log(`${prefix}${item.path}`)
             routeList.push({
                 name: item.name,
                 path: item.path,
                 /* beautify preserve:start */
-                component: () => import(`../components/${prefix}${item.path}.md`),
+                component: () => import(`../${prefix}${item.path}.md`),
                 /* beautify preserve:end */
                 meta: {
                     title: item.title || item.name,

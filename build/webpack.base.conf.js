@@ -56,16 +56,9 @@ module.exports = {
             },
             {
                 test: /\.md$/,
-                use: [{
-                        loader: 'vue-loader'
-                    },
-                    {
-                        loader: 'vue-markdown-loader/lib/markdown-compiler',
-                        options: {
-                            preventExtract: true,
-                            raw: true
-                        }
-                    }
+                use: [
+                    'vue-loader',
+                    'vue-markd-loader'
                 ]
             },
             {
