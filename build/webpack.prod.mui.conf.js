@@ -83,7 +83,5 @@ const webpackConfig = merge(baseWebpackConfig, {
         chunkModules: false
     }
 });
-if (config.build.productionGzip) {
-    //  utils.gZip(webpackConfig)
-}
+
 module.exports = webpackConfig;
