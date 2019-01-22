@@ -23,7 +23,6 @@ const mui = {
     createAPI,
     version: process.env.__VERSION__
 }
-// console.log(mui)
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(install)
 }
