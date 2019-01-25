@@ -7,32 +7,8 @@ Popup是所有弹层类组件的基础组件,如`toast`、`dialog`...
 
 ### 代码示例
 
-```html
-<m-popup ref="myPopup"
-    @maskClick="closePopup('myPopup')">
-    <div class="text">
-        Popup是所有弹层类组件的基础组件
-    </div>
-</m-popup>
-```
-```javascript  
-export default {
-    name: 'demo-popup',
-    data() {
-        return {}
-    },
-    methods: {
-        showPopup(refId) {
-            const component = this.$refs[refId]
-            component.show()
-        },
-        closePopup(refId) {
-            const component = this.$refs[refId]
-            component.hide()
-        }
-    }
-}
-```
+{{:examples/pages/popup.vue}}
+ 
 ### props 说明
 
 | 参数      |类型| 默认值    | 可选值|描述    | 

@@ -4,7 +4,8 @@
 
 ```html
 <m-icon type="checkbox_checked"></m-icon>
-```
+``` 
+
 ### props 说明
 
 | 参数      |类型| 默认值    | 可选值|描述    |

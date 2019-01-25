@@ -3,25 +3,8 @@
 
 ### 代码示例
 
-```html
-<div class="progress-step__wrap">
-    <m-progress></m-progress>
-    <br>
-    <m-progress :stepText="['Step0','Step1','Step2']"
-        :curStep="1"></m-progress>
-    <br>
-    <m-progress :stepText="[0,1,2,3,4,5]"
-        :curStep="3"></m-progress>
-</div>
-<br>
-<br>
-<m-progress type="timeline"
-    :stepText="timelineArr"></m-progress>
-<br>
-<m-progress type="timeline"
-    :isHalfLine="false"
-    :stepText="timelineArr"></m-progress>
-```
+{{:examples/pages/progress.vue?type=template}}
+ 
 
 ### props 说明
 

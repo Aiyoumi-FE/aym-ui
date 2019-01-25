@@ -58,7 +58,12 @@ module.exports = {
                 test: /\.md$/,
                 use: [
                     'vue-loader',
-                    'vue-markd-loader'
+                    {
+                        loader: 'vue-markd-loader',
+                        options: {
+                            replaceFiles: true
+                        }
+                    }
                 ]
             },
             {
