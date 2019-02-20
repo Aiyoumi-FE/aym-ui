@@ -51,6 +51,10 @@ export default {{nameFirstBig}}
 const docsTpl = `
 ## {{name}}
 ### 代码示例
+
+{{=<% %>=}}
+{{:examples/pages/<%name%>.vue}}
+
 ### props 说明
 
 | 参数      |类型| 默认值    | 可选值|描述    |
@@ -58,7 +62,7 @@ const docsTpl = `
 `
 
 
-const docsDir = path.resolve('document/components/docs')
+const docsDir = path.resolve('document/docs')
 const examplesDir = path.resolve('examples/pages')
 const componentsDir = path.resolve(`src/components/${FILE_NAME}`)
 const modulesDir = path.resolve(`src/components/${FILE_NAME}`)
@@ -90,17 +94,17 @@ const renderTpl = (tpl, data) => {
     return Mustache.render(tpl, data)
 }
 // 写入内容
-const writeMyData = (fd, content) => {
+const writeMyData = (fd, content, fileName) => {
     fs.write(fd, content, (err) => {
         if (err) {
             throw err;
         }
+        console.log(fileName + '创建成功---')
     })
 }
 // 创建文件
 const creteFile = (file, content) => {
     fs.open(file, 'ax+', (err, fd) => {
-
         if (err) {
             if (err.code === 'EEXIST') {
                 console.error(file + '----- already exists');
@@ -108,8 +112,7 @@ const creteFile = (file, content) => {
             }
             //   throw err;
         }
-        console.log(file + '创建成功---')
-        writeMyData(fd, content);
+        writeMyData(fd, content, file);
     });
 }
 // 创建文件夹，如果存在则去创建文件
