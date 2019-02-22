@@ -11,7 +11,6 @@ const registerRoute = (config, prefix) => {
     let navs = []
     config.forEach(group => {
         group.list.forEach(item => {
-            console.log(`${prefix}${item.path}`)
             routeList.push({
                 name: item.name,
                 path: item.path,

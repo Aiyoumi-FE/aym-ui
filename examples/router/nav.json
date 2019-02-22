@@ -79,6 +79,10 @@
         "name": "input"
     },
     {
+        "path": "/radio",
+        "name": "radio"
+    },
+    {
         "path": "/switch",
         "name": "switch"
     }]

@@ -31,6 +31,7 @@ import Progress from './components/progress'
 import Switch from './components/switch'
 import Tags from './components/tags'
 import Toast from './components/toast'
+import { RadioGroup, Radio } from './components/radio'
 // directives
 import TransferDom from './components/transfer-dom'
 export {
@@ -59,5 +60,7 @@ export {
     Marquee,
     MarqueeItem,
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    RadioGroup,
+    Radio
 }
