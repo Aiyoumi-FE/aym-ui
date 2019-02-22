@@ -1,6 +1,7 @@
 <template>
     <div class="mui-cell"
         :class="{
+      'mui-cell_first':isFirst,
       'mui-cell_access': isLink || !!link,
       'mui-cell_switch': isSwitch,
       'select': isSelect
@@ -24,6 +25,7 @@ import {
 } from '../../libs/router'
 export default {
     name: 'm-cell',
+    inject: ['cellGroup'],
     props: {
         title: {
             type: String,
@@ -55,9 +57,30 @@ export default {
         }
     },
     computed: {
+        parent() {
+            if (process.env.NODE_ENV !== 'production' && !this.cellGroup) {
+                console.error('[aym-ui] cell 需要在父组件cellGroup下')
+            }
+            return this.cellGroup
+        },
         valueClass() {
             return {}
+        },
+        itemId() {
+            return `item_${this._uid}`
+        },
+        index() {
+            return this.parent.items.indexOf(this.itemId)
+        },
+        isFirst() {
+            return this.index === 0
         }
+    },
+    created() {
+        this.parent.items.push(this.itemId)
+    },
+    destroyed() {
+        this.parent.items.splice(this.index, 1)
     },
     methods: {
         handleClick(event) {

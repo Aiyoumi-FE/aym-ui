@@ -12,14 +12,16 @@
     padding: px2rem(30) px2rem(32);
     position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
     align-items: center;
+
     &:before {
         @include setTopLine($lineColorLight);
         left: px2rem(32);
     }
-    &:first-child {
-        &:before {
-            display: none;
-        }
+}
+
+.mui-cell_first {
+    &:before {
+        display: none;
     }
 }
 
@@ -44,12 +46,14 @@
 
 // 当list下mui-cell__bd   mui-cell__ft文本溢出时
 .mui-cell_textoverflow {
+
     .mui-cell__bd,
     .mui-cell__ft {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
     }
+
     .mui-cell__ft {
         max-width: px2rem(180);
     }

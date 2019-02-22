@@ -10,6 +10,11 @@
  */
 export default {
     name: 'm-cell-group',
+    provide() {
+        return {
+            cellGroup: this
+        }
+    },
     props: {
         cellGroupClass: {
             type: String,
@@ -17,7 +22,9 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            items: []
+        }
     },
     computed: {},
     methods: {}
