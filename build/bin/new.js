@@ -39,7 +39,7 @@ export default {
 </style>
 `
 // 模块模版
-const modulesTpl = `import {{nameFirstBig}} from '../../components/{{name}}/{{name}}.vue'
+const modulesTpl = `import {{nameFirstBig}} from './{{name}}.vue'
 
 {{nameFirstBig}}.install = function(Vue) {
     Vue.component({{nameFirstBig}}.name, {{nameFirstBig}})
