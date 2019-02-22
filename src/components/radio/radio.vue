@@ -6,7 +6,11 @@
 <script>
 export default {
     name: 'm-radio',
-    inject: ['radioGroup'],
+    inject: {
+        radioGroup: {
+            default: () => null
+        }
+    },
     props: {},
     data() {
         return {}
@@ -22,6 +26,7 @@ export default {
             return `radio_${this._uid}`
         },
         index() {
+            if (!this.parent) return ''
             return this.parent.items.indexOf(this.radioId)
         },
         isActive() {
@@ -29,9 +34,11 @@ export default {
         }
     },
     created() {
+        if (!this.parent) return
         this.parent.items.push(this.radioId)
     },
     destroyed() {
+        if (!this.parent) return
         this.parent.items.splice(this.index, 1)
     },
     methods: {

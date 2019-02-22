@@ -25,7 +25,11 @@ import {
 } from '../../libs/router'
 export default {
     name: 'm-cell',
-    inject: ['cellGroup'],
+    inject: {
+        cellGroup: {
+            default: () => null
+        }
+    },
     props: {
         title: {
             type: String,
@@ -70,6 +74,7 @@ export default {
             return `item_${this._uid}`
         },
         index() {
+            if (!this.parent) return ''
             return this.parent.items.indexOf(this.itemId)
         },
         isFirst() {
@@ -77,9 +82,11 @@ export default {
         }
     },
     created() {
+        if (!this.parent) return
         this.parent.items.push(this.itemId)
     },
     destroyed() {
+        if (!this.parent) return
         this.parent.items.splice(this.index, 1)
     },
     methods: {
