@@ -8,6 +8,15 @@
 /*
 * mui 规范中定义的颜色
 */
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .m-tabbar {
   width: 16rem;
   margin: 0 auto;
@@ -28,5 +37,4 @@
     font-size: 0.42667rem;
     margin-top: 0.128rem;
 }
-
 

@@ -8,6 +8,15 @@
 /*
 * mui 规范中定义的颜色
 */
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .mui-cells {
   margin-top: 0.59733rem;
   background-color: #ffffff;
@@ -34,8 +43,8 @@
     transform: scaleY(0.5);
     left: 0.68267rem;
 }
-.mui-cell:first-child:before {
-    display: none;
+.mui-cell_first:before {
+  display: none;
 }
 .mui-cell_auto {
   height: auto;
@@ -107,6 +116,15 @@
 /*
 * mui 规范中定义的颜色
 */
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .mui-cells {
   margin-top: 0.59733rem;
   background-color: #ffffff;
@@ -133,8 +151,8 @@
     transform: scaleY(0.5);
     left: 0.68267rem;
 }
-.mui-cell:first-child:before {
-    display: none;
+.mui-cell_first:before {
+  display: none;
 }
 .mui-cell_auto {
   height: auto;
