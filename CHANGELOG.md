@@ -1,4 +1,21 @@
+# [2.1.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.0.0...v2.1.0) (2019-02-25)
+
+
+### Bug Fixes
+
+* fix no parent ([1ebc241](https://github.com/Aiyoumi-FE/aym-ui/commit/1ebc241))
+* **cell:** cell-group cell  组件之间有其他内容时样式展示修复 ([e182d98](https://github.com/Aiyoumi-FE/aym-ui/commit/e182d98))
+
+
+### Features
+
+* **radio:** add new component ([e6a2bac](https://github.com/Aiyoumi-FE/aym-ui/commit/e6a2bac))
+* **sass:** 全局注入变量 ([63345fc](https://github.com/Aiyoumi-FE/aym-ui/commit/63345fc))
+
+
+
 # [2.0.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.0.0-beta.0...v2.0.0) (2019-01-16)
+
 
 
 # [2.0.0-beta.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v1.4.2...v2.0.0-beta.0) (2019-01-03)
