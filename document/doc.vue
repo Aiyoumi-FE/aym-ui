@@ -20,7 +20,7 @@ export default {
     },
     computed: {
         demoUrl() {
-            return window.location.pathname.replace('document.html', 'example.html')
+            return window.location.pathname.replace('document.html', 'examples.html')
         }
     },
     method: {}
