@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.1.0...v2.1.1) (2019-03-01)
+
+
+### Bug Fixes
+
+* **toast:** toast loading style ([1f72a6f](https://github.com/Aiyoumi-FE/aym-ui/commit/1f72a6f))
+
+
+
 # [2.1.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.0.0...v2.1.0) (2019-02-25)
 
 
