@@ -114,15 +114,6 @@
 /*
 * mui 规范中定义的颜色
 */
-/*
-* mui 规范中定义的字号
-*/
-/*
-* mui 规范中定义的颜色
-*/
-/*
-* mui 规范中定义的颜色
-*/
 .mui-toast__content {
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
@@ -166,5 +157,61 @@
 .mui-toast__content.mui-toast__icon .mui-icon {
       font-size: 2.048rem;
       margin: 0.96rem 0 0.21333rem;
+}
+.mui-page-loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+.mui-page-loading .mui-page-loading__mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+.mui-page-loading .mui-page-loading__content {
+    width: 5.12rem;
+    height: 5.12rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-2.56rem, -2.56rem);
+}
+.mui-page-loading .mui-icon-loading {
+    width: 1.49333rem;
+    height: 1.49333rem;
+    vertical-align: baseline;
+}
+.mui-page-loading .mui-page-loading__content {
+    font-size: 0.59733rem;
+    color: #666;
+}
+.mui-icon-loading {
+  width: 1.28rem;
+  height: 1.28rem;
+  display: inline-block;
+  vertical-align: middle;
+  animation: muiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6IiAvPgogICAgICAgIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0U5RTlFOSIgcng9IjQiIHJ5PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0zMCkiIC8+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOTg5Njk3IiByeD0iNCIgcnk9IjQiIHRyYW5zZm9ybT0icm90YXRlKDMwIDEwNS45OCA2NSkiIC8+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNCIgcnk9IjQiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIgLz4KICAgICAgICA8cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBM0ExQTIiIHJ4PSI0IiByeT0iNCIgdHJhbnNmb3JtPSJyb3RhdGUoOTAgNjUgNjUpIiAvPgogICAgICAgIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0FCQTlBQSIgcng9IjQiIHJ5PSI0IiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgNTguNjYgNjUpIiAvPgogICAgICAgIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjQiIHJ5PSI0IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIiAvPgogICAgICAgIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0JBQjhCOSIgcng9IjQiIHJ5PSI0IiB0cmFuc2Zvcm09InJvdGF0ZSgxODAgNTAgNjUpIiAvPgogICAgICAgIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0MyQzBDMSIgcng9IjQiIHJ5PSI0IiB0cmFuc2Zvcm09InJvdGF0ZSgtMTUwIDQ1Ljk4IDY1KSIgLz4KICAgICAgICA8cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI0IiByeT0iNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiIC8+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRDJEMkQyIiByeD0iNCIgcnk9IjQiIHRyYW5zZm9ybT0icm90YXRlKC05MCAzNSA2NSkiIC8+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjREFEQURBIiByeD0iNCIgcnk9IjQiIHRyYW5zZm9ybT0icm90YXRlKC02MCAyNC4wMiA2NSkiIC8+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNCIgcnk9IjQiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiIC8+CiAgICA8L3N2Zz4=) no-repeat;
+  background-size: 100%;
+}
+@-webkit-keyframes muiLoading {
+0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+}
+}
+@keyframes muiLoading {
+0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+}
 }
 
