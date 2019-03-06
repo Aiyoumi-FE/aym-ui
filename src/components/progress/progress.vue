@@ -45,6 +45,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../styles/base/fn";
 @import "../../styles/widget/mui-progress/mui-progress";
 </style>

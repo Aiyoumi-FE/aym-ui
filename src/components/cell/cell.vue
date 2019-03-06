@@ -103,6 +103,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../styles/base/fn";
 @import "../../styles/widget/mui-cell/mui-cell";
 </style>

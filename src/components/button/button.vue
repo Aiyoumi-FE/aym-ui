@@ -76,6 +76,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../styles/base/fn";
 @import "../../styles/widget/mui-button/mui-button";
 </style>

@@ -43,6 +43,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../styles/base/fn";
 @import "../../styles/widget/mui-tags/mui-tags";
 </style>
