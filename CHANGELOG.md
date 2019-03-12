@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.1.2...v2.2.0) (2019-03-12)
+
+
+### Features
+
+* **progress:** 新增半圆进度条组件 ([cdc3108](https://github.com/Aiyoumi-FE/aym-ui/commit/cdc3108))
+
+
+
 ## [2.1.2](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.1.1...v2.1.2) (2019-03-06)
 
 
