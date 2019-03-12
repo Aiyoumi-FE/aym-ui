@@ -1,32 +1,33 @@
 <template>
-    <transition name=" fade">
-        <m-popup type="actionsheet"
-            @maskClick="maskClick"
-            v-show="isVisible">
-            <transition name="slide-up">
-                <div class="mui-actionsheet-panel"
-                    v-show="isVisible">
-                    <div class="mui-actionsheet__title"
-                        v-if="title.length > 0">
-                        <div class="mui-actionsheet__cell">{{title}}</div>
-                    </div>
-                    <div class="mui-actionsheet__menu">
-                        <div class="mui-actionsheet__cell"
-                            :class="{select:selectItem.isSelect ?sIndex == index : false}"
-                            v-for="(item,index) in data"
-                            v-html="item"
-                            @click="itemClick(item,index)"></div>
-                    </div>
-                    <div class="mui-actionsheet__ft"
-                        v-if="isBottomBtn"
-                        @click="cancel">
-                        <a href="javascript:;"
+  <transition name=" fade">
+    <m-popup type="actionsheet"
+      @maskClick="maskClick"
+      v-show="isVisible">
+      <transition name="slide-up">
+        <div class="mui-actionsheet-panel"
+          v-show="isVisible">
+          <div class="mui-actionsheet__title"
+            v-if="title.length > 0">
+            <div class="mui-actionsheet__cell">{{title}}</div>
+          </div>
+          <div class="mui-actionsheet__menu">
+            <!-- eslint-disable-next-line -->
+            <div class="mui-actionsheet__cell"
+              :class="{select:selectItem.isSelect ?sIndex == index : false}"
+              v-for="(item,index) in data"
+              v-html="item"
+              @click="itemClick(item,index)"></div>
+          </div>
+          <div class="mui-actionsheet__ft"
+            v-if="isBottomBtn"
+            @click="cancel">
+            <a href="javascript:;"
                             class="mui-actionsheet_default">取消</a>
-                    </div>
-                </div>
-            </transition>
-        </m-popup>
-    </transition>
+          </div>
+        </div>
+      </transition>
+    </m-popup>
+  </transition>
 </template>
 <script>
 import mPopup from '../popup/popup'
@@ -41,58 +42,58 @@ import apiMixin from '../../common/mixins/api'
 const EVENT_SELECT = 'select'
 const EVENT_CANCEL = 'cancel'
 export default {
-    name: 'm-action-sheet',
-    mixins: [apiMixin],
-    data() {
-        return {
-            sIndex: this.selectItem.index
-        }
-    },
-    props: {
-        title: {
-            type: String,
-            default: ''
-        },
-        data: {
-            type: Array,
-            default: () => {
-                return []
-            }
-        },
-        isBottomBtn: {
-            type: Boolean,
-            default: true
-        },
-        selectItem: {
-            type: Object,
-            default: () => {
-                return {
-                    isSelect: false,
-                    index: 0
-                }
-            }
-        }
-    },
-    watch: {
-        selectItem(val) {
-            this.sIndex = val.index
-        }
-    },
-    computed: {},
-    methods: {
-        cancel() {
-            this.hide()
-            this.$emit(EVENT_CANCEL)
-        },
-        itemClick(item, index) {
-            this.hide()
-            this.sIndex = index
-            this.$emit(EVENT_SELECT, item, index)
-        }
-    },
-    components: {
-        mPopup
+  name: 'm-action-sheet',
+  mixins: [apiMixin],
+  data() {
+    return {
+      sIndex: this.selectItem.index
     }
+  },
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    data: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+    isBottomBtn: {
+      type: Boolean,
+      default: true
+    },
+    selectItem: {
+      type: Object,
+      default: () => {
+        return {
+          isSelect: false,
+          index: 0
+        }
+      }
+    }
+  },
+  watch: {
+    selectItem(val) {
+      this.sIndex = val.index
+    }
+  },
+  computed: {},
+  methods: {
+    cancel() {
+      this.hide()
+      this.$emit(EVENT_CANCEL)
+    },
+    itemClick(item, index) {
+      this.hide()
+      this.sIndex = index
+      this.$emit(EVENT_SELECT, item, index)
+    }
+  },
+  components: {
+    mPopup
+  }
 }
 </script>
 <style lang="scss">

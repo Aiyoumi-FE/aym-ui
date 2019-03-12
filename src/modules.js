@@ -6,17 +6,17 @@ import ActionSheet from './components/actionsheet'
 import Badge from './components/badge'
 import Button from './components/button'
 import {
-    CellGroup,
-    Cell,
-    Input
+  CellGroup,
+  Cell,
+  Input
 } from './components/cell'
 import {
-    Marquee,
-    MarqueeItem
+  Marquee,
+  MarqueeItem
 } from './components/marquee'
 import {
-    Tabbar,
-    TabbarItem
+  Tabbar,
+  TabbarItem
 } from './components/tabbar'
 import Dialog from './components/dialog'
 import Header from './components/header'
@@ -35,32 +35,32 @@ import { RadioGroup, Radio } from './components/radio'
 // directives
 import TransferDom from './components/transfer-dom'
 export {
-    createAPI,
-    Style,
-    ActionSheet,
-    Badge,
-    Button,
-    CellGroup,
-    Cell,
-    Input,
-    Dialog,
-    Icon,
-    Indicator,
-    PageLoading,
-    Modal,
-    Header,
-    Page,
-    Picker,
-    Popup,
-    Progress,
-    Switch,
-    Tags,
-    Toast,
-    TransferDom,
-    Marquee,
-    MarqueeItem,
-    Tabbar,
-    TabbarItem,
-    RadioGroup,
-    Radio
+  createAPI,
+  Style,
+  ActionSheet,
+  Badge,
+  Button,
+  CellGroup,
+  Cell,
+  Input,
+  Dialog,
+  Icon,
+  Indicator,
+  PageLoading,
+  Modal,
+  Header,
+  Page,
+  Picker,
+  Popup,
+  Progress,
+  Switch,
+  Tags,
+  Toast,
+  TransferDom,
+  Marquee,
+  MarqueeItem,
+  Tabbar,
+  TabbarItem,
+  RadioGroup,
+  Radio
 }

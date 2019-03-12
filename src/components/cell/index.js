@@ -3,17 +3,17 @@ import Cell from './cell.vue'
 import Input from './input.vue'
 
 CellGroup.install = function(Vue) {
-    Vue.component(CellGroup.name, CellGroup)
+  Vue.component(CellGroup.name, CellGroup)
 }
 Cell.install = function(Vue) {
-    Vue.component(Cell.name, Cell)
+  Vue.component(Cell.name, Cell)
 }
 Input.install = function(Vue) {
-    Vue.component(Input.name, Input)
+  Vue.component(Input.name, Input)
 }
 
 export {
-    CellGroup,
-    Cell,
-    Input
+  CellGroup,
+  Cell,
+  Input
 }

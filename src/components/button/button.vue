@@ -1,10 +1,10 @@
 <template>
-    <button :type="htmlType"
-        :class="classes"
-        :disabled="disabled"
-        @click="handleClick">
-        <slot></slot>
-    </button>
+  <button :type="htmlType"
+    :class="classes"
+    :disabled="disabled"
+    @click="handleClick">
+    <slot></slot>
+  </button>
 </template>
 <script>
 /**
@@ -18,61 +18,62 @@
  */
 const prefixCls = 'mui-btn'
 export default {
-    name: 'm-button',
-    props: {
-        htmlType: {
-            default: 'button',
-            validator(value) {
-                return ['button', 'submit', 'reset'].indexOf(value) > -1
-            }
-        },
-        type: {
-            default: 'primary',
-            validator(value) {
-                return ['primary', 'plain', 'warn', 'border', 'full'].indexOf(value) > -1
-            }
-        },
-        size: {
-            default: 'large',
-            validator(value) {
-                return ['large', 'middle', 'small'].indexOf(value) > -1
-            }
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        }
+  name: 'm-button',
+  props: {
+    htmlType: {
+      default: 'button',
+      validator(value) {
+        return ['button', 'submit', 'reset'].indexOf(value) > -1
+      }
     },
-    computed: {
-        classType() {
-            return `${prefixCls}_${this.type}`
-        },
-        classSize() {
-            if (this.type !== 'full') {
-                return `${prefixCls}_${this.size}`
-            }
-        },
+    type: {
+      default: 'primary',
+      validator(value) {
+        return ['primary', 'plain', 'warn', 'border', 'full'].indexOf(value) > -1
+      }
+    },
+    size: {
+      default: 'large',
+      validator(value) {
+        return ['large', 'middle', 'small'].indexOf(value) > -1
+      }
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    classType() {
+      return `${prefixCls}_${this.type}`
+    },
+    classSize() {
+      if (this.type !== 'full') {
+        return `${prefixCls}_${this.size}`
+      }
+      return ''
+    },
 
-        classes() {
-            return [
-                `${prefixCls}`,
-                this.classType,
-                this.classSize,
-                { 'disabled': this.disabled }
-            ]
-        }
-    },
-    methods: {
-        handleClick(event) {
-            if (this.disabled) {
-                event.preventDefault()
-                event.stopPropagation()
-                return
-            }
-            this.$emit('click', event)
-        }
-    },
-    mounted() {}
+    classes() {
+      return [
+        `${prefixCls}`,
+        this.classType,
+        this.classSize,
+        { 'disabled': this.disabled }
+      ]
+    }
+  },
+  methods: {
+    handleClick(event) {
+      if (this.disabled) {
+        event.preventDefault()
+        event.stopPropagation()
+        return
+      }
+      this.$emit('click', event)
+    }
+  },
+  mounted() {}
 }
 </script>
 <style lang="scss">
