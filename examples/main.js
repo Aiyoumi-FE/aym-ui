@@ -10,17 +10,19 @@ Vue.use(demoGlobal)
 Vue.use(aymUI)
 // && window.parent === window
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js').then(registration => {
-            console.log(' SW registered: ', registration)
-        }).catch(registrationError => {
-            console.log(' SW registration failed: ', registrationError)
-        })
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').then(registration => {
+      // eslint-disable-next-line
+      console.log(' SW registered: ', registration)
+    }).catch(registrationError => {
+      // eslint-disable-next-line
+      console.log(' SW registration failed: ', registrationError)
     })
+  })
 }
 
 new Vue({
-    el: '#app',
-    router,
-    render: h => h(app)
+  el: '#app',
+  router,
+  render: h => h(app)
 })

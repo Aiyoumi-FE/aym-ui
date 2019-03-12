@@ -67,29 +67,14 @@ export default {
   },
   methods: {
     start() {
-      // console.log(this.$refs)
       const path = this.$refs.meter
-      // const meters2 = document.querySelectorAll('svg[data-value] .meter')
-      // console.log(meters.getTotalLength(), meters2)
-      // meters.forEach((path) => {
-      // Get the length of the path
       let length = path.getTotalLength()
-      // console.log(length) once and hardcode the stroke-dashoffset and stroke-dasharray in the SVG if possible
-      // or uncomment to set it dynamically
       path.style.strokeDashoffset = length
       path.style.strokeDasharray = length
-      console.log(length)
-      // Get the value of the meter
       let value = this.percent
-      console.log(this.percent)
-      // let value = parseInt(path.parentNode.getAttribute('data-value'))
-      // // Calculate the percentage of the total length
       let to = length * ((100 - value) / 100)
-      // // Trigger Layout in Safari hack https://jakearchibald.com/2013/animated-line-drawing-svg/
       path.getBoundingClientRect()
-      // // Set the Offset
       path.style.strokeDashoffset = Math.max(0, to)
-      // })
     }
   }
 }
