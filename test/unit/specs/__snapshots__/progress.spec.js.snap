@@ -3,8 +3,6 @@
 exports[`Progress step curStep：当前所在步数: 满格 1`] = `
 <ul
   class="mui-progress_step"
-  ishalfline="true"
-  type="step"
 >
   <li
     class="mui-progress__item cur"
@@ -90,7 +88,6 @@ exports[`Progress step curStep：当前所在步数: 满格 1`] = `
 exports[`Progress timeline 显示那半条线: 显示那半条线 1`] = `
 <ul
   class="mui-progress_timeline"
-  type="timeline"
 >
   <li
     class="mui-progress__item cur"
@@ -152,7 +149,6 @@ exports[`Progress timeline 显示那半条线: 显示那半条线 1`] = `
 exports[`Progress timeline 默认不显示一半线: 不显示那半条线 1`] = `
 <ul
   class="mui-progress_timeline"
-  type="timeline"
 >
   <li
     class="mui-progress__item cur"
