@@ -8,6 +8,38 @@
 /*
 * mui 规范中定义的颜色
 */
+.mui-progress__semicircle {
+  position: relative;
+  text-align: center;
+  line-height: 0;
+  color: #fff;
+}
+.svg__text {
+  position: absolute;
+  left: 50%;
+  bottom: 0.21333rem;
+  transform: translateX(-50%);
+  line-height: 1;
+  text-align: center;
+}
+.mui-progress__semicircle_svg {
+  width: 50%;
+}
+.mui-progress__semicircle_svg path {
+  will-change: auto;
+  transition: stroke-dashoffset 850ms ease-in-out;
+}
+
+@charset "UTF-8";
+/*
+* mui 规范中定义的字号
+*/
+/*
+* mui 规范中定义的颜色
+*/
+/*
+* mui 规范中定义的颜色
+*/
 .mui-progress_step {
   display: flex;
   height: 12px;
