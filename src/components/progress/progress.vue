@@ -1,10 +1,15 @@
 <template>
-    <component :is="type"
-        v-bind="$props"></component>
+  <!-- v-bind="$props" -->
+  <component :is="type"
+    v-bind="$attrs">
+    <slot></slot>
+  </component>
 </template>
 <script>
 import step from './step'
 import timeline from './timeline'
+import semicircle from './semicircle'
+
 /**
  * param {String} [type = step] - 进度类型 默认值step
  * param {Array} [stepText=[]] - 存放每一步文本的数组, 默认值['0', '1', '2']
@@ -12,38 +17,34 @@ import timeline from './timeline'
  * param {Boolean [isHalfLine = true]} - 是否隐藏一半进度 默认值true(隐藏)
  */
 export default {
-    name: 'm-progress',
-    props: {
-        type: {
-            type: String,
-            default: 'step'
-        },
-        stepText: {
-            type: Array,
-            default: function() {
-                return ['0', '1', '2']
-            },
-            validator(value) {
-                return value.length >= 1
-            }
-        },
-        curStep: {
-            type: Number,
-            default: 0
-        },
-        isHalfLine: {
-            type: Boolean,
-            default: true
-        }
-    },
-    computed: {},
-    components: {
-        step,
-        timeline
-    },
-    methods: {}
+  name: 'm-progress',
+  inheritAttrs: false,
+  provide() {
+    return {
+      progress: this
+    }
+  },
+  props: {
+    type: {
+      type: String,
+      default: 'step'
+    }
+  },
+  computed: {},
+  components: {
+    step,
+    timeline,
+    semicircle
+  },
+  created() {
+    // this.$children.slots = this.$slots
+  },
+  mounted() {
+    // console.log(this)
+  },
+  methods: {}
 }
 </script>
 <style lang="scss">
-@import "../../styles/widget/mui-progress/mui-progress";
+@import '../../styles/widget/mui-progress/mui-progress';
 </style>
