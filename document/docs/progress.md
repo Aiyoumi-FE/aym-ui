@@ -2,7 +2,7 @@
 
 ### 代码示例
 
-{{:examples/pages/progress.vue?type=template}}
+{{:examples/pages/progress.vue}}
 
 ### props 说明
 

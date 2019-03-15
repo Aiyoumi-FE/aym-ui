@@ -59,10 +59,9 @@ export default {
     return {}
   },
   mounted() {
+    this.progress.start = this.start
     if (this.isAutoPlay) {
-      this.start()
-    } else {
-      this.progress.start = this.start
+      this.progress.start()
     }
   },
   methods: {

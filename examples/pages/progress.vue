@@ -6,9 +6,8 @@
         percent="20"
         barColor="#f00" />
       <m-progress ref="notauto"
-        :isAutoPlay="false"
         type="semicircle"
-        percent="40"
+        :percent="percent"
         barColor="#000">
         <p>1行</p>
         <p>2行</p>
@@ -43,6 +42,7 @@ export default {
   name: 'demo-progress',
   data() {
     return {
+      percent: 40,
       timelineArr: [{
           date: '3.28',
           title: '已提交审核',
@@ -57,7 +57,11 @@ export default {
     }
   },
   mounted() {
-    this.$refs.notauto.start()
+    this.percent = 80
+    setTimeout(() => {
+      this.$refs.notauto.start()
+    }, 2000)
+    // this.$refs.notauto.start()
   }
 }
 </script>
