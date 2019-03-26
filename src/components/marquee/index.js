@@ -12,3 +12,8 @@ export {
   Marquee,
   MarqueeItem
 }
+
+export default {
+  Marquee,
+  MarqueeItem
+}

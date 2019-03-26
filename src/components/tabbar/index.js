@@ -12,3 +12,8 @@ export {
   Tabbar,
   TabbarItem
 }
+
+export default {
+  Tabbar,
+  TabbarItem
+}

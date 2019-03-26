@@ -12,3 +12,4 @@ RadioGroup.install = function(Vue) {
 // export default Radio
 
 export { RadioGroup, Radio }
+export default { RadioGroup, Radio }

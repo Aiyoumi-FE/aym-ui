@@ -17,3 +17,9 @@ export {
   Cell,
   Input
 }
+
+export default {
+  CellGroup,
+  Cell,
+  Input
+}
