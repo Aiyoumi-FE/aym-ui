@@ -1,3 +1,13 @@
+# [2.3.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.2.0...v2.3.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* **group:** 组合组件导出 ([f1b985c](https://github.com/Aiyoumi-FE/aym-ui/commit/f1b985c))
+* **progress:** autoplay ([dc96f26](https://github.com/Aiyoumi-FE/aym-ui/commit/dc96f26))
+
+
+
 # [2.2.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.1.2...v2.2.0) (2019-03-12)
 
 
