@@ -1,5 +1,13 @@
 <template>
-  <div :class="classes">
+  <div class="mui-cell mui-cell__input"
+    :class="{
+          'mui-cell_first':isFirst,
+          'mui-cell_autoheight':isAutoHeight,
+          'mui-cell__input_textarea':isTextarea,
+          'mui-cell__input_upanddown':upAndDown,
+          'mui-cell__input_vcode':oldVcode, // 老样式发松验证码
+          'mui-cell__input_focus':focused
+        }">
     <div class="mui-cell__hd">
       <slot name="hd">
         <label v-if="title"
@@ -7,15 +15,38 @@
       </slot>
     </div>
     <div class="mui-cell__bd">
-      <input class="mui-input"
+      <textarea v-if="isTextarea"
+        class="mui-textarea"
+        rows="3"
+        :value="value"
+        v-on="listeners"
+        v-bind="$attrs"></textarea>
+      <input v-else
+        ref="input"
+        class="mui-input"
         :value="value"
         v-on="listeners"
         v-bind="$attrs"
         :type="type">
+      <!-- prevent  v-if="isShowClear" -->
+      <m-icon v-if="isShowClear"
+        @click.stop="onClear"
+        ref="icon"
+        type="delete"
+        class=" mui-input__icon_clear"></m-icon>
+      <slot v-if="upAndDown"
+        name="ft">
+        <m-button v-if="newVcode"
+          type="plain"
+          size="middle"
+          :class="{'disabled':isDisabled}"
+          @click="getCode">{{vcodeBtnText}}</m-button>
+      </slot>
     </div>
     <div class="mui-cell__ft">
-      <slot name="ft">
-        <button v-if="inputType"
+      <slot v-if="!upAndDown"
+        name="ft">
+        <button v-if="oldVcode"
           class="mui-vcode__btn"
           :class="{'disabled':isDisabled}"
           @click="getCode">{{vcodeBtnText}}</button>
@@ -24,6 +55,9 @@
   </div>
 </template>
 <script>
+import mIcon from '../icon/icon'
+import mButton from '../button/button'
+import mixin from './mixin'
 /**
  * param {String} [title=''] - 输入框标题
  * param {String} [nativeType='text'] - input类型 可选text tel
@@ -34,11 +68,10 @@
  * event 自定义事件有getcode
  */
 const prefixCls = 'mui-cell'
-const EVENT_GETCODE = 'getCode'
-const EVENT_INPUT = 'input'
 export default {
   name: 'm-input',
   inheritAttrs: false,
+  mixins: [mixin],
   props: {
     title: {
       type: String,
@@ -55,6 +88,10 @@ export default {
         return ['codeBtn', 'imgBtn'].indexOf(value) > -1
       }
     },
+    autoHeight: {
+      type: Boolean,
+      default: false
+    },
     inputType: {
       type: String,
       default: ''
@@ -63,54 +100,40 @@ export default {
       type: Boolean,
       default: false
     },
-    value: {}
-    // placeholder: {
-    //     type: String,
-    //     default: ''
-    // },
-    // disabled: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // readonly: {
-    //     type: Boolean,
-    //     default: false
-    // },
-
-    // autofocus: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // autocomplete: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // name: String,
-    // id: String,
-    // form: String,
-    // minlength: Number,
-    // maxlength: Number,
-    // resize: String,
-    // min: Number,
-    // max: Number,
-    // step: Number,
-    // tabindex: String
+    value: {
+      default: ''
+    },
+    upAndDown: {
+      type: Boolean,
+      default: false
+    },
+    clearable: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
+      focused: false,
       // inputValue: this.value,
       currentTime: 0
     }
   },
   computed: {
+    isAutoHeight() {
+      return this.autoHeight || this.isTextarea || this.isVcode
+    },
+    isTextarea() {
+      return this.type === 'textarea'
+    },
+    isShowClear() {
+      // && !this.isVcode
+      return this.clearable && this.focused && this.value !== ''
+    },
     listeners() {
       var vm = this
       return Object.assign({},
-        // 我们从父级添加所有的监听器
-        this.$listeners,
-        // 然后我们添加自定义监听器，
-        // 或覆写一些监听器的行为
-        {
+        this.$listeners, {
           // 这里确保组件配合 `v-model` 的工作
           compositionstart: (e) => {
             e.target.composing = true
@@ -118,31 +141,25 @@ export default {
           compositionend: (e) => {
             if (!e.target.composing) return
             e.target.composing = false
-            vm.$emit(EVENT_INPUT, e.target.value)
+            vm.$emit('input', e.target.value)
           },
-          input: function(e) {
-            if (!e.target.composing) {
-              vm.$emit(EVENT_INPUT, e.target.value)
-            }
-          }
+          input: this.onInput,
+          focus: this.onFocus,
+          blur: this.onBlur
         }
       )
     },
-    classType() {
-      if (this.inputType) {
-        return `${prefixCls}_${this.inputType}`
-      }
-      return ''
-    },
-    classes() {
-      return [
-        `${prefixCls}`,
-        this.classType
-        // {  [`${prefixCls}_${this.inputType}`]: this.inputType.length > 0}
-      ]
-    },
     isDisabled() {
       return this.isTiming
+    },
+    isVcode() {
+      return this.inputType === 'vcode'
+    },
+    newVcode() {
+      return this.isVcode && this.upAndDown
+    },
+    oldVcode() {
+      return this.isVcode && !this.upAndDown
     },
     vcodeBtnText() {
       if (this.inputType === 'vcode' && this.isTiming) {
@@ -151,28 +168,53 @@ export default {
       return '获取验证码'
     }
   },
+  components: {
+    mIcon,
+    mButton
+  },
   watch: {
     isTiming(to, from) {
       if (to) {
         this.countdown(60).then(() => {
-          this.$emit(EVENT_GETCODE, 'done')
+          this.$emit('getCode', 'done')
         })
       }
     }
-    // value(to) {
-    //     this.inputValue = to
-    // },
-    // inputValue(to) {
-    //     this.$emit(EVENT_INPUT, to)
-    // }
   },
   mounted() {},
   methods: {
+    focus() {
+      this.$refs.input && this.$refs.input.focus()
+    },
+    blur() {
+      this.$refs.input && this.$refs.input.blur()
+    },
+    onInput(e) {
+      if (!e.target.composing) {
+        this.$emit('input', e.target.value)
+      }
+    },
+    onFocus(e) {
+      this.focused = true
+      this.$emit('focus', e)
+    },
+    onBlur(e) {
+      // this.focused = false
+      this.$emit('blur', e)
+      setTimeout(() => {
+        this.focused = false
+      }, 0)
+    },
+    onClear(e) {
+      this.$emit('input', '')
+      this.$emit('clear')
+      // this.focus()
+    },
     getCode(e) {
       if (this.isTiming) {
         return
       }
-      this.$emit(EVENT_GETCODE, 'send')
+      this.$emit('getCode', 'send')
     },
     countdown(totalTime) {
       this.currentTime = totalTime
