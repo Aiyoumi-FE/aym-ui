@@ -1,60 +1,136 @@
 .mui-cells {
-    margin-top: px2rem(28);
-    background-color: #ffffff;
-    font-size: $fontSizeLevel5;
-    overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
-    position: relative;
-    line-height: 1.2857;
+  margin-top: px2rem(24);
+  background-color: #ffffff;
+  font-size: $fontSizeLevel5;
+  overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
+  position: relative;
+  line-height: 1.2857;
 }
 
 .mui-cell {
-    display: flex;
-    padding: px2rem(30) px2rem(32);
-    position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
-    align-items: center;
+  display: flex;
+  height: px2rem(128);
+  padding: 0 px2rem(32);
 
-    &:before {
-        @include setTopLine($lineColorLight);
-        left: px2rem(32);
-    }
+  // padding: px2rem(44) px2rem(32);
+  position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
+  align-items: center;
+
+  &:before {
+    @include setTopLine($lineColorLight);
+    left: px2rem(32);
+    right: px2rem(32);
+  }
+}
+
+.mui-cell_multiline {
+  height: px2rem(148);
+  padding: 0 px2rem(32);
 }
 
 .mui-cell_first {
-    &:before {
-        display: none;
-    }
+  &:before {
+    display: none;
+  }
 }
 
 .mui-cell_auto {
-    height: auto;
-    padding: px2rem(20) px2rem(32);
+  height: auto;
+  padding: px2rem(20) px2rem(32);
 }
 
 .mui-cell_primary {
-    align-items: flex-start;
+  align-items: flex-start;
+}
+
+.mui-cell__hd {
+  // 64x64
+}
+
+
+
+.mui-cell__hd_icon {
+  margin-right: px2rem(24);
+  // margin: px2rem(-12) px2rem(24) px2rem(-12) 0;
+  width: px2rem(64);
+  height: px2rem(64);
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.mui-cell__hd_icon_big {
+  margin-right: px2rem(24);
+  // margin: px2rem(-2) px2rem(24) px2rem(-2) 0;
+  width: px2rem(84);
+  height: px2rem(84);
 }
 
 .mui-cell__bd {
-    flex: 1;
-    color: $textColorImportant;
+  flex: 1;
+  font-size: $fontSizeLevel3;
+  color: $textColorImportant;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mui-cell__bd_title {
+  font-weight: 500;
+
+}
+
+.mui-cell__bd_subtitle,
+.mui-cell__ft_subvalue {
+  margin-top: px2rem(8);
+}
+
+.mui-cell__bd_subtitle {
+  color: $textColorAssistant;
+  font-size: $fontSizeLevel5;
 }
 
 .mui-cell__ft {
-    text-align: right;
-    color: $textColorAssistant;
+  text-align: right;
+  color: $textColorAssistant;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mui-cell__ft_value {
+  font-size: $fontSizeLevel3;
+}
+
+.mui-cell__ft_subvalue {
+  color: $textColorAssistant;
+  font-size: $fontSizeLevel5;
+
 }
 
 // 当list下mui-cell__bd   mui-cell__ft文本溢出时
 .mui-cell_textoverflow {
 
-    .mui-cell__bd,
-    .mui-cell__ft {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+  .mui-cell__bd,
+  .mui-cell__ft {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
-    .mui-cell__ft {
-        max-width: px2rem(180);
-    }
+  .mui-cell__ft {
+    max-width: px2rem(180);
+  }
+}
+
+.mui-cell_autoheight {
+  &.mui-cell {
+    height: auto;
+    padding: px2rem(44) px2rem(32);
+  }
+
+  .mui-cell__bd,
+  .mui-cell__ft {
+    white-space: normal;
+  }
+
 }

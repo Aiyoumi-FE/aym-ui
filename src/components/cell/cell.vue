@@ -1,105 +1,120 @@
 <template>
-    <div class="mui-cell"
-        :class="{
+  <div class="mui-cell"
+    :class="{
       'mui-cell_first':isFirst,
       'mui-cell_access': isLink || !!link,
       'mui-cell_switch': isSwitch,
-      'select': isSelect
+      'mui-cell_disabled': disabled,
+      'mui-cell_autoheight': autoHeight,
+      'mui-cell_multiline': isMultiline
     }"
-        @click="handleClick">
-        <div class="mui-cell__hd">
-            <slot name="icon"></slot>
-        </div>
-        <div class="mui-cell__bd">
-            <slot name="title">{{ title }}</slot>
-        </div>
-        <div class="mui-cell__ft"
-            :class="valueClass">
-            <slot name="value">{{value}}</slot>
-        </div>
+    @click="handleClick">
+    <div class="mui-cell__hd">
+      <div class="mui-cell__hd_icon"
+        :class="{'mui-cell__hd_icon_big':isMultiline}"
+        v-if="$slots.icon">
+        <slot name="icon">
+        </slot>
+      </div>
     </div>
+    <div class="mui-cell__bd">
+      <slot name="title">
+        <p :class="{'mui-cell__bd_title':isBold}">{{ title }}</p>
+      </slot>
+      <p v-if="subTitle"
+        class="mui-cell__bd_subtitle">{{subTitle}}</p>
+    </div>
+    <div class="mui-cell__ft"
+      :class="valueClass">
+      <p v-if="!value"
+        class="mui-cell__ft_placeholder">
+        {{placeholder}}
+      </p>
+      <slot name="value">
+        <p :class="{'mui-cell__ft_value':subValue}"> {{value}}</p>
+      </slot>
+      <p v-if="subValue"
+        class="mui-cell__ft_subvalue">{{subValue}}</p>
+    </div>
+  </div>
 </template>
 <script>
 import {
-    go
+  go
 } from '../../libs/router'
+import mixin from './mixin'
+
 export default {
-    name: 'm-cell',
-    inject: {
-        cellGroup: {
-            default: () => null
-        }
+  name: 'm-cell',
+  mixins: [mixin],
+
+  props: {
+    title: {
+      type: String,
+      default: ''
     },
-    props: {
-        title: {
-            type: String,
-            default: ''
-        },
-        value: {
-            type: String,
-            default: ''
-        },
-        isLink: {
-            type: Boolean,
-            default: false
-        },
-        link: {
-            type: [String, Object],
-            default: ''
-        },
-        isSwitch: {
-            type: Boolean,
-            default: false
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
-        isSelect: {
-            type: Boolean,
-            default: false
-        }
+    titleBold: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-        parent() {
-            if (process.env.NODE_ENV !== 'production' && !this.cellGroup) {
-                console.error('[aym-ui] cell 需要在父组件cellGroup下')
-            }
-            return this.cellGroup
-        },
-        valueClass() {
-            return {}
-        },
-        itemId() {
-            return `item_${this._uid}`
-        },
-        index() {
-            if (!this.parent) return ''
-            return this.parent.items.indexOf(this.itemId)
-        },
-        isFirst() {
-            return this.index === 0
-        }
+    subTitle: {
+      type: String,
+      default: ''
     },
-    created() {
-        if (!this.parent) return
-        this.parent.items.push(this.itemId)
+    placeholder: {
+      type: String,
+      default: ''
     },
-    destroyed() {
-        if (!this.parent) return
-        this.parent.items.splice(this.index, 1)
+    value: {
+      type: String,
+      default: ''
     },
-    methods: {
-        handleClick(event) {
-            if (this.link) {
-                if (!this.disabled) {
-                    go(this.link, this.$router)
-                }
-            } else {
-                this.$emit('click', event)
-            }
-        }
+    subValue: {
+      type: String,
+      default: ''
+    },
+    autoHeight: {
+      type: Boolean,
+      default: false
+    },
+    isLink: {
+      type: Boolean,
+      default: false
+    },
+    link: {
+      type: [String, Object],
+      default: ''
+    },
+    isSwitch: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
+  },
+  computed: {
+    isBold() {
+      return this.subTitle || this.titleBold
+    },
+    isMultiline() {
+      return this.subTitle || this.subValue
+    },
+    valueClass() {
+      return {}
+    }
+  },
+  methods: {
+    handleClick(event) {
+      if (this.disabled) return
+      if (this.link) {
+        go(this.link, this.$router)
+      } else {
+        this.$emit('click', event)
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">

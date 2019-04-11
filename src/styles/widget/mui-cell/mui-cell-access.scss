@@ -1,31 +1,41 @@
 .mui-cell_access {
-    @include setTapColor();
-    color: inherit;
-    &:active {
-        background-color: #ECECEC;
-    }
+  @include setTapColor();
+  color: inherit;
+
+  &:active {
+    background-color: #ECECEC;
+  }
+
+  &.mui-cell_disabled {
     .mui-cell__ft {
-        padding-right: px2rem(50);
-        position: relative;
-        &:after {
-            content: " ";
-            @include setArrow(right, px2rem(14), px2rem(24));
-            position: absolute;
-            top: 50%;
-            margin-top: px2rem(-12);
-        }
+      color: $textColorAssistant;
     }
-    &.select {
-        .mui-cell__ft {
-            color: #222;
-        }
+  }
+
+  .mui-cell__ft {
+    padding-right: px2rem(50);
+    color: $textColorImportant;
+    position: relative;
+
+    &:after {
+      content: " ";
+      @include setArrow(right, px2rem(14), px2rem(24));
+      position: absolute;
+      top: 50%;
+      margin-top: px2rem(-12);
     }
+
+    .mui-cell__ft_placeholder {
+      color: $textColorAssistant;
+    }
+  }
 }
 
 .mui-cell_switch {
-    padding-top: px2rem(17);
-    padding-bottom: px2rem(17);
-    .mui-cell__ft {
-        font-size: 0;
-    }
+  // padding-top: px2rem(17);
+  // padding-bottom: px2rem(17);
+
+  .mui-cell__ft {
+    font-size: 0;
+  }
 }
