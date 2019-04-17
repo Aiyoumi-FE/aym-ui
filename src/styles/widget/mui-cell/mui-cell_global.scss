@@ -1,21 +1,22 @@
 .mui-cells {
   margin-top: px2rem(24);
-  background-color: #ffffff;
-  font-size: $fontSizeLevel5;
   overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
   position: relative;
-  line-height: 1.2857;
 }
 
 .mui-cell {
   display: flex;
   height: px2rem(128);
   padding: 0 px2rem(32);
-
   // padding: px2rem(44) px2rem(32);
   position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
   align-items: center;
+  font-size: $fontSizeLevel5;
+  line-height: 1.2857;
+  background-color: #ffffff;
+}
 
+.mui-cells .mui-cell {
   &:before {
     @include setTopLine($lineColorLight);
     left: px2rem(32);
@@ -43,9 +44,6 @@
   align-items: flex-start;
 }
 
-.mui-cell__hd {
-  // 64x64
-}
 
 
 
@@ -92,7 +90,8 @@
 
 .mui-cell__ft {
   text-align: right;
-  color: $textColorAssistant;
+  // color: $textColorAssistant;
+  color: $textColorImportant;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -105,6 +104,10 @@
   color: $textColorAssistant;
   font-size: $fontSizeLevel5;
 
+}
+
+.mui-cell__ft_placeholder {
+  color: $textColorAssistant;
 }
 
 // 当list下mui-cell__bd   mui-cell__ft文本溢出时

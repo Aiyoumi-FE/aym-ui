@@ -14,7 +14,7 @@
 
   .mui-cell__ft {
     padding-right: px2rem(50);
-    color: $textColorImportant;
+
     position: relative;
 
     &:after {
@@ -24,18 +24,5 @@
       top: 50%;
       margin-top: px2rem(-12);
     }
-
-    .mui-cell__ft_placeholder {
-      color: $textColorAssistant;
-    }
-  }
-}
-
-.mui-cell_switch {
-  // padding-top: px2rem(17);
-  // padding-bottom: px2rem(17);
-
-  .mui-cell__ft {
-    font-size: 0;
   }
 }
