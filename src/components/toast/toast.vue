@@ -18,7 +18,7 @@
 <script>
 import mPopup from '../popup/popup'
 import apiMixin from '../../common/mixins/api'
-import mIcon from '../icon/icon'
+import mIcon from '../icon'
 /**
  * m-toast
  * @param {String} [type='text'] - 提示类型,默认值为'text',仅文本

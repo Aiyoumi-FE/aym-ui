@@ -1,7 +1,3 @@
-import Icon from './icon.vue'
-
-Icon.install = function(Vue) {
-  Vue.component(Icon.name, Icon)
-}
+import Icon from 'mui-icon'
 
 export default Icon

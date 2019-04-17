@@ -46,7 +46,7 @@
 import BScroll from 'better-scroll'
 import mButton from '../button/button'
 import mPopup from '../popup/popup'
-import mIcon from '../icon/icon'
+import mIcon from '../icon'
 import apiMixin from '../../common/mixins/api'
 
 const EVENT_SELECT = 'select'

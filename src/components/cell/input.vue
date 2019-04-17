@@ -55,7 +55,7 @@
   </div>
 </template>
 <script>
-import mIcon from '../icon/icon'
+import mIcon from '../icon'
 import mButton from '../button/button'
 import mixin from './mixin'
 /**
@@ -81,13 +81,13 @@ export default {
       type: String,
       default: 'text'
     },
-    btnType: {
-      type: String,
-      default: 'codeBtn',
-      validator(value) {
-        return ['codeBtn', 'imgBtn'].indexOf(value) > -1
-      }
-    },
+    // btnType: {
+    //   type: String,
+    //   default: 'codeBtn',
+    //   validator(value) {
+    //     return ['codeBtn', 'imgBtn'].indexOf(value) > -1
+    //   }
+    // },
     autoHeight: {
       type: Boolean,
       default: false
