@@ -19,9 +19,9 @@
     <div class="mui-cell__bd">
       <slot name="title">
         <p :class="{'mui-cell__bd_title':isBold}">{{ title }}</p>
+        <p v-if="subTitle"
+          class="mui-cell__bd_subtitle">{{subTitle}}</p>
       </slot>
-      <p v-if="subTitle"
-        class="mui-cell__bd_subtitle">{{subTitle}}</p>
     </div>
     <div class="mui-cell__ft"
       :class="valueClass">
