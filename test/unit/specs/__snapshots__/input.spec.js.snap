@@ -2,7 +2,7 @@
 
 exports[`Input 属性测试 vcode: 倒计时到0 1`] = `
 <div
-  class="mui-cell mui-cell_vcode"
+  class="mui-cell mui-cell__input mui-cell_autoheight mui-cell__input_vcode"
 >
   <div
     class="mui-cell__hd"
@@ -17,6 +17,10 @@ exports[`Input 属性测试 vcode: 倒计时到0 1`] = `
       class="mui-input"
       type="text"
     />
+     
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -33,7 +37,7 @@ exports[`Input 属性测试 vcode: 倒计时到0 1`] = `
 
 exports[`Input 属性测试 vcode: 倒计时开始 1`] = `
 <div
-  class="mui-cell mui-cell_vcode"
+  class="mui-cell mui-cell__input mui-cell_autoheight mui-cell__input_vcode"
 >
   <div
     class="mui-cell__hd"
@@ -48,6 +52,10 @@ exports[`Input 属性测试 vcode: 倒计时开始 1`] = `
       class="mui-input"
       type="text"
     />
+     
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -64,7 +72,7 @@ exports[`Input 属性测试 vcode: 倒计时开始 1`] = `
 
 exports[`Input 属性测试 vcode: 计时完毕，保持原样 1`] = `
 <div
-  class="mui-cell mui-cell_vcode"
+  class="mui-cell mui-cell__input mui-cell_autoheight mui-cell__input_vcode"
 >
   <div
     class="mui-cell__hd"
@@ -79,6 +87,10 @@ exports[`Input 属性测试 vcode: 计时完毕，保持原样 1`] = `
       class="mui-input"
       type="text"
     />
+     
+    <!---->
+     
+    <!---->
   </div>
    
   <div

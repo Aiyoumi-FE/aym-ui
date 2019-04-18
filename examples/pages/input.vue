@@ -34,7 +34,6 @@
         <m-input title="姓名"
           v-model="upAndDownName"
           upAndDown
-          autoHeight
           clearable
           placeholder="请输入姓名"></m-input>
         <m-input title="手机号"
@@ -43,12 +42,10 @@
           :isTiming="isTiming"
           input-type="vcode"
           upAndDown
-          autoHeight
           placeholder="请输入手机号"></m-input>
         <m-input title="不要按钮也可以啊"
           v-model="upAndDownCustom"
           upAndDown
-          autoHeight
           placeholder="请输入姓名">
           <div slot="ft">随便</div>
         </m-input>

@@ -121,7 +121,7 @@ export default {
   },
   computed: {
     isAutoHeight() {
-      return this.autoHeight || this.isTextarea || this.isVcode
+      return this.autoHeight || this.isTextarea || this.isVcode || this.upAndDown
     },
     isTextarea() {
       return this.type === 'textarea'
