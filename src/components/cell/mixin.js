@@ -10,7 +10,8 @@ export default {
     },
     parent() {
       if (process.env.NODE_ENV !== 'production' && !this.cellGroup) {
-        console.error('[aym-ui] cell 需要在父组件cellGroup下')
+        // console.error('[aym-ui] cell 需要在父组件cellGroup下')
+        return null
       }
       return this.cellGroup
     },

@@ -82,6 +82,18 @@
           value="value"
           titleBold></m-cell>
       </m-cell-group>
+      <br>
+      <h4>单独的，没有group的cell</h4>
+      <m-cell title="单独cell"
+        subTitle="不在cell-group下"
+        value="可以和其他组件组合使用"
+        subValue="可以和其他组件组合使用"
+        placeholder="请选择">
+      </m-cell>
+      <m-cell title="单独cell"
+        subTitle="不在cell-group下"
+        value="单行">
+      </m-cell>
     </demo-content>
   </m-page>
 </template>

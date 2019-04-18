@@ -3,7 +3,6 @@
     :class="{
       'mui-cell_first':isFirst,
       'mui-cell_access': isLink || !!link,
-      'mui-cell_switch': isSwitch,
       'mui-cell_disabled': disabled,
       'mui-cell_autoheight': autoHeight,
       'mui-cell_multiline': isMultiline
@@ -26,15 +25,15 @@
     </div>
     <div class="mui-cell__ft"
       :class="valueClass">
-      <p v-if="!value"
+      <p v-if="!value&&!$slots.value"
         class="mui-cell__ft_placeholder">
         {{placeholder}}
       </p>
       <slot name="value">
         <p :class="{'mui-cell__ft_value':subValue}"> {{value}}</p>
+        <p v-if="subValue"
+          class="mui-cell__ft_subvalue">{{subValue}}</p>
       </slot>
-      <p v-if="subValue"
-        class="mui-cell__ft_subvalue">{{subValue}}</p>
     </div>
   </div>
 </template>
@@ -84,10 +83,6 @@ export default {
     link: {
       type: [String, Object],
       default: ''
-    },
-    isSwitch: {
-      type: Boolean,
-      default: false
     },
     disabled: {
       type: Boolean,
