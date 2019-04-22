@@ -55,7 +55,7 @@
             <m-cell title="双行+button"
               subTitle="描述信息">
               <img  slot="icon" src="../assets/img/logo.png" alt="" >
-              <a href="javascript:;" slot="value">删除</a>
+              <a href="javascript:;" slot="value" class="btn_link">删除</a>
             </m-cell>
       </m-cell-group>
       <br>
@@ -133,3 +133,9 @@ export default {
   }
 }
 </script>
+<style lang="scss"
+  scoped>
+.btn_link {
+  color: $linkColorDefault;
+}
+</style>

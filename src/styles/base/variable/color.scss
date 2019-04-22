@@ -2,29 +2,61 @@
 * mui 规范中定义的颜色
 */
 
-// 品牌色 用于大部分按钮 背景等
-$colorPrimary: #ffe352;
-// 用于提示语 幽灵按钮等
-$tipsColor: #ffb626;
-// 用于包含链接的常规性短文字
-$linkColorDefault: #61c9ff;
-// 用于促进用户前进的位置或用于警示 删除等
-$colorWarn: #ff6161;
-// 用于重要级文本信息 标题信息
-$textColorImportant: #222222;
-// 用于普通级文本信息
-$textColorGeneral: #666666;
-// 用于辅助或者次要文本信息
-$textColorAssistant: #999999;
-// 用于全站的分割处理
-$lineColorLight: #e4e4e4;
-// 用于内容区域底色或分隔模块
-$bgColorDefault: #f7f7f7;
-// 用于内容区域底色或浅色文字
-$textColorLight: #cccccc;
-// 用于按钮文字颜色
-$textBtnColor: #474747;
-// 用于按钮颜色
+// // 品牌色 用于大部分按钮 背景等
+// $colorPrimary: #ffe352;
+// // 用于提示语 幽灵按钮等
+// $tipsColor: #ffb626;
+// // 用于包含链接的常规性短文字
+// $linkColorDefault: #61c9ff;
+// // 用于促进用户前进的位置或用于警示 删除等
+// $colorWarn: #ff6161;
+// // 用于重要级文本信息 标题信息
+// $textColorImportant: #222222;
+// // 用于普通级文本信息
+// $textColorGeneral: #666666;
+// // 用于辅助或者次要文本信息
+// $textColorAssistant: #999999;
+// // 用于全站的分割处理
+// $lineColorLight: #e4e4e4;
+// // 用于内容区域底色或分隔模块
+// $bgColorDefault: #f7f7f7;
+// // 用于内容区域底色或浅色文字
+// $textColorLight: #cccccc;
+// // 用于按钮文字颜色
+// $textBtnColor: #474747;
+// // 用于按钮颜色
+// $btnBgColor: #f2f2f2;
+// // 用于价格等信息
+// $textColorPrice: #e31436;
+
+//------------------------ //
+//---updated on 20190422--- //
+//-------------------------//
+// color1 品牌色 用于大部分按钮 背景等
+$colorPrimary: #ffe550;
+// color2 用于提示语 幽灵按钮等
+$tipsColor: #f18800;
+// color3 用于包含链接的常规性短文字
+$linkColorDefault: #027AFF;
+// color4 用于促进用户前进的位置或用于警示 删除等
+$colorWarn: #FF5547;
+// color5 用于普通级文本信息
+$textColorGeneral: #424243;
+// color6 用于重要级文本信息 标题信息
+$textColorImportant: #131314;
+// color7 用于次要文本信息
+$textColorAssistant: #a1a1a1;
+// color8 用于辅助或者次要文本信息
+$textColorSecondary:#717172;
+// color9 用于内容区域底色或浅色文字
+$textColorLight: #d0d0d0;
+// color10 用于全站的分割处理
+$lineColorLight: #ececec;
+// color11 用于不可点按钮颜色
 $btnBgColor: #f2f2f2;
-// 用于价格等信息
-$textColorPrice: #e31436;
+// cloor12 用于内容区域底色或分隔模块
+$bgColorDefault: #f8f8f8;
+// color13 用于价格等信息
+$textColorPrice: #ff3e00;
+// color14 用于按钮文字颜色
+$textBtnColor: #424243;
