@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "better-scroll": "^1.9.1",
+    "mui-icon": "^0.1.0",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -109,7 +110,6 @@
     "jest-serializer-vue": "^2.0.2",
     "lodash": "^4.17.5",
     "mini-css-extract-plugin": "^0.5.0",
-    "mui-icon": "^0.1.0",
     "mustache": "^3.0.1",
     "nightwatch": "^1.0.17",
     "node-notifier": "^5.1.2",
