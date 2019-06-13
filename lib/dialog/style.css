@@ -94,7 +94,7 @@
   line-height: 1.3;
   word-wrap: break-word;
   word-break: break-all;
-  color: #666666;
+  color: #424243;
 }
 .mui-dialog__bd:first-child {
     padding: 0.93867rem 1.28rem 0.74667rem;
@@ -113,14 +113,14 @@
     top: 0;
     right: 0;
     height: 1px;
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid #ececec;
     transform-origin: 0 0;
     transform: scaleY(0.5);
 }
 .mui-dialog__btn {
   display: block;
   flex: 1;
-  color: #222222;
+  color: #131314;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
@@ -136,7 +136,7 @@
     top: 0;
     width: 1px;
     bottom: 0;
-    border-left: 1px solid #e4e4e4;
+    border-left: 1px solid #ececec;
     transform-origin: 0 0;
     transform: scaleX(0.5);
 }

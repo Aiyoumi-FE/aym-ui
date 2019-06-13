@@ -17,7 +17,7 @@
   padding-right: 0.29867rem;
   text-align: center;
   text-decoration: none;
-  color: #474747;
+  color: #424243;
   border-radius: 0.08533rem;
   border-width: 0;
   outline: 0;
@@ -33,7 +33,7 @@
   display: inline-block;
 }
 .mui-btn_primary {
-  background-color: #ffe352;
+  background-color: #ffe550;
 }
 .mui-btn_primary:active {
     background-color: #FEC106;
@@ -142,7 +142,7 @@
 .mui-btn_full {
   width: 100%;
   line-height: 2.13333rem;
-  background-color: #ffe352;
+  background-color: #ffe550;
   font-size: 0.768rem;
   color: #474747;
   border-radius: 0;

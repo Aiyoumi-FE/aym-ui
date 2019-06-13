@@ -20,7 +20,7 @@
   border: none;
   border-radius: 0.768rem;
   box-sizing: border-box;
-  background-color: #f7f7f7;
+  background-color: #f8f8f8;
   transition: background-color .1s, border .1s;
 }
 .mui-switch:before,
@@ -32,7 +32,7 @@
     width: 2.176rem;
     height: 1.32267rem;
     border-radius: 0.768rem;
-    background-color: #f7f7f7;
+    background-color: #f8f8f8;
     transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
 }
 .mui-switch:after,
@@ -48,7 +48,7 @@
     transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
 .mui-switch__box_checked {
-  background-color: #ffe352;
+  background-color: #ffe550;
 }
 .mui-switch__box_checked:before {
     transform: scale(0);

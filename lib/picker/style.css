@@ -17,7 +17,7 @@
   padding-right: 0.29867rem;
   text-align: center;
   text-decoration: none;
-  color: #474747;
+  color: #424243;
   border-radius: 0.08533rem;
   border-width: 0;
   outline: 0;
@@ -33,7 +33,7 @@
   display: inline-block;
 }
 .mui-btn_primary {
-  background-color: #ffe352;
+  background-color: #ffe550;
 }
 .mui-btn_primary:active {
     background-color: #FEC106;
@@ -142,7 +142,7 @@
 .mui-btn_full {
   width: 100%;
   line-height: 2.13333rem;
-  background-color: #ffe352;
+  background-color: #ffe550;
   font-size: 0.768rem;
   color: #474747;
   border-radius: 0;
@@ -232,30 +232,6 @@
 /*
 * mui 规范中定义的颜色
 */
-.mui-icon {
-  /* 通过设置 font-size 来改变图标大小 */
-  width: 1em;
-  height: 1em;
-  /* 图标和文字相邻时，垂直对齐 */
-  vertical-align: -0.15em;
-  /* 通过设置 color 来改变 SVG 的颜色/fill */
-  fill: currentColor;
-  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
-             normalize.css 中也包含这行 */
-  overflow: hidden;
-  font-size: 0.93867rem;
-}
-
-@charset "UTF-8";
-/*
-* mui 规范中定义的字号
-*/
-/*
-* mui 规范中定义的颜色
-*/
-/*
-* mui 规范中定义的颜色
-*/
 .mui-picker .mui-picker-panel {
   height: 12.8rem;
   background-color: #fff;
@@ -284,7 +260,7 @@
     text-align: center;
     font-weight: normal;
     font-size: 0.68267rem;
-    color: #666666;
+    color: #424243;
 }
 .mui-picker__hd:after {
     content: " ";
@@ -293,7 +269,7 @@
     bottom: 0;
     right: 0;
     height: 1px;
-    border-bottom: 1px solid #e4e4e4;
+    border-bottom: 1px solid #ececec;
     transform-origin: 0 100%;
     transform: scaleY(0.5);
 }
@@ -323,7 +299,7 @@
       bottom: 0;
       right: 0;
       height: 1px;
-      border-bottom: 1px solid #e4e4e4;
+      border-bottom: 1px solid #ececec;
       transform-origin: 0 100%;
       transform: scaleY(0.5);
 }
@@ -338,7 +314,7 @@
       top: 0;
       right: 0;
       height: 1px;
-      border-top: 1px solid #e4e4e4;
+      border-top: 1px solid #ececec;
       transform-origin: 0 0;
       transform: scaleY(0.5);
 }

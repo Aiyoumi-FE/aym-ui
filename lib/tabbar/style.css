@@ -8,15 +8,23 @@
 /*
 * mui 规范中定义的颜色
 */
+.m-tabbar__outter {
+  background: #fff;
+}
 .m-tabbar {
   width: 16rem;
   margin: 0 auto;
   display: flex;
-  position: fixed;
-  bottom: 0;
-  background: #fff;
   box-shadow: 0 -1px 0.10667rem 0 rgba(230, 222, 222, 0.5);
   padding: 0.32rem 0 0.08533rem;
+}
+.m-tabbar__bottom {
+  position: fixed;
+  bottom: 0;
+}
+.m-tabbar__top {
+  position: fixed;
+  top: 0;
 }
 .m-tabbar__item {
   font-size: 0;

@@ -31,7 +31,7 @@ html {
 body {
   line-height: 1.6;
   font-family: "PingFang SC", "Hiragino Sans GB", sans-serif;
-  background-color: #f7f7f7;
+  background-color: #f8f8f8;
   -webkit-overflow-scrolling: touch; }
 
 html,
@@ -39,8 +39,8 @@ body {
   height: 100%; }
 
 img {
-  display: block;
-  width: 100%; }
+  display: inline-block;
+  vertical-align: middle; }
 
 a img {
   border: 0; }
@@ -75,21 +75,25 @@ li {
 
 ::-webkit-input-placeholder {
   /* WebKit browsers */
-  color: #cccccc; }
+  color: #d0d0d0; }
 
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: #cccccc;
+  color: #d0d0d0;
   opacity: 1; }
 
 ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: #cccccc;
+  color: #d0d0d0;
   opacity: 1; }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10+ */
-  color: #cccccc; }
+  color: #d0d0d0; }
+
+.safe-area__block {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left); }
 
 .fade-enter,
 .fade-leave-active {

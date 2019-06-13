@@ -113,7 +113,7 @@
 }
 .mui-progress_timeline {
   font-size: 0.64rem;
-  color: #999999;
+  color: #a1a1a1;
   background-color: #fff;
 }
 .mui-progress_timeline .mui-progress__item {
@@ -170,13 +170,13 @@
         bottom: 0;
         right: 0;
         height: 1px;
-        border-bottom: 1px solid #e4e4e4;
+        border-bottom: 1px solid #ececec;
         transform-origin: 0 100%;
         transform: scaleY(0.5);
 }
 .mui-progress_timeline .mui-progress__item.cur .mui-progress__time,
   .mui-progress_timeline .mui-progress__item.cur .mui-progress__content p:first-child {
-    color: #222222;
+    color: #131314;
 }
 .mui-progress_timeline .mui-progress__item.cur .mui-progress__time .mui-progress__ball, .mui-progress_timeline .mui-progress__item.cur .mui-progress__time:before, .mui-progress_timeline .mui-progress__item.cur .mui-progress__time:after {
     background-color: #FFD72D;
