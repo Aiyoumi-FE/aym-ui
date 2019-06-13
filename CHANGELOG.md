@@ -1,3 +1,25 @@
+# [3.0.0-beta.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.3.0...v3.0.0-beta.0) (2019-06-13)
+
+
+### Bug Fixes
+
+* **cell:** change slot title  tag ([702189a](https://github.com/Aiyoumi-FE/aym-ui/commit/702189a))
+* **reset:** img width ([792a712](https://github.com/Aiyoumi-FE/aym-ui/commit/792a712))
+
+
+### Features
+
+* **cell:** cell unit up ([18fa7aa](https://github.com/Aiyoumi-FE/aym-ui/commit/18fa7aa))
+* **cell:** cell组件根据ui规范 更新 ([ef7dbc5](https://github.com/Aiyoumi-FE/aym-ui/commit/ef7dbc5))
+* **color:** update base color var ([fd0b910](https://github.com/Aiyoumi-FE/aym-ui/commit/fd0b910))
+* **icon:** 图标独立库管理 ([9eaebdb](https://github.com/Aiyoumi-FE/aym-ui/commit/9eaebdb))
+* **input:** input组件根据ui规范 更新 ([379bf2e](https://github.com/Aiyoumi-FE/aym-ui/commit/379bf2e))
+* **input:** unit update ([838cfd1](https://github.com/Aiyoumi-FE/aym-ui/commit/838cfd1))
+* **radio:** radio 更新 ([d8676ef](https://github.com/Aiyoumi-FE/aym-ui/commit/d8676ef))
+* **tabbar:** 增加位置属性 ([3edad73](https://github.com/Aiyoumi-FE/aym-ui/commit/3edad73))
+
+
+
 # [2.3.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v2.2.0...v2.3.0) (2019-03-26)
 
 
