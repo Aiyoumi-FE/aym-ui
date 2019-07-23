@@ -20,6 +20,7 @@ import {
 } from './components/tabbar'
 import Dialog from './components/dialog'
 import Header from './components/header'
+import Footer from './components/footer'
 import Icon from './components/icon'
 import Indicator from './components/indicator'
 import PageLoading from './components/loading'
@@ -49,6 +50,7 @@ export {
   PageLoading,
   Modal,
   Header,
+  Footer,
   Page,
   Picker,
   Popup,

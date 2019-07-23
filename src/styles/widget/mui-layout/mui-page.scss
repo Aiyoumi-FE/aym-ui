@@ -34,6 +34,20 @@
     bottom: 2.13333rem;
 }
 
+.mui-page_fixed .mui-content {
+    position: static;
+}
+.mui-page_fixed .mui-bar,
+.mui-page_fixed .mui-fixedbottom {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+}
+
+.mui-page_fixed .mui-bar_nav~.mui-content {
+    padding-top: 1.87733rem;
+}
+
 .mui-content__page-result,
 .mui-content__page-error {
     padding: 2.56rem 1.06667rem 1.28rem;

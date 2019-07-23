@@ -1,13 +1,15 @@
 <template>
   <div class="mui-page"
+    :class="{'mui-page_fixed': fixed}"
     :style="styleObject">
     <slot name="header"></slot>
-    <slot name="bottom"></slot>
+    <slot v-if="!fixed" name="bottom"></slot>
     <div class="mui-content">
       <slot></slot>
       <m-page-loading v-if="loading"
         :isShow="isShow"></m-page-loading>
     </div>
+    <slot v-if="fixed" name="bottom"></slot>
   </div>
 </template>
 <script>
@@ -16,6 +18,10 @@ export default {
   name: 'm-page',
   props: {
     loading: {
+      type: Boolean,
+      default: false
+    },
+    fixed: {
       type: Boolean,
       default: false
     },

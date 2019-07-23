@@ -24,6 +24,7 @@
   </div>
 </template>
 <script>
+import { isAndroid, isIOS, isWX } from '../../libs/env'
 /**
  * param {String} [title=''] - 输入框标题
  * param {String} [nativeType='text'] - input类型 可选text tel
@@ -99,7 +100,8 @@ export default {
   data() {
     return {
       // inputValue: this.value,
-      currentTime: 0
+      currentTime: 0,
+      scrollTop: 0
     }
   },
   computed: {
@@ -124,6 +126,14 @@ export default {
             if (!e.target.composing) {
               vm.$emit(EVENT_INPUT, e.target.value)
             }
+          },
+          focus: function(e) {
+            // if (isIOS && isWX) {
+            //   vm.scrollTop = window.body.scrollTop
+            // }
+          },
+          blur: function(e) {
+            // window.body.scrollTop = vm.scrollTop
           }
         }
       )
