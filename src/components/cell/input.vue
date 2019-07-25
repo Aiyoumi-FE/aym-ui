@@ -116,7 +116,8 @@ export default {
     return {
       focused: false,
       // inputValue: this.value,
-      currentTime: 0
+      currentTime: 0,
+      timer: null
     }
   },
   computed: {
@@ -182,6 +183,11 @@ export default {
     }
   },
   mounted() {},
+  destroyed() {
+    if (this.timer) {
+      clearInterval(this.timer)
+    }
+  },
   methods: {
     focus() {
       this.$refs.input && this.$refs.input.focus()
@@ -219,10 +225,10 @@ export default {
     countdown(totalTime) {
       this.currentTime = totalTime
       return new Promise((resolve, reject) => {
-        let timer = setInterval(() => {
+        this.timer = setInterval(() => {
           this.currentTime -= 1
           if (this.currentTime <= 0) {
-            clearInterval(timer)
+            clearInterval(this.timer)
             resolve()
           }
         }, 1000)
