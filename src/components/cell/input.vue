@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import { isAndroid, isIOS, isWX } from '../../libs/env'
+import { isIOS, isWX } from '../../libs/env'
 /**
  * param {String} [title=''] - 输入框标题
  * param {String} [nativeType='text'] - input类型 可选text tel
@@ -128,12 +128,16 @@ export default {
             }
           },
           focus: function(e) {
-            // if (isIOS && isWX) {
-            //   vm.scrollTop = window.body.scrollTop
-            // }
+            if (isIOS && isWX) {
+              vm.scrollTop = document.body.scrollTop
+            }
+            vm.$emit('focus', e)
           },
           blur: function(e) {
-            // window.body.scrollTop = vm.scrollTop
+            if (isIOS && isWX) {
+              document.body.scrollTop = vm.scrollTop
+            }
+            vm.$emit('blur', e)
           }
         }
       )

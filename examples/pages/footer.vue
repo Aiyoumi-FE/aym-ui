@@ -1,7 +1,8 @@
 <template>
-    <m-page :fixed="true">
+    <m-page :isFixed="isFixed">
         <m-header slot="header"></m-header>
-        <demo-content>
+        <demo-content ref="demos">
+          <m-button @click="changeLayout">切换布局</m-button>
             <m-cell-group>
                 <m-input
                     title="disabled"
@@ -71,15 +72,13 @@
                 </m-input>
                 <m-input title="文本只读"
                     v-model="testValue2"></m-input>
-                <m-input title="disabled"
-                    v-model="testValue3"></m-input>
             </m-cell-group>
             <m-picker ref="comPicker"
                 title="Picker-数据联动"
                 :data="list"></m-picker>
         </demo-content>
         <m-footer slot="bottom" :setPosition="true">
-          <m-button @click="showComPicker">提交</m-button>
+          <m-button @click="showComPicker">picker</m-button>
         </m-footer>
     </m-page>
 </template>
@@ -88,6 +87,7 @@ export default {
   name: 'demo-footer',
   data() {
     return {
+      isFixed: true,
       testValue0: 'testblur',
       testValue1: '123456',
       testValue2: 'readonly',
@@ -119,12 +119,11 @@ export default {
     showPicker() {
         this.picker.show()
     },
-    clickHandler() {
-        this.$_toast('点击了')
-    },
     showComPicker() {
-        this.$refs.comPicker.show()
-        // this.isShow = true
+      this.$refs.comPicker.show()
+    },
+    changeLayout() {
+      this.isFixed = !this.isFixed
     }
   }
 }

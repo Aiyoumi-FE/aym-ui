@@ -1,15 +1,23 @@
 <template>
-	<section class="mui-footer">
-        <div class="mui-fixedbottom"
-          :style="stylePosition">
-            <slot></slot>
-        </div>
+<section v-if="isFixed" class="mui-footer">
+    <div class="mui-fixedbottom"
+      :style="stylePosition">
+        <slot></slot>
+    </div>
 	</section>
+  <section v-else class="mui-fixedbottom">
+    <slot></slot>
+  </section>
 </template>
 <script>
 import { isAndroid } from '../../libs/env'
 export default {
     name: 'm-footer',
+    inject: {
+        isFixed: {
+            default: () => false
+        }
+    },
     props: {
         setPosition: {
           type: Boolean,

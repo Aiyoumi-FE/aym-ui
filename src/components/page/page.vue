@@ -1,15 +1,15 @@
 <template>
   <div class="mui-page"
-    :class="{'mui-page_fixed': fixed}"
+    :class="{'mui-page_fixed': isFixed}"
     :style="styleObject">
     <slot name="header"></slot>
-    <slot v-if="!fixed" name="bottom"></slot>
+    <slot v-if="!isFixed" name="bottom"></slot>
     <div class="mui-content">
       <slot></slot>
       <m-page-loading v-if="loading"
         :isShow="isShow"></m-page-loading>
     </div>
-    <slot v-if="fixed" name="bottom"></slot>
+    <slot v-if="isFixed" name="bottom"></slot>
   </div>
 </template>
 <script>
@@ -21,7 +21,7 @@ export default {
       type: Boolean,
       default: false
     },
-    fixed: {
+    isFixed: {
       type: Boolean,
       default: false
     },
@@ -34,6 +34,11 @@ export default {
     return {
       isShow: true,
       pageHeight: ''
+    }
+  },
+  provide() {
+    return {
+      isFixed: this.isFixed
     }
   },
   computed: {
