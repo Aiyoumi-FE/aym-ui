@@ -1,104 +1,104 @@
 .mui-picker {
-    .mui-picker-panel {
-        height: px2rem(600);
-        background-color: #fff;
-    }
+  .mui-picker-panel {
+    height: px2rem(600);
+    background-color: #fff;
+  }
 }
 
 .mui-picker__hd {
-    display: flex;
+  display: flex;
+  line-height: px2rem(96);
+  padding: 0 px2rem(32);
+  position: relative;
+  text-align: center;
+
+  .close {
+    display: inline-block;
+    width: px2rem(96);
     line-height: px2rem(96);
-    padding: 0 px2rem(32);
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #666;
+
+    .mui-icon {
+      font-size: px2rem(32);
+    }
+  }
+
+  & h3 {
+    width: 100%;
     text-align: center;
+    font-weight: normal;
+    font-size: $fontSizeLevel3;
+    color: $textColorGeneral;
+  }
 
-    .close {
-        display: inline-block;
-        width: px2rem(96);
-        line-height: px2rem(96);
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #666;
-
-        .mui-icon {
-            font-size: px2rem(32);
-        }
-    }
-
-    & h3 {
-        width: 100%;
-        text-align: center;
-        font-weight: normal;
-        font-size: $fontSizeLevel3;
-        color: $textColorGeneral;
-    }
-
-    &:after {
-        @include setBottomLine($lineColorLight);
-    }
+  &:after {
+    @include setBottomLine($lineColorLight);
+  }
 }
 
 .mui-picker__bd {
-    position: relative;
-    padding: px2rem(26) 0;
-    min-height: px2rem(149);
+  position: relative;
+  padding: px2rem(26) 0;
+  min-height: px2rem(149);
 
-    i {
-        position: absolute;
-        z-index: 10;
-        left: 0;
-        width: 100%;
-        height: px2rem(161);
-        pointer-events: none;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
+  i {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    width: 100%;
+    height: px2rem(161);
+    pointer-events: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .mui-picker__bottom-1px {
+    top: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
+
+    &:after {
+      @include setBottomLine($lineColorLight);
     }
+  }
 
-    .mui-picker__bottom-1px {
-        top: 0;
-        background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
+  .mui-picker__top-1px {
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
 
-        &:after {
-            @include setBottomLine($lineColorLight);
-        }
+    &:after {
+      @include setTopLine($lineColorLight);
     }
-
-    .mui-picker__top-1px {
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
-
-        &:after {
-            @include setTopLine($lineColorLight);
-        }
-    }
+  }
 }
 
 .mui-picker__wheel-wrapper {
-    display: flex;
-    padding: 0 px2rem(32);
+  display: flex;
+  padding: 0 px2rem(32);
 
-    div {
-        flex: 1;
-        flex-basis: 1e-px2rem(9);
-        width: 1%;
-        height: px2rem(354);
-        overflow: hidden;
-        font-size: px2rem(30);
+  div {
+    flex: 1;
+    flex-basis: px2rem(9);
+    width: 1%;
+    height: px2rem(354);
+    overflow: hidden;
+    font-size: px2rem(30);
+  }
+
+  .wheel-scroll {
+    padding: 0;
+    margin-top: px2rem(140);
+    line-height: px2rem(36);
+    list-style: none;
+
+    li {
+      list-style: none;
+      line-height: px2rem(80);
+      overflow: hidden;
+      white-space: nowrap;
+      color: #333;
     }
-
-    .wheel-scroll {
-        padding: 0;
-        margin-top: px2rem(140);
-        line-height: px2rem(36);
-        list-style: none;
-
-        li {
-            list-style: none;
-            line-height: px2rem(80);
-            overflow: hidden;
-            white-space: nowrap;
-            color: #333;
-        }
-    }
+  }
 }

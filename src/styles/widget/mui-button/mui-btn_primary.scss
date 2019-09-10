@@ -1,11 +1,14 @@
 .mui-btn_primary {
-    background-color: $btnPrimaryBg;
-    &:active {
-        background-color: $btnPrimaryActiveBg;
-    }
-    @import 'mui-btn_size';
-    &.disabled {
-        color: $btnPrimaryDisabledColor;
-        background-color: $btnPrimaryDisabledBg;
-    }
+  background-color: $colorPrimary;
+
+  &:active {
+    background-color: $btnPrimaryActiveBg;
+  }
+
+  @import 'mui-btn_size';
+
+  &.disabled {
+    color: $btnPrimaryDisabledColor;
+    background-color: $btnPrimaryDisabledBg;
+  }
 }

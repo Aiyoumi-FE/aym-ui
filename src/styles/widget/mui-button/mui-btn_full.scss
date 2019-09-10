@@ -1,15 +1,17 @@
 .mui-btn_full {
-    width: 100%;
-    line-height: $btnFullWidth;
-    background-color: $btnFullBg;
-    font-size: $fontSizeLevel2;
-    color: $btnFullColor;
-    border-radius: 0;
-    &:active {
-        background-color: $btnFullActiveBg;
-    }
-    &.disabled {
-        color: $btnFullDisabledColor;
-        background-color: $btnFullDisabledBgColor;
-    }
+  width: 100%;
+  line-height: $btnFullWidth;
+  background-color: $colorPrimary;
+  font-size: $fontSizeLevel2;
+  color: $btnFullColor;
+  border-radius: 0;
+
+  &:active {
+    background-color: $btnFullActiveBg;
+  }
+
+  &.disabled {
+    color: $btnFullDisabledColor;
+    background-color: $btnFullDisabledBgColor;
+  }
 }
