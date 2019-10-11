@@ -1,13 +1,13 @@
 <template>
   <div class="mui-cell mui-cell__input"
-    :class="{
-          'mui-cell_first':isFirst,
-          'mui-cell_autoheight':isAutoHeight,
-          'mui-cell__input_textarea':isTextarea,
-          'mui-cell__input_upanddown':upAndDown,
-          'mui-cell__input_vcode':oldVcode, // 老样式发松验证码
-          'mui-cell__input_focus':focused
-        }">
+    :class="[{
+              'mui-cell_first':isFirst,
+              'mui-cell_autoheight':isAutoHeight,
+              'mui-cell__input_textarea':isTextarea,
+              'mui-cell__input_upanddown':upAndDown,
+              'mui-cell__input_vcode':oldVcode, // 老样式发松验证码
+              'mui-cell__input_focus':focused
+            },cellSize]">
     <div class="mui-cell__hd">
       <slot name="hd">
         <label v-if="title"
@@ -33,7 +33,7 @@
         @click.stop="onClear"
         ref="icon"
         type="delete"
-        class=" mui-input__icon_clear"></m-icon>
+        class="mui-input__icon_clear"></m-icon>
       <slot v-if="upAndDown"
         name="ft">
         <m-button v-if="newVcode"
@@ -73,6 +73,13 @@ export default {
   inheritAttrs: false,
   mixins: [mixin],
   props: {
+    size: {
+      type: String,
+      default: 'large',
+      validator(value) {
+        return ['middle', 'large'].indexOf(value) > -1
+      }
+    },
     title: {
       type: String,
       default: ''
@@ -121,6 +128,9 @@ export default {
     }
   },
   computed: {
+    cellSize() {
+      return `mui-cell_${this.size}`
+    },
     isAutoHeight() {
       return this.autoHeight || this.isTextarea || this.isVcode || this.upAndDown
     },

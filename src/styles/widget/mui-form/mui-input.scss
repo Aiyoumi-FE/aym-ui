@@ -1,7 +1,7 @@
 .mui-label {
   display: block;
-  width: px2rem(192);
-  margin-right: px2rem(40);
+  min-width: px2rem(160);
+  margin-right: px2rem(16);
   @include text_wrap();
 }
 
@@ -63,6 +63,11 @@
   }
 }
 
+.mui-input__icon_clear {
+  font-size: px2rem(34);
+  color: $colorPlaceholder;
+}
+
 .mui-cell.mui-cell__input_upanddown {
   padding-bottom: 0;
   padding-top: px2rem(30);
@@ -97,6 +102,8 @@
       //   border-bottom: 1px solid $textColorImportant;
       // }
     }
+
+
 
     // .mui-input__icon_clear {
     //   position: absolute;

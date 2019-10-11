@@ -1,16 +1,14 @@
 <template>
   <div class="mui-cell"
-    :class="{
-      'mui-cell_first':isFirst,
-      'mui-cell_access': isLink || !!link,
-      'mui-cell_disabled': disabled,
-      'mui-cell_autoheight': autoHeight,
-      'mui-cell_multiline': isMultiline
-    }"
+    :class="[{
+          'mui-cell_first':isFirst,
+          'mui-cell_access': isLink || !!link,
+          'mui-cell_disabled': disabled,
+          'mui-cell_autoheight': autoHeight
+        },cellSize]"
     @click="handleClick">
     <div class="mui-cell__hd">
       <div class="mui-cell__hd_icon"
-        :class="{'mui-cell__hd_icon_big':isMultiline}"
         v-if="$slots.icon">
         <slot name="icon">
         </slot>
@@ -18,7 +16,7 @@
     </div>
     <div class="mui-cell__bd">
       <slot name="title">
-        <p :class="{'mui-cell__bd_title':isBold}">{{ title }}</p>
+        <p :class="{'mui-cell__bd_title_bold':isBold,'mui-cell__bd_title_mini':isMini}">{{ title }}</p>
         <p v-if="subTitle"
           class="mui-cell__bd_subtitle">{{subTitle}}</p>
       </slot>
@@ -87,14 +85,24 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: 'large', // s m l xl
+      validator(value) {
+        return ['small', 'middle', 'large', 'xlarge'].indexOf(value) > -1
+      }
     }
   },
   computed: {
-    isBold() {
-      return this.subTitle || this.titleBold
+    isBold() { // xlarge默认标题加粗
+      return this.size === 'xlarge' || this.titleBold
     },
-    isMultiline() {
-      return this.subTitle || this.subValue
+    isMini() { // 中号大号双行标题缩小
+      return this.subTitle && ['middle', 'large'].indexOf(this.size) > -1
+    },
+    cellSize() {
+      return `mui-cell_${this.size}`
     },
     valueClass() {
       return {}

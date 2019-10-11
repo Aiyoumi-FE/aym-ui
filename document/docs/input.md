@@ -7,6 +7,7 @@
 
 | 参数      |类型| 默认值    | 可选值|描述    | 
 |:-------- | :--------|:--------  |:--------|:---------|
+| size |String| large |  middle, large| 尺寸，高度不同 |  
 |title|String|-|-|输入框标题|
 |type|String|text|tel,text..|input类型,当type为textarea时为文本域，|
 |inputType|String|-|-|vcode(获取验证码)|

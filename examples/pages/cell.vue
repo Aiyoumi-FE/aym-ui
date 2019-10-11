@@ -2,39 +2,48 @@
   <m-page>
     <m-header slot="header"></m-header>
     <demo-content>
-      <h4>单行</h4>
+      <!-- size -->
+      <h4>size:small</h4>
+      <m-cell-group>
+        <m-cell size="small"
+          title="小列表"
+          value="无分割" />
+        <m-cell size="small"
+          title="小列表"
+          value="无分割" />
+        <m-cell size="small"
+          title="小列表"
+          value="无分割" />
+      </m-cell-group>
+      <br>
+      <h4>size:middle</h4>
       <m-cell-group>
         <m-cell is-link
+          size="middle"
           title="可点击选择"
           :value="selectAndSelectName"
           placeholder="请选择"
           @click="selectAndSelect">
         </m-cell>
         <m-cell is-link
+          size="middle"
           title="选择后不可修改"
           :value="selectAndDisableName"
           placeholder="请选择"
           :disabled="isDisable"
           @click="selectAndDisable">
         </m-cell>
-        <m-cell>
+        <m-cell size="middle">
           <img  slot="icon" src="../assets/img/logo.png" alt="" >
           <div slot="title">
-            自定义title
+            自定义
           </div>
-        </m-cell>
-        <m-cell title="自定义value,图标大小自己控制">
-          <div slot="value">
-            <img src="../assets/img/logo.png" alt=""  width="20">
-            </div>
-        </m-cell>
-        <m-cell title="button">
           <m-button slot="value"
-            size="small">添加</m-button>
+            size="small">value</m-button>
         </m-cell>
       </m-cell-group>
       <br>
-      <h4>多行</h4>
+      <h4>size:large</h4>
       <m-cell-group>
         <m-cell is-link
           title="主标题"
@@ -53,6 +62,35 @@
             <img  slot="icon" src="../assets/img/logo.png" alt="" >
         </m-cell>
             <m-cell title="双行+button"
+              subTitle="描述信息">
+              <img  slot="icon" src="../assets/img/logo.png" alt="" >
+              <a href="javascript:;" slot="value" class="btn_link">删除</a>
+            </m-cell>
+      </m-cell-group>
+      <br>
+      <h4>size:xlarge</h4>
+      <m-cell-group>
+        <m-cell is-link
+          size="xlarge"
+          title="主标题"
+          subTitle="副标题"
+          value="value"></m-cell>
+        <m-cell is-link
+          size="xlarge"
+          title="主标题+icon"
+          subTitle="副标题"
+          value="value">
+          <img  slot="icon" src="../assets/img/logo.png" alt="" >
+        </m-cell>
+          <m-cell is-link
+            size="xlarge"
+            title="详细信息"
+            value="双行列表"
+            subValue="描述信息">
+            <img  slot="icon" src="../assets/img/logo.png" alt="" >
+        </m-cell>
+            <m-cell size="xlarge"
+              title="双行+button"
               subTitle="描述信息">
               <img  slot="icon" src="../assets/img/logo.png" alt="" >
               <a href="javascript:;" slot="value" class="btn_link">删除</a>
@@ -90,6 +128,7 @@
         subValue="可以和其他组件组合使用"
         placeholder="请选择">
       </m-cell>
+      <br>
       <m-cell title="单独cell"
         subTitle="不在cell-group下"
         value="单行">
