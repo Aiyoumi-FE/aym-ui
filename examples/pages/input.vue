@@ -4,6 +4,13 @@
     <demo-content>
       <h4>单行</h4>
       <m-cell-group>
+        <m-input v-model="inputName"
+          title="小号"
+          size="middle"
+          clearable
+          placeholder="size:middle" />
+      </m-cell-group>
+      <m-cell-group>
         <m-input title="姓名"
           v-model="inputName"
           clearable
@@ -25,6 +32,9 @@
       <m-cell-group>
         <m-input v-model="textareaVal"
           title="可以写三行"
+          placeholder="超出部分会滚动"
+          type="textarea"></m-input>
+        <m-input v-model="textareaVal"
           placeholder="超出部分会滚动"
           type="textarea"></m-input>
       </m-cell-group>
@@ -65,7 +75,7 @@
         <m-input title="disabled"
           v-model="inputAttrDisabled"
           disabled></m-input>
-        <m-input title="手机号"
+        <!--       <m-input title="手机号"
           type="tel"
           placeholder="请输入手机号码"
           input-type="vcode"
@@ -86,7 +96,7 @@
                         src="../assets/img/vcode.png"
                         alt=""
                         class="mui-vcode__img">
-                </m-input>
+                </m-input> -->
       </m-cell-group>
     </demo-content>
   </m-page>

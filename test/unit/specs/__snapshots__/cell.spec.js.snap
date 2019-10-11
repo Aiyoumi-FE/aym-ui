@@ -1,52 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cell 代码片段 单行title+placeholder 1`] = `
+exports[`Cell 属性测试 cell autoHeight 1`] = `
 <div
-  class="mui-cell"
->
-  <div
-    class="mui-cell__hd"
-  >
-    <!---->
-  </div>
-   
-  <div
-    class="mui-cell__bd"
-  >
-    <p
-      class=""
-    >
-      cellTitle
-    </p>
-     
-    <!---->
-  </div>
-   
-  <div
-    class="mui-cell__ft"
-  >
-    <p
-      class="mui-cell__ft_placeholder"
-    >
-      
-      请选择
-    
-    </p>
-     
-    <p
-      class=""
-    >
-       
-    </p>
-     
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`Cell 代码片段 单行title+value 1`] = `
-<div
-  class="mui-cell"
+  class="mui-cell mui-cell_autoheight mui-cell_large"
 >
   <div
     class="mui-cell__hd"
@@ -82,9 +38,9 @@ exports[`Cell 代码片段 单行title+value 1`] = `
 </div>
 `;
 
-exports[`Cell 代码片段 单行title+value+isLink 1`] = `
+exports[`Cell 属性测试 cell size cell size large 1`] = `
 <div
-  class="mui-cell mui-cell_access"
+  class="mui-cell mui-cell_large"
 >
   <div
     class="mui-cell__hd"
@@ -96,87 +52,7 @@ exports[`Cell 代码片段 单行title+value+isLink 1`] = `
     class="mui-cell__bd"
   >
     <p
-      class=""
-    >
-      cellTitle
-    </p>
-     
-    <!---->
-  </div>
-   
-  <div
-    class="mui-cell__ft"
-  >
-    <!---->
-     
-    <p
-      class=""
-    >
-       cellValue
-    </p>
-     
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`Cell 代码片段 双value 1`] = `
-<div
-  class="mui-cell mui-cell_multiline"
->
-  <div
-    class="mui-cell__hd"
-  >
-    <!---->
-  </div>
-   
-  <div
-    class="mui-cell__bd"
-  >
-    <p
-      class=""
-    >
-      cellTitle
-    </p>
-     
-    <!---->
-  </div>
-   
-  <div
-    class="mui-cell__ft"
-  >
-    <!---->
-     
-    <p
-      class="mui-cell__ft_value"
-    >
-       cellValue
-    </p>
-     
-    <p
-      class="mui-cell__ft_subvalue"
-    >
-      cellSubValue
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Cell 代码片段 双标题 1`] = `
-<div
-  class="mui-cell mui-cell_multiline"
->
-  <div
-    class="mui-cell__hd"
-  >
-    <!---->
-  </div>
-   
-  <div
-    class="mui-cell__bd"
-  >
-    <p
-      class="mui-cell__bd_title"
+      class="mui-cell__bd_title_mini"
     >
       cellTitle
     </p>
@@ -204,9 +80,51 @@ exports[`Cell 代码片段 双标题 1`] = `
 </div>
 `;
 
-exports[`Cell 代码片段 自动高度 1`] = `
+exports[`Cell 属性测试 cell size cell size middle 1`] = `
 <div
-  class="mui-cell mui-cell_autoheight mui-cell_multiline"
+  class="mui-cell mui-cell_middle"
+>
+  <div
+    class="mui-cell__hd"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="mui-cell__bd"
+  >
+    <p
+      class="mui-cell__bd_title_mini"
+    >
+      cellTitle
+    </p>
+     
+    <p
+      class="mui-cell__bd_subtitle"
+    >
+      cellSubTitle
+    </p>
+  </div>
+   
+  <div
+    class="mui-cell__ft"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+       cellValue
+    </p>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Cell 属性测试 cell size cell size small 1`] = `
+<div
+  class="mui-cell mui-cell_small"
 >
   <div
     class="mui-cell__hd"
@@ -232,23 +150,19 @@ exports[`Cell 代码片段 自动高度 1`] = `
     <!---->
      
     <p
-      class="mui-cell__ft_value"
+      class=""
     >
        cellValue
     </p>
      
-    <p
-      class="mui-cell__ft_subvalue"
-    >
-      cellSubValue
-    </p>
+    <!---->
   </div>
 </div>
 `;
 
-exports[`Cell 属性测试 cell autoHeight 1`] = `
+exports[`Cell 属性测试 cell size cell size xlarge 1`] = `
 <div
-  class="mui-cell mui-cell_autoheight"
+  class="mui-cell mui-cell_xlarge"
 >
   <div
     class="mui-cell__hd"
@@ -260,12 +174,16 @@ exports[`Cell 属性测试 cell autoHeight 1`] = `
     class="mui-cell__bd"
   >
     <p
-      class=""
+      class="mui-cell__bd_title_bold"
     >
       cellTitle
     </p>
      
-    <!---->
+    <p
+      class="mui-cell__bd_subtitle"
+    >
+      cellSubTitle
+    </p>
   </div>
    
   <div
@@ -286,7 +204,7 @@ exports[`Cell 属性测试 cell autoHeight 1`] = `
 
 exports[`Cell 属性测试 cell subTitle 1`] = `
 <div
-  class="mui-cell mui-cell_multiline"
+  class="mui-cell mui-cell_large"
 >
   <div
     class="mui-cell__hd"
@@ -298,7 +216,7 @@ exports[`Cell 属性测试 cell subTitle 1`] = `
     class="mui-cell__bd"
   >
     <p
-      class="mui-cell__bd_title"
+      class="mui-cell__bd_title_mini"
     >
       cellTitle
     </p>
@@ -334,7 +252,7 @@ exports[`Cell 属性测试 cell subTitle 1`] = `
 
 exports[`Cell 属性测试 cell subValue 1`] = `
 <div
-  class="mui-cell mui-cell_multiline"
+  class="mui-cell mui-cell_large"
 >
   <div
     class="mui-cell__hd"
@@ -376,7 +294,7 @@ exports[`Cell 属性测试 cell subValue 1`] = `
 
 exports[`Cell 属性测试 cell title,默认单行 1`] = `
 <div
-  class="mui-cell"
+  class="mui-cell mui-cell_large"
 >
   <div
     class="mui-cell__hd"
@@ -420,7 +338,7 @@ exports[`Cell 属性测试 cell title,默认单行 1`] = `
 
 exports[`Cell 属性测试 cell value 1`] = `
 <div
-  class="mui-cell"
+  class="mui-cell mui-cell_large"
 >
   <div
     class="mui-cell__hd"

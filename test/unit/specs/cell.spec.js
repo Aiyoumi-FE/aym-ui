@@ -23,30 +23,70 @@ describe('Cell', () => {
 
   describe('属性测试', () => {
 
+    describe('cell size', () => {
+      beforeEach(() => {
+        cmp.setProps({
+          title: TITLE,
+          value: VALUE
+        })
+      })
+      it('cell size small', () => {
+        cmp.setProps({ size: 'small' })
+        expect(cmp.classes()).toContain('mui-cell_small')
+        expect(cmp.vm.$el).toMatchSnapshot()
+      })
+      it('cell size middle', () => {
+        cmp.setProps({ size: 'middle' })
+        expect(cmp.classes()).toContain('mui-cell_middle')
+        expect(cmp.find('.mui-cell__bd_title_mini').exists()).toBe(false)
+        cmp.setProps({ subTitle: SUB_TITLE })
+        expect(cmp.find('.mui-cell__bd_title_mini').exists()).toBe(true)
+        expect(cmp.vm.$el).toMatchSnapshot()
+      })
+      it('cell size large', () => {
+
+        // cmp.setProps({ size: '' })
+        // 默认值 large
+        // console.log(cmp.html())
+        expect(cmp.classes()).toContain('mui-cell_large')
+        cmp.setProps({ size: 'large' })
+        expect(cmp.classes()).toContain('mui-cell_large')
+        // mui-cell__bd_title_mini
+        expect(cmp.find('.mui-cell__bd_title_mini').exists()).toBe(false)
+        cmp.setProps({ subTitle: SUB_TITLE })
+        expect(cmp.find('.mui-cell__bd_title_mini').exists()).toBe(true)
+        expect(cmp.vm.$el).toMatchSnapshot()
+      })
+      it('cell size xlarge', () => {
+        cmp.setProps({ size: 'xlarge' })
+        expect(cmp.classes()).toContain('mui-cell_xlarge')
+        expect(cmp.find('.mui-cell__bd_title_mini').exists()).toBe(false)
+        cmp.setProps({ subTitle: SUB_TITLE })
+        expect(cmp.find('.mui-cell__bd_title_mini').exists()).toBe(false)
+        expect(cmp.vm.$el).toMatchSnapshot()
+      })
+    })
+
     it('cell title,默认单行', () => {
       cmp.setProps({ title: TITLE })
       expect(cmp.find('.mui-cell__bd').text()).toContain(TITLE)
-      expect(cmp.contains('.mui-cell_multiline')).toBe(false)
       expect(cmp.vm.$el).toMatchSnapshot()
     })
     it('cell subTitle', () => {
       cmp.setProps({ title: TITLE, subTitle: SUB_TITLE })
-      expect(cmp.find('.mui-cell__bd_title').text()).toContain(TITLE)
+      expect(cmp.find('.mui-cell__bd').text()).toContain(TITLE)
       expect(cmp.find('.mui-cell__bd_subtitle').text()).toContain(SUB_TITLE)
-      expect(cmp.contains('.mui-cell_multiline')).toBe(true)
       expect(cmp.vm.$el).toMatchSnapshot()
     })
     it('cell value', () => {
       cmp.setProps({ value: VALUE })
       expect(cmp.find('.mui-cell__ft').text()).toContain(VALUE)
-      expect(cmp.contains('.mui-cell_multiline')).toBe(false)
       expect(cmp.vm.$el).toMatchSnapshot()
     })
     it('cell subValue', () => {
       cmp.setProps({ value: VALUE, subValue: SUB_VALUE })
       expect(cmp.find('.mui-cell__ft_value').text()).toContain(VALUE)
       expect(cmp.find('.mui-cell__ft_subvalue').text()).toContain(SUB_VALUE)
-      expect(cmp.contains('.mui-cell_multiline')).toBe(true)
       expect(cmp.vm.$el).toMatchSnapshot()
     })
     it('cell placeholder', () => {
