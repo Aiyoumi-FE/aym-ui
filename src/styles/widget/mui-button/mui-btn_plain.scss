@@ -4,7 +4,6 @@
     &:active {
         background-color: $btnSubsidiaryActiveBg;
     }
-    @import 'mui-btn_size';
     &.disabled {
         background-color: $btnSubsidiaryDisabledBg;
         color: $btnSubsidiaryDisabledColor;

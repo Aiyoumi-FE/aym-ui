@@ -2,53 +2,27 @@
     <m-page>
         <m-header slot="header"></m-header>
         <demo-content>
-            <!-- 大按钮 -->
-            <m-button @click="fn">Primary Button</m-button>
-            <m-button :disabled="true">Primary Button</m-button>
-            <m-button type="plain">Plain Button</m-button>
-            <m-button type="plain"
-                :disabled="true">Plain Button</m-button>
-            <m-button type="warn">Warn Button</m-button>
-            <m-button type="warn"
-                :disabled="true">Warn Button</m-button>
-            <div class="mui-flex"
-                style="padding:10px 0;">
-                <div class="mui-flex-1">
-                    <!-- 中按钮 -->
-                    <m-button size="middle">Button</m-button>
-                    <m-button size="middle"
-                        :disabled="true">Button</m-button>
-                    <m-button type="plain"
-                        size="middle">Button</m-button>
-                    <m-button type="plain"
-                        size="middle"
-                        :disabled="true">Button</m-button>
-                    <m-button type="border"
-                        size="middle">Button</m-button>
-                    <m-button type="border"
-                        size="middle"
-                        :disabled="true">Button</m-button>
-                </div>
-                <div class="mui-flex-1">
-                    <!-- 小按钮 -->
-                    <m-button size="small">Button</m-button>
-                    <m-button size="small"
-                        :disabled="true">Button</m-button>
-                    <m-button type="plain"
-                        size="small">Button</m-button>
-                    <m-button type="plain"
-                        size="small"
-                        :disabled="true">Button</m-button>
-                    <m-button type="border"
-                        size="small">Button</m-button>
-                    <m-button type="border"
-                        size="small"
-                        :disabled="true">Button</m-button>
-                </div>
+            <h5>按钮类型</h5>
+            <m-button @click="fn">主要按钮</m-button>
+            <m-button type="plain">次要按钮</m-button>
+
+            <h5>按钮尺寸</h5>
+            <m-button>大号按钮</m-button>
+            <div class="box">
+                <m-button size="middle">中号按钮</m-button>
+                <m-button size="small">小号按钮</m-button>
+                <m-button size="xsmall">超小按钮</m-button>
             </div>
-            <m-button type="full">Button</m-button>
-            <m-button type="full"
-                :disabled="true">Button</m-button>
+            <h5>禁用状态</h5>
+            <m-button disabled>禁用按钮</m-button>
+            <h5>按钮形状</h5>
+            <div class="box">
+                <m-button size="middle">圆角按钮</m-button>
+                <m-button size="middle" :round="false">四方按钮</m-button>
+            </div>
+            <h5>full按钮</h5>
+            <m-button type="full">full按钮</m-button>
+            <m-button type="full" disabled>full按钮(disabled)</m-button>
         </demo-content>
     </m-page>
 </template>
@@ -68,7 +42,16 @@ export default {
 </script>
 <style lang="scss"
     scoped>
-.content-wrap {
-    background-color: #fff;
+// .content-wrap {
+//     padding: 0 px2rem(32);
+// }
+// h5 {
+//     padding: 35px 0 10px;
+// }
+.box {
+    padding: 0 20px;
+}
+/deep/ .mui-btn {
+    margin-bottom: 10px;
 }
 </style>
