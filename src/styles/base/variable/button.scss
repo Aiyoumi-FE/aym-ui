@@ -3,25 +3,25 @@
 $btnBorderRadius: px2rem(4);
 $btnDefaultGap: px2rem(30);
 //主操作按钮
-// $btnPrimaryBg: $colorPrimary;
-$btnPrimaryActiveBg: #FEC106;
-$btnPrimaryDisabledBg: #f2f2f2;
-$btnPrimaryDisabledColor: #cccccc;
+// // $btnPrimaryBg: $colorPrimary;
+// $btnPrimaryActiveBg: #FEC106;
+// $btnPrimaryDisabledBg: #f2f2f2;
+// $btnPrimaryDisabledColor: #cccccc;
 //辅助按钮
-$btnSubsidiaryBg: #ffffff;
-$btnSubsidiaryActiveBg: #F2F2F2;
-$btnSubsidiaryBdColor:#E4E4E4;
-$btnSubsidiaryDisabledBg:#F7F7F7;
-$btnSubsidiaryDisabledColor:#CCCCCC;
-//警告按钮
-$btnWarnBg: #ffffff;
-$btnWarnColor:#FF3C37;
-$btnWarnActiveBg: #F2F2F2;
-$btnWarnBdColor: #E4E4E4;
-$btnWarnActiveBdColor: #CCCCCC;
-$btnWarnDisabledBdColor: #e4e4e4;
-$btnWarnDisabledColor:#FEAAA9;
-$btnWarnDisabledBgColor:#F7F7F7;
+// $btnSubsidiaryBg: #ffffff;
+// $btnSubsidiaryActiveBg: #F2F2F2;
+// $btnSubsidiaryBdColor:#E4E4E4;
+// $btnSubsidiaryDisabledBg:#F7F7F7;
+// $btnSubsidiaryDisabledColor:#CCCCCC;
+// //警告按钮
+// $btnWarnBg: #ffffff;
+// $btnWarnColor:#FF3C37;
+// $btnWarnActiveBg: #F2F2F2;
+// $btnWarnBdColor: #E4E4E4;
+// $btnWarnActiveBdColor: #CCCCCC;
+// $btnWarnDisabledBdColor: #e4e4e4;
+// $btnWarnDisabledColor:#FEAAA9;
+// $btnWarnDisabledBgColor:#F7F7F7;
 //边框按钮
 $btnBorderColor:#FFB626;
 $btnBorderBdColor:#FFB626;
@@ -37,17 +37,53 @@ $btnFullActiveBg:#FEC106;
 $btnFullDisabledColor:#666666;
 $btnFullDisabledBgColor:#FFEDA7;
 // 按钮尺寸
+// $widthLarge:px2rem(686);
+// $heightLarge:px2rem(96);
+// $fontSizeLarge:px2rem(36);
+// $widthMiddle:px2rem(300);
+// $heightMiddle:px2rem(84);
+// $fontSizeMiddle:px2rem(34);
+// $widthSmall:px2rem(118);
+// $heightSmall:px2rem(60);
+// $fontSizeSmall:px2rem(26);
+
+//------------------------ //
+//---updated on 20190924--- //
+//-------------------------//
+// $btnPrimaryBg: $colorPrimary;
+$btnPrimaryActiveBg: mix(#000,$colorPrimary,10%);
+$btnPrimaryDisabledBg: #E6E6E6;
+$btnPrimaryDisabledColor: #999;
+
+//辅助按钮
+$btnSubsidiaryBg: #ffffff;
+$btnSubsidiaryActiveBg: mix(#000,#fff,10%);
+$btnSubsidiaryBdColor:mix(#000,#fff,10%);
+$btnSubsidiaryDisabledBg:mix(#000,#fff,10%);
+$btnSubsidiaryDisabledColor:#999;
+
+// 按钮尺寸
 $widthLarge:px2rem(686);
-$heightLarge:px2rem(96);
-$fontSizeLarge:px2rem(36);
-$widthMiddle:px2rem(300);
-$heightMiddle:px2rem(84);
-$fontSizeMiddle:px2rem(34);
-$widthSmall:px2rem(118);
-$heightSmall:px2rem(60);
-$fontSizeSmall:px2rem(26);
+$heightLarge:px2rem(88);
+$borderRadiusLarge: px2rem(44);
+$fontSizeLarge:$fontSizeLevel3;
+$fontWeightLarge: 600;
 
+$widthMiddle:px2rem(200);
+$heightMiddle:px2rem(80);
+$borderRadiusMiddle: px2rem(40);
+$fontSizeMiddle:$fontSizeLevel3;
+$fontWeightMiddle: 600;
 
+$widthSmall:px2rem(184);
+$heightSmall:px2rem(72);
+$borderRadiusSmall: px2rem(44);
+$fontSizeSmall:$fontSizeLevel5;
+
+$widthMini:px2rem(184);
+$heightMini:px2rem(64);
+$borderRadiusMini: px2rem(44);
+$fontSizeMini: $fontSizeLevel5;
 
 //
 //mix(#000,#ffe550,10%)
