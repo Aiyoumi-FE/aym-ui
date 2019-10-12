@@ -14,42 +14,6 @@
 
             <h5>禁用状态</h5>
             <m-button disabled>禁用按钮</m-button>
-            <!-- <div class="mui-flex"
-                style="padding:10px 0;">
-                <div class="mui-flex-1">
-                    <m-button size="middle">中号按钮</m-button>
-                    <m-button size="middle"
-                        :disabled="true">Button</m-button>
-                    <m-button type="plain"
-                        size="middle">Button</m-button>
-                    <m-button type="plain"
-                        size="middle"
-                        :disabled="true">Button</m-button>
-                    <m-button type="border"
-                        size="middle">Button</m-button>
-                    <m-button type="border"
-                        size="middle"
-                        :disabled="true">Button</m-button>
-                </div>
-                <div class="mui-flex-1">
-                    <m-button size="small">Button</m-button>
-                    <m-button size="small"
-                        :disabled="true">Button</m-button>
-                    <m-button type="plain"
-                        size="small">Button</m-button>
-                    <m-button type="plain"
-                        size="small"
-                        :disabled="true">Button</m-button>
-                    <m-button type="border"
-                        size="small">Button</m-button>
-                    <m-button type="border"
-                        size="small"
-                        :disabled="true">Button</m-button>
-                </div>
-            </div> -->
-            <!-- <m-button type="full">Button</m-button>
-            <m-button type="full"
-                :disabled="true">Button</m-button> -->
         </demo-content>
     </m-page>
 </template>
