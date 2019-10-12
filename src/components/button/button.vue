@@ -29,14 +29,18 @@ export default {
     type: {
       default: 'primary',
       validator(value) {
-        return ['primary', 'plain', 'warn', 'border', 'full'].indexOf(value) > -1
+        return ['primary', 'plain', 'full'].indexOf(value) > -1
       }
     },
     size: {
       default: 'large',
       validator(value) {
-        return ['large', 'middle', 'small'].indexOf(value) > -1
+        return ['large', 'middle', 'small', 'xsmall'].indexOf(value) > -1
       }
+    },
+    round: {
+      type: Boolean,
+      default: true
     },
     disabled: {
       type: Boolean,
@@ -53,13 +57,21 @@ export default {
       }
       return ''
     },
-
+    classRound() {
+      if (this.type !== 'full' && this.round) {
+        return `${prefixCls}_round`
+      }
+      return ''
+    },
     classes() {
       return [
         `${prefixCls}`,
         this.classType,
         this.classSize,
-        { 'disabled': this.disabled }
+        this.classRound,
+        {
+          'disabled': this.disabled
+        }
       ]
     }
   },
