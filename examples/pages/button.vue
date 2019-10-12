@@ -5,7 +5,6 @@
             <h5>按钮类型</h5>
             <m-button @click="fn">主要按钮</m-button>
             <m-button type="plain">次要按钮</m-button>
-
             <h5>按钮尺寸</h5>
             <m-button>大号按钮</m-button>
             <div class="box">
@@ -20,9 +19,9 @@
                 <m-button size="middle">圆角按钮</m-button>
                 <m-button size="middle" :round="false">四方按钮</m-button>
             </div>
-            <h5>full按钮</h5>
+            <!-- <h5>full按钮</h5>
             <m-button type="full">full按钮</m-button>
-            <m-button type="full" disabled>full按钮(disabled)</m-button>
+            <m-button type="full" disabled>full按钮(disabled)</m-button> -->
         </demo-content>
     </m-page>
 </template>
@@ -42,12 +41,9 @@ export default {
 </script>
 <style lang="scss"
     scoped>
-// .content-wrap {
-//     padding: 0 px2rem(32);
-// }
-// h5 {
-//     padding: 35px 0 10px;
-// }
+h5 {
+    margin-top: 20px;
+}
 .box {
     padding: 0 20px;
 }

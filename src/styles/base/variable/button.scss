@@ -1,7 +1,7 @@
 @import "./color";
 //按钮公共样式定义
 $btnBorderRadius: px2rem(4);
-$btnDefaultGap: px2rem(30);
+// $btnDefaultGap: px2rem(30);
 //主操作按钮
 // // $btnPrimaryBg: $colorPrimary;
 // $btnPrimaryActiveBg: #FEC106;
@@ -50,17 +50,16 @@ $btnDefaultGap: px2rem(30);
 //------------------------ //
 //---updated on 20190924--- //
 //-------------------------//
-// $btnPrimaryBg: $colorPrimary;
 $btnPrimaryActiveBg: mix(#000,$colorPrimary,10%);
-$btnPrimaryDisabledBg: #E6E6E6;
-$btnPrimaryDisabledColor: #999;
+$btnPrimaryDisabledBg: mix(#000,#fff,10%);
+$btnPrimaryDisabledColor: $colorTextAssistant;
 
 //辅助按钮
 $btnSubsidiaryBg: #ffffff;
 $btnSubsidiaryActiveBg: mix(#000,#fff,10%);
 $btnSubsidiaryBdColor:mix(#000,#fff,10%);
 $btnSubsidiaryDisabledBg:mix(#000,#fff,10%);
-$btnSubsidiaryDisabledColor:#999;
+$btnSubsidiaryDisabledColor:$colorTextAssistant;
 
 // 按钮尺寸
 $widthLarge:px2rem(686);
@@ -88,10 +87,8 @@ $fontSizeXsmall: $fontBody;
 //满屏按钮
 $heightFll:px2rem(88);
 $fontSizeFll:$fontSTitle;
-$btnFullBg: $colorPrimary;
-$btnFullColor:#474747;
-$btnFullActiveBg:#FEC106;
-$btnFullDisabledColor:#666666;
+$btnFullActiveBg: mix(#000,$colorPrimary,10%);
+$btnFullDisabledColor:$colorTextGeneral;
 $btnFullDisabledBgColor:#FFEDA7;
 
 //

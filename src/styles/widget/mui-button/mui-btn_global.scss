@@ -1,8 +1,6 @@
 .mui-btn {
   position: relative;
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: px2rem(36);
   padding-right: px2rem(36);
   text-align: center;
@@ -14,7 +12,6 @@
   background: transparent;
   @include setTapColor();
   -webkit-appearance: none;
-
   &:focus {
     outline: 0;
   }
