@@ -1,72 +1,9 @@
 /*
 * mui 规范中定义的颜色
 */
-
-// // 品牌色 用于大部分按钮 背景等
-// $colorPrimary: #ffe352;
-// // 用于提示语 幽灵按钮等
-// $tipsColor: #ffb626;
-// // 用于包含链接的常规性短文字
-// $linkColorDefault: #61c9ff;
-// // 用于促进用户前进的位置或用于警示 删除等
-// $colorWarn: #ff6161;
-// // 用于重要级文本信息 标题信息
-// $textColorImportant: #222222;
-// // 用于普通级文本信息
-// $textColorGeneral: #666666;
-// // 用于辅助或者次要文本信息
-// $textColorAssistant: #999999;
-// // 用于全站的分割处理
-// $lineColorLight: #e4e4e4;
-// // 用于内容区域底色或分隔模块
-// $bgColorDefault: #f7f7f7;
-// // 用于内容区域底色或浅色文字
-// $textColorLight: #cccccc;
-// // 用于按钮文字颜色
-// $textBtnColor: #474747;
-// // 用于按钮颜色
-// $btnBgColor: #f2f2f2;
-// // 用于价格等信息
-// $textColorPrice: #e31436;
-
 //------------------------ //
-//---updated on 20190422--- //
+//---updated on 20191011--- //
 //-------------------------//
-// color1 品牌色 用于大部分按钮 背景等
-// $colorPrimary: #ffe550;
-// // color2 用于提示语 幽灵按钮等
-// $tipsColor: #f18800;
-// // color3 用于包含链接的常规性短文字
-// $linkColorDefault: #027AFF;
-// // color4 用于促进用户前进的位置或用于警示 删除等
-// $colorWarn: #FF5547;
-// // color5 用于普通级文本信息
-// $textColorGeneral: #424243;
-// // color6 用于重要级文本信息 标题信息
-// $textColorImportant: #131314;
-// // color7 用于次要文本信息
-// $textColorAssistant: #a1a1a1;
-// // color8 用于辅助或者次要文本信息
-// $textColorSecondary:#717172;
-// // color9 用于内容区域底色或浅色文字
-// $textColorLight: #d0d0d0;
-// // color10 用于全站的分割处理
-// $lineColorLight: #ececec;
-// // color11 用于不可点按钮颜色
-// $btnBgColor: #f2f2f2;
-// // cloor12 用于内容区域底色或分隔模块
-// $bgColorDefault: #f8f8f8;
-// // color13 用于价格等信息
-// $textColorPrice: #ff3e00;
-// // color14 用于按钮文字颜色
-// $textBtnColor: #424243;
-
-//------------------------ //
-//---updated on 20190820--- //
-//-------------------------//
-// color16 主按钮按下色
-// $colorBtnPress:#E6ce49;
-
 $colorBlack:#000;
 $colorRed:#ff3e00;
 
@@ -75,56 +12,23 @@ $colorRed:#ff3e00;
 // color1 品牌色 用于大部分按钮 背景等
 $colorPrimary: #ffe24d; // #ffe550
 /*color2 用于提示语 幽灵按钮等*/
-$colorTips: #f18800;
+$colorTips: #f18800; // 这个颜色后续需要废弃。
 // color3 用于包含链接的常规性短文字
-$colorLinkDefault: #007fff;
+$colorLink: #007fff;
 // color4 用于促进用户前进的位置或用于警示 删除等
+$colorSuccess: #12AB24;
 $colorWarn: $colorRed;
-// color5 用于普通级文本信息
-$colorTextGeneral:lighten($colorBlack, 8%);
 // color6 用于重要级文本信息 标题信息
-$colorTextImportant:lighten($colorBlack, 20%);
+$colorTextMain:lighten($colorBlack, 20%); // #333
+// color5 用于普通级文本信息
+$colorTextGeneral:lighten($colorBlack, 40%); // #666
 // color7 用于次要文本信息
-$colorTextAssistant:lighten($colorBlack, 40%);
-// color8 用于辅助或者次要文本信息
-$colorTextSecondary:lighten($colorBlack, 60%);
+$colorTextAssistant:lighten($colorBlack, 60%); // #999
 // color9 用于内容区域底色或浅色文字
-$colorTextLight:lighten($colorBlack, 80%);
+$colorPlaceholder:lighten($colorBlack, 80%); // #ccc
 // color10 用于全站的分割处理
-$colorLineLight: lighten($colorBlack, 90%);
+$colorLineLight: lighten($colorBlack, 90%); // #e6e6e6
 // color11 用于不可点按钮颜色
 $colorBtnBg: lighten($colorBlack, 90%);
 // clor12 用于内容区域底色或分隔模块
-$colorBgDefault: lighten($colorBlack, 97%);
-// color13 用于价格等信息
-$colorTextPrice: $colorRed;
-// color14 用于按钮文字颜色
-$colorTextBtn: #424243;
-
-
-/**** [命名不规范，废弃start]****/
-// color2 用于提示语 幽灵按钮等
-$tipsColor: $colorTips;
-// color3 用于包含链接的常规性短文字
-$linkColorDefault: $colorLinkDefault;
-// color5 用于普通级文本信息
-$textColorGeneral:$colorTextGeneral;
-// color6 用于重要级文本信息 标题信息
-$textColorImportant:$colorTextImportant;
-// color7 用于次要文本信息
-$textColorAssistant:$colorTextAssistant;
-// color8 用于辅助或者次要文本信息
-$textColorSecondary:$colorTextSecondary;
-// color9 用于内容区域底色或浅色文字
-$textColorLight:$colorTextLight;
-// color10 用于全站的分割处理
-$lineColorLight: $colorLineLight;
-// color11 用于不可点按钮颜色
-$btnBgColor: $colorBtnBg;
-// clor12 用于内容区域底色或分隔模块
-$bgColorDefault: $colorBgDefault;
-// color13 用于价格等信息
-$textColorPrice: $colorTextPrice;
-// color14 用于按钮文字颜色
-$textBtnColor: $colorTextBtn;
-/**** [命名不规范，废弃end]*****/
+$colorBg: lighten($colorBlack, 97%); // #f8f8f8

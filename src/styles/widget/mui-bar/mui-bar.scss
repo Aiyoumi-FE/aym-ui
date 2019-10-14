@@ -2,43 +2,43 @@
 @import "mui-bar_nav";
 
 .mui-bar {
+  position: relative;
+  padding: 0 px2rem(15);
+  background-color: #fff;
+
+  .mui-bar__title {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 px2rem(-15);
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .mui-bar__left,
+  .mui-bar__tools {
+    padding: 0 px2rem(18);
     position: relative;
-    padding: 0 px2rem(15);
-    background-color: #fff;
+    z-index: 1;
 
-    .mui-bar__title {
-        position: absolute;
-        display: block;
-        width: 100%;
-        padding: 0;
-        margin: 0 px2rem(-15);
-        font-weight: normal;
-        text-align: center;
-        white-space: nowrap;
+    [class*='mui-icon-'] {
+      vertical-align: middle;
     }
+  }
 
-    .mui-bar__left,
-    .mui-bar__tools {
-        padding: 0 px2rem(18);
-        position: relative;
-        z-index: 1;
+  .mui-bar__left {
+    float: left;
+  }
 
-        [class*='mui-icon-'] {
-            vertical-align: middle;
-        }
+  .mui-bar__tools {
+    float: right;
+  }
+
+  &.mui-bar_bottom-line {
+    &:before {
+      @include setBottomLine($colorLineLight);
     }
-
-    .mui-bar__left {
-        float: left;
-    }
-
-    .mui-bar__tools {
-        float: right;
-    }
-
-    &.mui-bar_bottom-line {
-        &:before {
-            @include setBottomLine($lineColorLight);
-        }
-    }
+  }
 }

@@ -1,53 +1,53 @@
 .mui-toast__content {
-    background: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    font-size: $fontSizeLevel5;
-    border-radius: px2rem(12);
-    color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-size: $fontBody;
+  border-radius: px2rem(12);
+  color: #fff;
 
-    .mui-toast__txt {
-        max-width: px2rem(438);
-        min-height: px2rem(80);
-        padding: px2rem(20);
+  .mui-toast__txt {
+    max-width: px2rem(438);
+    min-height: px2rem(80);
+    padding: px2rem(20);
+  }
+
+  &.mui-toast__icon {
+    min-width: px2rem(240);
+    max-width: px2rem(320);
+    min-height: px2rem(240);
+
+    i {
+      &.mui-icon-loading {
+        margin: px2rem(50) 0 px2rem(5);
+        width: px2rem(86);
+        height: px2rem(86);
+        vertical-align: baseline;
+      }
+
+      &.mui-toast__no-text {
+        margin-top: px2rem(67);
+      }
     }
 
-    &.mui-toast__icon {
-        min-width: px2rem(240);
-        max-width: px2rem(320);
-        min-height: px2rem(240);
-
-        i {
-            &.mui-icon-loading {
-                margin: px2rem(50) 0 px2rem(5);
-                width: px2rem(86);
-                height: px2rem(86);
-                vertical-align: baseline;
-            }
-
-            &.mui-toast__no-text {
-                margin-top: px2rem(67);
-            }
-        }
-
-        [class^="mui-icon-"],
-        [class*=" mui-icon-"] {
-            display: inline-block;
-            font-size: px2rem(106);
-            margin-top: px2rem(30);
-        }
-
-        .mui-toast__text {
-            font-size: $fontSizeLevel6;
-            padding: 0 px2rem(30);
-            color: #fff;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .mui-icon {
-            font-size: px2rem(96);
-            margin: px2rem(45) 0 px2rem(10);
-        }
+    [class^="mui-icon-"],
+    [class*=" mui-icon-"] {
+      display: inline-block;
+      font-size: px2rem(106);
+      margin-top: px2rem(30);
     }
+
+    .mui-toast__text {
+      font-size: $fontBody;
+      padding: 0 px2rem(30);
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mui-icon {
+      font-size: px2rem(96);
+      margin: px2rem(45) 0 px2rem(10);
+    }
+  }
 }

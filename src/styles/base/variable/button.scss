@@ -66,28 +66,28 @@ $btnSubsidiaryDisabledColor:#999;
 $widthLarge:px2rem(686);
 $heightLarge:px2rem(88);
 $borderRadiusLarge: px2rem(44);
-$fontSizeLarge:$fontSizeLevel3;
+$fontSizeLarge:$fontSTitle;
 $fontWeightLarge: 600;
 
 $widthMiddle:px2rem(200);
 $heightMiddle:px2rem(80);
 $borderRadiusMiddle: px2rem(40);
-$fontSizeMiddle:$fontSizeLevel3;
+$fontSizeMiddle:$fontSTitle;
 $fontWeightMiddle: 600;
 
 $widthSmall:px2rem(184);
 $heightSmall:px2rem(72);
 $borderRadiusSmall: px2rem(44);
-$fontSizeSmall:$fontSizeLevel5;
+$fontSizeSmall:$fontBody;
 
 $widthXsmall:px2rem(184);
 $heightXsmall:px2rem(64);
 $borderRadiusXsmall: px2rem(44);
-$fontSizeXsmall: $fontSizeLevel5;
+$fontSizeXsmall: $fontBody;
 
 //满屏按钮
 $heightFll:px2rem(88);
-$fontSizeFll:$fontSizeLevel3;
+$fontSizeFll:$fontSTitle;
 $btnFullBg: $colorPrimary;
 $btnFullColor:#474747;
 $btnFullActiveBg:#FEC106;

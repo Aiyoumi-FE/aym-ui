@@ -17,7 +17,7 @@
   border: none;
   line-height: px2rem(96);
   vertical-align: middle;
-  font-size: $fontSizeLevel5;
+  font-size: $fontBody;
   color: #F99E00;
   position: relative;
   white-space: nowrap;
@@ -29,6 +29,6 @@
   }
 
   &.disabled {
-    color: $textColorAssistant;
+    color: $colorTextAssistant;
   }
 }

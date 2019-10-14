@@ -83,13 +83,13 @@ export default {
 .radio-item__label {
   font-size: px2rem(28);
   padding: px2rem(10) px2rem(40);
-  color: $textColorImportant;
-  background-color: $bgColorDefault;
+  color: $colorTextMain;
+  background-color: $colorBg;
   border-radius: px2rem(12);
   margin-right: px2rem(20);
 
   &.radio-item__label_active {
-    color: $textBtnColor;
+    // color: $colorTextImportant;
     background-color: $colorPrimary;
   }
 }

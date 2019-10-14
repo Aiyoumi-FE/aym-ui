@@ -30,12 +30,12 @@
     width: 100%;
     text-align: center;
     font-weight: normal;
-    font-size: $fontSizeLevel3;
-    color: $textColorGeneral;
+    font-size: $fontSTitle;
+    color: $colorTextGeneral;
   }
 
   &:after {
-    @include setBottomLine($lineColorLight);
+    @include setBottomLine($colorLineLight);
   }
 }
 
@@ -60,7 +60,7 @@
     background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
 
     &:after {
-      @include setBottomLine($lineColorLight);
+      @include setBottomLine($colorLineLight);
     }
   }
 
@@ -69,7 +69,7 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
 
     &:after {
-      @include setTopLine($lineColorLight);
+      @include setTopLine($colorLineLight);
     }
   }
 }

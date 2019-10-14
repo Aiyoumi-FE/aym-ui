@@ -22,18 +22,15 @@
 <script>
 const arr = [
   '$colorPrimary',
-  '$colorTips',
-  '$colorLinkDefault',
+  '$colorLink',
+  '$colorSuccess',
   '$colorWarn',
   '$colorTextGeneral',
-  '$colorTextImportant',
-  '$colorTextSecondary',
-  '$colorTextLight',
+  '$colorTextMain',
+  '$colorPlaceholder',
   '$colorLineLight',
   '$colorBtnBg',
-  '$colorBgDefault',
-  '$colorTextPrice',
-  '$colorTextBtn'
+  '$colorBg'
 ]
 export default {
   name: 'demo-color',
@@ -67,19 +64,15 @@ export default {
 <style lang="scss"
   scoped>
 $colors:($colorPrimary,
-$colorTips,
-$colorLinkDefault,
+$colorLink,
+$colorSuccess,
 $colorWarn,
 $colorTextGeneral,
-$colorTextImportant,
-$colorTextSecondary,
-$colorTextLight,
+$colorTextMain,
+$colorPlaceholder,
 $colorLineLight,
 $colorBtnBg,
-$colorBgDefault,
-$colorTextPrice,
-$colorTextBtn);
-
+$colorBg);
 $i:1;
 
 @each $color in $colors {

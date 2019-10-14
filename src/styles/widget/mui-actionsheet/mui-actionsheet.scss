@@ -1,66 +1,66 @@
 .mui-actionsheet-panel {
-    color: $textColorImportant;
-    background-color: $bgColorDefault;
+  color: $colorTextMain;
+  background-color: $colorBg;
 }
 
 .mui-actionsheet__title {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .mui-actionsheet__menu {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .mui-actionsheet__cell {
-    position: relative;
-    height: px2rem(96);
-    line-height: px2rem(96);
-    text-align: center;
-    font-size: px2rem(34);
-    color: $textColorImportant;
+  position: relative;
+  height: px2rem(96);
+  line-height: px2rem(96);
+  text-align: center;
+  font-size: px2rem(34);
+  color: $colorTextMain;
 
-    &:before {
-        @include setTopLine($lineColorLight);
+  &:before {
+    @include setTopLine($colorLineLight);
+  }
+
+  &:active {}
+
+  &.select {
+    color: $colorTips;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: px2rem(26);
+      height: px2rem(29);
+      background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMTYgMTggMjYgMjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTE2IDE4IDI2IDI2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgICAuc3QwIHsNCiAgICAgICAgZmlsbDogI0ZGQjYyNjsNCiAgICB9DQogICAgPC9zdHlsZT4NCiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLTE1LjYsMzIuNWMtMC4yLTAuMi0wLjItMC41LTAuMS0wLjhsMC43LTAuOGMwLjItMC4yLDAuNS0wLjMsMC43LTAuMWw1LjgsMy45YzAuNSwwLjQsMS4yLDAuMywxLjYsMEw4LjYsMjEuOQ0KCWMwLjItMC4yLDAuNS0wLjEsMC43LDBsMC4zLDAuM2MwLjIsMC4yLDAuMiwwLjUsMCwwLjdMLTcsMzkuOWMtMC40LDAuNC0xLDAuNC0xLjQsMEwtMTUuNiwzMi41eiIgLz4NCjwvc3ZnPg==') 0 0 no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: px2rem(32);
+      top: 50%;
+      transform: translate(0, -50%);
     }
-
-    &:active {}
-
-    &.select {
-        color: $tipsColor;
-
-        &:after {
-            content: '';
-            display: inline-block;
-            width: px2rem(26);
-            height: px2rem(29);
-            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMTYgMTggMjYgMjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTE2IDE4IDI2IDI2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgICAuc3QwIHsNCiAgICAgICAgZmlsbDogI0ZGQjYyNjsNCiAgICB9DQogICAgPC9zdHlsZT4NCiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLTE1LjYsMzIuNWMtMC4yLTAuMi0wLjItMC41LTAuMS0wLjhsMC43LTAuOGMwLjItMC4yLDAuNS0wLjMsMC43LTAuMWw1LjgsMy45YzAuNSwwLjQsMS4yLDAuMywxLjYsMEw4LjYsMjEuOQ0KCWMwLjItMC4yLDAuNS0wLjEsMC43LDBsMC4zLDAuM2MwLjIsMC4yLDAuMiwwLjUsMCwwLjdMLTcsMzkuOWMtMC40LDAuNC0xLDAuNC0xLjQsMEwtMTUuNiwzMi41eiIgLz4NCjwvc3ZnPg==') 0 0 no-repeat;
-            background-size: cover;
-            position: absolute;
-            right: px2rem(32);
-            top: 50%;
-            transform: translate(0, -50%);
-        }
-    }
+  }
 }
 
 .mui-actionsheet__ft {
-    .mui-actionsheet_default {
-        display: block;
-        width: 100%;
-        line-height: px2rem(96);
-        margin-top: px2rem(12);
-        text-align: center;
-        background-color: #fff;
-        font-size: px2rem(34);
-        color: $textColorImportant;
-    }
+  .mui-actionsheet_default {
+    display: block;
+    width: 100%;
+    line-height: px2rem(96);
+    margin-top: px2rem(12);
+    text-align: center;
+    background-color: #fff;
+    font-size: px2rem(34);
+    color: $colorTextMain;
+  }
 
-    .mui-actionsheet_warn {
-        background-color: $colorWarn;
-        color: #fff;
-    }
+  .mui-actionsheet_warn {
+    background-color: $colorWarn;
+    color: #fff;
+  }
 }
 
 .mui-actionsheet_toggle {
-    transform: translate(0, 0);
+  transform: translate(0, 0);
 }
