@@ -1,17 +1,20 @@
 .mui-bar_modal {
-    height: px2rem(97);
-    .mui-bar__title {
-        line-height: px2rem(97);
-        color: $textColorGeneral;
-        font-size: $fontSizeLevel3;
+  height: px2rem(97);
+
+  .mui-bar__title {
+    line-height: px2rem(97);
+    color: $colorTextGeneral;
+    font-size: $fontSTitle;
+  }
+
+  .mui-bar__left,
+  .mui-bar__tools {
+    line-height: px2rem(97);
+    color: $colorTextGeneral;
+
+    [class*='mui-icon-'] {
+      font-size: $fontSTitle;
+      vertical-align: middle;
     }
-    .mui-bar__left,
-    .mui-bar__tools {
-        line-height: px2rem(97);
-        color: $textColorGeneral;
-        [class*='mui-icon-'] {
-            font-size: $fontSizeLevel3;
-            vertical-align: middle;
-        }
-    }
+  }
 }

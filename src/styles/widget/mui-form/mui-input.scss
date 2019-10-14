@@ -75,8 +75,8 @@
   flex-direction: column;
 
   .mui-cell__hd {
-    color: $textColorGeneral;
-    font-size: $fontSizeLevel5;
+    color: $colorTextGeneral;
+    font-size: $fontBody;
   }
 
   .mui-cell__hd .mui-label {
@@ -84,12 +84,12 @@
   }
 
   &.mui-cell__input_focus .mui-cell__bd {
-    border-bottom: 1px solid $textColorImportant;
+    border-bottom: 1px solid $colorTextMain;
   }
 
   .mui-cell__bd {
     width: 100%;
-    font-size: $fontSizeLevel3;
+    font-size: $fontSTitle;
     border-bottom: 1px solid transparent;
 
     .mui-input {
@@ -99,7 +99,7 @@
 
       // &:focus {
       //   padding-right: px2rem(60);
-      //   border-bottom: 1px solid $textColorImportant;
+      //   border-bottom: 1px solid $colorTextMain;
       // }
     }
 

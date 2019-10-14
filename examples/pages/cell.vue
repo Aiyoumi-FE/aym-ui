@@ -175,6 +175,6 @@ export default {
 <style lang="scss"
   scoped>
 .btn_link {
-  color: $linkColorDefault;
+  color: $colorLink;
 }
 </style>

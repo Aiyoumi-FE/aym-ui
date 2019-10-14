@@ -2,7 +2,7 @@
   margin-top: px2rem(24);
   overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
   position: relative;
-  color: $colorTextImportant;
+  color: $colorTextMain;
 }
 
 .mui-cell {
@@ -12,7 +12,7 @@
   // padding: px2rem(44) px2rem(32);
   position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
   align-items: center;
-  font-size: $fontSizeLevel3;
+  font-size: $fontSTitle;
   // line-height: 1.2857;
   background-color: #ffffff;
 }
@@ -21,7 +21,7 @@
 
 .mui-cells .mui-cell:not(.mui-cell_small) {
   &:before {
-    @include setTopLine($lineColorLight);
+    @include setTopLine($colorLineLight);
     left: px2rem(32);
     right: px2rem(32);
   }
@@ -68,8 +68,8 @@
 
 .mui-cell__bd {
   flex: 1;
-  // font-size: $fontSizeLevel3;
-  // color: $textColorImportant;
+  // font-size: $fontSTitle;
+  // color: $colorTextMain;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -79,7 +79,7 @@
 }
 
 .mui-cell__bd_title_mini {
-  font-size: $fontSizeLevel5;
+  font-size: $fontBody;
 }
 
 
@@ -91,19 +91,19 @@
 .mui-cell__bd_subtitle,
 .mui-cell__ft_subvalue {
   color: $colorTextAssistant;
-  font-size: $fontSizeLevel7;
+  font-size: $fontSBody;
 }
 
 .mui-cell__ft {
   text-align: right;
-  // color: $textColorAssistant;
-  // color: $textColorImportant;
+  // color: $colorTextAssistant;
+  // color: $colorTextMain;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .mui-cell__ft_value {
-  // font-size: $fontSizeLevel3;
+  // font-size: $fontSTitle;
 }
 
 
@@ -143,7 +143,7 @@
 // size
 .mui-cell_small {
   height: px2rem(72);
-  font-size: $fontSizeLevel5;
+  font-size: $fontBody;
 }
 
 .mui-cell_middle {

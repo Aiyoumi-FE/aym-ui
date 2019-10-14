@@ -1,25 +1,27 @@
 .mui-btn {
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: px2rem(14);
-    padding-right: px2rem(14);
-    text-align: center;
-    text-decoration: none;
-    color: $textBtnColor;
-    border-radius: $btnBorderRadius;
-    border-width: 0;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: px2rem(14);
+  padding-right: px2rem(14);
+  text-align: center;
+  text-decoration: none;
+  color: $colorTextMain;
+  border-radius: $btnBorderRadius;
+  border-width: 0;
+  outline: 0;
+  background: transparent;
+  @include setTapColor();
+  -webkit-appearance: none;
+
+  &:focus {
     outline: 0;
-    background: transparent;
-    @include setTapColor();
-    -webkit-appearance: none;
-    &:focus {
-        outline: 0;
-    }
-    overflow: hidden;
+  }
+
+  overflow: hidden;
 }
 
 .mui-btn_inline {
-    display: inline-block;
+  display: inline-block;
 }
