@@ -1,0 +1,7 @@
+import {{nameFirstBig}} from './{{name}}.vue'
+
+{{nameFirstBig}}.install = function(Vue) {
+    Vue.component({{nameFirstBig}}.name, {{nameFirstBig}})
+}
+
+export default {{nameFirstBig}}
