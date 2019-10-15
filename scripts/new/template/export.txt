@@ -1,0 +1,2 @@
+export { {{nameFirstBig}} } from './components/{{name}}'
+
