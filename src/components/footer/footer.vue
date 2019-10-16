@@ -1,13 +1,13 @@
 <template>
 <section v-if="isFixed" class="mui-footer">
-    <div class="mui-fixedbottom"
-      :style="stylePosition">
-        <slot></slot>
-    </div>
-	</section>
-  <section v-else class="mui-fixedbottom">
-    <slot></slot>
-  </section>
+  <div class="mui-fixedbottom"
+    :style="stylePosition">
+      <slot></slot>
+  </div>
+</section>
+<section v-else class="mui-fixedbottom">
+  <slot></slot>
+</section>
 </template>
 <script>
 import { isAndroid } from '../../libs/env'
@@ -21,39 +21,43 @@ export default {
     props: {
         setPosition: {
           type: Boolean,
-          default: false
+          default: true
         }
     },
     data() {
       return {
-        elementHeight: 0,
-        outerHeight: 0
+        originHeight: 0,
+        pageHeight: 0
       }
     },
     computed: {
       stylePosition() {
-        if (!this.elementHeight) {
+        if (!this.originHeight) {
           return {}
         }
-        let keyboardHeight = this.elementHeight - this.outerHeight
-        return (keyboardHeight < 300 && keyboardHeight > 0) ? { position: 'static'} : {}
+        let keyboardHeight = this.originHeight - this.pageHeight
+        return (keyboardHeight < 400 && keyboardHeight > 0) ? { position: 'static'} : {}
       }
     },
     mounted() {
-      if (this.setPosition && isAndroid) {
-        this.getHeight()
-        window.addEventListener('resize', this.getHeight, false)
+      if (this.isFixed && this.setPosition && isAndroid) {
+        this.initHeight()
+        window.addEventListener('resize', this.resetHeight, false)
       }
     },
     beforeDestroy() {
       if (this.setPosition && isAndroid) {
-        window.removeEventListener('resize', this.getHeight, false)
+        window.removeEventListener('resize', this.resetHeight, false)
       }
     },
     methods: {
-      getHeight() {
-        this.elementHeight = document.documentElement.clientHeight
-        this.outerHeight = window.outerHeight
+      initHeight() {
+        let height = document.body.offsetHeight
+        this.originHeight = height
+        this.pageHeight = height
+      },
+      resetHeight() {
+        this.pageHeight = document.body.offsetHeight
       }
     }
 }

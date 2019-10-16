@@ -33,6 +33,7 @@ export default {
   data() {
     return {
       isShow: true,
+      originHeight: '',
       pageHeight: ''
     }
   },
@@ -51,7 +52,7 @@ export default {
   },
   mounted() {
     if (this.setHeight) {
-      this.resizeHeight()
+      this.initHeight()
       window.addEventListener('resize', this.resizeHeight, false)
     }
   },
@@ -59,8 +60,17 @@ export default {
     window.removeEventListener('resize', this.resizeHeight, false)
   },
   methods: {
+    initHeight() {
+      let height = document.body.offsetHeight
+      this.originHeight = height
+      this.pageHeight = height
+    },
     resizeHeight() {
-      this.pageHeight = document.body.offsetHeight
+      // this.pageHeight = document.body.offsetHeight
+      let height = document.body.offsetHeight
+      if (height >= originHeight) {
+        this.pageHeight = height
+      }
     }
   }
 }

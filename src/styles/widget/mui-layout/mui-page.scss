@@ -21,15 +21,6 @@
     top: 1.87733rem;
 }
 
-.mui-fixedbottom {
-    width: 100%;
-    height: 2.13333rem;
-    position: absolute;
-    bottom: 0;
-    background-color: #fff;
-    z-index: 1000;
-}
-
 .mui-fixedbottom~.mui-content {
     bottom: 2.13333rem;
 }
@@ -41,7 +32,6 @@
 .mui-page_fixed .mui-fixedbottom {
     position: fixed;
     z-index: 999;
-    left: 0;
 }
 
 .mui-page_fixed .mui-bar_nav~.mui-content {

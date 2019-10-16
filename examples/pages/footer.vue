@@ -1,8 +1,7 @@
 <template>
-    <m-page :isFixed="isFixed">
+    <m-page setHeight isFixed>
         <m-header slot="header"></m-header>
         <demo-content ref="demos">
-          <m-button @click="changeLayout">切换布局</m-button>
             <m-cell-group>
                 <m-input
                     title="disabled"
@@ -77,7 +76,7 @@
                 title="Picker-数据联动"
                 :data="list"></m-picker>
         </demo-content>
-        <m-footer slot="bottom" :setPosition="true">
+        <m-footer slot="bottom">
           <m-button @click="showComPicker">picker</m-button>
         </m-footer>
     </m-page>
@@ -87,7 +86,6 @@ export default {
   name: 'demo-footer',
   data() {
     return {
-      isFixed: true,
       testValue0: 'testblur',
       testValue1: '123456',
       testValue2: 'readonly',
@@ -121,9 +119,6 @@ export default {
     },
     showComPicker() {
       this.$refs.comPicker.show()
-    },
-    changeLayout() {
-      this.isFixed = !this.isFixed
     }
   }
 }
