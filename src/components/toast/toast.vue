@@ -109,6 +109,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../styles/widget/mui-tips/mui-toast";
-@import "../../styles/widget/mui-loading/mui-loading";
+@import '../../styles/var.scss';
+@import "../../styles/widget/mui-tips/mui-tips";
 </style>

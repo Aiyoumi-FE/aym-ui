@@ -1,4 +1,173 @@
-@import "./mui-input";
-@import "./mui-vcode";
-@import "./mui-checkbox";
-@import "./mui-switch";
+/*input*/
+
+.mui-label {
+  display: block;
+  min-width: px2rem(160);
+  margin-right: px2rem(16);
+  @include text_wrap();
+}
+
+.mui-input,
+.mui-textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  // height: px2rem(96 - 2 * 30);
+  // line-height: px2rem(96 - 2 * 30); // hides the spin-button
+  line-height: px2rem(36); // hides the spin-button
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.mui-textarea {
+  resize: none;
+  line-height: px2rem(41);
+}
+
+.mui-cell__input_textarea {
+  align-items: flex-start;
+}
+
+.mui-cells_form {
+  .mui-icon-warn {
+    display: none;
+  }
+
+  input,
+  textarea,
+  label[for] {
+    @include setTapColor();
+  }
+}
+
+.mui-cell_warn {
+  color: $colorWarn;
+
+  .mui-icon-warn {
+    display: inline-block;
+  }
+}
+
+.mui-cell__input .mui-cell__bd {
+  display: flex;
+  align-items: center;
+
+  .mui-input {
+    flex: 1;
+  }
+}
+
+.mui-input__icon_clear {
+  font-size: px2rem(34);
+  color: $colorPlaceholder;
+}
+
+.mui-cell.mui-cell__input_upanddown {
+  padding-bottom: 0;
+  padding-top: px2rem(30);
+  align-items: flex-start;
+  flex-direction: column;
+
+  .mui-cell__hd {
+    color: $colorTextGeneral;
+    font-size: $fontBody;
+  }
+
+  .mui-cell__hd .mui-label {
+    width: 100%;
+  }
+
+  &.mui-cell__input_focus .mui-cell__bd {
+    border-bottom: 1px solid $colorTextMain;
+  }
+
+  .mui-cell__bd {
+    width: 100%;
+    font-size: $fontSTitle;
+    border-bottom: 1px solid transparent;
+
+    .mui-input {
+      font-weight: 500;
+      padding: px2rem(32) 0;
+      border-radius: 0;
+
+      // &:focus {
+      //   padding-right: px2rem(60);
+      //   border-bottom: 1px solid $colorTextMain;
+      // }
+    }
+
+
+
+    // .mui-input__icon_clear {
+    //   position: absolute;
+    //   right: 0;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   color: $textBtnColor;
+    // }
+
+    // right
+  }
+
+}
+
+/*checkbox*/
+.mui-check-icon {
+  display: inline-block;
+  position: relative;
+
+  .mui-icon-check1,
+  .mui-icon-uncheck1 {
+    font-size: px2rem(40);
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+}
+
+/*TODO:vcode*/
+
+.mui-cell.mui-cell__input_vcode {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.mui-vcode__img {
+  width: px2rem(200);
+  height: px2rem(96);
+  vertical-align: middle;
+}
+
+.mui-vcode__btn {
+  display: inline-block;
+  width: px2rem(200);
+  padding: 0 px2rem(29);
+  border: none;
+  line-height: px2rem(96);
+  vertical-align: middle;
+  font-size: $fontBody;
+  color: #F99E00;
+  position: relative;
+  white-space: nowrap;
+  background-color: transparent;
+  outline: 0;
+
+  &:before {
+    @include setLeftLine(#e4e4e4);
+  }
+
+  &.disabled {
+    color: $colorTextAssistant;
+  }
+}
