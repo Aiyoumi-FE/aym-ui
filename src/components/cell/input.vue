@@ -248,7 +248,6 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../../styles/var.scss';
 @import "../../styles/widget/mui-cell/mui-cell";
-@import "../../styles/widget/mui-form/mui-input";
-@import "../../styles/widget/mui-form/mui-vcode";
 </style>

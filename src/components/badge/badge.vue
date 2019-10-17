@@ -1,26 +1,27 @@
 <template>
-    <span class="mui-badge"
+  <span class="mui-badge"
         :class="{'mui-badge_dot':isDot}">
             <slot>{{text}}</slot>
         </span>
 </template>
 <script>
 export default {
-    name: 'm-badge',
-    props: {
-        text: {
-            type: String,
-            default: ''
-        },
-        isDot: {
-            type: Boolean,
-            default: false
-        }
+  name: 'm-badge',
+  props: {
+    text: {
+      type: String,
+      default: ''
     },
-    computed: {},
-    methods: {}
+    isDot: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {},
+  methods: {}
 }
 </script>
 <style lang="scss">
-@import "../../styles/widget/mui-tips/mui-badge";
+@import '../../styles/var.scss';
+@import "../../styles/widget/mui-badge/mui-badge";
 </style>

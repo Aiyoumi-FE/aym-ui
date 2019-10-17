@@ -1,6 +1,3 @@
-@import "mui-bar_modal";
-@import "mui-bar_nav";
-
 .mui-bar {
   position: relative;
   padding: 0 px2rem(15);
@@ -39,6 +36,50 @@
   &.mui-bar_bottom-line {
     &:before {
       @include setBottomLine($colorLineLight);
+    }
+  }
+}
+
+/* nav */
+.mui-bar_nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: px2rem(88);
+
+  .mui-bar__title {
+    line-height: px2rem(88);
+    color: $colorTextMain;
+    font-size: $fontTitle;
+  }
+
+  .mui-bar__left,
+  .mui-bar__tools {
+    line-height: px2rem(88);
+    color: #474747;
+    font-size: $fontHeadline;
+  }
+}
+
+/* modal */
+.mui-bar_modal {
+  height: px2rem(97);
+
+  .mui-bar__title {
+    line-height: px2rem(97);
+    color: $colorTextGeneral;
+    font-size: $fontSTitle;
+  }
+
+  .mui-bar__left,
+  .mui-bar__tools {
+    line-height: px2rem(97);
+    color: $colorTextGeneral;
+
+    [class*='mui-icon-'] {
+      font-size: $fontSTitle;
+      vertical-align: middle;
     }
   }
 }

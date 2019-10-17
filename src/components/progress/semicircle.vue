@@ -79,6 +79,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../../styles/var.scss';
+
 .mui-progress__semicircle {
   position: relative;
   text-align: center;
