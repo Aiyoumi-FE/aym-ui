@@ -10,7 +10,7 @@
             <m-button>大号按钮</m-button>
             <m-button size="middle">中号按钮</m-button>
             <m-button size="small">小号按钮</m-button>
-            <m-button size="mini">超小按钮</m-button>
+            <m-button size="xsmall">超小按钮</m-button>
 
             <h5>禁用状态</h5>
             <m-button disabled>禁用按钮</m-button>

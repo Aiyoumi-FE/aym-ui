@@ -28,10 +28,10 @@
     }
 }
 
-.mui-btn_mini {
-    line-height: $heightMini;
-    font-size: $fontSizeMini;
+.mui-btn_xsmall {
+    line-height: $heightXsmall;
+    font-size: $fontSizeXsmall;
     &.mui-btn_round {
-        border-radius: $borderRadiusMini;
+        border-radius: $borderRadiusXsmall;
     }
 }

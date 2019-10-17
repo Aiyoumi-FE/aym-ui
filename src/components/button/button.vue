@@ -35,7 +35,7 @@ export default {
     size: {
       default: 'large',
       validator(value) {
-        return ['large', 'middle', 'small', 'mini'].indexOf(value) > -1
+        return ['large', 'middle', 'small', 'xsmall'].indexOf(value) > -1
       }
     },
     round: {
@@ -52,10 +52,11 @@ export default {
       return `${prefixCls}_${this.type}`
     },
     classSize() {
-      if (this.type !== 'full') {
-        return `${prefixCls}_${this.size}`
-      }
-      return ''
+      return `${prefixCls}_${this.size}`
+      // if (this.type !== 'full') {
+      //   return `${prefixCls}_${this.size}`
+      // }
+      // return ''
     },
 
     classes() {
