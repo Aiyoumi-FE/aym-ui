@@ -85,5 +85,14 @@ $heightXsmall:px2rem(64);
 $borderRadiusXsmall: px2rem(44);
 $fontSizeXsmall: $fontSizeLevel5;
 
+//满屏按钮
+$heightFll:px2rem(88);
+$fontSizeFll:$fontSizeLevel3;
+$btnFullBg: $colorPrimary;
+$btnFullColor:#474747;
+$btnFullActiveBg:#FEC106;
+$btnFullDisabledColor:#666666;
+$btnFullDisabledBgColor:#FFEDA7;
+
 //
 //mix(#000,#ffe550,10%)

@@ -29,7 +29,7 @@ export default {
     type: {
       default: 'primary',
       validator(value) {
-        return ['primary', 'plain'].indexOf(value) > -1
+        return ['primary', 'plain', 'full'].indexOf(value) > -1
       }
     },
     size: {
@@ -52,21 +52,25 @@ export default {
       return `${prefixCls}_${this.type}`
     },
     classSize() {
-      return `${prefixCls}_${this.size}`
-      // if (this.type !== 'full') {
-      //   return `${prefixCls}_${this.size}`
-      // }
-      // return ''
+      if (this.type !== 'full') {
+        return `${prefixCls}_${this.size}`
+      }
+      return ''
     },
-
+    classRound() {
+      if (this.type !== 'full' && this.round) {
+        return `${prefixCls}_round`
+      }
+      return ''
+    },
     classes() {
       return [
         `${prefixCls}`,
         this.classType,
         this.classSize,
+        this.classRound,
         {
-          'disabled': this.disabled,
-          [`${prefixCls}_round`]: this.round
+          'disabled': this.disabled
         }
       ]
     }
