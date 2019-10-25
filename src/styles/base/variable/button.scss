@@ -22,7 +22,7 @@ $btnDefaultGap: px2rem(30);
 // $btnWarnDisabledBdColor: #e4e4e4;
 // $btnWarnDisabledColor:#FEAAA9;
 // $btnWarnDisabledBgColor:#F7F7F7;
-//边框按钮
+// 边框按钮
 // $btnBorderColor:#FFB626;
 // $btnBorderBdColor:#FFB626;
 // $btnBorderActiveColor:#FCC360;
@@ -51,48 +51,60 @@ $btnDefaultGap: px2rem(30);
 //---updated on 20190924--- //
 //-------------------------//
 // $btnPrimaryBg: $colorPrimary;
-$btnPrimaryActiveBg: mix(#000,$colorPrimary,10%);
-$btnPrimaryDisabledBg: #E6E6E6;
-$btnPrimaryDisabledColor: #999;
+$colorPromaryActive: mix(#000,$colorPrimary,10%); // #e6cb45
+
+// 主按钮
+$btnPrimaryActiveBg: $colorPromaryActive; // #e6cb45
+// $btnPrimaryDisabledBg: #E6E6E6;
+// $btnPrimaryDisabledColor: #999;
 
 //辅助按钮
 $btnSubsidiaryBg: #ffffff;
-$btnSubsidiaryActiveBg: mix(#000,#fff,10%);
-$btnSubsidiaryBdColor:mix(#000,#fff,10%);
-$btnSubsidiaryDisabledBg:mix(#000,#fff,10%);
-$btnSubsidiaryDisabledColor:#999;
+$btnSubsidiaryActiveBg: mix(#000,#fff,10%); // #e6e6e6
+$btnSubsidiaryBdColor:mix(#000,#fff,10%); // #e6e6e6
+// $btnSubsidiaryDisabledBg:mix(#000,#fff,10%);
+// $btnSubsidiaryDisabledColor:#999;
 
+// 禁用
+$btnDisabledBg:mix(#000,#fff,10%); // #e6e6e6
+$btnDisabledColor:$colorTextAssistant;
 // 按钮尺寸
 $widthLarge:px2rem(686);
 $heightLarge:px2rem(88);
 $borderRadiusLarge: px2rem(44);
-$fontSizeLarge:$fontSizeLevel3;
+$fontSizeLarge:$fontSTitle;
 $fontWeightLarge: 600;
 
 $widthMiddle:px2rem(200);
 $heightMiddle:px2rem(80);
 $borderRadiusMiddle: px2rem(40);
-$fontSizeMiddle:$fontSizeLevel3;
+$fontSizeMiddle:$fontSTitle;
 $fontWeightMiddle: 600;
 
 $widthSmall:px2rem(184);
 $heightSmall:px2rem(72);
 $borderRadiusSmall: px2rem(44);
-$fontSizeSmall:$fontSizeLevel5;
+$fontSizeSmall:$fontBody;
 
 $widthXsmall:px2rem(184);
 $heightXsmall:px2rem(64);
 $borderRadiusXsmall: px2rem(44);
-$fontSizeXsmall: $fontSizeLevel5;
+$fontSizeXsmall: $fontBody;
 
 //满屏按钮
-$heightFll:px2rem(88);
-$fontSizeFll:$fontSizeLevel3;
-$btnFullBg: $colorPrimary;
-$btnFullColor:#474747;
-$btnFullActiveBg:#FEC106;
-$btnFullDisabledColor:#666666;
-$btnFullDisabledBgColor:#FFEDA7;
+$heightFull:px2rem(88);
+$fontSizeFll:$fontSTitle;
+$btnFullActiveBg:$colorPromaryActive;
+// $btnFullDisabledColor:#666666;
+// $btnFullDisabledBgColor:#FFEDA7;
+
+// 边框按钮
+// $btnBorderColor:#FFB626;
+// $btnBorderBdColor:#FFB626;
+$btnBorderActiveColor:$colorPromaryActive;
+$btnBorderActiveBdColor:$colorPromaryActive;
+// $btnBorderDisabledColor:#e4e4e4;
+// $btnBorderDisabledBdColor:#e4e4e4;
 
 //
 //mix(#000,#ffe550,10%)

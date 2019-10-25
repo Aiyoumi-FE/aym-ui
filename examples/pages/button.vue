@@ -5,6 +5,7 @@
             <h5>按钮类型</h5>
             <m-button @click="fn">主要按钮</m-button>
             <m-button type="plain">次要按钮</m-button>
+            <m-button type="border">border按钮</m-button>
 
             <h5>按钮尺寸</h5>
             <m-button>大号按钮</m-button>
@@ -14,7 +15,8 @@
                 <m-button size="xsmall">超小按钮</m-button>
             </div>
             <h5>禁用状态</h5>
-            <m-button disabled>禁用按钮</m-button>
+            <m-button disabled @click="fn">禁用按钮</m-button>
+            <m-button type="border" disabled>禁用按钮</m-button>
             <h5>按钮形状</h5>
             <div class="box">
                 <m-button size="middle">圆角按钮</m-button>
@@ -42,12 +44,9 @@ export default {
 </script>
 <style lang="scss"
     scoped>
-// .content-wrap {
-//     padding: 0 px2rem(32);
-// }
-// h5 {
-//     padding: 35px 0 10px;
-// }
+h5 {
+    margin-top: 20px;
+}
 .box {
     padding: 0 20px;
 }
