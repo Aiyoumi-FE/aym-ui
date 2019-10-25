@@ -1,11 +1,13 @@
 .mui-btn_plain {
-    background-color: $btnSubsidiaryBg;
-    border: 1px solid $btnSubsidiaryBdColor;
-    &:active {
-        background-color: $btnSubsidiaryActiveBg;
-    }
-    &.disabled {
-        background-color: $btnSubsidiaryDisabledBg;
-        color: $btnSubsidiaryDisabledColor;
-    }
+	background-color: $btnSubsidiaryBg;
+	border: 1px solid $btnSubsidiaryBdColor;
+	
+	&:active {
+			background-color: $btnSubsidiaryActiveBg;
+	}
+
+	&:disabled {
+		color: $btnDisabledColor;
+		background-color: $btnDisabledBg;
+	}
 }

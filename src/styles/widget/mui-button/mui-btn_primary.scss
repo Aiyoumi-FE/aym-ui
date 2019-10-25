@@ -1,10 +1,12 @@
 .mui-btn_primary {
   background-color: $colorPrimary;
+
   &:active {
     background-color: $btnPrimaryActiveBg;
   }
-  &.disabled {
-    color: $btnPrimaryDisabledColor;
-    background-color: $btnPrimaryDisabledBg;
+
+  &:disabled {
+    color: $btnDisabledColor;
+    background-color: $btnDisabledBg;
   }
 }

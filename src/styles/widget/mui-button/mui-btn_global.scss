@@ -11,15 +11,16 @@
   border-radius: $btnBorderRadius;
   border-width: 0;
   @include setTapColor();
-  -webkit-appearance: none;
   overflow: hidden;
+  -webkit-appearance: none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 
   &:focus {
     outline: 0;
   }
-
-}
-
-.mui-btn_inline {
-  display: inline-block;
 }
