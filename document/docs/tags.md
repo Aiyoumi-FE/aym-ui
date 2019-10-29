@@ -9,5 +9,5 @@
 
 | 参数      |类型 | 默认值    | 可选值|描述    | 
 |:-------- | :--------|:--------  |:--------|:---------| 
-|type|String|bg|bg,border| 背景色填充/边框|
-|bgColor|String|orange|orange, red, yellow, linear-blue, linear-red|type为bg时的可选项 |
+|type|String|normal|normal, warn, success, link, primary| 决定颜色|
+|outline|Boolean|false|true/false|outline 为true时，表现为实心 |

@@ -1,5 +1,5 @@
 <template>
-  <span :class="classes">
+  <span class="mui-tags" :class="[tagStyle,tagType]">
         <slot></slot>
     </span>
 </template>
@@ -10,34 +10,22 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'bg',
+      default: 'normal',
       validator(value) {
-        return ['bg', 'border'].indexOf(value) > -1
+        return ['normal', 'warn', 'success', 'link', 'primary'].indexOf(value) > -1
       }
     },
-    bgColor: {
-      type: String,
-      default: 'orange',
-      validator(value) {
-        return ['orange', 'red', 'yellow', 'linear-blue', 'linear-red'].indexOf(value) > -1
-      }
+    outline: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
-    classType() {
-      return `${prefixCls}_${this.type}`
+    tagStyle() {
+      return this.outline ? 'mui-tags_outline' : 'mui-tags_bg'
     },
-    classBg() {
-      if (this.type === 'bg') {
-        return `${prefixCls}_${this.bgColor}`
-      }
-      return ''
-    },
-    classes() {
-      return [
-        this.classType,
-        this.classBg
-      ]
+    tagType() {
+      return `mui-tags_${this.type}`
     }
   },
   methods: {}
