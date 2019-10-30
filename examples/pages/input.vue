@@ -39,7 +39,7 @@
           type="textarea"></m-input>
       </m-cell-group>
       <br>
-      <h4>上下结构</h4>
+      <!--       <h4>上下结构</h4>
       <m-cell-group>
         <m-input title="姓名"
           v-model="upAndDownName"
@@ -59,7 +59,7 @@
           placeholder="请输入姓名">
           <div slot="ft">随便</div>
         </m-input>
-      </m-cell-group>
+      </m-cell-group> -->
       <m-cell-group>
         <m-input title="原生事件可用"
           type="tel"
