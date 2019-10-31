@@ -1,19 +1,38 @@
-.fade-enter,
-.fade-leave-active {
-    opacity: 0
+.router-slide-enter-active,
+.router-slide-leave-active {
+  transition: all .5s;
+}
+
+.router-slide-enter,
+.router-slide-leave-active {
+  transform: translateX(100%);
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .3s ease;
+  transition: opacity .3s ease;
 }
 
-.slide-up-enter-active,
-.slide-up-leave-active {
-    transition: all .3s ease;
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
+.slide-enter-active {
+  transition: all .5s ease;
+  transform: translate(0, 0);
+}
+
+.slide-enter {
+  transform: translate(30px, 0);
+}
+
+.slide-up-enter-active {
+  transition: all .3s ease;
 }
 
 .slide-up-enter,
 .slide-up-leave-active {
-    transform: translate3d(0, 100%, 0)
+  transition: all .3s ease;
+  transform: translate(0, 100%);
 }

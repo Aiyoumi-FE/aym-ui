@@ -5,39 +5,39 @@
   }
 }
 
-.mui-picker__hd {
-  display: flex;
-  line-height: px2rem(96);
-  padding: 0 px2rem(32);
-  position: relative;
-  text-align: center;
+// .mui-picker__hd {
+//   display: flex;
+//   line-height: px2rem(96);
+//   padding: 0 px2rem(32);
+//   position: relative;
+//   text-align: center;
 
-  .close {
-    display: inline-block;
-    width: px2rem(96);
-    line-height: px2rem(96);
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #666;
+//   .close {
+//     display: inline-block;
+//     width: px2rem(96);
+//     line-height: px2rem(96);
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     color: #666;
 
-    .mui-icon {
-      font-size: px2rem(32);
-    }
-  }
+//     .mui-icon {
+//       font-size: px2rem(32);
+//     }
+//   }
 
-  & h3 {
-    width: 100%;
-    text-align: center;
-    font-weight: normal;
-    font-size: $fontSTitle;
-    color: $colorTextGeneral;
-  }
+//   & h3 {
+//     width: 100%;
+//     text-align: center;
+//     font-weight: normal;
+//     font-size: $fontSTitle;
+//     color: $colorTextGeneral;
+//   }
 
-  &:after {
-    @include setBottomLine($colorLineLight);
-  }
-}
+//   &:after {
+//     @include setBottomLine($colorLineLight);
+//   }
+// }
 
 .mui-picker__bd {
   position: relative;

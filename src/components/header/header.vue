@@ -5,7 +5,7 @@
             href="javascript:;"
             @click="leftHandle">
             <slot name="left">
-                <m-icon v-if="type === 'modal'"
+                <m-icon v-if="type === 'modal'&&isShowClose"
                     type="close1"></m-icon>
                 <m-icon v-else
                     type="back"></m-icon>
@@ -39,6 +39,10 @@ export default {
     isLine: {
       type: Boolean,
       default: false
+    },
+    isShowClose: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

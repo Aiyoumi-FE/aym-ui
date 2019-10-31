@@ -19,6 +19,10 @@ export default {
     },
     hide() {
       this.isVisible = false
+    },
+    close() {
+      this.hide()
+      this.$emit('close')
     }
   }
 }

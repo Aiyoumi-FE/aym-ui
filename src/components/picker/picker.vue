@@ -1,20 +1,15 @@
 <template>
   <transition name="fade">
     <m-popup type="picker"
-      @maskClick="maskClick"
+      @maskClick="hide"
       v-show="isVisible">
       <transition name="slide-up">
         <div class="mui-picker-panel"
           v-show="isVisible">
-          <div class="mui-picker__hd">
-            <a class="close"
-                            href="javascript:;"
-                            data-action="cancel"
-                            @click="cancel">
-                            <m-icon type="close"></m-icon>
-                        </a>
-            <h3>{{title}}</h3>
-          </div>
+          <m-header v-if="title"
+            :title="title"
+            type="modal"
+            @click="close"></m-header>
           <div class="mui-picker__bd">
             <i class="mui-picker__bottom-1px"></i>
             <i class="mui-picker__top-1px"></i>
@@ -46,7 +41,7 @@
 import BScroll from 'better-scroll'
 import mButton from '../button/button'
 import mPopup from '../popup/popup'
-import mIcon from '../icon'
+import mHeader from '../header/header'
 import apiMixin from '../../common/mixins/api'
 
 const EVENT_SELECT = 'select'
@@ -106,8 +101,8 @@ export default {
   },
   components: {
     mPopup,
-    mButton,
-    mIcon
+    mHeader,
+    mButton
   },
   created() {
     if (!this.pickerSelectedIndex.length) {
@@ -142,10 +137,6 @@ export default {
       if (changed) {
         this.$emit(EVENT_VALUE_CHANGE, this.pickerSelectedItem, this.pickerSelectedIndex)
       }
-    },
-    cancel() {
-      this.hide()
-      this.$emit(EVENT_CANCEL)
     },
     show() {
       if (this.isVisible) {
