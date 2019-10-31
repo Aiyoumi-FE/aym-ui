@@ -14,14 +14,16 @@
                 <m-button size="small">小号按钮</m-button>
                 <m-button size="xsmall">超小按钮</m-button>
             </div>
+
             <h5>禁用状态</h5>
-            <m-button disabled @click="fn">禁用按钮</m-button>
-            <m-button type="border" disabled>禁用按钮</m-button>
+            <m-button disabled type="plain" @click="fn">禁用按钮</m-button>
+
             <h5>按钮形状</h5>
             <div class="box">
                 <m-button size="middle">圆角按钮</m-button>
                 <m-button size="middle" :round="false">四方按钮</m-button>
             </div>
+
             <h5>full按钮</h5>
             <m-button type="full">full按钮</m-button>
             <m-button type="full" disabled>full按钮(disabled)</m-button>
