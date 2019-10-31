@@ -1,46 +1,46 @@
 <template>
-    <div id="app">
-        <transition name="fade">
-            <router-view></router-view>
-        </transition>
-    </div>
+  <div id="app">
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
+  </div>
 </template>
 <script>
 export default {
-    name: 'app'
+  name: 'app'
 }
 </script>
 <style>
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    position: relative;
-    width: 16rem;
-    margin: 0 auto;
+  position: relative;
+  width: 16rem;
+  margin: 0 auto;
 }
 
 h4 {
-    font-weight: normal;
-    font-size: 16px;
-    padding: 10px;
-    color: #999
+  font-weight: normal;
+  font-size: 16px;
+  padding: 10px;
+  color: #999
 }
 
 h5 {
-    font-weight: normal;
-    font-size: 16px;
-    padding: 0 20px 10px;
-    color: #999
+  font-weight: normal;
+  font-size: 16px;
+  padding: 0 20px 10px;
+  color: #999
 }
 
 
 
 /* 左右滑动 */
 
-.router-slide-enter-active,
+/*.router-slide-enter-active,
 .router-slide-leave-active {
     transition: all .5s;
 }
@@ -80,5 +80,5 @@ h5 {
     transition: all .3s ease;
     -webkit-transform: translate(0, 100%);
     transform: translate(0, 100%);
-}
+}*/
 </style>

@@ -1,22 +1,35 @@
 <template>
-  <transition name=" fade">
+  <transition name="fade">
     <m-popup type="actionsheet"
-      @maskClick="maskClick"
+      @maskClick="hide"
       v-show="isVisible">
       <transition name="slide-up">
         <div class="mui-actionsheet-panel"
           v-show="isVisible">
-          <div class="mui-actionsheet__title"
-            v-if="title.length > 0">
-            <div class="mui-actionsheet__cell">{{title}}</div>
-          </div>
+          <!--   <div class="mui-actionsheet__title"
+            v-if="title.length ">
+            {{title}}
+          </div> -->
+          <m-header v-if="title"
+            :title="title"
+            type="modal"
+            @click="close"></m-header>
+          <p v-if="desc.length"
+            class="mui-actionsheet__desc"
+            v-html="desc">
+          </p>
           <div class="mui-actionsheet__menu">
             <!-- eslint-disable-next-line -->
             <div class="mui-actionsheet__cell"
               :class="{select:selectItem.isSelect ?sIndex == index : false}"
               v-for="(item,index) in data"
-              v-html="item"
-              @click="itemClick(item,index)"></div>
+              @click="itemClick(item,index)">
+              <div class="mui-actionsheet__cell__bd"> {{item}}</div>
+              <div v-if="sIndex == index"
+                class="mui-actionsheet__cell__ft">
+                <m-icon type="check1" />
+              </div>
+            </div>
           </div>
           <div class="mui-actionsheet__ft"
             v-if="isBottomBtn"
@@ -30,7 +43,9 @@
   </transition>
 </template>
 <script>
+import mHeader from '../header/header'
 import mPopup from '../popup/popup'
+import mIcon from '../icon'
 import apiMixin from '../../common/mixins/api'
 /**
  * param {String} [title=''] - 标题, 默认为空.
@@ -51,6 +66,10 @@ export default {
   },
   props: {
     title: {
+      type: String,
+      default: ''
+    },
+    desc: {
       type: String,
       default: ''
     },
@@ -92,6 +111,8 @@ export default {
     }
   },
   components: {
+    mHeader,
+    mIcon,
     mPopup
   }
 }

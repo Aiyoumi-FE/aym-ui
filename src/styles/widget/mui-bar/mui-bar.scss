@@ -64,22 +64,22 @@
 
 /* modal */
 .mui-bar_modal {
-  height: px2rem(97);
+  height: px2rem(88);
+  color: $colorTextMain;
 
   .mui-bar__title {
-    line-height: px2rem(97);
-    color: $colorTextGeneral;
+    line-height: px2rem(88);
     font-size: $fontSTitle;
   }
 
   .mui-bar__left,
   .mui-bar__tools {
-    line-height: px2rem(97);
-    color: $colorTextGeneral;
+    line-height: px2rem(88);
 
-    [class*='mui-icon-'] {
-      font-size: $fontSTitle;
+    .mui-icon {
+      font-size: $fontSBody;
       vertical-align: middle;
+      color: $colorTextAssistant;
     }
   }
 }

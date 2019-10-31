@@ -7,12 +7,14 @@
       @click="maskClick"
       :style="transparent? transparentStyle :''"></div>
     <div class="mui-popup__container">
-      <div class="mui-popup__content"
+      <div class="mui-popup__content "
+        :class="{'mui-popup__content_round':round}"
         v-if="$slots.default">
         <slot>
         </slot>
       </div>
       <div class="mui-popup__content"
+        :class="{'mui-popup__content_round':round}"
         v-else
         v-html="content">
       </div>
@@ -29,6 +31,10 @@ export default {
     type: {
       type: String,
       default: ''
+    },
+    round: {
+      type: Boolean,
+      default: true
     },
     mask: {
       type: Boolean,
