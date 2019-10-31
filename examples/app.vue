@@ -37,6 +37,13 @@ h5 {
 }
 
 
+.mui-btn {
+  margin-bottom: 20px;
+}
+
+.mui-popup__content .mui-btn {
+  margin-bottom: 0;
+}
 
 /* 左右滑动 */
 
