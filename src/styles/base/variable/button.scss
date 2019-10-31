@@ -69,16 +69,14 @@ $btnSubsidiaryBdColor:mix(#000,#fff,10%); // #e6e6e6
 $btnDisabledBg:mix(#000,#fff,10%); // #e6e6e6
 $btnDisabledColor:$colorTextAssistant;
 // 按钮尺寸
-$widthLarge:px2rem(686);
+$widthLarge:px2rem(684);
 $heightLarge:px2rem(86);
 $borderRadiusLarge: px2rem(44);
 $fontSizeLarge:$fontSTitle;
-$fontWeightLarge: 600;
 
 $heightMiddle:px2rem(78);
 $borderRadiusMiddle: px2rem(40);
 $fontSizeMiddle:$fontSTitle;
-$fontWeightMiddle: 600;
 
 $heightSmall:px2rem(70);
 $borderRadiusSmall: px2rem(44);

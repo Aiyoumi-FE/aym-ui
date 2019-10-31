@@ -23,14 +23,9 @@
     &:focus {
       outline: 0;
     }
-    &.disabled {
-        color: $btnDisabledColor;
-        background-color: $btnDisabledBg;
-        border: 0;
-    }
-  }
+}
 
-  .mui-btn_large {
+.mui-btn_large {
     width: 100%;
     max-width: $widthLarge;
 	display: block;
@@ -38,7 +33,7 @@
 	margin-right: auto;
 	line-height: $heightLarge;
 	font-size: $fontSizeLarge;
-	font-weight: $fontWeightLarge;
+	font-weight: 700;
 	&.mui-btn_round {
         border-radius: $borderRadiusLarge;
 	}
@@ -47,7 +42,7 @@
 .mui-btn_middle {
 	line-height: $heightMiddle;
 	font-size: $fontSizeMiddle;
-	font-weight: $fontWeightMiddle;
+	font-weight: 700;
 	&.mui-btn_round {
         border-radius: $borderRadiusMiddle;
 	}
@@ -84,8 +79,8 @@
 	border: 1px solid $btnSubsidiaryBdColor;
 	
 	&:active {
-            background-color: $btnSubsidiaryActiveBg;
-            border: 1px solid $btnSubsidiaryActiveBg;
+        background-color: $btnSubsidiaryActiveBg;
+        border: 1px solid $btnSubsidiaryActiveBg;
 	}
 }
 
@@ -96,6 +91,7 @@
     background-color: $colorPrimary;
     font-size: $fontTitle;
     border-radius: 0;
+    font-weight: 700;
   
     &:active {
       background-color: $btnFullActiveBg;
@@ -111,4 +107,10 @@
 		border-color: $btnBorderActiveBdColor;
 	}
 }
-
+.mui-btn {
+    &.disabled {
+        color: $btnDisabledColor;
+        background-color: $btnDisabledBg;
+        border-color: $btnDisabledBg;
+    }
+}
