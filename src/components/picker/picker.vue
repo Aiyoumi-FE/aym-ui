@@ -29,8 +29,7 @@
             </div>
           </div>
           <div class="mui-picker__ft">
-            <m-button type="full"
-              @click="confirm">{{confirmTxt}}</m-button>
+            <m-button @click="confirm">{{confirmTxt}}</m-button>
           </div>
         </div>
       </transition>
