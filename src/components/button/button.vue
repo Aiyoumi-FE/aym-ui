@@ -1,7 +1,9 @@
 <template>
   <button :class="classes"
     v-bind="$attrs"
-    @click="handleClick">
+    :disabled="disabled"
+    @click="handleClick"
+    @touchstart="handleTouchstart">
     <slot></slot>
   </button>
 </template>
@@ -33,6 +35,10 @@ export default {
     round: {
       type: Boolean,
       default: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -63,17 +69,12 @@ export default {
       ]
     }
   },
-  mounted() {
-    document.body.addEventListener('touchstart',function(){},false)
-  },
   methods: {
     handleClick(event) {
-      // if (this.disabled) {
-      //   event.preventDefault()
-      //   event.stopPropagation()
-      //   return
-      // }
       this.$emit('click', event)
+    },
+    handleTouchstart(event) {
+      this.$emit('touchstart', event)
     }
   }
 }
