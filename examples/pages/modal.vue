@@ -18,7 +18,8 @@
           <p>cotent</p>
           <p>cotent</p>
         </div>
-        <div slot="footer">
+        <div slot="footer"
+          class="modal__footer">
           <m-button @click="hideModal2">关闭</m-button>
         </div>
       </m-modal>
@@ -57,4 +58,7 @@ export default {
 </script>
 <style lang="scss"
   scoped>
+.modal__footer {
+  margin-bottom: px2rem(16);
+}
 </style>

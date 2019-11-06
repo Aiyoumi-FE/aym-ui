@@ -48,9 +48,13 @@
   }
 }
 
+.mui-modal-panel {
+  background-color: #fff;
+}
+
 .mui-modal__content {
   min-height: px2rem(503);
   max-height: px2rem(663);
-  background-color: #fff;
+
   overflow: auto;
 }
