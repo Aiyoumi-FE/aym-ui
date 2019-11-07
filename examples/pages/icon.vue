@@ -410,7 +410,7 @@ export default {
     border-collapse: collapse;
     width: 100%;
     overflow: auto;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .icon-list table th {

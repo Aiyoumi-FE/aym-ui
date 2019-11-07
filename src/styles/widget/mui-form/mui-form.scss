@@ -237,3 +237,32 @@
 .mui-switch__box {
   display: block;
 }
+.mui-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: $fontSTitle;
+}
+.mui-checkbox__label {
+  color: $colorTextMain;
+  font-size: $fontBody;
+  flex: 1;
+  margin-left: px2rem(12);
+}
+
+.mui-checkbox_checked {
+  .mui-icon {
+    color: $colorPrimary;
+  }
+}
+
+.mui-checkbox_unchecked {
+  .mui-icon {
+    color: $colorPlaceholder;
+  }
+}
+
+.mui-checkbox_disabled {
+  .mui-checkbox__label, .mui-icon {
+    color:  $colorPlaceholder;
+  }
+}
