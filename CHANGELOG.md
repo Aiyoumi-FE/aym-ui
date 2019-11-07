@@ -1,3 +1,12 @@
+# [4.0.0-beta.1](https://github.com/Aiyoumi-FE/aym-ui/compare/v4.0.0-beta.0...v4.0.0-beta.1) (2019-11-07)
+
+
+### Features
+
+* **cell,radio,tabbar,marquee:** 组合类组件扁平调用 ([db5df5e](https://github.com/Aiyoumi-FE/aym-ui/commit/db5df5e))
+
+
+
 # [4.0.0-beta.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v3.0.0-beta.1...v4.0.0-beta.0) (2019-11-06)
 
 
