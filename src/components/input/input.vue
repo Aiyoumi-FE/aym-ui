@@ -57,7 +57,8 @@
 <script>
 import mIcon from '../icon'
 import mButton from '../button/button'
-import mixin from './mixin'
+import { ChildrenMixin } from '../../common/mixins/nested.js'
+
 /**
  * param {String} [title=''] - 输入框标题
  * param {String} [nativeType='text'] - input类型 可选text tel
@@ -71,7 +72,7 @@ const prefixCls = 'mui-cell'
 export default {
   name: 'm-input',
   inheritAttrs: false,
-  mixins: [mixin],
+  mixins: [ChildrenMixin('cellGroup')],
   props: {
     size: {
       type: String,
@@ -250,4 +251,5 @@ export default {
 <style lang="scss">
 @import '../../styles/var.scss';
 @import "../../styles/widget/mui-cell/mui-cell";
+@import "../../styles/widget/mui-form/mui-form";
 </style>
