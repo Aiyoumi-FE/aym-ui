@@ -39,11 +39,11 @@
 import {
   go
 } from '../../libs/router'
-import mixin from './mixin'
+import { ChildrenMixin } from '../../common/mixins/nested.js'
 
 export default {
   name: 'm-cell',
-  mixins: [mixin],
+  mixins: [ChildrenMixin('cellGroup')],
 
   props: {
     title: {
