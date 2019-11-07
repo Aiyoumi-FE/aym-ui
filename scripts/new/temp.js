@@ -3,7 +3,7 @@ var path = require('path')
 var Mustache = require('mustache')
 // 用户输入 组件名
 
-module.exports = function(FILE_NAME) {
+module.exports = function(FILE_NAME, isNeedExamples = true) {
   if (!FILE_NAME) {
     console.log('未检测到文件名！！')
     return
@@ -19,7 +19,7 @@ module.exports = function(FILE_NAME) {
   const docsTpl = fs.readFileSync('scripts/new/template/doc.txt', { encoding: 'utf8' })
   const modulesExportTpl = fs.readFileSync('scripts/new/template/export.txt', { encoding: 'utf8' })
 
-  const FILE_ARR = [{
+  const componentArr = [{
     name: 'component',
     dir: path.resolve(`src/components/${FILE_NAME}`),
     baseName: FILE_NAME + '.vue',
@@ -30,6 +30,13 @@ module.exports = function(FILE_NAME) {
     baseName: 'index.js',
     tpl: modulesTpl
   }, {
+    name: 'modulesExport',
+    dir: path.resolve(`src`),
+    baseName: 'modules.js',
+    tpl: modulesExportTpl,
+    flag: 'a+'
+  }, ]
+  const examplesArr = [{
     name: 'example',
     dir: path.resolve('examples/pages'),
     baseName: FILE_NAME + '.vue',
@@ -39,13 +46,8 @@ module.exports = function(FILE_NAME) {
     dir: path.resolve('document/docs'),
     baseName: FILE_NAME + '.md',
     tpl: docsTpl,
-  }, {
-    name: 'modulesExport',
-    dir: path.resolve(`src`),
-    baseName: 'modules.js',
-    tpl: modulesExportTpl,
-    flag: 'a+'
-  }, ]
+  }]
+  let allArr = isNeedExamples ? componentArr.concat(examplesArr) : componentArr
 
   // 渲染模版
   const renderTpl = (tpl, data) => {
@@ -74,7 +76,7 @@ module.exports = function(FILE_NAME) {
     });
   }
   // 创建文件夹，如果存在则去创建文件
-  FILE_ARR.forEach(item => {
+  allArr.forEach(item => {
     fs.mkdir(item.dir, err => {
       if (err) {
         if (err.code === 'EEXIST') {
@@ -87,11 +89,21 @@ module.exports = function(FILE_NAME) {
         name: FILE_NAME,
         nameFirstBig: function() {
           // return this.name.toUpperCase()
-          return this.name.replace(/^(\w)/g, (m, c) => c ? c.toUpperCase() : '')
+          // return this.name.replace(/^(\w)/g, (m, c) => c ? c.toUpperCase() : '')
+          return upperCamelize(this.name)
         }
       })
       creteFile(file, content, item.flag)
     })
 
+  })
+}
+
+
+function upperCamelize(str) {
+  const camelizeRE = /-(\w)/g
+  str = String(str)
+  return str.charAt(0).toUpperCase() + str.slice(1).replace(camelizeRE, function(m, c) {
+    return c ? c.toUpperCase() : ''
   })
 }

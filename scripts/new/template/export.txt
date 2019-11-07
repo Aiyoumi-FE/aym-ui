@@ -1,2 +1,2 @@
-export { {{nameFirstBig}} } from './components/{{name}}'
+export { default as {{nameFirstBig}} } from './components/{{name}}'
 

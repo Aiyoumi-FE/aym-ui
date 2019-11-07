@@ -32,9 +32,16 @@ inquirer
     name: 'componentsName',
     message: "新增组件名",
     when: !componentsName
+  }, {
+    type: 'confirm',
+    name: 'isNeedExample',
+    message: "是否需要示例(组合组件父组件不需要)",
+    default: true
   }])
   .then(answers => {
     const cname = componentsName || answers.componentsName
-    genTemplate(cname)
-    addNewComponentsToJSON(arr.indexOf(answers.type), cname)
+    genTemplate(cname, answers.isNeedExample)
+    if (answers.isNeedExample) {
+      addNewComponentsToJSON(arr.indexOf(answers.type), cname)
+    }
   });
