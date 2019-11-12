@@ -28,9 +28,14 @@
         {{placeholder}}
       </p>
       <slot name="value">
-        <p :class="{'mui-cell__ft_value':subValue}"> {{value}}</p>
+        <template v-if="subValue">
+          <p class="mui-cell__ft_value"> {{value}}</p>
+          <p class="mui-cell__ft_subvalue">{{subValue}}</p>
+        </template>
+        <template v-else>{{value}}</template>
+        <!-- <p :class="{'mui-cell__ft_value':subValue}"> {{value}}</p>
         <p v-if="subValue"
-          class="mui-cell__ft_subvalue">{{subValue}}</p>
+          class="mui-cell__ft_subvalue">{{subValue}}</p> -->
       </slot>
     </div>
   </div>

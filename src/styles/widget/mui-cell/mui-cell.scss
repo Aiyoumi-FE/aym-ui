@@ -179,16 +179,10 @@
   @include setTapColor();
   color: inherit;
 
-  &:active {
+  &:active:not(.mui-cell_disabled) {
     background-color: #ECECEC;
   }
-
-  &.mui-cell_disabled {
-    .mui-cell__ft {
-      color: $colorTextAssistant;
-    }
-  }
-
+  
   .mui-cell__ft {
     padding-right: px2rem(50);
 
@@ -201,5 +195,10 @@
       top: 50%;
       margin-top: px2rem(-12);
     }
+  }
+}
+.mui-cell_disabled {
+  .mui-cell__ft {
+    color: $colorTextAssistant;
   }
 }

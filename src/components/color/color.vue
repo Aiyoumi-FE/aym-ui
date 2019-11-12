@@ -7,7 +7,7 @@ export default {
   name: 'm-color',
   props: {
     color: {
-      type: 'String'
+      type: String
     }
   },
   methods: {}
