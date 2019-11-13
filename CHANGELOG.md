@@ -1,33 +1,25 @@
-# [4.0.0-beta.1](https://github.com/Aiyoumi-FE/aym-ui/compare/v4.0.0-beta.0...v4.0.0-beta.1) (2019-11-07)
-
-
-### Features
-
-* **cell,radio,tabbar,marquee:** 组合类组件扁平调用 ([db5df5e](https://github.com/Aiyoumi-FE/aym-ui/commit/db5df5e))
-
-
-
-# [4.0.0-beta.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v3.0.0-beta.1...v4.0.0-beta.0) (2019-11-06)
+# [4.0.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v3.0.0-beta.1...v4.0.0) (2019-11-13)
 
 
 ### Bug Fixes
 
-* 移动端兼容性-修改diabled下active有效果问题 ([70eaccc](https://github.com/Aiyoumi-FE/aym-ui/commit/70eaccc))
-* **vue:** 按钮示例间距调整 ([fdd101c](https://github.com/Aiyoumi-FE/aym-ui/commit/fdd101c))
-* 优化button ([e1fe21a](https://github.com/Aiyoumi-FE/aym-ui/commit/e1fe21a))
+* 移动端兼容性-修改diabled下active有效果问题 ([f37f128](https://github.com/Aiyoumi-FE/aym-ui/commit/f37f128))
+* **vue:** 按钮示例间距调整 ([c0a170b](https://github.com/Aiyoumi-FE/aym-ui/commit/c0a170b))
+* 优化button ([9c4e327](https://github.com/Aiyoumi-FE/aym-ui/commit/9c4e327))
 * **input:** 倒计时销毁 ([9222ef7](https://github.com/Aiyoumi-FE/aym-ui/commit/9222ef7))
 
 
 ### Features
 
-* **button:** 更新button组件 ([ed9dd38](https://github.com/Aiyoumi-FE/aym-ui/commit/ed9dd38))
+* **button:** 更新button组件 ([84cde79](https://github.com/Aiyoumi-FE/aym-ui/commit/84cde79))
 * **cell:** cell 根据4.0规范更新 ([569acf4](https://github.com/Aiyoumi-FE/aym-ui/commit/569acf4))
+* **cell,radio,tabbar,marquee:** 组合类组件扁平调用 ([dc731fb](https://github.com/Aiyoumi-FE/aym-ui/commit/dc731fb))
 * **color:** update color ([813efed](https://github.com/Aiyoumi-FE/aym-ui/commit/813efed))
 * **color,fontsize:** 规范化变量名&全局替换 ([b1900d9](https://github.com/Aiyoumi-FE/aym-ui/commit/b1900d9))
-* **demo:** 示例修改 ([f4d3052](https://github.com/Aiyoumi-FE/aym-ui/commit/f4d3052))
-* **input:** 去掉上下结构示例 ([abc8189](https://github.com/Aiyoumi-FE/aym-ui/commit/abc8189))
-* **popup,modal,actionsheet,piker:** 弹层样式修改 ([a839a47](https://github.com/Aiyoumi-FE/aym-ui/commit/a839a47))
-* 合并样式文件 ([bde28a8](https://github.com/Aiyoumi-FE/aym-ui/commit/bde28a8))
+* **demo:** 示例修改 ([70578ac](https://github.com/Aiyoumi-FE/aym-ui/commit/70578ac))
+* **input:** 去掉上下结构示例 ([7d986c6](https://github.com/Aiyoumi-FE/aym-ui/commit/7d986c6))
+* **popup,modal,actionsheet,piker:** 弹层样式修改 ([9defa95](https://github.com/Aiyoumi-FE/aym-ui/commit/9defa95))
+* 合并样式文件 ([ef0c758](https://github.com/Aiyoumi-FE/aym-ui/commit/ef0c758))
 * **vue:** 更新tag组件 ([6f89013](https://github.com/Aiyoumi-FE/aym-ui/commit/6f89013))
 
 
