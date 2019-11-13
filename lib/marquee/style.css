@@ -1,25 +1,2 @@
-@charset "UTF-8";
-/*
-* mui 规范中定义的字号
-*/
-/*
-* mui 规范中定义的颜色
-*/
-/*
-* mui 规范中定义的颜色
-*/
-.m-marquee {
-  width: 100%;
-  overflow: hidden;
-}
-.m-marquee-box {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: auto;
-}
-.m-marquee-box li {
-    margin: 0;
-    width: 100%;
-}
+.m-marquee{width:100%;overflow:hidden}.m-marquee-box{padding:0;margin:0;width:100%;height:auto}.m-marquee-box li{margin:0;width:100%}
 
