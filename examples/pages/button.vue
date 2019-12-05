@@ -27,6 +27,16 @@
       <m-button type="full">full按钮</m-button>
       <m-button type="full"
         disabled>full按钮(disabled)</m-button>
+      <h5>组合按钮</h5>
+      <m-button-group>
+        <m-button>加入购物车</m-button>
+        <m-button type="warn">立即购买</m-button>
+      </m-button-group>
+      <m-button-group size="small">
+        <m-button>a</m-button>
+        <m-button type="warn">b</m-button>
+        <m-button>c</m-button>
+      </m-button-group>
     </demo-content>
   </m-page>
 </template>

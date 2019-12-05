@@ -1,116 +1,178 @@
 .mui-btn {
-    position: relative;
-    display: inline-block;
-    padding-left: px2rem(36);
-    padding-right: px2rem(36);
-  
-    text-align: center;
-    text-decoration: none;
-    color: $colorTextMain;
-    background: transparent;
-    border-radius: $btnBorderRadius;
-    // border-width: 0;
-    box-sizing: border-box;
-    @include setTapColor();
-    overflow: hidden;
-    -webkit-appearance: none;
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-    -khtml-user-select:none;
-    -moz-user-select:none;
-    user-select:none;
-  
-    &:focus {
-      outline: 0;
-    }
+  position: relative;
+  display: inline-block;
+  padding-left: px2rem(36);
+  padding-right: px2rem(36);
+
+  text-align: center;
+  text-decoration: none;
+  color: $colorTextMain;
+  background: transparent;
+  border-radius: $btnBorderRadius;
+  // border-width: 0;
+  box-sizing: border-box;
+  @include setTapColor();
+  overflow: hidden;
+  -webkit-appearance: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 0;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .mui-btn_large {
-    width: 100%;
-    max-width: $widthLarge;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	line-height: $heightLarge;
-	font-size: $fontSizeLarge;
-	font-weight: 700;
-	&.mui-btn_round {
-        border-radius: $borderRadiusLarge;
-	}
+  width: 100%;
+  max-width: $widthLarge;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: $heightLarge;
+  font-size: $fontSizeLarge;
+  font-weight: 700;
+
+  &.mui-btn_round {
+    border-radius: $borderRadiusLarge;
+  }
 }
 
 .mui-btn_middle {
-	line-height: $heightMiddle;
-	font-size: $fontSizeMiddle;
-	font-weight: 700;
-	&.mui-btn_round {
-        border-radius: $borderRadiusMiddle;
-	}
+  line-height: $heightMiddle;
+  font-size: $fontSizeMiddle;
+  font-weight: 700;
+
+  &.mui-btn_round {
+    border-radius: $borderRadiusMiddle;
+  }
 }
 
 .mui-btn_small {
-	line-height: $heightSmall;
-	font-size: $fontSizeSmall;
-	&.mui-btn_round {
-        border-radius: $borderRadiusSmall;
-	}
+  line-height: $heightSmall;
+  font-size: $fontSizeSmall;
+
+  &.mui-btn_round {
+    border-radius: $borderRadiusSmall;
+  }
 }
 
 .mui-btn_xsmall {
-	line-height: $heightXsmall;
-	font-size: $fontSizeXsmall;
-	&.mui-btn_round {
-        border-radius: $borderRadiusXsmall;
-	}
+  line-height: $heightXsmall;
+  font-size: $fontSizeXsmall;
+
+  &.mui-btn_round {
+    border-radius: $borderRadiusXsmall;
+  }
+}
+
+@mixin buttonType($bgColor, $color: $colorTextMain, $borderColor:'', ) {
+  background-color: $bgColor;
+  color: $color;
+
+  @if $borderColor !='' {
+    border: 1px solid $borderColor;
+  }
+
+  &:active {
+    background-color: mix(#000, $bgColor, 10%);
+    color: mix(#000, $color, 10%);
+
+    @if $borderColor {
+      border: 1px solid $borderColor;
+    }
+  }
 }
 
 .mui-btn_primary {
-    border: 1px solid $colorPrimary;
-    background-color: $colorPrimary;
-  
-    &:active {
-      background-color: $btnPrimaryActiveBg;
-      border: 1px solid $btnPrimaryActiveBg;
-    }
+  @include buttonType($colorPrimary) // border: 1px solid $colorPrimary;
+  // background-color: $colorPrimary;
+
+  // &:active {
+  //   background-color: $btnPrimaryActiveBg;
+  //   border: 1px solid $btnPrimaryActiveBg;
+  // }
 }
 
 .mui-btn_plain {
-	background-color: $btnSubsidiaryBg;
-	border: 1px solid $btnSubsidiaryBdColor;
-	
-	&:active {
-        background-color: $btnSubsidiaryActiveBg;
-        border: 1px solid $btnSubsidiaryActiveBg;
-	}
+  // @include buttonType($colorWhite, '#f00', $colorLineLight) // border: 1px solid $colorPrimary;
+  @include buttonType($colorWhite, $colorTextMain, $colorLineLight) // border: 1px solid $colorPrimary;
+
+  // background-color: $btnSubsidiaryBg;
+  // border: 1px solid $btnSubsidiaryBdColor;
+
+  // &:active {
+  //   background-color: $btnSubsidiaryActiveBg;
+  //   border: 1px solid $btnSubsidiaryActiveBg;
+  // }
+}
+
+.mui-btn_warn {
+  @include buttonType($colorWarn, $colorWhite) // border: 1px solid $colorPrimary;
+
+  // background-color: $colorWarn;
+  // border: 1px solid $colorWarn;
+  // color: #fff;
+
+  // &:active {
+  //   background-color: $btnSubsidiaryActiveBg;
+  //   border: 1px solid $btnSubsidiaryActiveBg;
+  // }
 }
 
 .mui-btn_full {
-    width: 100%;
-    line-height: $heightFull;
-    border: 1px solid $colorPrimary;
-    background-color: $colorPrimary;
-    font-size: $fontTitle;
-    border-radius: 0;
-    font-weight: 700;
-  
-    &:active {
-      background-color: $btnFullActiveBg;
-      border: 1px solid $btnFullActiveBg;
-    }
+  width: 100%;
+  line-height: $heightFull;
+
+  font-size: $fontTitle;
+  border-radius: 0;
+  font-weight: 700;
+
+  @include buttonType($colorPrimary) // border: 1px solid $colorPrimary;
+  // background-color: $colorPrimary;
+  // &:active {
+  //   background-color: $btnFullActiveBg;
+  //   border: 1px solid $btnFullActiveBg;
+  // }
 }
 
 .mui-btn_border {
-	color: $colorPrimary;
-	border: 1px solid $colorPrimary;
-	&:active {
-		color: $btnBorderActiveColor;
-		border-color: $btnBorderActiveBdColor;
-	}
+  color: $colorPrimary;
+  border: 1px solid $colorPrimary;
+
+  &:active {
+    color: $btnBorderActiveColor;
+    border-color: $btnBorderActiveBdColor;
+  }
 }
+
 .mui-btn {
-    &.disabled {
-        color: $btnDisabledColor;
-        background-color: $btnDisabledBg;
-        border-color: $btnDisabledBg;
-    }
+  &.disabled {
+    color: $btnDisabledColor;
+    background-color: $btnDisabledBg;
+    border-color: $btnDisabledBg;
+  }
+}
+
+// 组合按钮
+.mui-btns {
+  display: flex;
+}
+
+.mui-btns .mui-btn {
+  border-radius: 0;
+  width: 100%;
+}
+
+.mui-btns .mui-btn:first-of-type {
+  border-top-left-radius: $borderRadiusMiddle;
+  border-bottom-left-radius: $borderRadiusMiddle;
+}
+
+.mui-btns .mui-btn:last-of-type {
+  border-top-right-radius: $borderRadiusMiddle;
+  border-bottom-right-radius: $borderRadiusMiddle;
 }
