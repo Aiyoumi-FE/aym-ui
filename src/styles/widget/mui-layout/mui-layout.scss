@@ -38,17 +38,8 @@
   top: 1.87733rem;
 }
 
-.mui-fixedbottom {
-  width: 100%;
-  height: 2.13333rem;
-  position: absolute;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 1000;
-}
-
 .mui-fixedbottom~.mui-content {
-  bottom: 2.13333rem;
+  bottom: px2rem(120);
 }
 
 .mui-content__page-result,

@@ -47,6 +47,10 @@
     "name": "header"
   },
   {
+    "path": "/footer",
+    "name": "footer"
+  },
+  {
     "path": "/badge",
     "name": "badge"
   },

@@ -70,3 +70,5 @@ export { default as Marquee } from './components/marquee'
 export { default as MarqueeItem } from './components/marquee-item'
 export { default as Tabbar } from './components/tabbar'
 export { default as TabbarItem } from './components/tabbar-item'
+export { default as Footer } from './components/footer'
+
