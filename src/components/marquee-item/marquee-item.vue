@@ -9,8 +9,8 @@ export default {
   mounted() {
     this.$nextTick(() => {
       // this.$parent.destroy()
-      this.$parent.init()
-      this.$parent.start()
+      // this.$parent.init()
+      // this.$parent.start()
     })
   }
 }
