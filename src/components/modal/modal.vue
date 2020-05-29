@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <m-popup type="modal"
-      @maskClick="hide"
+      @maskClick="maskClick"
       v-show="isVisible">
       <transition name="slide-up">
         <div class="mui-modal-panel"
