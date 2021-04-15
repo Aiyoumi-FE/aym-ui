@@ -1,3 +1,17 @@
+## [4.0.1](https://github.com/Aiyoumi-FE/aym-ui/compare/v4.0.0...v4.0.1) (2021-04-15)
+
+
+### Bug Fixes
+
+* picker scrollEnd repeat ([cf2f54c](https://github.com/Aiyoumi-FE/aym-ui/commit/cf2f54c))
+
+
+### Features
+
+* modal弹窗maskClick的bug修复 ([585e152](https://github.com/Aiyoumi-FE/aym-ui/commit/585e152))
+
+
+
 # [4.0.0](https://github.com/Aiyoumi-FE/aym-ui/compare/v3.0.0-beta.1...v4.0.0) (2019-11-13)
 
 
