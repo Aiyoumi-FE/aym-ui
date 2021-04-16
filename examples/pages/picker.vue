@@ -56,9 +56,6 @@ export default {
         }
     },
     watch: {
-        linkageData() {
-            this.linkagePicker.refresh()
-        }
     },
     computed: {
         linkageData() {
@@ -108,7 +105,6 @@ export default {
                 if (newIndex !== this.tempIndex[col]) {
                     for (let j = 2; j > col; j--) {
                         this.tempIndex.splice(j, 1, 0)
-                        this.linkagePicker.scrollTo(j, 0)
                     }
                     this.tempIndex.splice(col, 1, newIndex)
                     this.linkagePicker.setData(this.linkageData, this.tempIndex)
@@ -153,7 +149,6 @@ export default {
             if (newIndex !== this.comPickerIndex[col]) {
                 for (let j = 2; j > col; j--) {
                     this.comPickerIndex.splice(j, 1, 0)
-                    this.$refs.comPicker.scrollTo(j, 0)
                 }
                 this.comPickerIndex.splice(col, 1, newIndex)
             }

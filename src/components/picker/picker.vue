@@ -122,6 +122,7 @@ export default {
       let isEqualArr = []
       let selectObj = []
       for (let i = 0; i < this.pickerData.length; i++) {
+        // let index = this._getSelectIndex(this.wheels[i])
         let index = this.wheels[i].getSelectedIndex()
         this.pickerSelectedIndex[i] = index
         if (this.pickerData[i].length) {
@@ -137,18 +138,22 @@ export default {
         this.$emit(EVENT_VALUE_CHANGE, this.pickerSelectedItem, this.pickerSelectedIndex)
       }
     },
+
     show() {
       if (this.isVisible) {
         return
       }
       this.isVisible = true
+
       if (!this.wheels || this.dirty) {
         this.$nextTick(() => {
-          this.wheels = []
+          this.wheels = this.wheels || []
           let wheelWrapper = this.$refs.wheelWrapper
           for (let i = 0; i < this.pickerData.length; i++) {
-            this._createWheel(wheelWrapper, i)
+            this._createWheel(wheelWrapper, i).enable()
+            this.wheels[i].wheelTo(this.pickerSelectedIndex[i])
           }
+          this.dirty && this._destroyExtraWheels()
           this.dirty = false
         })
       } else {
@@ -171,7 +176,18 @@ export default {
     setData(data, selectedIndex) {
       this.pickerSelectedIndex = selectedIndex ? [...selectedIndex] : []
       this.pickerData = data.slice()
-      this.dirty = true
+      if (this.isVisible) {
+        this.$nextTick(() => {
+          const wheelWrapper = this.$refs.wheelWrapper
+          this.pickerData.forEach((item, i) => {
+            this._createWheel(wheelWrapper, i)
+            this.wheels[i].wheelTo(this.pickerSelectedIndex[i])
+          })
+          this._destroyExtraWheels()
+        })
+      } else {
+        this.dirty = true
+      }
     },
     // refill(datas) {
     //     let ret = []
@@ -215,6 +231,7 @@ export default {
       const wheel = this.wheels[index]
       this.pickerSelectedIndex[index] = dist
       wheel.wheelTo(dist)
+
     },
     refresh() {
       setTimeout(() => {
@@ -224,22 +241,61 @@ export default {
       }, 200)
     },
     _createWheel(wheelWrapper, i) {
-      const wheel = this.wheels[i] = new BScroll(wheelWrapper.children[i], {
-        wheel: {
-          selectedIndex: this.pickerSelectedIndex[i] || 0,
-          rotate: 16
-        }
-      })
-      wheel.on('scrollEnd', () => {
-        this.$emit(EVENT_CHANGE, i, wheel.getSelectedIndex())
-      })
-      return wheel
+      if (!this.wheels[i]) {
+        const wheel = this.wheels[i] = new BScroll(wheelWrapper.children[i], {
+          wheel: {
+
+            selectedIndex: this.pickerSelectedIndex[i] || 0,
+            rotate: 16
+          },
+          observeDOM: false,
+          // useTransition: false
+        })
+        wheel.on('scrollEnd', () => {
+          this.$emit(EVENT_CHANGE, i, wheel.getSelectedIndex())
+          // this.$emit(EVENT_CHANGE, i, this._getSelectIndex(wheel))
+        })
+      } else {
+        this.wheels[i].refresh()
+      }
+      return this.wheels[i]
+    },
+    _destroyExtraWheels() {
+      const dataLength = this.pickerData.length
+      if (this.wheels.length > dataLength) {
+        const extraWheels = this.wheels.splice(dataLength)
+        extraWheels.forEach((wheel) => {
+          wheel.destroy()
+        })
+      }
     },
     _canConfirm() {
       return this.wheels.every((wheel) => {
         return !wheel.isInTransition
       })
-    }
+    },
+    _getSelectIndex(wheel) {
+      const y = wheel.y
+      let selectedIndex
+      // if (USE_TRANSITION) {
+      //   selectedIndex = wheel.getSelectedIndex()
+      // } else {
+        if (y > wheel.minScrollY) {
+          selectedIndex = 0
+        } else if (y < wheel.maxScrollY) {
+          selectedIndex = wheel.items.length - 1
+        } else {
+          selectedIndex = Math.round(Math.abs(y / wheel.itemHeight))
+        }
+      // }
+      return selectedIndex
+    },
+    beforeDestroy() {
+      this.wheels && this.wheels.forEach((wheel) => {
+        wheel.destroy()
+      })
+      this.wheels = null
+    },
   }
 }
 </script>
